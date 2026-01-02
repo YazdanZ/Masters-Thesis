@@ -1,0 +1,1409 @@
+\begin{thebibliography}{100}
+
+\bibitem{Jemimah_Gromiha_2020}
+Sherlyn Jemimah and M.~Michael Gromiha.
+\newblock Insights into changes in binding affinity caused by disease mutations
+  in protein-protein complexes.
+\newblock {\em Computers in Biology and Medicine}, 123:103829, August 2020.
+
+\bibitem{hiv_ppi}
+Roger~G. Ptak, William Fu, Brigitte~E. Sanders-Beer, Jonathan~E. Dickerson,
+  John~W. Pinney, David~L. Robertson, Mikhail~N. Rozanov, Kenneth~S. Katz,
+  Donna~R. Maglott, Kim~D. Pruitt, and Carl~W. Dieffenbach.
+\newblock Short communication: Cataloguing the {HIV} type 1 human protein
+  interaction network.
+\newblock {\em AIDS Research and Human Retroviruses}, 24(12):1497–1502,
+  December 2008.
+
+\bibitem{sars_cov2_ppi}
+David~E. Gordon, Gwendolyn~M. Jang, Mehdi Bouhaddou, Jiewei Xu, Kirsten
+  Obernier, Kris~M. White, Matthew~J. O’Meara, Veronica~V. Rezelj, Jeffrey~Z.
+  Guo, Danielle~L. Swaney, Tia~A. Tummino, Ruth Hüttenhain, Robyn~M. Kaake,
+  Alicia~L. Richards, Beril Tutuncuoglu, Helene Foussard, Jyoti Batra, Kelsey
+  Haas, Maya Modak, Minkyu Kim, Paige Haas, Benjamin~J. Polacco, Hannes
+  Braberg, Jacqueline~M. Fabius, Manon Eckhardt, Margaret Soucheray, Melanie~J.
+  Bennett, Merve Cakir, Michael~J. McGregor, Qiongyu Li, Bjoern Meyer,
+  Ferdinand Roesch, Thomas Vallet, Alice Mac~Kain, Lisa Miorin, Elena Moreno,
+  Zun Zar~Chi Naing, Yuan Zhou, Shiming Peng, Ying Shi, Ziyang Zhang, Wenqi
+  Shen, Ilsa~T. Kirby, James~E. Melnyk, John~S. Chorba, Kevin Lou, Shizhong~A.
+  Dai, Inigo Barrio-Hernandez, Danish Memon, Claudia Hernandez-Armenta, Jiankun
+  Lyu, Christopher J.~P. Mathy, Tina Perica, Kala~Bharath Pilla, Sai~J.
+  Ganesan, Daniel~J. Saltzberg, Ramachandran Rakesh, Xi~Liu, Sara~B. Rosenthal,
+  Lorenzo Calviello, Srivats Venkataramanan, Jose Liboy-Lugo, Yizhu Lin,
+  Xi-Ping Huang, YongFeng Liu, Stephanie~A. Wankowicz, Markus Bohn, Maliheh
+  Safari, Fatima~S. Ugur, Cassandra Koh, Nastaran~Sadat Savar, Quang~Dinh Tran,
+  Djoshkun Shengjuler, Sabrina~J. Fletcher, Michael~C. O’Neal, Yiming Cai,
+  Jason C.~J. Chang, David~J. Broadhurst, Saker Klippsten, Phillip~P. Sharp,
+  Nicole~A. Wenzell, Duygu Kuzuoglu-Ozturk, Hao-Yuan Wang, Raphael Trenker,
+  Janet~M. Young, Devin~A. Cavero, Joseph Hiatt, Theodore~L. Roth, Ujjwal
+  Rathore, Advait Subramanian, Julia Noack, Mathieu Hubert, Robert~M. Stroud,
+  Alan~D. Frankel, Oren~S. Rosenberg, Kliment~A. Verba, David~A. Agard, Melanie
+  Ott, Michael Emerman, Natalia Jura, Mark von Zastrow, Eric Verdin, Alan
+  Ashworth, Olivier Schwartz, Christophe d’Enfert, Shaeri Mukherjee, Matt
+  Jacobson, Harmit~S. Malik, Danica~G. Fujimori, Trey Ideker, Charles~S. Craik,
+  Stephen~N. Floor, James~S. Fraser, John~D. Gross, Andrej Sali, Bryan~L. Roth,
+  Davide Ruggero, Jack Taunton, Tanja Kortemme, Pedro Beltrao, Marco Vignuzzi,
+  Adolfo García-Sastre, Kevan~M. Shokat, Brian~K. Shoichet, and Nevan~J.
+  Krogan.
+\newblock A {SARS-CoV-2} protein interaction map reveals targets for drug
+  repurposing.
+\newblock {\em Nature}, 583(7816):459–468, July 2020.
+
+\bibitem{vidal_fields_2014}
+Marc Vidal and Stanley Fields.
+\newblock The yeast two-hybrid assay: still finding connections after 25 years.
+\newblock {\em Nature Methods}, 11(12):1203–1206, Dec 2014.
+
+\bibitem{snider_2015}
+Jamie Snider, Max Kotlyar, Punit Saraon, Zhong Yao, Igor Jurisica, and Igor
+  Stagljar.
+\newblock Fundamentals of protein interaction network mapping.
+\newblock {\em Molecular Systems Biology}, 11(12):848, Dec 2015.
+
+\bibitem{low_recent_2021}
+Teck~Yew Low, Saiful~Effendi Syafruddin, M.~Aiman Mohtar, Adaikkalam
+  Vellaichamy, Nisa~Syakila A~Rahman, Yuh-Fen Pung, and Chris Soon~Heng Tan.
+\newblock Recent progress in mass spectrometry-based strategies for elucidating
+  protein–protein interactions.
+\newblock {\em Cellular and Molecular Life Sciences}, 78(13):5325--5339, July
+  2021.
+
+\bibitem{y2h_protocol}
+Melina Altmann, Stefan Altmann, Claudia Falter, and Pascal Falter-Braun.
+\newblock High-quality yeast-2-hybrid interaction network mapping.
+\newblock {\em Current Protocols in Plant Biology}, 3(3):e20067, September
+  2018.
+
+\bibitem{mehla_mapping_2015}
+Jitender Mehla, J.~Harry Caufield, and Peter Uetz.
+\newblock Mapping protein-protein interactions using yeast two-hybrid assays.
+\newblock {\em Cold Spring Harbor Protocols}, 2015(5):442--452, May 2015.
+
+\bibitem{intrepppid}
+Joseph Szymborski and Amin Emad.
+\newblock {INTREPPPID} — an orthologue-informed quintuplet network for
+  cross-species prediction of protein–protein interaction.
+\newblock {\em Briefings in Bioinformatics}, 25(5):bbae405, September 2024.
+
+\bibitem{rapppid}
+Joseph Szymborski and Amin Emad.
+\newblock Rapppid: towards generalizable protein interaction prediction with
+  awd-lstm twin networks.
+\newblock {\em Bioinformatics}, 38(16):3958–3967, August 2022.
+
+\bibitem{string_v12}
+Damian Szklarczyk, Rebecca Kirsch, Mikaela Koutrouli, Katerina Nastou, Farrokh
+  Mehryary, Radja Hachilif, Annika~L. Gable, Tao Fang, Nadezhda~T. Doncheva,
+  Sampo Pyysalo, Peer Bork, Lars~J. Jensen, and Christian von Mering.
+\newblock The string database in 2023: protein-protein association networks and
+  functional enrichment analyses for any sequenced genome of interest.
+\newblock {\em Nucleic Acids Research}, 51(D1):D638–D646, January 2023.
+
+\bibitem{intact}
+Noemi del Toro, Anjali Shrivastava, Eliot Ragueneau, Birgit Meldal, Colin
+  Combe, Elisabet Barrera, Livia Perfetto, Karyn How, Prashansa Ratan, Gautam
+  Shirodkar, Odilia Lu, Bálint Mészáros, Xavier Watkins, Sangya Pundir,
+  Luana Licata, Marta Iannuccelli, Matteo Pellegrini, Maria~Jesus Martin,
+  Simona Panni, Margaret Duesbury, Sylvain D Vallet, Juri Rappsilber, Sylvie
+  Ricard-Blum, Gianni Cesareni, Lukasz Salwinski, Sandra Orchard, Pablo Porras,
+  Kalpana Panneerselvam, and Henning Hermjakob.
+\newblock The {IntAct} database: efficient access to fine-grained molecular
+  interaction data.
+\newblock {\em Nucleic Acids Research}, 50(D1):D648–D653, January 2022.
+
+\bibitem{park_marcotte}
+Yungki Park and Edward~M. Marcotte.
+\newblock Flaws in evaluation schemes for pair-input computational predictions.
+\newblock {\em Nature Methods}, 9(12):1134–1136, December 2012.
+
+\bibitem{Hamp_Rost_2015}
+Tobias Hamp and Burkhard Rost.
+\newblock More challenges for machine-learning protein interactions.
+\newblock {\em Bioinformatics (Oxford, England)}, 31(10):1521–1525, May 2015.
+
+\bibitem{black_box}
+Judith Bernett, David~B Blumenthal, and Markus List.
+\newblock Cracking the black box of deep sequence-based protein–protein
+  interaction prediction.
+\newblock {\em Briefings in Bioinformatics}, 25(2):bbae076, March 2024.
+
+\bibitem{human_interactome_size}
+Michael P.~H. Stumpf, Thomas Thorne, Eric de~Silva, Ronald Stewart, Hyeong~Jun
+  An, Michael Lappe, and Carsten Wiuf.
+\newblock Estimating the size of the human interactome.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 105(19):6959–6964, May 2008.
+
+\bibitem{Vidal_2016}
+Marc Vidal.
+\newblock How much of the human protein interactome remains to be mapped?
+\newblock {\em Science Signaling}, 9(427):eg7–eg7, May 2016.
+
+\bibitem{negatome2}
+Philipp Blohm, Goar Frishman, Pawel Smialowski, Florian Goebels, Benedikt
+  Wachinger, Andreas Ruepp, and Dmitrij Frishman.
+\newblock Negatome 2.0: a database of non-interacting proteins derived by
+  literature mining, manual annotation and protein structure analysis.
+\newblock {\em Nucleic Acids Research}, 42(D1):D396–D400, January 2014.
+
+\bibitem{hairball_gingras}
+Anne-Claude Gingras and Brian Raught.
+\newblock Beyond hairballs: The use of quantitative mass spectrometry data to
+  understand protein–protein interactions.
+\newblock {\em FEBS Letters}, 586(17):2723–2731, August 2012.
+
+\bibitem{hairball_ideker}
+Jonathan Flint and Trey Ideker.
+\newblock The great hairball gambit.
+\newblock {\em PLOS Genetics}, 15(11):e1008519, November 2019.
+
+\bibitem{reactome}
+Bijay Jassal, Lisa Matthews, Guilherme Viteri, Chuqiao Gong, Pascual Lorente,
+  Antonio Fabregat, Konstantinos Sidiropoulos, Justin Cook, Marc Gillespie,
+  Robin Haw, Fred Loney, Bruce May, Marija Milacic, Karen Rothfels, Cristoffer
+  Sevilla, Veronica Shamovsky, Solomon Shorser, Thawfeek Varusai, Joel Weiser,
+  Guanming Wu, Lincoln Stein, Henning Hermjakob, and Peter D’Eustachio.
+\newblock The reactome pathway knowledgebase.
+\newblock {\em Nucleic Acids Research}, 48(D1):D498–D503, January 2020.
+
+\bibitem{corum}
+George Tsitsiridis, Ralph Steinkamp, Madalina Giurgiu, Barbara Brauner, Gisela
+  Fobo, Goar Frishman, Corinna Montrone, and Andreas Ruepp.
+\newblock {CORUM}: the comprehensive resource of mammalian protein
+  complexes–2022.
+\newblock {\em Nucleic Acids Research}, 51(D1):D539–D545, January 2023.
+
+\bibitem{protein_rna}
+Matthias~W. Hentze, Alfredo Castello, Thomas Schwarzl, and Thomas Preiss.
+\newblock A brave new world of {RNA}-binding proteins.
+\newblock {\em Nature Reviews. Molecular Cell Biology}, 19(5):327–341, May
+  2018.
+
+\bibitem{protein_glycan}
+Jamie Heimburg-Molinaro, Akul~Y. Mehta, Catherine~A. Tilton, and Richard~D.
+  Cummings.
+\newblock Insights into glycobiology and the protein-glycan interactome using
+  glycan microarray technologies.
+\newblock {\em Molecular & Cellular Proteomics : MCP}, 23(11):100844,
+  September 2024.
+
+\bibitem{atp_binding}
+Kaspar~P. Locher.
+\newblock Mechanistic diversity in {ATP}-binding cassette ({ABC}) transporters.
+\newblock {\em Nature Structural & Molecular Biology}, 23(6):487–493, June
+  2016.
+
+\bibitem{zn_ppi}
+Anna Kocyła, Józef~Ba Tran, and Artur Krężel.
+\newblock Galvanization of protein–protein interactions in a dynamic zinc
+  interactome.
+\newblock {\em Trends in Biochemical Sciences}, 46(1):64–79, January 2021.
+
+\bibitem{zn_ca_binding}
+James~W. Torrance, Malcolm~W. MacArthur, and Janet~M. Thornton.
+\newblock Evolution of binding sites for zinc and calcium ions playing
+  structural roles.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  71(2):813–830, 2008.
+
+\bibitem{Sarhangi_Matyushov_2020}
+Setare~Mostajabi Sarhangi and Dmitry~V. Matyushov.
+\newblock Driving forces of protein diffusion.
+\newblock {\em The Journal of Physical Chemistry Letters},
+  11(23):10137–10143, December 2020.
+
+\bibitem{Smith_van_Gunsteren_1994}
+Paul~E. Smith and Wilfred~F. van Gunsteren.
+\newblock Translational and rotational diffusion of proteins.
+\newblock {\em Journal of Molecular Biology}, 236(2):629–636, February 1994.
+
+\bibitem{Schreiber_2013}
+Gideon Schreiber.
+\newblock {\em Protein–Protein Interactions: Kinetics}, page 2098–2101.
+\newblock Springer, Berlin, Heidelberg, 2013.
+
+\bibitem{Pan_2011}
+Chongle Pan.
+\newblock Measuring dissociation rate constants of protein complexes through
+  subunit exchange: Experimental design and theoretical modeling.
+\newblock {\em PLOS ONE}, 6(12):e28827, December 2011.
+
+\bibitem{mapk_pathways}
+Megan~J Robinson and Melanie~H Cobb.
+\newblock Mitogen-activated protein kinase pathways.
+\newblock {\em Current Opinion in Cell Biology}, 9(2):180–186, April 1997.
+
+\bibitem{mapk_metabolic_disease}
+Gavin Yong~Quan Ng, Zachary Wai-Loon Loh, David~Y. Fann, Karthik
+  Mallilankaraman, Thiruma~V. Arumugam, and M.~Prakash Hande.
+\newblock Role of mitogen-activated protein (map) kinase pathways in metabolic
+  diseases.
+\newblock {\em Genome Integrity}, 15, 2024.
+
+\bibitem{mapk_ras}
+J.~Nathaniel Diehl, Priya~S. Hibshman, Irem Ozkan-Dagliyan, Craig~M. Goodwin,
+  Sarah~V. Howard, Adrienne~D. Cox, and Channing~J. Der.
+\newblock {\em Chapter Four - Targeting the ERK mitogen-activated protein
+  kinase cascade for the treatment of KRAS-mutant pancreatic cancer}, volume
+  153 of {\em RAS: Past, Present, and Future}, page 101–130.
+\newblock Academic Press, January 2022.
+
+\bibitem{mek_erk_kinetics}
+Nadia Barbero, Lucia Napione, Sonja Visentin, Maria Alvaro, Andrea Veglio,
+  Federico Bussolino, and Guido Viscardi.
+\newblock A transient kinetic study between signaling proteins: the case of the
+  {MEK–ERK} interaction.
+\newblock {\em Chemical Science}, 2(9):1804–1809, 2011.
+
+\bibitem{biotin_avidin_kinetics}
+Joshua~R. Wayment and Joel~M. Harris.
+\newblock {Biotin−Avidin} binding kinetics measured by single-molecule
+  imaging.
+\newblock {\em Analytical Chemistry}, 81(1):336–342, January 2009.
+
+\bibitem{Blazek_Santisteban_Zengerle_Meier_2015}
+Matthias Blazek, Tomas~Silva Santisteban, Roland Zengerle, and Matthias Meier.
+\newblock Analysis of fast protein phosphorylation kinetics in single cells on
+  a microfluidic chip.
+\newblock {\em Lab on a Chip}, 15(3):726–734, January 2015.
+
+\bibitem{lodish_protein_binding}
+Harvey Lodish, Arnold Berk, Chris~A. Kaiser, Monty Kreiger, Anthony Bretscher,
+  Hidde Ploegh, Angelika Amon, and Kelsey~C. Martin.
+\newblock Protein binding and enzyme catalysis.
+\newblock In {\em Molecular cell biology}, page 89–97. W H Freeman, New York,
+  NY, USA, 8th edition, 2016.
+
+\bibitem{myoglobin_1958}
+J.~C. Kendrew, G.~Bodo, H.~M. Dintzis, R.~G. Parrish, H.~Wyckoff, and D.~C.
+  Phillips.
+\newblock A three-dimensional model of the myoglobin molecule obtained by
+  {X-Ray} analysis.
+\newblock {\em Nature}, 181(4610):662–666, March 1958.
+
+\bibitem{haeomoglobin_1960}
+M.~F. Perutz, M.~G. Rossmann, Ann~F. Cullis, Hilary Muirhead, Georg Will, and
+  A.~C.~T. North.
+\newblock Structure of hæmoglobin: A three-dimensional fourier synthesis at
+  5.5-Å. resolution, obtained by {X-Ray} analysis.
+\newblock {\em Nature}, 185(4711):416–422, February 1960.
+
+\bibitem{Fersht_2008}
+Alan~R. Fersht.
+\newblock From the first protein structures to our current knowledge of protein
+  folding: delights and scepticisms.
+\newblock {\em Nature Reviews Molecular Cell Biology}, 9(8):650–654, August
+  2008.
+
+\bibitem{Anfinsen_Haber_Sela_White_1961}
+C.~B. Anfinsen, E.~Haber, M.~Sela, and F.~H. White.
+\newblock The kinetics of formation of native ribonuclease during oxidation of
+  the reduced polypeptide chain.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 47(9):1309–1314, September 1961.
+
+\bibitem{Anfinsen_1973}
+C.~B. Anfinsen.
+\newblock Principles that govern the folding of protein chains.
+\newblock {\em Science}, 181(4096):223–230, July 1973.
+
+\bibitem{Vila_2020}
+Jorge~A. Vila.
+\newblock Metamorphic proteins in light of {Anfinsen}’s dogma.
+\newblock {\em The Journal of Physical Chemistry Letters}, 11(13):4998–4999,
+  July 2020.
+
+\bibitem{Kulkarni_2022}
+Prakash Kulkarni, Vitor B.~P. Leite, Susmita Roy, Supriyo Bhattacharyya, Atish
+  Mohanty, Srisairam Achuthan, Divyoj Singh, Rajeswari Appadurai, Govindan
+  Rangarajan, Keith Weninger, John Orban, Anand Srivastava, Mohit~Kumar Jolly,
+  Jose~N. Onuchic, Vladimir~N. Uversky, and Ravi Salgia.
+\newblock Intrinsically disordered proteins: Ensembles at the limits of
+  {Anfinsen}’s dogma.
+\newblock {\em Biophysics Reviews}, 3(1):011306, March 2022.
+
+\bibitem{central_dogma}
+Francis Crick.
+\newblock Central dogma of molecular biology.
+\newblock {\em Nature}, 227(5258):561–563, August 1970.
+
+\bibitem{chaperones}
+Kris Pauwels, Inge Van~Molle, Jan Tommassen, and Patrick Van~Gelder.
+\newblock Chaperoning {Anfinsen}: the steric foldases.
+\newblock {\em Molecular Microbiology}, 64(4):917--922, 2007.
+
+\bibitem{disordered_protein}
+Ursula Jakob, Richard Kriwacki, and Vladimir~N. Uversky.
+\newblock Conditionally and transiently disordered proteins: Awakening cryptic
+  disorder to regulate protein function.
+\newblock {\em Chemical Reviews}, 114(13):6779--6805, 2014.
+\newblock PMID: 24502763.
+
+\bibitem{ppi_disease_net_analysis}
+Arunachalam Vinayagam, Travis~E. Gibson, Ho-Joon Lee, Bahar Yilmazel, Charles
+  Roesel, Yanhui Hu, Young Kwon, Amitabh Sharma, Yang-Yu Liu, Norbert Perrimon,
+  and Albert-László Barabási.
+\newblock Controllability analysis of the directed human protein interaction
+  network identifies disease genes and drug targets.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  113(18):4976–4981, May 2016.
+
+\bibitem{ppi_disease_net_analysis2}
+Ian~W. Taylor and Jeffrey~L. Wrana.
+\newblock Protein interaction networks in medicine and disease.
+\newblock {\em PROTEOMICS}, 12(10):1706–1716, May 2012.
+
+\bibitem{edgetic_disease}
+Quan Zhong, Nicolas Simonis, Qian‐Ru Li, Benoit Charloteaux, Fabien Heuze,
+  Niels Klitgord, Stanley Tam, Haiyuan Yu, Kavitha Venkatesan, Danny Mou, Venus
+  Swearingen, Muhammed~A Yildirim, Han Yan, Amélie Dricot, David Szeto,
+  Chenwei Lin, Tong Hao, Changyu Fan, Stuart Milstein, Denis Dupuy, Robert
+  Brasseur, David~E Hill, Michael~E Cusick, and Marc Vidal.
+\newblock Edgetic perturbation models of human inherited disorders.
+\newblock {\em Molecular Systems Biology}, 5(1):321, January 2009.
+
+\bibitem{emutpath}
+Yongsheng Li, Brandon Burgman, Ishaani~S Khatri, Sairahul~R Pentaparthi, Zhe
+  Su, Daniel~J McGrail, Yang Li, Erxi Wu, S~Gail Eckhardt, Nidhi Sahni, and
+  S~Stephen Yi.
+\newblock {e-MutPath}: computational modeling reveals the functional landscape
+  of genetic mutations rewiring interactome networks.
+\newblock {\em Nucleic Acids Research}, 49(1):e2–e2, January 2021.
+
+\bibitem{interaction_landscape_breast_cancer}
+Minkyu Kim, Jisoo Park, Mehdi Bouhaddou, Kyumin Kim, Ajda Rojc, Maya Modak,
+  Margaret Soucheray, Michael~J. McGregor, Patrick O’Leary, Denise Wolf,
+  Erica Stevenson, Tzeh~Keong Foo, Dominique Mitchell, Kari~A. Herrington,
+  Denise~P. Muñoz, Beril Tutuncuoglu, Kuei-Ho Chen, Fan Zheng, Jason~F.
+  Kreisberg, Morgan~E. Diolaiti, John~D. Gordan, Jean-Philippe Coppé,
+  Danielle~L. Swaney, Bing Xia, Laura Van ’T~Veer, Alan Ashworth, Trey
+  Ideker, and Nevan~J. Krogan.
+\newblock A protein interaction landscape of breast cancer.
+\newblock {\em Science}, 374(6563):eabf3066, October 2021.
+
+\bibitem{huntingtin_rho}
+Cendrine Tourette, Biao Li, Russell Bell, Shannon O’Hare, Linda~S.
+  Kaltenbach, Sean~D. Mooney, and Robert~E. Hughes.
+\newblock A large scale huntingtin protein interaction network implicates {Rho}
+  {GTP}ase signaling pathways in huntington disease.
+\newblock {\em Journal of Biological Chemistry}, 289(10):6709–6726, March
+  2014.
+
+\bibitem{Mabonga_Kappo_2019}
+Lloyd Mabonga and Abidemi~Paul Kappo.
+\newblock Protein-protein interaction modulators: advances, successes and
+  remaining challenges.
+\newblock {\em Biophysical Reviews}, 11(4):559–581, August 2019.
+
+\bibitem{Scott_Bayly_Abell_Skidmore_2016}
+Duncan~E. Scott, Andrew~R. Bayly, Chris Abell, and John Skidmore.
+\newblock Small molecules, big targets: drug discovery faces the
+  protein–protein interaction challenge.
+\newblock {\em Nature Reviews Drug Discovery}, 15(8):533–550, August 2016.
+
+\bibitem{fields_novel_1989}
+Stanley Fields and Ok-kyu Song.
+\newblock A novel genetic system to detect protein–protein interactions.
+\newblock {\em Nature}, 340(6230):245--246, July 1989.
+\newblock Publisher: Nature Publishing Group.
+
+\bibitem{snider_detecting_2010}
+Jamie Snider, Saranya Kittanakom, Dunja Damjanovic, Jasna Curak, Victoria Wong,
+  and Igor Stagljar.
+\newblock Detecting interactions with membrane proteins using a membrane
+  two-hybrid assay in yeast.
+\newblock {\em Nature Protocols}, 5(7):1281--1293, July 2010.
+
+\bibitem{petschnigg_mammalian-membrane_2014}
+Julia Petschnigg, Bella Groisman, Max Kotlyar, Mikko Taipale, Yong Zheng,
+  Christoph~F. Kurat, Azin Sayad, J.~Rafael Sierra, Mojca~Mattiazzi Usaj, Jamie
+  Snider, Alex Nachman, Irina Krykbaeva, Ming-Sound Tsao, Jason Moffat, Tony
+  Pawson, Susan Lindquist, Igor Jurisica, and Igor Stagljar.
+\newblock The mammalian-membrane two-hybrid assay ({MaMTH}) for probing
+  membrane-protein interactions in human cells.
+\newblock {\em Nature Methods}, 11(5):585--592, May 2014.
+\newblock Publisher: Nature Publishing Group.
+
+\bibitem{kerppola_bimolecular_2008}
+Tom~K. Kerppola.
+\newblock Bimolecular fluorescence complementation ({BiFC}) analysis as a probe
+  of protein interactions in living cells.
+\newblock {\em Annual Review of Biophysics}, 37:465--487, 2008.
+
+\bibitem{lemmens_mappit_2015}
+Irma Lemmens, Sam Lievens, and Jan Tavernier.
+\newblock {MAPPIT}, a mammalian two-hybrid method for in-cell detection of
+  protein-protein interactions.
+\newblock {\em Methods in Molecular Biology (Clifton, N.J.)}, 1278:447--455,
+  2015.
+
+\bibitem{lievens_kinase_2014}
+Sam Lievens, Sarah Gerlo, Irma Lemmens, Dries J.~H. De~Clercq, Martijn D.~P.
+  Risseeuw, Nele Vanderroost, Anne-Sophie De~Smet, Elien Ruyssinck, Eric
+  Chevet, Serge Van~Calenbergh, and Jan Tavernier.
+\newblock Kinase {Substrate} {Sensor} ({KISS}), a mammalian in situ protein
+  interaction sensor.
+\newblock {\em Molecular \& cellular proteomics: MCP}, 13(12):3332--3342,
+  December 2014.
+
+\bibitem{evans_co-immunoprecipitation_2022}
+Ian~M. Evans and Ketevan Paliashvili.
+\newblock Co-immunoprecipitation {Assays}.
+\newblock In Lorna~R. Fiedler and Caroline Pellet-Many, editors, {\em {VEGF}
+  {Signaling}: {Methods} and {Protocols}}, pages 125--132. Springer US, New
+  York, NY, 2022.
+
+\bibitem{kaushal_protocol_2024}
+Prashant Kaushal, Manisha~R. Ummadi, Gwendolyn~M. Jang, Yennifer Delgado,
+  Sara~K. Makanani, Kareem Alba, Declan~M. Winters, Sophie~F. Blanc, Jiewei Xu,
+  Benjamin Polacco, Yuan Zhou, Erica Stevenson, Manon Eckhardt, Lorena
+  Zuliani-Alvarez, Robyn Kaake, Danielle~L. Swaney, Nevan~J. Krogan, and Mehdi
+  Bouhaddou.
+\newblock Protocol for mapping differential protein-protein interaction
+  networks using affinity purification-mass spectrometry.
+\newblock {\em STAR Protocols}, 5(4):103286, November 2024.
+
+\bibitem{roux_bioid_2018}
+Kyle~J. Roux, Dae~In Kim, Brian Burke, and Danielle~G. May.
+\newblock {BioID}: {A} {Screen} for {Protein}-{Protein} {Interactions}.
+\newblock {\em Current Protocols in Protein Science}, 91(1):19.23.1--19.23.15,
+  2018.
+\newblock \_eprint:
+  https://currentprotocols.onlinelibrary.wiley.com/doi/pdf/10.1002/cpps.51.
+
+\bibitem{ma_application_2014}
+Linlin Ma, Fan Yang, and Jie Zheng.
+\newblock Application of fluorescence resonance energy transfer in protein
+  studies.
+\newblock {\em Journal of Molecular Structure}, 1077:87--100, December 2014.
+
+\bibitem{tan_thermal_2018}
+Chris Soon~Heng Tan, Ka~Diam Go, Xavier Bisteau, Lingyun Dai, Chern~Han Yong,
+  Nayana Prabhu, Mert~Burak Ozturk, Yan~Ting Lim, Lekshmy Sreekumar, Johan
+  Lengqvist, Vinay Tergaonkar, Philipp Kaldis, Radoslaw~M. Sobota, and Pär
+  Nordlund.
+\newblock Thermal proximity coaggregation for system-wide profiling of protein
+  complex dynamics in cells.
+\newblock {\em Science}, 359(6380):1170--1177, March 2018.
+
+\bibitem{Kini_Evans_1996}
+R.~M. Kini and H.~J. Evans.
+\newblock {Prediction of potential protein-protein interaction sites from amino
+  acid sequence. Identification of a fibrin polymerization site}.
+\newblock {\em FEBS letters}, 385(1–2):81–86, April 1996.
+
+\bibitem{Pazos_Helmer-Citterich_Ausiello_Valencia_1997}
+F.~Pazos, M.~Helmer-Citterich, G.~Ausiello, and A.~Valencia.
+\newblock {Correlated mutations contain information about protein-protein
+  interaction}.
+\newblock {\em Journal of Molecular Biology}, 271(4):511–523, August 1997.
+
+\bibitem{Jones_Thornton_1997}
+Susan Jones and Janet~M Thornton.
+\newblock {Prediction of protein-protein interaction sites using patch
+  analysis}.
+\newblock {\em Journal of Molecular Biology}, 272(1):133–143, September 1997.
+
+\bibitem{neuvirth_promate_2004}
+Hani Neuvirth, Ran Raz, and Gideon Schreiber.
+\newblock {ProMate}: {A} {Structure} {Based} {Prediction} {Program} to
+  {Identify} the {Location} of {Protein}–{Protein} {Binding} {Sites}.
+\newblock {\em Journal of Molecular Biology}, 338(1):181--199, April 2004.
+
+\bibitem{chapman_sequence_1994}
+Michael~S. Chapman.
+\newblock Sequence similarity scores and the inference of structure—function
+  relationships.
+\newblock {\em Bioinformatics}, 10(2):111--119, 1994.
+
+\bibitem{Marcotte_Pellegrini_Ng_Rice_Yeates_Eisenberg_1999}
+Edward~M. Marcotte, Matteo Pellegrini, Ho-Leung Ng, Danny~W. Rice, Todd~O.
+  Yeates, and David Eisenberg.
+\newblock {Detecting Protein Function and Protein-Protein Interactions from
+  Genome Sequences}.
+\newblock {\em Science}, 285(5428):751–753, July 1999.
+
+\bibitem{date_discovery_2003}
+Shailesh~V Date and Edward~M Marcotte.
+\newblock Discovery of uncharacterized cellular systems by genome-wide analysis
+  of functional linkages.
+\newblock {\em Nature Biotechnology}, 21(9):1055--1062, September 2003.
+
+\bibitem{altschul_gapped_1997}
+S.~Altschul.
+\newblock Gapped {BLAST} and {PSI}-{BLAST}: a new generation of protein
+  database search programs.
+\newblock {\em Nucleic Acids Research}, 25(17):3389--3402, September 1997.
+
+\bibitem{kanehisa_kegg_2000}
+M.~Kanehisa.
+\newblock {KEGG}: {Kyoto} {Encyclopedia} of {Genes} and {Genomes}.
+\newblock {\em Nucleic Acids Research}, 28(1):27--30, January 2000.
+
+\bibitem{pitre_pipe_2006}
+Sylvain Pitre, Frank Dehne, Albert Chan, Jim Cheetham, Alex Duong, Andrew
+  Emili, Marinella Gebbia, Jack Greenblatt, Mathew Jessulat, Nevan Krogan,
+  Xuemei Luo, and Ashkan Golshani.
+\newblock {PIPE}: a protein-protein interaction prediction engine based on the
+  re-occurring short polypeptide sequences between known interacting protein
+  pairs.
+\newblock {\em BMC Bioinformatics}, 7(1):365, July 2006.
+
+\bibitem{pitre_global_2008}
+S.~Pitre, C.~North, M.~Alamgir, M.~Jessulat, A.~Chan, X.~Luo, J.~R. Green,
+  M.~Dumontier, F.~Dehne, and A.~Golshani.
+\newblock Global investigation of protein–protein interactions in yeast
+  {Saccharomyces} cerevisiae using re-occurring short polypeptide sequences.
+\newblock {\em Nucleic Acids Research}, 36(13):4286--4294, August 2008.
+
+\bibitem{schoenrock_pipe3_2010}
+Andrew Schoenrock.
+\newblock {\em {PIPE3} : a massively parallel protein-protein interatction
+  prediction engine}.
+\newblock Master of {Computer} {Science}, Carleton University, Ottawa, Ontario,
+  2010.
+
+\bibitem{schoenrock_mp-pipe_2011}
+Andrew Schoenrock, Frank Dehne, James~R. Green, Ashkan Golshani, and Sylvain
+  Pitre.
+\newblock {MP}-{PIPE}: a massively parallel protein-protein interaction
+  prediction engine.
+\newblock In {\em Proceedings of the international conference on
+  {Supercomputing}}, {ICS} '11, pages 327--337, New York, NY, USA, May 2011.
+  Association for Computing Machinery.
+
+\bibitem{dick_pipe4_2020}
+K.~Dick, Bahram Samanfar, Bradley Barnes, E.~Cober, B.~Mimee, Le~Hoa Tan,
+  S.~Molnar, K.~Biggar, A.~Golshani, F.~Dehne, and J.~Green.
+\newblock {PIPE4}: {Fast} {PPI} {Predictor} for {Comprehensive} {Inter}- and
+  {Cross}-{Species} {Interactomes}.
+\newblock {\em Scientific Reports}, 2020.
+
+\bibitem{li_sprint_2017}
+Yiwei Li and Lucian Ilie.
+\newblock {SPRINT}: ultrafast protein-protein interaction prediction of the
+  entire human interactome.
+\newblock {\em BMC Bioinformatics}, 2017.
+
+\bibitem{tsukamoto_development_2009}
+Koki Tsukamoto, Tatsuya Yoshikawa, Kiyonobu Yokota, Yuichiro Hourai, and
+  Kazuhiko Fukui.
+\newblock The development of an affinity evaluation and prediction system by
+  using protein\&ndash;protein docking simulations and parameter tuning.
+\newblock {\em Advances and Applications in Bioinformatics and Chemistry},
+  2:1--15, January 2009.
+\newblock Publisher: Dove Press.
+
+\bibitem{matsuzaki_silico_2009}
+Yuri Matsuzaki, Yusuke Matsuzaki, Toshiyuki Sato, and Yutaka Akiyama.
+\newblock In silico screening of protein–protein interactions with all-to-all
+  rigid docking and clustering: an application to pathway analysis.
+\newblock {\em Journal of Bioinformatics and Computational Biology},
+  07(06):991--1012, December 2009.
+\newblock Publisher: World Scientific Publishing Co.
+
+\bibitem{chen_zdock_2003}
+Rong Chen, Li~Li, and Zhiping Weng.
+\newblock {ZDOCK}: an initial-stage protein-docking algorithm.
+\newblock {\em Proteins}, 52(1):80--87, July 2003.
+
+\bibitem{ohue_megadock_2013}
+Masahito Ohue, Yuri Matsuzaki, Nobuyuki Uchikoga, Takashi Ishida, and Yutaka
+  Akiyama.
+\newblock {MEGADOCK}: {An} {All}-to-{All} {Protein}-{Protein} {Interaction}
+  {Prediction} {System} {Using} {Tertiary} {Structure} {Data}.
+\newblock {\em Protein \& Peptide Letters}, 21(8):766--778, July 2013.
+
+\bibitem{bock_predicting_2001}
+Joel~R. Bock and David~A. Gough.
+\newblock Predicting protein–protein interactions from primary structure.
+\newblock {\em Bioinformatics}, 17(5):455--460, May 2001.
+
+\bibitem{scholkopf_early_2013}
+Alexey~Ya. Chervonenkis.
+\newblock Early {History} of {Support} {Vector} {Machines}.
+\newblock In Bernhard Schölkopf, Zhiyuan Luo, and Vladimir Vovk, editors, {\em
+  Empirical {Inference}}, pages 13--20. Springer Berlin Heidelberg, Berlin,
+  Heidelberg, 2013.
+
+\bibitem{cortes_support-vector_1995}
+Corinna Cortes and Vladimir Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine Learning}, 20(3):273--297, September 1995.
+
+\bibitem{noble_what_2006}
+William~S Noble.
+\newblock What is a support vector machine?
+\newblock {\em Nature Biotechnology}, 24(12):1565--1567, December 2006.
+
+\bibitem{scholkopf_kernel_2000}
+B.~Scholkopf.
+\newblock The {Kernel} {Trick} for {Distances}.
+\newblock 2000.
+
+\bibitem{gomez_learning_2003}
+Shawn~M. Gomez, William~Stafford Noble, and Andrey Rzhetsky.
+\newblock Learning to predict protein-protein interactions from protein
+  sequences.
+\newblock {\em Bioinformatics (Oxford, England)}, 19(15):1875--1881, October
+  2003.
+
+\bibitem{dohkan_support_2003}
+Shinsuke Dohkan, Asako Koike, and Toshihisa Takagi.
+\newblock Support {Vector} {Machines} for {Predicting} {Protein}-{Protein}
+  {Interactions}.
+\newblock {\em Genome Informatics}, 14:502--503, 2003.
+
+\bibitem{guo_using_2008}
+Yanzhi Guo, Lezheng Yu, Zhining Wen, and Menglong Li.
+\newblock Using support vector machine combined with auto covariance to predict
+  protein–protein interactions from protein sequences.
+\newblock {\em Nucleic Acids Research}, 36(9):3025--3030, May 2008.
+
+\bibitem{hu_discovering_2015}
+Lun Hu and Keith C.~C. Chan.
+\newblock Discovering {Variable}-{Length} {Patterns} in {Protein} {Sequences}
+  for {Protein}-{Protein} {Interaction} {Prediction}.
+\newblock {\em IEEE Transactions on NanoBioscience}, 14(4):409--416, June 2015.
+
+\bibitem{martin_predicting_2005}
+Shawn Martin, Diana Roe, and Jean-Loup Faulon.
+\newblock Predicting protein–protein interactions using signature products.
+\newblock {\em Bioinformatics}, 21(2):218--226, January 2005.
+
+\bibitem{ben-hur_kernel_2005}
+A.~Ben-Hur and W.~S. Noble.
+\newblock Kernel methods for predicting protein-protein interactions.
+\newblock {\em Bioinformatics}, 21(Suppl 1):i38--i46, June 2005.
+
+\bibitem{you_mapreduce_2014}
+Zhu-Hong You, Jian-Zhong Yu, Lin Zhu, Shuai Li, and Zhen-Kun Wen.
+\newblock A {MapReduce} based parallel {SVM} for large-scale predicting
+  protein–protein interactions.
+\newblock {\em Neurocomputing}, 145:37--43, December 2014.
+
+\bibitem{dean_mapreduce_2008}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock {MapReduce}: simplified data processing on large clusters.
+\newblock {\em Commun. ACM}, 51(1):107--113, January 2008.
+
+\bibitem{qi_mixture_2007}
+Yanjun Qi, Judith Klein-Seetharaman, and Ziv Bar-Joseph.
+\newblock A mixture of feature experts approach for protein-protein interaction
+  prediction.
+\newblock {\em BMC Bioinformatics}, 8(10):S6, December 2007.
+
+\bibitem{bell_peppi_2022}
+Eric~W. Bell, Jacob~H. Schwartz, Lydia Freddolino, and Yang Zhang.
+\newblock {PEPPI}: {Whole}-proteome {Protein}-protein {Interaction}
+  {Prediction} through {Structure} and {Sequence} {Similarity}, {Functional}
+  {Association}, and {Machine} {Learning}.
+\newblock {\em Journal of Molecular Biology}, 434(11):167530, June 2022.
+
+\bibitem{breiman_random_2001}
+Leo Breiman.
+\newblock Random {Forests}.
+\newblock {\em Machine Learning}, 45(1):5--32, October 2001.
+
+\bibitem{du_novel_2014}
+Xiuquan Du, Jiaxing Cheng, Tingting Zheng, Zheng Duan, and Fulan Qian.
+\newblock A {Novel} {Feature} {Extraction} {Scheme} with {Ensemble} {Coding}
+  for {Protein}–{Protein} {Interaction} {Prediction}.
+\newblock {\em International Journal of Molecular Sciences},
+  15(7):12731--12749, July 2014.
+
+\bibitem{you_predicting_2015}
+Zhu-Hong You, Keith C.~C. Chan, and Pengwei Hu.
+\newblock Predicting {Protein}-{Protein} {Interactions} from {Primary}
+  {Protein} {Sequences} {Using} a {Novel} {Multi}-{Scale} {Local} {Feature}
+  {Representation} {Scheme} and the {Random} {Forest}.
+\newblock {\em PLOS ONE}, 10(5):e0125811, May 2015.
+
+\bibitem{ding_predicting_2016}
+Yijie Ding, Jijun Tang, and Fei Guo.
+\newblock Predicting protein-protein interactions via multivariate mutual
+  information of protein sequences.
+\newblock {\em BMC Bioinformatics}, 17(1):398, September 2016.
+
+\bibitem{yu_gtb-ppi_2020}
+Bin Yu, Cheng Chen, Hongyan Zhou, Bingqiang Liu, and Qin Ma.
+\newblock {GTB}-{PPI}: {Predict} {Protein}–{Protein} {Interactions} {Based}
+  on {L1}-{Regularized} {Logistic} {Regression} and {Gradient} {Tree}
+  {Boosting}.
+\newblock {\em Genomics, Proteomics \& Bioinformatics}, 18(5):582--592, October
+  2020.
+
+\bibitem{gao_prediction_2023}
+Hongli Gao, Cheng Chen, Shuangyi Li, Congjing Wang, Weifeng Zhou, and Bin Yu.
+\newblock Prediction of protein-protein interactions based on ensemble residual
+  convolutional neural network.
+\newblock {\em Computers in Biology and Medicine}, 152:106471, January 2023.
+
+\bibitem{hutchison_predicting_2010}
+Mario~R. Guarracino and Adriano Nebbia.
+\newblock Predicting {Protein}-{Protein} {Interactions} with {K}-{Nearest}
+  {Neighbors} {Classification} {Algorithm}.
+\newblock In David Hutchison, Takeo Kanade, Josef Kittler, Jon~M. Kleinberg,
+  Friedemann Mattern, John~C. Mitchell, Moni Naor, Oscar Nierstrasz,
+  C.~Pandu~Rangan, Bernhard Steffen, Madhu Sudan, Demetri Terzopoulos, Doug
+  Tygar, Moshe~Y. Vardi, Gerhard Weikum, Francesco Masulli, Leif~E. Peterson,
+  and Roberto Tagliaferri, editors, {\em Computational {Intelligence} {Methods}
+  for {Bioinformatics} and {Biostatistics}}, volume 6160, pages 139--150.
+  Springer Berlin Heidelberg, Berlin, Heidelberg, 2010.
+\newblock Series Title: Lecture Notes in Computer Science.
+
+\bibitem{fix_discriminatory_1952}
+E.~Fix and J.~Hodges.
+\newblock Discriminatory {Analysis} - {Nonparametric} {Discrimination}: {Small}
+  {Sample} {Performance}.
+\newblock August 1952.
+
+\bibitem{riesz_untersuchungen_1910}
+Friedrich Riesz.
+\newblock Untersuchungen über {Systeme} integrierbarer {Funktionen}.
+\newblock {\em Mathematische Annalen}, 69(4):449--497, December 1910.
+
+\bibitem{lewis_naive_1998}
+David~D. Lewis.
+\newblock Naive ({Bayes}) at forty: {The} independence assumption in
+  information retrieval.
+\newblock In Claire Nédellec and Céline Rouveirol, editors, {\em Machine
+  {Learning}: {ECML}-98}, pages 4--15, Berlin, Heidelberg, 1998. Springer.
+
+\bibitem{hsin_liu_human_2013}
+Chia Hsin~Liu, Ker-Chau Li, and Shinsheng Yuan.
+\newblock Human protein–protein interaction prediction by a novel
+  sequence-based co-evolution method: co-evolutionary divergence.
+\newblock {\em Bioinformatics}, 29(1):92--98, January 2013.
+
+\bibitem{fariselli_prediction_2002}
+Piero Fariselli, Florencio Pazos, Alfonso Valencia, and Rita Casadio.
+\newblock Prediction of protein–protein interaction sites in heterocomplexes
+  with neural networks.
+\newblock {\em European Journal of Biochemistry}, 269(5):1356--1361, March
+  2002.
+
+\bibitem{rosenblatt_perceptron_1957}
+Frank Rosenblatt.
+\newblock The perceptron a perceiving and recognizing automaton.
+\newblock {\em tech. rep., Technical Report 85-460-1}, 1957.
+
+\bibitem{hopfield_neural_1982}
+J~J Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  79(8):2554--2558, April 1982.
+\newblock Publisher: Proceedings of the National Academy of Sciences.
+
+\bibitem{werbos_applications_1982}
+Paul~J. Werbos.
+\newblock Applications of advances in nonlinear sensitivity analysis.
+\newblock In R.~F. Drenick and F.~Kozin, editors, {\em System {Modeling} and
+  {Optimization}}, pages 762--770, Berlin, Heidelberg, 1982. Springer.
+
+\bibitem{rumelhart_learning_1986}
+David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock {\em Nature}, 323(6088):533--536, October 1986.
+\newblock Publisher: Nature Publishing Group.
+
+\bibitem{fukushima_neocognitron_1980}
+Kunihiko Fukushima.
+\newblock Neocognitron: {A} self-organizing neural network model for a
+  mechanism of pattern recognition unaffected by shift in position.
+\newblock {\em Biological Cybernetics}, 36(4):193--202, April 1980.
+
+\bibitem{elman_finding_1990}
+Jeffrey~L. Elman.
+\newblock Finding {Structure} in {Time}.
+\newblock {\em Cognitive Science}, 14(2):179--211, 1990.
+\newblock \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1207/s15516709cog1402\_1.
+
+\bibitem{kelleher_brief_2019}
+John~D. Kelleher.
+\newblock A {Brief} {History} of {Deep} {Learning}.
+\newblock In {\em Deep {Learning}}, pages 101--159. MIT Press, Cambridge,
+  Massachusetts, 2019.
+
+\bibitem{aizenberg_multi-valued_2000}
+Igor~N. Aizenberg, Naum~N. Aizenberg, and Joos Vandewalle.
+\newblock {\em Multi-{Valued} and {Universal} {Binary} {Neurons}}.
+\newblock Springer US, Boston, MA, 2000.
+
+\bibitem{krizhevsky_imagenet_2012}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock {\em Advances in neural information processing systems}, 25, 2012.
+
+\bibitem{aiayn}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, Łukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Proceedings of the 31st International Conference on Neural
+  Information Processing Systems}, NIPS’17, page 6000–6010, Red Hook, NY,
+  USA, December 2017. Curran Associates Inc.
+
+\bibitem{sun_sequence-based_2017}
+Tanlin Sun, Bo~Zhou, Luhua Lai, and Jianfeng Pei.
+\newblock Sequence-based prediction of protein protein interaction using a
+  deep-learning algorithm.
+\newblock {\em BMC Bioinformatics}, 18(1):277, May 2017.
+
+\bibitem{bank_autoencoders_2023}
+Dor Bank, Noam Koenigstein, and Raja Giryes.
+\newblock Autoencoders.
+\newblock In Lior Rokach, Oded Maimon, and Erez Shmueli, editors, {\em Machine
+  {Learning} for {Data} {Science} {Handbook}: {Data} {Mining} and {Knowledge}
+  {Discovery} {Handbook}}, pages 353--374. Springer International Publishing,
+  Cham, 2023.
+
+\bibitem{wang_predicting_2013}
+Hua Wang, Heng Huang, Chris Ding, and Feiping Nie.
+\newblock Predicting {Protein}–{Protein} {Interactions} from {Multimodal}
+  {Biological} {Data} {Sources} via {Nonnegative} {Matrix}
+  {Tri}-{Factorization}.
+\newblock {\em Journal of Computational Biology}, 20(4):344--358, April 2013.
+
+\bibitem{fukushima_cognitron_1975}
+K.~Fukushima.
+\newblock Cognitron: a self-organizing multilayered neural network.
+\newblock {\em Biological Cybernetics}, 20(3-4):121--136, November 1975.
+
+\bibitem{hubel_functional_1977}
+D.~Hubel and T.~Wiesel.
+\newblock Functional architecture of macaque monkey visual cortex.
+\newblock 1977.
+
+\bibitem{hubel_receptive_1965}
+D.~H. Hubel and T.~N. Wiesel.
+\newblock Receptive {Fields} and {Functional} {Architecture} in two
+  {Nonstirate} {Visual} {Areas} (18 and 19) of the {Cat}.
+\newblock {\em Journal of Neurophysiology}, 28:229--289, March 1965.
+
+\bibitem{lecun_backpropagation_1989}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel.
+\newblock Backpropagation {Applied} to {Handwritten} {Zip} {Code}
+  {Recognition}.
+\newblock {\em Neural Computation}, 1(4):541--551, December 1989.
+
+\bibitem{lecun_generalization_1989}
+Yann LeCun.
+\newblock Generalization and {Network} {Design} {Strategies}.
+\newblock Technical {Report} CRG-TR-89-4, University of Toronto, Toronto, ON,
+  June 1989.
+
+\bibitem{kiranyaz_1d_2021}
+Serkan Kiranyaz, Onur Avci, Osama Abdeljaber, Turker Ince, Moncef Gabbouj, and
+  Daniel~J. Inman.
+\newblock {1D} convolutional neural networks and applications: {A} survey.
+\newblock {\em Mechanical Systems and Signal Processing}, 151:107398, April
+  2021.
+
+\bibitem{hashemifar_predicting_2018}
+Somaye Hashemifar, Behnam Neyshabur, Aly~A Khan, and Jinbo Xu.
+\newblock Predicting protein–protein interactions through sequence-based deep
+  learning.
+\newblock {\em Bioinformatics}, 34(17):i802--i810, September 2018.
+
+\bibitem{hochreiter_long_1997}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock Long {Short}-{Term} {Memory}.
+\newblock {\em Neural Computation}, 9(8):1735--1780, November 1997.
+
+\bibitem{kudo_subword_2018}
+Taku Kudo.
+\newblock Subword {Regularization}: {Improving} {Neural} {Network}
+  {Translation} {Models} with {Multiple} {Subword} {Candidates}, April 2018.
+
+\bibitem{kudo_sentencepiece_2018}
+Taku Kudo and John Richardson.
+\newblock {SentencePiece}: {A} simple and language independent subword
+  tokenizer and detokenizer for {Neural} {Text} {Processing}.
+\newblock In Eduardo Blanco and Wei Lu, editors, {\em Proceedings of the 2018
+  {Conference} on {Empirical} {Methods} in {Natural} {Language} {Processing}:
+  {System} {Demonstrations}}, pages 66--71, Brussels, Belgium, November 2018.
+  Association for Computational Linguistics.
+
+\bibitem{chen_multifaceted_2019}
+Muhao Chen, Chelsea J~T Ju, Guangyu Zhou, Xuelu Chen, Tianran Zhang, Kai-Wei
+  Chang, Carlo Zaniolo, and Wei Wang.
+\newblock Multifaceted protein–protein interaction prediction based on
+  {Siamese} residual {RCNN}.
+\newblock {\em Bioinformatics}, 35(14):i305--i314, July 2019.
+
+\bibitem{richoux}
+Florian Richoux, Charlène Servantie, Cynthia Borès, and Stéphane
+  Téletchéa.
+\newblock Comparing two deep learning sequence-based models for protein-protein
+  interaction prediction.
+\newblock (arXiv:1901.06268), January 2019.
+\newblock number: arXiv:1901.06268 arXiv:1901.06268 [cs, q-bio, stat].
+
+\bibitem{shannon_prediction_1993}
+Claude~E. Shannon.
+\newblock Prediction and {Entropy} of {Printed} {English}.
+\newblock In {\em Claude {E}. {Shannon}: {Collected} {Papers}}, pages 194--208.
+  IEEE, 1993.
+
+\bibitem{cover_convergent_1978}
+T.~Cover and R.~King.
+\newblock A convergent gambling estimate of the entropy of {English}.
+\newblock {\em IEEE Transactions on Information Theory}, 24(4):413--421, July
+  1978.
+
+\bibitem{bengio_neural_2003}
+Yoshua Bengio, Réjean Ducharme, Pascal Vincent, and Christian Jauvin.
+\newblock A {Neural} {Probabilistic} {Language} {Model}.
+\newblock {\em Journal of Machine Learning Research}, 3(Feb):1137--1155, 2003.
+
+\bibitem{merity_analysis_2018}
+Stephen Merity, Nitish~Shirish Keskar, and Richard Socher.
+\newblock An {Analysis} of {Neural} {Language} {Modeling} at {Multiple}
+  {Scales}, March 2018.
+\newblock arXiv:1803.08240 [cs].
+
+\bibitem{devlin_bert_2019}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: {Pre}-training of {Deep} {Bidirectional} {Transformers} for
+  {Language} {Understanding}.
+\newblock {\em arXiv:1810.04805 [cs]}, May 2019.
+\newblock arXiv: 1810.04805.
+
+\bibitem{alley_unified_2019}
+Ethan~C. Alley, Grigory Khimulya, Surojit Biswas, Mohammed AlQuraishi, and
+  George~M. Church.
+\newblock Unified rational protein engineering with sequence-based deep
+  representation learning.
+\newblock {\em Nature Methods}, 16(12):1315--1322, December 2019.
+\newblock Publisher: Nature Publishing Group.
+
+\bibitem{bepler_learning_2019}
+Tristan Bepler and Bonnie Berger.
+\newblock Learning protein sequence embeddings using information from
+  structure, October 2019.
+\newblock arXiv:1902.08661 [cs, q-bio, stat].
+
+\bibitem{bepler_learning_2021}
+Tristan Bepler and Bonnie Berger.
+\newblock Learning the protein language: {Evolution}, structure, and function.
+\newblock {\em Cell Systems}, 12(6):654--669.e3, June 2021.
+\newblock Publisher: Elsevier.
+
+\bibitem{brandes_proteinbert_2022}
+Nadav Brandes, Dan Ofer, Yam Peleg, Nadav Rappoport, and Michal Linial.
+\newblock {ProteinBERT}: a universal deep-learning model of protein sequence
+  and function.
+\newblock {\em Bioinformatics}, 38(8):2102–2110, April 2022.
+
+\bibitem{elnaggar_prottrans_2022}
+Ahmed Elnaggar, Michael Heinzinger, Christian Dallago, Ghalia Rehawi, Yu~Wang,
+  Llion Jones, Tom Gibbs, Tamas Feher, Christoph Angerer, Martin Steinegger,
+  Debsindhu Bhowmik, and Burkhard Rost.
+\newblock {ProtTrans}: {Toward} {Understanding} the {Language} of {Life}
+  {Through} {Self}-{Supervised} {Learning}.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  44(10):7112--7127, October 2022.
+
+\bibitem{lin_evolutionary-scale_2023}
+Zeming Lin, Halil Akin, Roshan Rao, Brian Hie, Zhongkai Zhu, Wenting Lu, Nikita
+  Smetanin, Robert Verkuil, Ori Kabeli, Yaniv Shmueli, Allan dos Santos~Costa,
+  Maryam Fazel-Zarandi, Tom Sercu, Salvatore Candido, and Alexander Rives.
+\newblock Evolutionary-scale prediction of atomic-level protein structure with
+  a language model.
+\newblock {\em Science}, 379(6637):1123--1130, March 2023.
+\newblock Publisher: American Association for the Advancement of Science.
+
+\bibitem{elnagger_ankh_2023}
+Ahmed Elnaggar, Hazem Essam, Wafaa Salah-Eldin, Walid Moustafa, Mohamed
+  Elkerdawy, Charlotte Rochereau, and Burkhard Rost.
+\newblock {Ankh ☥: Optimized Protein Language Model Unlocks General-Purpose
+  Modelling}.
+\newblock January 2023.
+\newblock Repository: Bioinformatics.
+
+\bibitem{liu_protein-protein_2023}
+Tuoyu Liu, Han Gao, Xiaopu Ren, Guoshun Xu, Bo~Liu, Ningfeng Wu, Huiying Luo,
+  Yuan Wang, Tao Tu, Bin Yao, Feifei Guan, Yue Teng, Huoqing Huang, and Jian
+  Tian.
+\newblock Protein-protein interaction and site prediction using transfer
+  learning.
+\newblock {\em Briefings in Bioinformatics}, 24(6):bbad376, September 2023.
+
+\bibitem{lv_prollama_2024}
+Liuzhenghao Lv, Zongying Lin, Hao Li, Yuyang Liu, Jiaxi Cui, Calvin Yu-Chian
+  Chen, Li~Yuan, and Yonghong Tian.
+\newblock Prollama: A protein language model for multi-task protein language
+  processing.
+\newblock 2024.
+
+\bibitem{foloba_mulan_2024}
+Daria Frolova, Marina~A. Pak, Anna Litvin, Ilya Sharov, Dmitry~N. Ivankov, and
+  Ivan Oseledets.
+\newblock Mulan: Multimodal protein language model for sequence and structure
+  encoding.
+\newblock page 2024.05.30.596565, June 2024.
+
+\bibitem{hayes_simulating_2025}
+Thomas Hayes, Roshan Rao, Halil Akin, Nicholas~J. Sofroniew, Deniz Oktay,
+  Zeming Lin, Robert Verkuil, Vincent~Q. Tran, Jonathan Deaton, Marius Wiggert,
+  Rohil Badkundri, Irhum Shafkat, Jun Gong, Alexander Derry, Raul~S. Molina,
+  Neil Thomas, Yousuf~A. Khan, Chetan Mishra, Carolyn Kim, Liam~J. Bartie,
+  Matthew Nemeth, Patrick~D. Hsu, Tom Sercu, Salvatore Candido, and Alexander
+  Rives.
+\newblock Simulating 500 million years of evolution with a language model.
+\newblock {\em Science}, 387(6736):850--858, February 2025.
+\newblock Publisher: American Association for the Advancement of Science.
+
+\bibitem{sledzieski_d-script_2021}
+Samuel Sledzieski, Rohit Singh, Lenore Cowen, and Bonnie Berger.
+\newblock D-{SCRIPT} translates genome to phenome with sequence-based,
+  structure-aware, genome-scale predictions of protein-protein interactions.
+\newblock {\em Cell Systems}, 12(10):969--982.e6, October 2021.
+\newblock Publisher: Elsevier.
+
+\bibitem{kang_aftgan_2023}
+Yanlei Kang, Arne Elofsson, Yunliang Jiang, Weihong Huang, Minzhe Yu, and Zhong
+  Li.
+\newblock {AFTGAN}: prediction of multi-type {PPI} based on attention free
+  transformer and graph attention network.
+\newblock {\em Bioinformatics}, 39(2):btad052, February 2023.
+
+\bibitem{zhou_pre-trained_2023}
+Kewei Zhou, Chenping Lei, Jingyan Zheng, Yan Huang, and Ziding Zhang.
+\newblock Pre-trained protein language model sheds new light on the prediction
+  of {Arabidopsis} protein–protein interactions.
+\newblock {\em Plant Methods}, 19(1):141, December 2023.
+
+\bibitem{ko_tuna_2024}
+Young~Su Ko, Jonathan Parkinson, Cong Liu, and Wei Wang.
+\newblock {TUnA}: an uncertainty-aware transformer model for sequence-based
+  protein–protein interaction prediction.
+\newblock {\em Briefings in Bioinformatics}, 25(5):bbae359, September 2024.
+
+\bibitem{rasmussen_gaussian_2005}
+Carl~Edward Rasmussen and Christopher K.~I. Williams.
+\newblock {\em Gaussian {Processes} for {Machine} {Learning}}.
+\newblock The MIT Press, November 2005.
+
+\bibitem{Kapoor_Narayanan_2023}
+Sayash Kapoor and Arvind Narayanan.
+\newblock Leakage and the reproducibility crisis in machine-learning-based
+  science.
+\newblock {\em Patterns}, 4(9):100804, September 2023.
+
+\bibitem{kohavi_study_1995}
+Ron Kohavi.
+\newblock A study of cross-validation and bootstrap for accuracy estimation and
+  model selection.
+\newblock In {\em Proceedings of the 14th international joint conference on
+  {Artificial} intelligence - {Volume} 2}, {IJCAI}'95, pages 1137--1143, San
+  Francisco, CA, USA, August 1995. Morgan Kaufmann Publishers Inc.
+
+\bibitem{stone_cross-validatory_1974}
+M.~Stone.
+\newblock Cross-{Validatory} {Choice} and {Assessment} of {Statistical}
+  {Predictions}.
+\newblock {\em Journal of the Royal Statistical Society: Series B
+  (Methodological)}, 36(2):111--133, January 1974.
+
+\bibitem{szymborski_flaw_2025}
+Joseph Szymborski and Amin Emad.
+\newblock A flaw in using pre-trained {pLLMs} in protein-protein interaction
+  inference models, April 2025.
+\newblock Pages: 2025.04.21.649858 Section: New Results.
+
+\bibitem{awd_lstm}
+Stephen Merity, Nitish~Shirish Keskar, and Richard Socher.
+\newblock Regularizing and optimizing {LSTM} language models.
+\newblock {\em arXiv:1708.02182 [cs]}, August 2017.
+\newblock arXiv: 1708.02182.
+
+\bibitem{fang_getting_2010}
+Gang Fang, Nitin Bhardwaj, Rebecca Robilotto, and Mark~B. Gerstein.
+\newblock Getting {Started} in {Gene} {Orthology} and {Functional} {Analysis}.
+\newblock {\em PLOS Computational Biology}, 6(3):1--8, March 2010.
+\newblock Publisher: Public Library of Science.
+
+\bibitem{sharan_conserved_2005}
+Roded Sharan, Silpa Suthram, Ryan~M. Kelley, Tanja Kuhn, Scott McCuine, Peter
+  Uetz, Taylor Sittler, Richard~M. Karp, and Trey Ideker.
+\newblock Conserved patterns of protein interaction in multiple species.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  102(6):1974--1979, February 2005.
+
+\bibitem{chen_simple_2020}
+Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton.
+\newblock A {Simple} {Framework} for {Contrastive} {Learning} of {Visual}
+  {Representations}, June 2020.
+\newblock Number: arXiv:2002.05709 arXiv:2002.05709 [cs, stat].
+
+\bibitem{sermanet_time-contrastive_2018}
+Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan
+  Schaal, and Sergey Levine.
+\newblock Time-{Contrastive} {Networks}: {Self}-{Supervised} {Learning} from
+  {Video}, March 2018.
+\newblock Number: arXiv:1704.06888 arXiv:1704.06888 [cs].
+
+\bibitem{wynter_evaluation_2023}
+Adrian~de Wynter, Xun Wang, Alex Sokolov, Qilong Gu, and Si-Qing Chen.
+\newblock An {Evaluation} on {Large} {Language} {Model} {Outputs}: {Discourse}
+  and {Memorization}.
+\newblock {\em Natural Language Processing Journal}, 4:100024, September 2023.
+\newblock arXiv:2304.08637 [cs].
+
+\bibitem{dropconnect}
+Li~Wan, Matthew Zeiler, Sixin Zhang, Yann~Le Cun, and Rob Fergus.
+\newblock Regularization of neural networks using {DropConnect}.
+\newblock In Sanjoy Dasgupta and David McAllester, editors, {\em Proceedings of
+  the 30th International Conference on Machine Learning}, volume~28 of {\em
+  Proceedings of Machine Learning Research}, page 1058–1066, Atlanta,
+  Georgia, USA, June 2013. PMLR.
+
+\bibitem{dropout}
+Nitish Srivastava, Geoffrey~E. Hinton, A.~Krizhevsky, Ilya Sutskever, and
+  R.~Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock 15:1929–1958, 2014.
+
+\bibitem{fast_dropout}
+Justin Bayer, Christian Osendorfer, Daniela Korhammer, Nutan Chen, Sebastian
+  Urban, and Patrick van~der Smagt.
+\newblock On fast dropout and its applicability to recurrent networks.
+\newblock (arXiv:1311.0701), December 2013.
+\newblock arXiv:1311.0701 [stat].
+
+\bibitem{image_augmentation}
+Luke Taylor and Geoff Nitschke.
+\newblock Improving deep learning with generic data augmentation.
+\newblock In {\em 2018 IEEE Symposium Series on Computational Intelligence
+  (SSCI)}, page 1542–1547, November 2018.
+
+\bibitem{protein_augmentation}
+Rui Sun, Lirong Wu, Haitao Lin, Yufei Huang, and Stan~Z. Li.
+\newblock Enhancing protein predictive models via proteins data augmentation: A
+  benchmark and new directions.
+\newblock (arXiv:2403.00875), March 2024.
+\newblock arXiv:2403.00875 [q-bio].
+
+\bibitem{cd_hit}
+Limin Fu, Beifang Niu, Zhengwei Zhu, Sitao Wu, and Weizhong Li.
+\newblock {CD-HIT}: accelerated for clustering the next-generation sequencing
+  data.
+\newblock {\em Bioinformatics (Oxford, England)}, 28(23):3150–3152, December
+  2012.
+
+\bibitem{Sander_Schneider_1991}
+Chris Sander and Reinhard Schneider.
+\newblock Database of homology-derived protein structures and the structural
+  meaning of sequence alignment.
+\newblock 9:56–68, 1991.
+
+\bibitem{hssp}
+Wouter~G. Touw, Coos Baakman, Jon Black, Tim A.~H. te~Beek, E.~Krieger,
+  Robbie~P. Joosten, and Gert Vriend.
+\newblock A series of {PDB}-related databanks for everyday needs.
+\newblock {\em Nucleic Acids Research}, 43(D1):D364–D368, January 2015.
+
+\bibitem{rost_twilight_zone}
+Burkhard Rost.
+\newblock Twilight zone of protein sequence alignments.
+\newblock {\em Protein Engineering, Design and Selection}, 12(2):85–94,
+  February 1999.
+
+\bibitem{Oner_Cheng_Lee_Sung_2020}
+Mustafa~Umit Oner, Yi-Chih Cheng, Hwee~Kuan Lee, and Wing-Kin Sung.
+\newblock Training machine learning models on patient level data segregation is
+  crucial in practical clinical applications.
+\newblock page 2020.04.23.20076406, April 2020.
+
+\bibitem{Whalen_Schreiber_Noble_Pollard_2022}
+Sean Whalen, Jacob Schreiber, William~S. Noble, and Katherine~S. Pollard.
+\newblock Navigating the pitfalls of applying machine learning in genomics.
+\newblock {\em Nature Reviews Genetics}, 23(3):169–181, March 2022.
+
+\bibitem{szymborski_emad_2025}
+Joseph Szymborski and Amin Emad.
+\newblock A flaw in using pre-trained pllms in protein-protein interaction
+  inference models.
+\newblock page 2025.04.21.649858, April 2025.
+
+\bibitem{bias_variance}
+Stuart Geman, Elie Bienenstock, and René Doursat.
+\newblock Neural networks and the bias/variance dilemma.
+\newblock {\em Neural Computation}, 4(1):1–58, January 1992.
+
+\bibitem{Baldi_2024}
+Pierre Baldi.
+\newblock Deep learning over-parameterization: the shallow fallacy.
+\newblock page 7–12. PMLR, January 2024.
+
+\bibitem{bias_variance_update}
+Brady Neal.
+\newblock On the bias-variance tradeoff: Textbooks need an update, 2019.
+
+\bibitem{TOP500_2025}
+TOP500.
+\newblock June 2025 | top500, September 2025.
+
+\bibitem{linpack}
+Jack~J. Dongarra, Piotr Luszczek, and Antoine Petitet.
+\newblock The linpack benchmark: past, present and future.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  15(9):803–820, 2003.
+
+\bibitem{hardware_lottery}
+Sara Hooker.
+\newblock The hardware lottery.
+\newblock (arXiv:2009.06489), September 2020.
+\newblock arXiv:2009.06489 [cs].
+
+\bibitem{long_range_arena}
+Yi~Tay, Mostafa Dehghani, Samira Abnar, Yikang Shen, Dara Bahri, Philip Pham,
+  Jinfeng Rao, Liu Yang, Sebastian Ruder, and Donald Metzler.
+\newblock Long range arena: A benchmark for efficient transformers.
+\newblock (arXiv:2011.04006), November 2020.
+\newblock arXiv:2011.04006 [cs].
+
+\bibitem{Zimerman_Wolf_2023}
+Itamar Zimerman and Lior Wolf.
+\newblock On the long range abilities of transformers.
+\newblock (arXiv:2311.16620), November 2023.
+\newblock arXiv:2311.16620 [cs].
+
+\bibitem{longnet}
+Jiayu Ding, Shuming Ma, Li~Dong, Xingxing Zhang, Shaohan Huang, Wenhui Wang,
+  Nanning Zheng, and Furu Wei.
+\newblock Longnet: Scaling transformers to 1,000,000,000 tokens.
+\newblock (arXiv:2307.02486), July 2023.
+\newblock arXiv:2307.02486 [cs].
+
+\bibitem{flashattention}
+Tri Dao, Daniel~Y. Fu, Stefano Ermon, Atri Rudra, and Christopher Ré.
+\newblock Flashattention: Fast and memory-efficient exact attention with
+  io-awareness.
+\newblock (arXiv:2205.14135), June 2022.
+\newblock arXiv:2205.14135 [cs].
+
+\bibitem{linformer}
+Sinong Wang, Belinda~Z. Li, Madian Khabsa, Han Fang, and Hao Ma.
+\newblock Linformer: Self-attention with linear complexity.
+\newblock (arXiv:2006.04768), June 2020.
+\newblock arXiv:2006.04768 [cs].
+
+\bibitem{longformer}
+Iz~Beltagy, Matthew~E. Peters, and Arman Cohan.
+\newblock Longformer: The long-document transformer.
+\newblock (arXiv:2004.05150), December 2020.
+\newblock arXiv:2004.05150 [cs].
+
+\bibitem{squeezebert}
+Forrest~N. Iandola, Albert~E. Shaw, Ravi Krishna, and Kurt~W. Keutzer.
+\newblock Squeezebert: What can computer vision teach nlp about efficient
+  neural networks?
+\newblock (arXiv:2006.11316), June 2020.
+\newblock arXiv:2006.11316 [cs].
+
+\bibitem{rtx_3090_msrp}
+Roland Moore-Colyer.
+\newblock {Nvidia GeForce RTX 3090} release date, price, specs, restocks and
+  more, July 2022.
+
+\bibitem{Keefer_2025}
+John Keefer.
+\newblock Nvidia launches $3,000 titan v pc gpu based on tesla v100, September
+  2025.
+
+\bibitem{the_uniprot_consortium_uniprot_2023}
+{The UniProt Consortium}, Alex Bateman, Maria-Jesus Martin, Sandra Orchard,
+  Michele Magrane, Shadab Ahmad, Emanuele Alpi, Emily~H Bowler-Barnett, Ramona
+  Britto, Hema Bye-A-Jee, Austra Cukura, Paul Denny, Tunca Dogan, ThankGod
+  Ebenezer, Jun Fan, Penelope Garmiri, Leonardo~Jose Da~Costa~Gonzales, Emma
+  Hatton-Ellis, Abdulrahman Hussein, Alexandr Ignatchenko, Giuseppe Insana,
+  Rizwan Ishtiaq, Vishal Joshi, Dushyanth Jyothi, Swaathi Kandasaamy, Antonia
+  Lock, Aurelien Luciani, Marija Lugaric, Jie Luo, Yvonne Lussi, Alistair
+  MacDougall, Fabio Madeira, Mahdi Mahmoudy, Alok Mishra, Katie Moulang, Andrew
+  Nightingale, Sangya Pundir, Guoying Qi, Shriya Raj, Pedro Raposo, Daniel~L
+  Rice, Rabie Saidi, Rafael Santos, Elena Speretta, James Stephenson, Prabhat
+  Totoo, Edward Turner, Nidhi Tyagi, Preethi Vasudev, Kate Warner, Xavier
+  Watkins, Rossana Zaru, Hermann Zellner, Alan~J Bridge, Lucila Aimo, Ghislaine
+  Argoud-Puy, Andrea~H Auchincloss, Kristian~B Axelsen, Parit Bansal, Delphine
+  Baratin, Teresa~M Batista~Neto, Marie-Claude Blatter, Jerven~T Bolleman,
+  Emmanuel Boutet, Lionel Breuza, Blanca~Cabrera Gil, Cristina Casals-Casas,
+  Kamal~Chikh Echioukh, Elisabeth Coudert, Beatrice Cuche, Edouard De~Castro,
+  Anne Estreicher, Maria~L Famiglietti, Marc Feuermann, Elisabeth Gasteiger,
+  Pascale Gaudet, Sebastien Gehant, Vivienne Gerritsen, Arnaud Gos, Nadine
+  Gruaz, Chantal Hulo, Nevila Hyka-Nouspikel, Florence Jungo, Arnaud Kerhornou,
+  Philippe Le~Mercier, Damien Lieberherr, Patrick Masson, Anne Morgat,
+  Venkatesh Muthukrishnan, Salvo Paesano, Ivo Pedruzzi, Sandrine Pilbout,
+  Lucille Pourcel, Sylvain Poux, Monica Pozzato, Manuela Pruess, Nicole
+  Redaschi, Catherine Rivoire, Christian J~A Sigrist, Karin Sonesson, Shyamala
+  Sundaram, Cathy~H Wu, Cecilia~N Arighi, Leslie Arminski, Chuming Chen,
+  Yongxing Chen, Hongzhan Huang, Kati Laiho, Peter McGarvey, Darren~A Natale,
+  Karen Ross, C~R Vinayaka, Qinghua Wang, Yuqi Wang, and Jian Zhang.
+\newblock {UniProt}: the {Universal} {Protein} {Knowledgebase} in 2023.
+\newblock {\em Nucleic Acids Research}, 51(D1):D523--D531, January 2023.
+
+\bibitem{statscan_energy_consumption}
+{Statistics Canada}.
+\newblock {Table 25-10-0060-01 Household energy consumption, Canada and
+  provinces}, March 2024.
+
+\bibitem{canada_energy_regulator_canadas_2021}
+{Canada Energy Regulator}.
+\newblock Canada’s {Energy} {Future} {Data} {Appendices}, 2021.
+
+\bibitem{silicon_elephants}
+Jennifer Gabrys.
+\newblock {\em Silicon Elephants: the transformative materiality of
+  microchips}, page 20–44.
+\newblock University of Michigan Press, 2014.
+
+\bibitem{Parvez2021}
+Sarker~M Parvez, Farjana Jahan, Marie-Noel Brune, Julia~F Gorman, Musarrat~J
+  Rahman, David Carpenter, Zahir Islam, Mahbubur Rahman, Nirupam Aich, Luke~D
+  Knibbs, and Peter~D Sly.
+\newblock Health consequences of exposure to e-waste: an updated systematic
+  review.
+\newblock {\em The Lancet Planetary Health}, 5(12):e905–e920, December 2021.
+
+\bibitem{alcott_jevons_2005}
+Blake Alcott.
+\newblock Jevons' paradox.
+\newblock {\em Ecological Economics}, 54(1):9--21, July 2005.
+
+\bibitem{endris_medical_2022}
+Salem Endris, Zemenu Tamir, and Abay Sisay.
+\newblock Medical laboratory waste generation rate, management practices and
+  associated factors in {Addis} {Ababa}, {Ethiopia}.
+\newblock {\em PloS One}, 17(4):e0266888, 2022.
+
+\bibitem{alves_case_2021}
+Joana Alves, Fiona~A. Sargison, Hanne Stawarz, Willow~B. Fox, Samuel~G. Huete,
+  Amany Hassan, Brian McTeir, and Amy~C. Pickering.
+\newblock A case report: insights into reducing plastic waste in a microbiology
+  laboratory.
+\newblock {\em Access Microbiology}, 3(3), March 2021.
+
+\bibitem{thakur_approaching_2024}
+Anjali Thakur, Tapasyapreeti Mukhopadhyay, and Ashok~Kumar Ahirwar.
+\newblock Approaching sustainability in {Laboratory} {Medicine}.
+\newblock {\em Clinical Chemistry and Laboratory Medicine}, 62(9):1787--1794,
+  August 2024.
+
+\bibitem{tan_plastic_2022}
+Mei~Lan Tan, Chee~Keat Ying, and Shahrul Bariyah~Sahul Hamid.
+\newblock Plastic {Pollution} and {Sustainable} {Managing} of {Single}-{Use}
+  {Laboratory} {Plastic} {Waste}.
+\newblock {\em Sustainability and Climate Change}, 15(1):6--16, February 2022.
+\newblock Publisher: Mary Ann Liebert, Inc., publishers.
+
+\bibitem{becker_what_2023}
+Christoph Becker.
+\newblock What is {Just} {Sustainability} {Design}?
+\newblock In {\em Insolvent: {How} to {Reorient} {Computing} for {Just}
+  {Sustainability}}. MIT Press, Cambridge, MA, USA, June 2023.
+
+\end{thebibliography}

@@ -1,0 +1,13 @@
+\chapter{Conclusion}
+
+A robust model with the ability to reliably infer the interactions of two proteins given only their sequences in real-world, out-of-distribution would be deeply impactful --- accelerating discoveries that currently take weeks or months to potentially mere minutes or seconds. Despite three decades of developing computational methods for \textsc{ppi} inference, the persistent failure of these approaches to generalize to real-world use cases is a challenge the scientific community continues to grapple with. This is partly due to the many years in which researchers were unaware of or neglected this challenge. 
+
+This thesis catalogues the work I've conducted over the last half decade to identify and mitigate obstacles which are at the root of this failure, while anticipating new obstacles to generalizability. A great deal of progress is needed before these sources of bias are sufficiently addressed and \textsc{ppi} inference models become useful for real-world tasks. The three studies presented here represent substantive developments towards that goal.
+
+The development of \textsc{rapppid} demonstrated that a deep learning technique could be made to generalize to \textsc{ppi} pairs whose members don't appear in the training dataset. To my knowledge, the study which introduced \textsc{rapppid} was the first to do so. \textsc{rapppid} out-performed all of the contemporaneous leading \textsc{ppi} inference methods against which it was compared.
+
+In our subsequent study, I expanded on the generalization of \textsc{rapppid} to include \textsc{ppi}s between unseen proteins originating from organisms other than that which the model was trained on. To do so, we devised an ``orthologous locality'' task whose formulation was motivated by both the biological underpinnings of our data as much as it was by practical considerations of model building.
+
+Finally, our third study identified challenges in the nascent area of p\textsc{lm}-based models. It is in this study which I identify an emerging source of data leakage, before uncharacterized, which already implicates a number of methods. It is also here that I demonstrate ways in which \textsc{ppi} inference models continue to fail to generalize to common, practical use-cases.
+
+The studies in this thesis are humble but tangible contributions to a relatively new field which still holds many mysteries to unravel and challenges to overcome. I know not what the next three decades will uncover for \textsc{ppi} inference, but I am confident that a focus on methodological rigour and generalization lights the way forward.

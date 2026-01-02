@@ -1,0 +1,34 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {chapter}{Background Material and Literature Review}{9}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A high-level schematic of the human pathways in the Reactome knowledgebase}}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A historical timeline of \textsc {ppi} inference methodologies.}}{17}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Number of parameters in language models over time.}}{27}{figure.caption.36}%
+\addvspace {10\p@ }
+\contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{32}{chapter.3}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the \textsc {rapppid} pipeline and architecture.}}{37}{figure.caption.40}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of differences in edges between \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets.}}{41}{figure.caption.41}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Receiver-Operator curves across methods and datasets.}}{43}{figure.caption.43}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc {c2}.}}{46}{figure.caption.45}%
+\addvspace {10\p@ }
+\contentsline {chapter}{Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{60}{chapter.4}%
+\contentsline {figure}{\numberline {1}{\ignorespaces The species gap as illustrated by the \textsc {string} \textsc {ppi} database.}}{62}{figure.caption.56}%
+\contentsline {figure}{\numberline {2}{\ignorespaces INTREPPPID’s architecture and performance.}}{71}{figure.caption.67}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Cross-species performance}}{73}{figure.caption.70}%
+\contentsline {figure}{\numberline {4}{\ignorespaces The webserver of \textsc {ppi}.Bio supporting \textsc {rapppid} and \textsc {intrepppid} at whole proteome scale.}}{77}{figure.caption.75}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {chapter}{Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{99}{appendix.A}%
+\contentsline {figure}{\numberline {S1}{\ignorespaces Relative Degree of Proteins in the \textit {H. sapiens} \textsc {string} \textsc {c3} dataset.}}{100}{figure.caption.95}%
+\contentsline {figure}{\numberline {S2}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{101}{figure.caption.96}%
+\contentsline {figure}{\numberline {S3}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{102}{figure.caption.97}%
+\contentsline {figure}{\numberline {S4}{\ignorespaces Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc {c3}.}}{103}{figure.caption.98}%
+\contentsline {figure}{\numberline {S5}{\ignorespaces Distribution of Interaction Probabilities of Trastuzumab and Pertuzumab with all Proteins of the Human Proteome as Predicted by \textsc {rapppid}.}}{104}{figure.caption.99}%
+\addvspace {10\p@ }
+\contentsline {chapter}{Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{105}{appendix.B}%
+\contentsline {figure}{\numberline {S1}{\ignorespaces Precision-Recall curves of various \textsc {ppi} inference methods}}{117}{figure.caption.115}%
+\contentsline {figure}{\numberline {S2}{\ignorespaces Receiver-Operator curves of various \textsc {ppi} inference methods}}{118}{figure.caption.116}%
+\contentsline {figure}{\numberline {S3}{\ignorespaces The effect of orthologous locality task.}}{119}{figure.caption.117}%

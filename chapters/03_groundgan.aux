@@ -1,0 +1,158 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\citation{park_marcotte}
+\citation{black_box}
+\citation{awd_lstm}
+\citation{kudo_sentencepiece_2018}
+\citation{rapppid}
+\citation{rapppid}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{32}{chapter.3}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:rapppid}{{3}{32}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{chapter.3}{}}
+\@writefile{lof}{\contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{32}{chapter.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{32}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Abstract}{32}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{33}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Materials and methods}{35}{section.3.2}\protected@file@percent }
+\newlabel{sec:rapppid:methods}{{2}{35}{Materials and methods}{section.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}\textsc  {ppi} prediction using \textsc  {awd-lstm} twin networks}{35}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Sequence segmentation and tokenization}{36}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Generalizing protein sequence encoding with \textsc  {awd-lstm}}{36}{subsection.3.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the \textsc  {rapppid} pipeline and architecture.}}{37}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:rapppid:pipeline}{{1}{37}{Overview of the \textsc {rapppid} pipeline and architecture}{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Details of \textsc  {rapppid}’s architecture and hyper-parameter tuning}{38}{subsection.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Protein interaction datasets}{38}{subsection.3.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Negative examples}{39}{subsection.3.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Training, validation and testing set construction}{40}{subsection.3.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of differences in edges between \textsc  {c1}, \textsc  {c2}, and \textsc  {c3} datasets.}}{41}{figure.caption.41}\protected@file@percent }
+\newlabel{fig:rapppid:c_dataset}{{2}{41}{Illustration of differences in edges between \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets}{figure.caption.41}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8}Implementation}{41}{subsection.3.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.9}Protein similarity experiments}{41}{subsection.3.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{42}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Performance evaluation of \textsc  {rapppid} and other algorithms}{42}{subsection.3.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Comparison of \textsc  {ppi} prediction performance on \textsc  {c1}, \textsc  {c2}, and \textsc  {c3} datasets.}}{43}{table.caption.42}\protected@file@percent }
+\newlabel{tab:rapppid:auroc}{{1}{43}{Comparison of \textsc {ppi} prediction performance on \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets}{table.caption.42}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Channel-specific performance of \textsc  {rapppid}}{43}{subsection.3.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Receiver-Operator curves across methods and datasets.}}{43}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:rapppid:auroc}{{3}{43}{Receiver-Operator curves across methods and datasets}{figure.caption.43}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Role of protein similarity on \textsc  {rapppid}’s performance}{44}{subsection.3.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc  {string} channels.}}{45}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:rapppid:channels}{{4}{45}{Accuracy of positive edges across edge confidence stratified by \textsc {string} channels}{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc  {c2}.}}{46}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:rapppid:similarity}{{5}{46}{Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc {c2}}{figure.caption.45}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Effect of different components on \textsc  {rapppid}'s performance}{46}{subsection.3.3.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Results from an ablation study conducted on \textsc  {rapppid}.}}{47}{table.caption.46}\protected@file@percent }
+\newlabel{tab:ablation}{{2}{47}{Results from an ablation study conducted on \textsc {rapppid}}{table.caption.46}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Transfer learning on protein-ligand data from X-ray crystallography experiments}{48}{subsection.3.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}\textsc  {rapppid} predicts interaction of \textsc  {her2} with Trastuzumab and\\Pertuzumab}{49}{subsection.3.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{50}{section.3.4}\protected@file@percent }
+\bibcite{Lorem}{1}
+\bibcite{Lorem}{2}
+\bibcite{Lorem}{3}
+\bibcite{Lorem}{4}
+\bibcite{Lorem}{5}
+\bibcite{Lorem}{6}
+\bibcite{Lorem}{7}
+\bibcite{Lorem}{8}
+\@writefile{toc}{\contentsline {section}{Authors' contributions}{52}{section*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Funding}{52}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Data availability}{52}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{52}{section*.50}\protected@file@percent }
+\bibcite{Lorem}{9}
+\bibcite{Lorem}{10}
+\bibcite{Lorem}{11}
+\bibcite{Lorem}{12}
+\bibcite{Lorem}{13}
+\bibcite{Lorem}{14}
+\bibcite{Lorem}{15}
+\bibcite{Lorem}{16}
+\bibcite{Lorem}{17}
+\bibcite{Lorem}{18}
+\bibcite{Lorem}{19}
+\bibcite{Lorem}{20}
+\bibcite{Lorem}{21}
+\bibcite{Lorem}{22}
+\bibcite{Lorem}{23}
+\bibcite{Lorem}{24}
+\bibcite{Lorem}{25}
+\bibcite{Lorem}{26}
+\bibcite{Lorem}{27}
+\bibcite{Lorem}{28}
+\bibcite{Lorem}{29}
+\bibcite{Lorem}{30}
+\bibcite{Lorem}{31}
+\bibcite{Lorem}{32}
+\bibcite{Lorem}{33}
+\bibcite{Lorem}{34}
+\bibcite{Lorem}{35}
+\bibcite{Lorem}{36}
+\bibcite{Lorem}{37}
+\bibcite{Lorem}{38}
+\bibcite{Lorem}{39}
+\bibcite{Lorem}{40}
+\bibcite{Lorem}{41}
+\bibcite{Lorem}{42}
+\bibcite{Lorem}{43}
+\bibcite{Lorem}{44}
+\bibcite{Lorem}{45}
+\bibcite{Lorem}{46}
+\bibcite{Lorem}{47}
+\bibcite{Lorem}{48}
+\bibcite{Lorem}{49}
+\bibcite{Lorem}{50}
+\bibcite{Lorem}{51}
+\bibcite{Lorem}{52}
+\bibcite{Lorem}{53}
+\bibcite{Lorem}{54}
+\bibcite{Lorem}{55}
+\bibcite{Lorem}{56}
+\bibcite{Lorem}{57}
+\bibcite{Lorem}{58}
+\bibcite{Lorem}{59}
+\bibcite{Lorem}{60}
+\bibcite{Lorem}{61}
+\bibcite{Lorem}{62}
+\bibcite{Lorem}{63}
+\bibcite{Lorem}{64}
+\bibcite{Lorem}{65}
+\bibcite{Lorem}{66}
+\bibcite{Lorem}{67}
+\bibcite{Lorem}{68}
+\bibcite{Lorem}{69}
+\bibcite{Lorem}{70}
+\bibcite{Lorem}{71}
+\@setckpt{chapters/03_groundgan}{
+\setcounter{page}{58}
+\setcounter{equation}{0}
+\setcounter{enumi}{3}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{71}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{3}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{5}
+\setcounter{table}{2}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{section@level}{1}
+\setcounter{Item}{6}
+\setcounter{Hfootnote}{1}
+\setcounter{bookmark@seq@number}{47}
+\setcounter{parentequation}{0}
+\setcounter{su@anzahl}{0}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+\setcounter{tcbbreakpart}{1}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{4}
+}

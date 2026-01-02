@@ -1,0 +1,102 @@
+% main.tex — Master file for University of Melbourne thesis
+% University of Melbourne thesis guidelines:
+% https://gradresearch.unimelb.edu.au/processes/preparation-of-graduate-research-theses
+\documentclass[twoside]{uomthesis}
+\usepackage[version=4]{mhchem}
+\usepackage{chemformula}
+\usepackage[dvipsnames]{xcolor}
+%--------------------------------------------%
+%% Metadata %%
+%--------------------------------------------%
+\ThesisTitle{Gene Regulatory Network-Guided Causal Generative Modeling of Single-Cell Transcriptomics}
+\ThesisAuthor{Yazdan Zinati}
+%\ThesisOrcid{0000-0003-1559-6225}
+\ThesisDegree{Master of Science}
+\ThesisDate{January 2026}
+% \ThesisResubmissionDate{Sep 2025}
+\ThesisFaculty{Faculty of Engineering}
+\ThesisDepartment{Department of Electrical \& Computer Engineering}
+\ThesisUniversity{McGill University, Montr\'eal}
+% \ThesisJointInstitution{}
+\ThesisSupervisor{Amin Emad}
+\usepackage{tcolorbox}
+\usepackage{csquotes}
+\usepackage{caption}
+\DeclareCaptionLabelFormat{sflabel}{\textsf{#1~#2}}
+\captionsetup[table]{labelformat=sflabel}
+\captionsetup[figure]{labelformat=sflabel}
+
+
+\newcommand{\figuresection}[1]{%
+   \addcontentsline{lof}{chapter}{#1}%
+   \addcontentsline{lot}{chapter}{#1}%
+}
+
+\usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage[justification=justified]{caption}
+\usepackage{enumitem}
+
+\begin{document}
+
+  \maketitle
+
+
+  %--------------------------------------------%
+  %% Front matter %%
+  %--------------------------------------------%
+  \frontmatter
+  \vspace*{\fill}
+    \includegraphics[width=0.2\linewidth]{figures/by-nc.eps}\\
+    Gene Regulatory Network-Guided Causal Generative Modeling of Single-Cell Transcriptomics © 2026 by Yazdan Zinati is licensed under \textsc{cc by-nc} 4.0. To view a copy of this license, visit \href{https://creativecommons.org/licenses/by-nc/4.0/}{https://creativecommons.org/licenses/by-nc/4.0/} \\\\
+    No part of this thesis was created using generative artificial intelligence.
+    \newpage
+  \include{frontmatter/abstract}
+  \include{frontmatter/acknowledgements}
+
+  \tableofcontents
+  
+  \listoffigures     
+  \listoftables  
+  
+  % \include{frontmatter/copyright}
+
+
+  %%% Acronyms and Glossaries %%%
+  % \PrintAcronym{frontmatter/acronyms}  
+  % \PrintGlossary{frontmatter/glossaries} 
+
+  %%% Print Nomenclatures %%%
+  % \PrintNomenclature{frontmatter/nomenclature}
+
+  
+
+  %--------------------------------------------%
+  %% Load chapters %%
+  %--------------------------------------------%
+  \mainmatter
+
+  \include{chapters/00_abbreviations}
+  \include{chapters/01_introduction}
+  \include{chapters/02_lit_review} 
+  \include{chapters/03_groundgan}
+  \include{chapters/04_protocol}
+  \include{chapters/05_discussion}
+  \include{chapters/06_conclusion}
+
+  %--------------------------------------------%
+  %% Appendices %%
+  %--------------------------------------------%
+  \appendix
+  \include{appendix/groundgan}
+  \include{appendix/protocol}
+
+  %--------------------------------------------%
+  %% Bibliography %%
+  %--------------------------------------------%
+  \bibliographystyle{unsrt}         % bib style
+  \bibliography{bibliography/refs}  % load bib file
+
+
+
+\end{document}

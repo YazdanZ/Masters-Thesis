@@ -1,0 +1,25 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{32}{chapter.3}%
+\contentsline {table}{\numberline {1}{\ignorespaces Comparison of \textsc {ppi} prediction performance on \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets.}}{43}{table.caption.42}%
+\contentsline {table}{\numberline {2}{\ignorespaces Results from an ablation study conducted on \textsc {rapppid}.}}{47}{table.caption.46}%
+\addvspace {10\p@ }
+\contentsline {chapter}{Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{60}{chapter.4}%
+\contentsline {table}{\numberline {1}{\ignorespaces Average performance of five leading \textsc {ppi} inference methods trained and tested on four \textit {H.~sapiens} \textsc {ppi} datasets.}}{72}{table.caption.68}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {chapter}{Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{99}{appendix.A}%
+\contentsline {table}{\numberline {S1}{\ignorespaces Ranges of hyperparameters used for training of \textsc {rapppid}.}}{99}{table.caption.91}%
+\contentsline {table}{\numberline {S2}{\ignorespaces The final values of hyperparameters selected.}}{99}{table.caption.92}%
+\contentsline {table}{\numberline {S3}{\ignorespaces Statistics for the \textsc {string} \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets.}}{100}{table.caption.93}%
+\contentsline {table}{\numberline {S4}{\ignorespaces Repeatability of results across randomly generated \textsc {c3} datasets.}}{100}{table.caption.94}%
+\addvspace {10\p@ }
+\contentsline {chapter}{Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{105}{appendix.B}%
+\contentsline {table}{\numberline {S2}{\ignorespaces Hyperparameters used to train \textsc {intrepppid} in all experiments.}}{109}{table.caption.106}%
+\contentsline {table}{\numberline {S4}{\ignorespaces Performance of \textsc {intrepppid} tested on increasing negative-to-positive ratios.}}{111}{table.caption.108}%
+\contentsline {table}{\numberline {S6}{\ignorespaces Performance of \textsc {intrepppid} with scrambled and not scrambled orthologue information.}}{113}{table.caption.110}%
+\contentsline {table}{\numberline {S7}{\ignorespaces Change in \textsc {intrepppid} performance when omitting orthology data.}}{114}{table.caption.111}%
+\contentsline {table}{\numberline {S9}{\ignorespaces Analysis of online availability of \textsc {ppi}-related tools.}}{116}{table.caption.113}%

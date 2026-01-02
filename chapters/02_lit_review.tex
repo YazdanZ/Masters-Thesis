@@ -1,0 +1,323 @@
+\chapter{Background Material and Literature Review}
+\label{chap:background}
+%\figuresection{Background Material and Literature Review}
+\addcontentsline{lof}{chapter}{Background Material and Literature Review}
+
+The studies of which this thesis is composed are multi-disciplinary in scope and nature. They encompass a wide range of fields as varied as molecular biology, biocuration, machine learning, and deep neural networks. This chapter serves as a gentle but comprehensive introduction to the relevant aspects of these fields to help guide the reader in their understanding of the chapters that follow it.
+
+\section*{The Biological Basis of Protein-Protein Interactions}
+\addcontentsline{toc}{section}{The Biological Basis of Protein-Protein Interactions}
+Proteins are the subject, verb, and object of a dizzying number of molecular functions that make-up life. This chapter section discusses those functions, the scientific phenomena that causes them to occur, and the sometimes grim outcomes of their dysregulation.
+
+\subsection*{Biological Processes, Pathways, and Networks}
+\addcontentsline{toc}{subsection}{Biological Processes, Pathways, and Networks}
+
+The number of interactions between two proteins (``binary interactions'') in humans has been estimated at around 600~000, while the literature is estimated to contain upward of 110~000 (or $\approx18\%$) of those interactions \cite{human_interactome_size, Vidal_2016}. As there are upwards of 20~000 human proteins with over 400 million possible combinations, the proportions of proteins that interact with one another (\textit{i.e.}, members of the ``interactome'') are relatively few. This makes for a rather sparse network of interactions. Despite this, the proportion of non-interacting proteins which appear in the literature is far smaller than that of those which do interact. A mere 2~171 non-interacting pairs found in literature are present in the Negatome database, an effort by researchers at the Technical University of Munich to collect evidence of non-interacting protein pairs \cite{negatome2}. If the aforementioned estimates are to be believed, approximately one thousandth of one percent of non-interacting protein pairs have been verified experimentally. An additional layer of complexity atop this network of interactions is that the sequence, speed, and environment in which protein interactions occur greatly impact their downstream effects. The large and complex network formed by these interactions has led to comparisons to a hairball \cite{hairball_gingras, hairball_ideker}.
+
+The structural organization, metabolism, proliferation, \textsc{dna} repair, and death of a cell are just a sample of the very many functions for which \textsc{ppi}s are primarily responsible for. The functions are carried out by an often-diverging chain of interactions that are typically referred to as ``pathways''. The latest version of Reactome, a knowledgebase which catalogues peer-reviewed reactions and pathways, identifies 2~799 pathways in \textit{Homo sapiens} broadly sorted into 29 categories reflecting their function and role within the cell, ranging from signal transduction to extracellular matrix organization (Figure \ref{fig:reactome}) \cite{reactome}.
+
+\begin{figure}[h!]
+  \includegraphics[scale=0.37]{figures/reactome.pdf}
+  \caption[A high-level schematic of the human pathways in the Reactome knowledgebase]{\textsf{\textbf{A high-level schematic of the human pathways in the Reactome knowledgebase.}} Each blue curved line segment represent a protein interaction within a broader pathway. Pathways are sorted in 29 broad categories that reflect their function and role. © 2025 \href{https://reactome.org/}{Reactome} / \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0}.}
+  \label{fig:reactome}
+\end{figure}
+
+These pathways are composed of interactions which can involve pairs of discrete proteins or many proteins acting in concert as a complex \cite{corum}. While these complexes may be composed of proteins which are different to one another in both sequence and structure (``heter-oligomeric'' complexes), those comprise entirely of the same protein are also common (``homo-oligomeric''). In addition to other proteins, proteins interact with other macromolecules like ribonucleic acids (\textsc{rna}), deoxyribonucleic acids (\textsc{dna}), and even glycans to perform these various functions. These interactions, however, are less understood and, to our current knowledge, fewer in number \cite{protein_rna, protein_glycan}. Proteins also regularly interact with small molecules like adenosine triphosphate (\textsc{atp}) and ions like those of the metals zinc and calcium \cite{atp_binding, zn_ppi, zn_ca_binding}. For the purposes of this thesis, we will restrict our scope to binary interactions between proteins.
+
+
+\subsection*{Physiochemical Fundamentals of Protein Interactions}
+\addcontentsline{toc}{subsection}{Physiochemical Fundamentals of Protein Interactions}
+
+ Protein interactions, at their most fundamental level, are chemical reactions. These reactions can alter the structural or chemical properties of the interacting proteins or other macromolecules. Additionally, enzymes are a class of protein which intercede to catalyze other biochemical reactions. 
+
+ Proteins within a cell travel through its different liquid phases via a random process known as Brownian diffusion \cite{Sarhangi_Matyushov_2020, Smith_van_Gunsteren_1994}. This undirected movement results in random collisions between proteins which then have an opportunity to physically and/or chemically interact with each other.
+
+ The strength with which two or more proteins interact is referred to as their ``binding affinity'' with respect to another protein. One way of quantifying such an interaction is its dissociation constant ($\mathrm{K_D}$), which measures the concentration of ligand at which half of the protein is bound\footnote{This definition only holds for binary interactions involving a single binding site, an assumption held throughout this thesis.} \cite{Schreiber_2013}. For an equilibrium between a protein P and a ligand L
+
+\[
+\ce{P + L <=>[\ce{k_{\mathrm{on}}}][\ce{k_{\mathrm{off}}}] PL}
+\]
+
+where $\mathrm{k}_\mathrm{on}$ and $\mathrm{k}_\mathrm{off}$ reflects the forward and reverse rate of reaction, the value of $\mathrm{K_D}$ is defined as 
+
+\[
+\ce{K_D = \dfrac{k_{\mathrm{off}}}{k_{\mathrm{on}}} = \dfrac{[\mathrm{P}][\mathrm{L}]}{[\mathrm{PL}]}}
+\]\cite{Pan_2011}.
+
+Protein interactions vary greatly with regard to their reaction kinetics, with some protein interactions being transient and short-lived (\textit{i.e.}, high $\mathrm{K_D}$ value), while others are long-lived stable interactions (\textit{i.e.}, small $\mathrm{K_D}$ value).
+
+Some kinase reactions are short-lived. One such example is given by the Mitogen-activated protein kinase (\textit{MAPK}) cascade, whose involvement in cell proliferation, differentiation, stress, and apoptosis set the stage for its role in, among other things, metabolic disease and cancers \cite{mapk_pathways, mapk_metabolic_disease, mapk_ras}. Specifically, the isoforms of the mitogen-activated protein kinase kinase (\textit{MEK1/2}) and the isoforms of the extracellular signal-regulated kinase (\textit{ERK1/2}) bind very quickly ($\mathrm{k_{on}}=3.23 \times 10^8\;\mathrm{M}^{-1}\mathrm{s}^{-1}$) and dissociate relatively quickly ($\mathrm{k_{off}}=18.7\;\mathrm{s}^{-1}$) \cite{mek_erk_kinetics}. In comparison, Biotin and Avidin form very long lasting reactions, with a comparable association rate to \textit{MEK}--\textit{ERK} ($\mathrm{k_{on}}=7 \times 10^7\;\mathrm{M}^{-1}\mathrm{s}^{-1}$) and a much slower dissociation rate ($\mathrm{k_{off}}\approx10^{-7}\mathrm{s}^{-1}$) \cite{biotin_avidin_kinetics}. This is reflected in the difference of their dissociation constants. The \textit{MEK}--\textit{ERK} reaction has a dissociation constant of $5 \times 10^{-8}$ M while the Biotin--Avidin constant is much smaller at $7\times10^{-15}$ M.
+
+Proteins most commonly selectively bind their ligands to some degree, however some ``promiscuous'' proteins are capable of almost indiscriminately binding to other proteins \cite{Blazek_Santisteban_Zengerle_Meier_2015}. This promiscuity, however, is often evolutionarily balanced by an increase in protein instability \cite{Blazek_Santisteban_Zengerle_Meier_2015}.
+
+The binding affinity and specificity of a protein to another protein is largely determined by their three-dimensional structure and chemistry --- their ``molecular complementarity'' \cite{lodish_protein_binding}. Our understanding of how a protein's structure factors into its function was put into focus when researchers solved the first protein structures, that of myoglobin in 1958 and h\ae moglobin in 1960 \cite{myoglobin_1958, haeomoglobin_1960, Fersht_2008}. In the early 1960s, shortly after the first protein structures were resolved, the role of amino acid sequences in the structure of a protein was largely crystallized through work done by Christian B. Anfinsen and his colleagues. Anfinsen for his part would go on to win the 1972 Nobel Prize in Chemistry, having established ``...the connection between the amino acid sequence and the biologically active conformation'' \cite{Anfinsen_Haber_Sela_White_1961, Anfinsen_1973}. Anfinsen advanced a ``thermodynamic hypothesis'' which states ``...that the native conformation is determined by the totality of inter-atomic interactions and hence by the amino acid sequence, in a given environment'' \cite{Anfinsen_1973}. This would later be commonly referred to by many as ``Anfinsen's dogma'', by way of comparison to Crick's ``central dogma of molecular biology'' \cite{Vila_2020, Kulkarni_2022, central_dogma}.
+
+% maybe something about amino acids and their side-chains?
+
+Together, these works uncovered a triune of protein biochemistry, whereby a protein's sequence determines its structure and its structure in turn determines its function. As is the case with most statements of fact with wide-sweeping implications, this is a gross oversimplification and hides within it many pernicious exceptions and conditions \cite{chaperones, disordered_protein, Vila_2020, Kulkarni_2022}. Nonetheless, it shall serve as a useful guide for our discussion of the basis of protein interactions. 
+
+\subsection*{Protein Interactions and Pathologies}
+\addcontentsline{toc}{subsection}{Protein Interactions and Pathologies}
+
+Having established that proteins are essential for many essential functions of the cell, it requires little imagination to arrive at the conclusion that their dysfunction can have grave implications for organismal health. Our understanding of how protein interaction networks and how diseases alter their fabric has lead to many therapies and treatments. For instance, network analysis on an organism's interactome can be useful in identifying which proteins are ``indispensable'' to normal cell function and therefore whose dysfunction is more likely to cause disease and illness \cite{ppi_disease_net_analysis, ppi_disease_net_analysis2}. This can be done by analyzing the effects of removing entire proteins from the protein interaction graph \cite{ppi_disease_net_analysis}, or by observing the result of a protein which no longer interacts with one of its usual partners due to \textit{e.g.}, mutations which alter one of multiple binding sites \cite{edgetic_disease}. The latter are known as ``edgetic'' perturbations, and give us particular insight into genetic diseases which cause small changes in proteins rather than the drastic sort which eliminates all function or expression of the protein \cite{edgetic_disease}. 
+
+Analyses of the ``edgetic'' changes are particularly relevant in the context of cancers which are largely driven by germline and somatic mutations which alter protein function \cite{emutpath}. Network analysis of the binding partners of mutant drivers of breast cancer, such as \textit{TP53} and \textit{PTEN}, helped identify new proteins previously unknown to be implicated in the onset of cancer \cite{interaction_landscape_breast_cancer}. Similarly, network analysis has helped us understand some of the mechanisms by which hereditary diseases like Huntingtin's disease progress, implicating novel interactors of the mutant \textit{HTT} protein \cite{huntingtin_rho}. The new discoveries can then help identify new targets for the development of small-molecule therapies to restore wild-type function \cite{Mabonga_Kappo_2019, Scott_Bayly_Abell_Skidmore_2016}.
+
+The clinical utility of protein interaction networks aren't limited to cancers and hereditary diseases. Early networks of between human proteins and the \textsc{sars}-\textsc{c}o\textsc{v-2} virus, the cause of Coronavirus disease 2019 (\textsc{covid-19}), helped quickly identify druggable protein targets months after a worldwide pandemic was announced \cite{sars_cov2_ppi}.
+
+The study of protein-protein interaction networks, therefore, is one of the rare fields of study in the biological sciences whose pursuit readily advances both basic and translational research.
+
+\section*{Experimental Approaches to Discovering Protein-Protein Interactions}
+\addcontentsline{toc}{section}{Experimental Approaches to Discovering Protein-Protein Interactions}
+
+
+A huge number of \textsc{ppi} interactions have been characterized to date, with over 20 billion interactions across more than a thousand organisms being catalogued in version 12 of the \textsc{string} database \cite{string_v12}. The scale of the studies whose findings populate databases like \textsc{string} are increasing as well, with as many as 53~000 \textsc{ppi}s being identified in a single study.
+
+Protein-protein interaction have been discovered using a wide variety of methods. Many methods involve identifying the unknown partners (``prey'' proteins) of a known target protein (``bait'' protein). Each method presents its own unique advantages and challenges. These limitations, including high costs, biases and lack of sensitivity, present as obstacles to uncovering the complete network of proteins which interact \cite{snider_2015, low_recent_2021}. 
+
+This section serves as an overview of common methods for discovering and verifying \textsc{ppi}s.
+
+\subsection*{Yeast Two-Hybrid and Related Methods}
+\addcontentsline{toc}{subsection}{Yeast Two-Hybrid and Related Methods}
+
+The \textsc{y2h} system is one of the oldest and best studied methods for experimentally discovering and validating \textsc{ppi}s, originating from work by Fields and Song 36 years ago \cite{fields_novel_1989, vidal_fields_2014}. The \textsc{y2h} method involves fusing the binding domain of a transcription factor to the bait protein and that same transcription factors activation domain to the prey proteins \cite{fields_novel_1989}. When the two proteins interact, they effectively reconstitute the function of the transcription factor, which results in the expression of some desired reporter gene. In their original work, Fields and Song used the \textit{Gal4-UAS} system, which allowed for screening by the ability of cells to grow on galactose or for the blue colour they produce when grown on indicator plates \cite{fields_novel_1989}.
+
+(\textsc{myth}) is a variation of the \textsc{y2h} system which adapts the method to the study of membrane proteins \cite{snider_detecting_2010}.
+
+Many related methods for studying and observing \textsc{ppi}s involve fusing domains to subjects of study such that bait-prey interactions reconstitute functional systems whose activity is directly or indirectly observable \cite{snider_2015}. Examples include \textsc{m}a\textsc{mth} and \textsc{b}i\textsc{fc}, whose interactions cause the reconstitution of ubiquitin and a fluorescent complex, respectively \cite{petschnigg_mammalian-membrane_2014, kerppola_bimolecular_2008}.
+
+The \textit{JAK/STAT3} signal transduction pathway has also proved useful in identifying \textsc{ppi}s experimentally. Both the \textsc{mapppit} and \textsc{kiss} methods involve fusing kinase and/or receptor domains which, upon prey-bait interactions, causes activation of the \textit{JAK/STAT3} signalling pathway and the downstream expression of a reporter gene \cite{lemmens_mappit_2015, lievens_kinase_2014}.
+
+\subsection*{Affinity-based Methods}
+\addcontentsline{toc}{subsection}{Affinity-based Methods}
+
+Affinity methods involve the physical capture, through the use of antibodies, of target proteins which have bound proteins. 
+
+Co-immunoprecipitation (\textsc{c}o-\textsc{ip}) is a useful technique for validating hypothesized \textsc{ppi}s. Primary antibodies which bind the target protein are first incubated with cell lysate, often from cells which over-express the protein of interest \cite{evans_co-immunoprecipitation_2022}. Secondary antibodies, conjugated to agarose or magnetic beads, are used to isolate the target protein \cite{evans_co-immunoprecipitation_2022}. Following the separation of the lysate's constituents on an \textsc{sds-page} gel, the presence of the proteins hypothesized to interact is confirmed by Western blot \cite{evans_co-immunoprecipitation_2022}.
+
+Whereas \textsc{c}o-\textsc{ip} is suitable for validating suspected interaction partners, affinity purification mass-spectroscopy (\textsc{ap-ms}) is a method which can be used for the discovery of new interaction partners. Baits are fused with short peptide sequences known as affinity tags (\textit{e.g.}, \textsc{flag} or \textsc{ha}) \cite{kaushal_protocol_2024}. Purification is then conducted much in the same way as it is for \textsc{c}o-\textsc{ip}, but primary antibodies here target the affinity tag \cite{kaushal_protocol_2024}. The most significant difference is that, rather than identifying interacting partners using a Western blot, \textsc{ap-ms} relies on mass spectrometry. Mass spectrometry allows for the identification of partners without making assumptions as to the proteins which have interacted with the bait, as is the case with \textsc{c}o-\textsc{ip} \cite{kaushal_protocol_2024}.
+
+Both \textsc{ap-ms} and \textsc{co-ip} require that protein interactions survive cell lysis which, depending on the strength of the interaction, may not be the case. \textsc{b}io\textsc{id-ms} is a method whereby a promiscous biotin ligase (\textit{e.g.}, BirA) is fused to a bait protein, resulting in the biotinylation of interactors \cite{roux_bioid_2018}. The biotinylated proteins can then be isolated using avidin/streptavidin affinity columns and the partners can be identified by mass spectrometry \cite{roux_bioid_2018}.
+
+%Some affinity-based methods do not require lysis at all. The proximity ligation assay (\textsc{pla}) allows for \textit{in-situ} detection of \textsc{ppi}s. \textsc{dna}-conjugated antibodies bind proteins of interest. When the \textsc{dna}-conjugated antibodies are in proximity to one another,
+
+\subsection*{Energy Transfer Methods}
+\addcontentsline{toc}{subsection}{Energy Transfer Methods}
+
+The methods for \textsc{ppi} discovery and validation here thus far have not been suitable for real-time observation of protein interaction dynamics. F\"orster resonance energy transfer, or sometimes fluorescence resonance energy transfer, (\textsc{fret}) is capable of spatial and temporal resolution of \textsc{ppi}s in living cells \cite{ma_application_2014, snider_2015}. 
+
+\textsc{fret} shares some similarity with \textsc{b}i\textsc{fc}, but rather than fusing fragments of one fluorescent protein, fluorophores are fused to both proteins. One of the fluorophores (the ``donor'') emits at a wavelength which excites the other (the ``acceptor'') \cite{ma_application_2014, snider_2015}. The acceptor only emits when the donor is near enough to excite it, unlike with \textsc{b}i\textsc{fc} where the reconstitution of the fluorescent complex is permanent \cite{snider_2015}.
+
+Bioluminescence resonance energy transfer (\textsc{bret}) is a similar method which helps reduce background noise and photobleaching which are obstacles caused by \textsc{fret}'s reliance on external illumination \cite{ma_application_2014}. Rather than fusing two fluorophores, \textsc{bret} experiments replace the ``donor'' fluorophore with luciferase, eliminating the need for external illumination to excite the ``donor'' \cite{ma_application_2014}.
+
+\subsection*{Other methods}
+\addcontentsline{toc}{subsection}{Other methods}
+
+Cross-linking mass spectrometry (\textsc{xl-ms}) is a method involves forming covalent bonds between nearby protein residues using a chemical cross-linker. The cross-linked proteins are then identified using mass spectrometry. \textsc{xl-ms} is both high-throughput and allows us to identify protein complexes. Cross-linking, however, can often
+have low-efficiency and are slow, limiting the interactions that can be detected using \textsc{xl-ms} \cite{low_recent_2021}.
+
+Many of the methods here involve high-impact manipulations involving greatly altering the natural environments of cells or proteins, which can distort or mask certain reactions. coFrac-\textsc{ms} is a method for identifying possible protein complexes while avoiding any such harsh conditions at the cost of measuring functional association via co-expression/co-localization rather than direct \textsc{ppi}s \cite{low_recent_2021}. This is achieved by fractionating cell lysates under native conditions and identifying the protein constituents of fractions by mass spectrometry \cite{low_recent_2021}. 
+
+Thermal proximity co-aggregation (\textsc{tpca}) is a method that exploits the finding that proteins which interact co-aggregate when thermally denatured \cite{tan_thermal_2018}. By comparing the melting curves of proteins, interaction partners are inferred \cite{tan_thermal_2018}. This method can successfully identify protein complexes, is sensitive to weakly bound proteins and can be performed \textit{in situ}.
+
+\section*{Computational \& Statistical Models of Protein-Protein Interactions}
+\label{sec:ppi_methods}
+\addcontentsline{toc}{section}{Computational \& Statistical Models of Protein-Protein Interactions}
+
+Methods for computationally inferring \textsc{ppi}s span a wide range, with the field largely moving from statistical methods to machine learning methods and finally to deep learning models (Figure \ref{fig:timeline}). I have found that, much as musical artists resist being assigned genre labels, so too do models of \textsc{ppi} inference. Nevertheless, an effort was made to thematically group models into broad categories on the basis of the methodologies they employ. Viewing these groups over the passage of time gives us useful insight into the trends and discoveries that have shaped the field of \textsc{ppi} inference. 
+
+The list of studies reviewed here is not exhaustive, but rather a representative cross-section of the methodologies that have been used for \textsc{ppi} inference. They are presented here with the aim that they might help situate the novel approaches presented later in this thesis within the broader field.
+
+\begin{figure}[b!]
+  \centering 
+  \includegraphics[width=\linewidth]{figures/timeline.pdf}
+  \caption[A historical timeline of \textsc{ppi} inference methodologies.]{\textsf{\textbf{A historical timeline of PPI inference methodologies.}} A timeline of papers representative of the last 30 years of advances in \textsc{ppi} inference research, with particular focus to the methodologies employed. Each black box represents a study, and is placed along a timeline across three decades beginning from 1995. Coloured rounded boxes group the timeline according to broad methodological themes: non-machine learning (yellow), machine learning (red), deep learning (blue). Emblems at the right of each black box indicate the methodology studied in each publication. Emphasis has been placed on publications of which I am an author.}
+  \label{fig:timeline}
+\end{figure}
+%\addtocounter{figure}{-1}
+
+\subsection*{Non-Machine Learning Methods for PPI Inference}
+\addcontentsline{toc}{subsection}{Non-Machine Learning Methods for \textsc{ppi} Inference}
+
+\subsubsection*{Interaction Site Prediction}
+
+The earliest methods for \textsc{ppi} inference largely centred identifying on identifying similarities across proteins and networks belonging to other species, and interpolating interactions between them on that basis \cite{Kini_Evans_1996, Pazos_Helmer-Citterich_Ausiello_Valencia_1997, Jones_Thornton_1997}. The earliest study of this nature of which I am aware also is arguably the simplest; Kini and Evans described a method for predicting interaction sites in 1996 by noting the prevalence of proline residues which flank such regions \cite{Kini_Evans_1996}. This method was used to identify the existence of a polymerization site in the epitope of fibrinogen which they found to be bound by a specific monocolonal antibody \cite{Kini_Evans_1996}. A further generalization of the identification of interaction sites on the basis of the composition of amino acid residues and their three-dimensional structure closely followed in the work of Jones and Thornton the following year \cite{Jones_Thornton_1997}. Jones and Thornton devised a scoring system for surface patches of the resolved three-dimensional structure of proteins which, among other factors, accounted for its solvation potential, hydrophobicity, accessible surface area (\textsc{asa}), and planarity \cite{Jones_Thornton_1997}. Seven years later, a study would revisit the analysis of surface properties of proteins which might help identify interactions sites by characterizing differences between the interfaces of bound and unbound protein complexes \cite{neuvirth_promate_2004}. Another early method by Pazos \textit{et al.} published in 1997 uses the correlation of mutations between proteins to identify putative interaction sites \cite{Pazos_Helmer-Citterich_Ausiello_Valencia_1997}.
+
+\subsubsection*{Sequence Similarity}
+The similarity between protein sequences has been demonstrated to have relationship to their relative structure and function for over 30 years  \cite{chapman_sequence_1994}. This relationship has been leveraged to infer interactions between proteins on the basis of their similarity to each other, or to other homologous proteins which interact. One of the earliest such methods was devised in 1999 by Marcotte \textit{et al.} who describe a ``Rosetta Stone'' method, which uncovers interacting proteins which appear as fused singular proteins in other species \cite{Marcotte_Pellegrini_Ng_Rice_Yeates_Eisenberg_1999}. This finding serves as the seed for later work expanding and generalizing these ideas by Date and Marcotte in 2004 \cite{date_discovery_2003}. Specifically, Date and Marcotte constructed what they termed ``phylogenic profile'' vectors for each protein for which \textsc{ppi}s were to be constructed. Each element of these 57-dimension \textbf{p} vectors corresponds to a reference organism $j$. The value of each element $p_{i,j} = \max\left[−{\log \left(E_{i,j}\right)^{-1}}, 1\right]$, where $E_{i,j}$ is the lowest expectation value (\textit{E}-value) found between the protein in question and the the proteome of organism $j$, as measured by the \textsc{blast} software \cite{altschul_gapped_1997, date_discovery_2003}. The mutual information between the \textbf{p} vectors of pairs of proteins correlate with their functional similarity \cite{date_discovery_2003}. Functional similarity was determined using the \textsc{kegg} knowledgebase \cite{kanehisa_kegg_2000}. Notably, Date and Marcotte's method infers functional associations between proteins, sometime termed ``functional interactions'', which are not to be confused with physical interactions. 
+
+Sequence similarity methods remain the most common variety of non-machine learning models that are developed in recent years. These methods infer interactions on the basis of having previously observed other pairs of proteins with similar amino acid sequences which themselves interact with one another. A pioneering example of these methods is Pitre, \textit{et al.}'s \textsc{pipe} method \cite{pitre_pipe_2006}. 
+
+\textsc{pipe} begins by sliding overlapping windows over two proteins (protein $A$ and $B$) whose interaction status is being evaluated. A search for proteins whose sequence contains similar regions to the overlapping windows over protein $A$ is conducted. Subsequently, proteins which interact with the proteins found in the search are catalogued in a list $R$. Finally, a search is conducted for similarities between the windows from the sequence of protein $B$ and those in $R$ to construct a final score matrix. Each element $s_{i,j}$ of the score matrix corresponds to instances where the $j^\textrm{th}$ window from protein $B$ matched a member of $R$ who was added to the list due to its interaction with a protein who shared sequence similarity to the $i^\textrm{th}$ window from protein $A$. An \textit{ad hoc} visual analysis of the scoring matrix is then performed, whereby strong peaks in regions of the scoring matrix are indications of possible interactions.
+
+The original \textsc{pipe} algorithm was very computationally demanding, with its authors citing an approximate 1~000 hours of computational time required to conduct the evaluations that appear in the original publication \cite{pitre_pipe_2006}. The computational performance and sensitivity of the \textsc{pipe} algorithm has since been iterated upon and improved over the course of 14 years \cite{pitre_global_2008, schoenrock_pipe3_2010, schoenrock_mp-pipe_2011, dick_pipe4_2020}. Li and Ilie developed \textsc{sprint}, a method reminiscent of \textsc{pipe} in its theory, and boldly claimed in their 2017 publication that that theirs was ``...the only sequence-based program that can effectively predict the entire human interactome: it requires between 15 and 100 [minutes], depending on the dataset'' \cite{li_sprint_2017}.
+
+Bell \textit{et al.} would later describe \textsc{peppi}, a pipeline which integrates multiple signals to infer \textsc{ppi}s, including protein sequence and stucture similarity.
+
+\subsubsection*{Tertiary Structure Methods}
+
+The non-machine learning methods discussed thus far have largely operated on the basis of the amino acid sequences of proteins. Other methods rely on the tertiary structure of proteins to screen for pairs which are likely to interact. 
+
+Tsukamoto \textit{et al.} introduced their Affinity Evaluation and Prediction (\textsc{aep}) aglorithm in 2009, whereby the three-dimensional structure of proteins are first voxelized \cite{tsukamoto_development_2009}. The complementarity of these structures are then computed and used to infer interaction. Matsuzaki \textit{et al.} outlined another such method in the same year, but this time using a protein docking software (\textsc{zdock}) to assess complementarity \cite{matsuzaki_silico_2009, chen_zdock_2003}. Both these methods require exhaustive searches and are very computationally costly.
+
+\textsc{megadock}, a method describe in a 2013 publication by Ohue \textit{et al.}, was conceived to address these computational performance concerns \cite{ohue_megadock_2013}. Ohue \textit{et al.} claimed a 7.5-fold improvement in docking calculation speed all while maintaining ``an acceptable level of accuracy''.
+
+\subsection*{Machine Learning Methods for PPI Inference} \label{sec:ml_for_ppi}
+\addcontentsline{toc}{subsection}{Machine Learning Methods for \textsc{ppi} Inference}
+
+From the years 1995 to 2000, \textsc{ppi} inference methods were primarily predicated on expert analyses and heuristics. These, often partially manual, methods are time consuming and often have limited accuracy. This is perhaps partly responsible for the limited scope of the applied examples of these publications, likely further exacerbated by the accessibility and scope of the contemporaneous databases available. Work by Bock and Gough is an early, if not the first, example of machine learning deployed in the then-nascent field of \textsc{ppi} inference \cite{bock_predicting_2001}. Bock and Gough use the Support Vector Machine (\textsc{svm}) algorithm, which would become one of the most common machine learning approaches for inferring \textsc{ppi}s before deep learning would become prevalent \cite{bock_predicting_2001}.
+
+\subsubsection*{Support Vector Machines}
+The \textsc{svm} is a very well-studied machine learning algorithm whose underlying concepts arose in the 1960s and which would eventually enjoy a great deal of popularity in the early-to-mid 2000s across a number of fields, not least of which being computational biology \cite{scholkopf_early_2013, cortes_support-vector_1995, noble_what_2006}. \textsc{svm}s operate by maximizing the distance between a hyperplane and the nearest data point on either of its sides, resulting in what's termed as the ``maximum-margin hyperplane'' \cite{noble_what_2006}. While \textsc{svm}s were originally characterized a linear classifier, they can be easily adapted to non-linearly separable classification tasks by applying a kernel which projects the data into a higher dimension where such linear maximum-margin hyperplanes are more likely to exist \cite{scholkopf_kernel_2000, noble_what_2006}.
+
+Many of the studies which sought to apply the \textsc{svm} algorithm to the \textsc{ppi} inference task concern themselves primarily with feature engineering and devising appropriate kernels. In the same year, Gomez \textit{et al.} and Dohkan \textit{et al.} used \textsc{svm}s by representing proteins as a ``bag of domains'' as well as incorporating amino acid composition features \cite{gomez_learning_2003, dohkan_support_2003}. Representing variable-length amino acid sequences as fixed-length vectors is a subject which has received much focus, as they are required by the \textsc{svm} algorithm as well as other machine learning approaches \cite{guo_using_2008, hu_discovering_2015, martin_predicting_2005}. Martin \textit{et al.} used features inspired by chemical signatures to represent variable-length amino acid sequences into fixed vector representations \cite{martin_predicting_2005}.
+
+All applications of \textsc{svm}s to the binary \textsc{ppi} inference task must conceive of kernels which allow for the pairwise comparison of proteins. That is to say that methods must devise of a kernel $\tilde{k}\left[\left(A, B\right), \left(X, Y\right)\right] \to \mathbb{R}$ which calculates the similarity of the pair of proteins $A$ and $B$ with the pair $X$ and $Y$. Ben-Hur and Noble term this variety of kernel a ``pairwise kernel'' \cite{ben-hur_kernel_2005}. A pairwise kernel often makes use of a second ``sequence'' kernel which computes the similarity between two protein sequences \cite{ben-hur_kernel_2005}. Martin \textit{et al.}, for instance, use the sequence kernel
+
+$$
+k(A, B) = s(A) \cdot s(B)
+$$
+
+where $k$ is the sequence kernel and $s$ is the aforementioned signature function which projects protein sequences into fixed vectors. Martin \textit{et al.} go on to define the pairwise kernel as
+
+$$
+\tilde{k}\left[\left(A, B\right), \left(X, Y\right)\right] = k(A, B)k(X, Y)
+$$
+
+where $\tilde{k}$ is the pairwise kernel \cite{martin_predicting_2005}. Ben Hur and Noble concurrently and independently described the same kernels and termed the sequence kernel a ``spectrum kernel''  \cite{ben-hur_kernel_2005}. 
+
+Shen \textit{et al.} use a so-called ``conjoint triad'' of residues as features which take into consideration the neighbourhood of each residue and their physiochemical properties. A sequence kernel which computes the distance between these residue feature vectors was used and can be expressed, for two proteins $A$ and $B$, as
+
+$$
+k(A,B) = ||A - B||^2.
+$$
+
+This sequence kernel is then incorporated into a symmetric pairwise kernel of the form
+
+$$
+\tilde{k}\left[\left(A, B\right), \left(X, Y\right)\right] = \min\left[k(A, X) + k(B, Y), \; k(A, Y) + k(B, X) \right].
+$$
+
+Supervised machine learning methods like \textsc{svm} require large representative training sets to perform optimally, and as a result it is desirable to scale these methods to handle such datasets. You \textit{et al.} explore a method to improve scalability by parallelizing a \textsc{svm} model for \textsc{ppi} inference using the MapReduce algorithm \cite{you_mapreduce_2014, dean_mapreduce_2008}.
+
+\subsubsection*{Ensemble Methods}
+
+Ensemble methods combine multiple weaker predictors to form a single, more performant one. An early example of such a method is provided by Qi \textit{et al.} who describe a Mixture-of-Experts (\textsc{m}o\textsc{e}) method composed of four experts \cite{qi_mixture_2007}. The first expert ($P$) was trained on high-throughput \textsc{ppi} experiments, the second expert ($E$) trained on gene expression data, the third expert ($S$) was trained on sequence-based features like homology, and the fourth and final expert ($F$) were trained on functional annotations. Bell \textit{et al.}'s \textsc{peppi} method can be viewed as an ensemble method, as it classifies the interaction status of pairs of proteins by computing the consensus of four independent models which (1) perform look-ups in existing \textsc{ppi} databases, searches for (2) sequence and (3) structure interologues, and finally (4) a shallow neural network which operates on amino acid sequence triads \cite{bell_peppi_2022}.
+
+The Random Forest algorithm is very well represented among studies which use ensemble methods \cite{breiman_random_2001, du_novel_2014, you_predicting_2015, ding_predicting_2016, yu_gtb-ppi_2020, gao_prediction_2023}. The Random Forest models consist of multiple shallow decision trees whose output are averaged to assign a final inferred label \cite{breiman_random_2001}. In contrast to Qi \textit{et al.}'s \textsc{m}o\textsc{e} model, the features upon which sub-models are trained are chosen at random in Random Forest models rather than being selected manually \cite{breiman_random_2001}. Additionally, it is typical for Random Forest models to have many more sub-models than the four found in Qi \textit{et al.}'s \textsc{m}o\textsc{e} model and Bell \textit{et al.}'s \textsc{peppi}.
+
+\subsubsection*{Other Methods}
+
+While the most common traditional machine learning algorithms used for inferring \textsc{ppi} models are \textsc{svm}s and Random Forest, other algorithms are also sometimes used. Guarracino and Nebbia created a \textsc{ppi} inference model using the $k$-nearest neighbours ($k$\textsc{nn}) algorithm \cite{hutchison_predicting_2010, fix_discriminatory_1952}. For this method, Guarracino and Nebbia computed amino acid composition feature vectors for each protein in a interacting or non-interacting pair, concatenated those vectors. To infer the interaction status of a new pair of proteins $x$, the $L^1$ (Manhattan) distance between the concatenated amino acid feature vectors of $x$ and those in the training set is measured to find its $k$ nearest neighbours \cite{riesz_untersuchungen_1910}. If the majority of these neighbours are features of interacting pairs, the members of $x$ are deemed to interact, and \textit{vice versa}. 
+
+Another algorithm sometimes used for inferring \textsc{ppi} interactions is the na\"ive Bayes classifier \cite{lewis_naive_1998, hsin_liu_human_2013}. Hsin Liu \textit{et al.} use the na\"ive Bayes classifier to combine 91 likelihood ratios which reflect the divergence in co-evolution between proteins \cite{hsin_liu_human_2013}. Bell \textit{et al.} similarly rely on a na\"ive Bayes classifier to ascertain a consensus between the five independent models they train.
+
+In 2002, Fariselli \textit{et al.} published a work which made the rare use of an artificial neural network (\textsc{ann}) for \textsc{ppi} inference. It would be another 15 years before neural networks would become common place for such a task \cite{fariselli_prediction_2002}. 
+
+\subsection*{Deep Learning Methods for PPI Inference}
+\label{subsec:dl_for_ppi}
+\addcontentsline{toc}{subsection}{Deep Learning Methods for \textsc{ppi} Inference}
+
+While implementations of \textsc{ann}s have been around since the late 1950s in some form or another, it would not be until approximately five decades later in the 2010s when networks with very many layers would see widespread use \cite{rosenblatt_perceptron_1957}. Much of the groundwork for these ``deep'' neural networks (\textsc{dnn}s) was laid between the early 1980s and the mid 1990s, with the development and implementation of concepts such as Hopfields networks, backpropagation, convolutional neural networks (\textsc{cnn}s), and recurrent neural networks (\textsc{rnn}s) \cite{hopfield_neural_1982, werbos_applications_1982, rumelhart_learning_1986, fukushima_neocognitron_1980, elman_finding_1990, kelleher_brief_2019}.  
+
+The term ``deep learning'' as applied to neural networks would be coined at the turn of the millennium but widespread adoption of deep neural networks came on the back of multiple simultaneous developments --- including general-purpose computing on graphics processing units (\textsc{gpu}s), improvements to neural network implementations, and the advancement of big data algorithms \cite{aizenberg_multi-valued_2000, kelleher_brief_2019}. A watershed moment for deep learning occurred in 2012 when Krizhevsky,~\textit{et al.} published AlexNet, a network for image classification that marked the first time a neural network won the ImageNet competition \cite{krizhevsky_imagenet_2012}. Computer vision and would be the field that arguably benefitted the most from the flurry of \textsc{dnn} research that followed AlexNet until self-attention and the transformer architecture would revolutionize the field of natural language processing (\textsc{nlp}) \cite{aiayn}.
+
+The adoption of \textsc{dnn} architectures to the task of \textsc{ppi} inference largely follow the trends of the broader field, with readily available examples of such models based on stacked autoencoders, \textsc{rnn}s, \textsc{cnn}s, protein language models and graph neural networks.
+
+\subsubsection*{Stacked Autoencoders}
+
+In 2017, Sun \textit{et al.} claimed in an article published in \textsc{bmc} Bioinformatics:
+
+\begin{displayquote}
+\begin{singlespace}
+To our knowledge, this research is the first to apply a deep-learning algorithm to sequence-based \textsc{ppi} prediction, and the results demonstrate its potential in this field. \cite{sun_sequence-based_2017}
+\end{singlespace}
+\end{displayquote}
+
+Sun \textit{et al.}'s first-of-kind deep \textsc{ppi} inference method would adopt the stacked autoencoder (\textsc{sae}) architecture \cite{sun_sequence-based_2017, bank_autoencoders_2023}. A similar \textsc{sae} method for \textsc{ppi} inference by Wang \textit{et al.} would be submitted for publication in Molecular BioSystems 23 days later \cite{wang_predicting_2013}. These methods would foreshadow a burgeoning field of \textsc{dnn}-based \textsc{ppi} inference methods in the years to come.
+
+\textsc{sae}s are a neural network architecture that involve chaining the outputs and inputs of a series of autoencoders \cite{bank_autoencoders_2023}. Autoencoders (\textsc{ae}s) are in turn neural networks which are composed of two sub-networks: an encoder and a decoder. The encoder is a network which projects an input into some smaller dimension, and a decoder approximates the encoder's inverse function. That is to say,  
+$$
+g: \mathbb{R^n} \to \mathbb{R}^m \;,\; g': \mathbb{R}^m \to \mathbb{R}^n
+$$
+
+where $g$ is an encoder, $g'$ is a decoder, and $n >> m$ \cite{bank_autoencoders_2023}. Given some input $x \in \mathbb{R^n}$, the encoder computes a latent vector $z \in \mathbb{R^m}$. The decoder, being optimized to invert the encoding given the latent vector, means that
+
+$$g'(z) = \hat{x} \approx x$$ where $\hat{x}$ is the reconstructed input encoded by latent vector $z$ \cite{bank_autoencoders_2023}.
+
+While important to the initial development of \textsc{dnn}-based \textsc{ppi} inference, the \textsc{sae} architecture remained uncommon outside these two studies, being primarily superseded in the next few years by \textsc{rnn}s and \textsc{cnn}s.
+
+\subsubsection*{Convolutional Neural Networks}
+
+Retellings of the invention of the \textsc{cnn} often begin with Kunihiko Fukushima who published the idea while working at the \textsc{nhk} Broadcasting Science Research Laboratories in 1980 \cite{fukushima_neocognitron_1980, kelleher_brief_2019}. Using the name ``neocognitron'' for the concept --- an iteration of his earlier ``cognitron'' --- Fukushima created a feature detector network which took inspiration from research by David Hunter Hubel
+and Torsten Nils Wiesel who conducted research on the cells of the visual neural cortex of mammals and their relation to pattern recognition \cite{fukushima_cognitron_1975, hubel_functional_1977, hubel_receptive_1965, kelleher_brief_2019}. The two layer types used in the neocognitron, ``S-layers'' and ``C-layers'', resemble convolutional and pooling layers, respectively --- both commonly used neural network layers used for computer vision tasks \cite{fukushima_neocognitron_1980}.
+
+Nearly 20 years later, LeCun \textit{et al.} would describe how fully-connected layers could be constrained to be convolutional, thereby describing the \textsc{cnn}s we know today \cite{lecun_backpropagation_1989, lecun_generalization_1989}. Briefly, \textsc{cnn}s apply convolutions to input tensors using a learnable kernel. \textsc{cnn}'s are accordingly well suited to computer vision tasks. When convolutions are only applied in one-dimension, however, they lend themselves to sequences of features \cite{kiranyaz_1d_2021}. 
+
+An early example of \textsc{cnn}'s being applied to the \textsc{ppi} inference task is Hashemifar \textit{et al.}'s \textsc{dppi} method \cite{hashemifar_predicting_2018}. \textsc{cnn}'s are, in the context of \textsc{ppi} inference methods however, are commonly used in conjunction with \textsc{rnn}s.
+
+\subsubsection*{Recurrent Neural Networks}
+\label{subsec:ppi_methods_rnn}
+
+In 1990, Jeffrey L. Elman of the University of California, San Diego published a study entitled ``Finding Structure in Time'' in the journal Cognitive Science. This seminal article provides one of the earliest descriptions of an \textsc{rnn} architecture, later to be known eponymously as an Elman network \cite{elman_finding_1990}. \textsc{rnn}s were conceived with the goal of better modelling time-series data using neural networks. \textsc{rnn}s add a time-based inductive bias to the architecture of neural networks, where the locality of elements in the time series is made relevant. Incremental improvements on \textsc{rnn} architecture would ultimately cumulate into the Long Short-Term Memory (\textsc{lstm}) network seven years later \cite{hochreiter_long_1997}. Devised by Sepp Hochreiter and J\"orgen Schmidhuber, the \textsc{lstm} gated architecture addressed many of the problems plaguing older \textsc{rnn} constructions by improving gradient flow and training stability as well as performance on tasks that require long-range dependencies \cite{hochreiter_long_1997}. The following year Hochreiter would publish a simplified construction similar to the \textsc{lstm} architecture which he named the Gated Recurrent Unit (\textsc{gru}).
+
+\textsc{rnn}s are useful for any number of domains with a sequence of elements, be that a string of letter or words, as is the case for the field of \textsc{nlp}, a series of closing stock prices over the last quarter, as might be the case for quantitative finance, or a sequence of amino acid residues found in a protein --- a scenario which is most relevant to this thesis.
+
+Compared to Elman or Jordan networks, \textsc{lstm}s and \textsc{gru}s greatly reduce the risk of vanishing gradients due to long time-series. Despite this, \textsc{lstm}s and \textsc{gru}s still often suffer from training instability when trained on protein sequences due to their long length.
+
+My methods, \textsc{rapppid} and \textsc{intrepppid}, both rely on \textsc{lstm} encoders to learn latent vector representations of amino acid sequences. In both cases, to mitigate the training stability issue, amino acid sequences are first tokenized using the Unigram algorithm resulting in common groupings of common amino acids to be considered as one time-step when encoding the \textsc{rnn} \cite{kudo_subword_2018, kudo_sentencepiece_2018}. 
+
+Richoux \textit{et al.}'s work and Chen \textit{et al.}'s \textsc{pipr} both use a combination of \textsc{rnn} and \textsc{cnn} layers \cite{chen_multifaceted_2019, richoux}. The \textsc{cnn} layers, followed by pooling layers, serve to greatly reduce the number of time-steps, thereby increasing training stability of the downstream \textsc{lstm} (in the case of Richoux \textit{et al.}) and \textsc{gru} (in the case of \textsc{pipr}) layers.
+
+\subsubsection*{Protein Language Models}
+
+Some two decades after Claude E. Shannon described a method for estimating the information entropy of the words that appear in printed English in 1950, Thomas M. Cover and Roger C. King would elaborate the idea by describing a ``gambling'' method for inferring the next letter of an English phrase \cite{shannon_prediction_1993, cover_convergent_1978}. This is achieved by placing ``sequential bets on the next symbol of text'' using information about the underlying information entropy distribution \cite{cover_convergent_1978}. Cover and King's method would, however, rely on human subject to ``...work interactively at a computer terminal for a period of approximately five hours...'' to generate predictions of a text sample approximately 250 words long, for an average of 50 words per hour \cite{cover_convergent_1978}. It would be another quarter century before Bengio \textit{et al.} would propose to model language neural networks using a similar method \cite{bengio_neural_2003}. Bengio \textit{et al.} began by modelling language as the ``...conditional probability of the next word given all the previous ones...'', given by
+
+$$
+\hat{P}(W)=\prod_{t=1}^T \hat{P}\left(w_t|w_1, \dots,w_{t-1}\right),
+$$
+
+where $w_t$ is the $t^\textrm{th}$ word in the sequence $W={w_1, \dots, w_T}$
+\cite{bengio_neural_2003}. Concisely, Bengio \textit{et al.} summarize their proposed method for modelling language using the following numbered list of steps:
+
+\begin{displayquote}
+\begin{singlespace}
+\begin{enumerate}
+\item associate with each word in the vocabulary a distributed \textit{word feature vector} (a real-valued vector in $\mathbb{R}^m$),
+\item express the joint \textit{probability function} of word sequences in terms of the feature vectors of these words in the sequence, and
+\item learn simultaneously the \textit{word feature vectors} and the parameters of that \textit{probability function}.\cite{bengio_neural_2003}
+
+\end{enumerate}
+\end{singlespace}
+\end{displayquote}
+
+While research on neural language models, particularly using \textsc{rnn}s, continued in the years following Bengio \textit{et al.}'s introduction of the concept, it would be the introduction of self-attention and the transformer architecture that would result in huge gains in predictive performance and reignite a field \cite{merity_analysis_2018, aiayn}. While originally trained on a neural machine translation task, transformers would later be employed to model language in a 2018 white paper by OpenAI, inc. introducing a method named \textsc{gpt}. \textsc{gpt} models language in a similar manner to that proposed by Bengio \textit{et al.}, conditioning the probability of the next member of the sequence given all previous ones. The following year, researchers at Google's \textsc{ai} language group would release \textsc{bert}, a language model that diverges from Bengio \textit{et al.}'s ``causal'' approach \cite{devlin_bert_2019}. Instead, \textsc{bert} infers masked regions of sequences given \textit{all} other tokens in the sequence. This variety of language model is referred to as a ``masked language model'' (\textsc{mlm}).
+
+\begin{figure}[b!]
+  \centering 
+  \includegraphics[width=\linewidth]{figures/pllm_params.pdf}
+  \caption[Number of parameters in language models over time.]{\textsf{\textbf{Number of parameters in language models over time.}} The number of model parameters (y-axis, log scale) found in \textsc{llm}s as a function of their release date (x-axis). Round, blue markers indicate natural language models with open-source architectures. Red, square markers indicate natural language models whose architecture is closed-source. Parameter counts in these cases are difficult to verify and are either reported by the model's authors or otherwise estimated. Yellow, diamond markers report parameter counts of protein language models. The names of some notable models are included above their markers. Models included in this figure were released between 2018 and 2024. }
+  \label{fig:pllm_params}
+\end{figure}
+
+Rather than sequences of natural language, protein language models (p\textsc{llm}s) apply the idea of neural language models to sequences of amino acids of which proteins are made-up. Early seminal work in modelling protein sequences by next-residue prediction include the UniRep and Pro\textsc{se} method \cite{alley_unified_2019, bepler_learning_2019, bepler_learning_2021}. Both methods are based on \textsc{lstm}s, as was common for contemporaneous language models \cite{merity_analysis_2018}. The stated utility of these methods is primarily the generation of useful vector representation of proteins. As discussed at length in section \ref{sec:ml_for_ppi}, machine learning methods thus far have relied on various methods to generate fixed-length features for protein sequence with mixed-results. Prior to p\textsc{llm}s, these methods often relied on heuristics that effectively produced a hash or signature of proteins, or learned embeddings which were often limited due to compromises intrinsic to the \textsc{rnn} or \textsc{cnn} architectures.
+
+In the years that would follow the release of \textsc{gpt} and \textsc{bert}, attention-based language models --- of natural language and protein sequences alike --- would balloon in parameter size (Figure \ref{fig:pllm_params}). This would lead to the \textit{terme de l'art} ``large language model'' or \textsc{llm} in reference to the scale of the number of parameters. Much like the \textit{deep} in ``deep learning'' or \textit{big} of ``big data'', \textit{large} is a relative qualifier whose definition in absolute terms is murky at best and rapidly changing with developments in the field.
+
+A variety of attention-based p\textsc{llm} models would be released by a number of groups in rapid succession between 2022 and today \cite{brandes_proteinbert_2022, elnaggar_prottrans_2022, lin_evolutionary-scale_2023, elnagger_ankh_2023, liu_protein-protein_2023, lv_prollama_2024, foloba_mulan_2024, hayes_simulating_2025}. When used as part of \textsc{ppi} inference models, these vector representations of proteins generated by these p\textsc{llm}s have resulted in great improvements in reported predictive performance. One of the earliest methods to use p\textsc{llm} embeddings for \textsc{ppi} inference is the \textsc{d-script} method, which made use of the Pro\textsc{se} language \cite{sledzieski_d-script_2021, bepler_learning_2021}. \textsc{d-script} computes a ``broadcast matrix'' from the protein embeddings of the proteins whose interaction status is being inferred. Using convolutional and pooling layers, a contact map between the two proteins is inferred as well as the probability of interaction. Kang \textit{et al.}'s \textsc{aftgan} method uses embeddings from the \textsc{esm-1b} p\textsc{llm} to generate features for proteins in a graph of \textsc{ppi} interactions \cite{kang_aftgan_2023}. A graphical attention network is then used to learn \textsc{ppi}-specific features, before a fully-connected layer is used to infer interaction status \cite{kang_aftgan_2023}. Geometric learning is once more paired with p\textsc{llm}'s in work conducted by Li and Liu and their MuToN method. Unlike \textsc{aftgan}, MuToN uses attention-based message passing to learn structural features from the three-dimensional structure of the protein in question. MuToN uses a pre-trained p\textsc{llm} to obtain embeddings of each residue in the protein as part of the features used to train the message passing network.
+
+Other p\textsc{llm}-based methods use more conventional approaches to \textsc{ppi} inference. For instance, Zhou \textit{et al.} simply compute the Hadamard product of protein vectors generated by \textsc{esm-1b} and input the result to a four-layer fully-connected neural network which infers the interaction status \cite{zhou_pre-trained_2023}. Liu \textit{et al.} input both protein sequences directly into a language model, delimited by a special ``separation'' token  \cite{liu_protein-protein_2023}. Unlike the other p\textsc{llm}-based \textsc{ppi} inference models here, however, Liu \textit{et al.} train their own p\textsc{llm} (\textsc{mp-bert}) from scratch. Ko \textit{et al.} developed \textsc{t}u\textsc{na}, which uses features from \textsc{esm2-150m} as input to a twin transformer-based neural network \cite{ko_tuna_2024}. A final neural Gaussian process layer is used to predict uncertainty and provide interval estimates \cite{ko_tuna_2024, rasmussen_gaussian_2005}.
+
+\section*{The Issue of Generalization in PPI Inference Models}
+\label{sec:ppi_generalization}
+\addcontentsline{toc}{section}{The Issue of Generalization in \textsc{ppi} Inference Models}
+
+In a 2012 letter to \textit{Nature Methods}, Park and Marcotte sounded the alarm about a pervasive source of data leakage among methods which purport to make accurate inferences on paired biological data such protein-protein or protein-drug interactions \cite{park_marcotte}. Data leakage occurs when data or information from the testing set appears in the training set \cite{Kapoor_Narayanan_2023}. The implication being that the cross-validation being performed is invalidated by the lack of independence between the training and testing datasets \cite{kohavi_study_1995, stone_cross-validatory_1974}.
+
+This oversight in the preparation of evaluation datasets had caused methods to appear as they had made accurate predictions of the interaction status of protein pairs, but instead had gravely overfitted to the training set and were incapable of generalizing to real-world use-cases. So severe was this masking that models which were evaluated under the flawed scheme which appeared to achieve \textsc{auroc} scores as high as 0.82±0.01 were in reality scoring 0.58±0.03 when evaluated on a corrected dataset \cite{park_marcotte}. The collapse of metrics to near-random levels was consistent across seven models tested, all representative of methodologies common to the time. 
+
+As described in Section \ref{sec:ppi_methods}, significant changes in the adopted methodologies for \textsc{ppi} inference between when Park and Marcotte published their warning in 2012 and today. The methods tested had largely been superseded by new ones based on deep learning (Section \ref{subsec:dl_for_ppi}), each purporting to having achieved ever more accurate testing scores. A study in 2024 found, however, that leading methods failed to correct for data leakage in precisely the same way Park and Marcotte first described \cite{black_box}. When re-evaluated on a corrected dataset, the familiar collapse of testing metrics to near-random levels is replicated once more. 
+
+Notable exceptions among methods of this era are \textsc{rapppid} and \textsc{intrepppid}, which were developed with a focus on generalization and minimizing data leakage during evaluation \cite{rapppid, intrepppid}. Both methods far out-performed their contemporaries on datasets which control for data leakage as result.
+
+Around the same time as p\textsc{llm} adoption for \textsc{ppi} inference grew, so did awareness of the challenges that Park and Marcotte first described. This resulted in these methods increasingly adopting stricter evaluation datasets which control for data leakage \cite{ko_tuna_2024, zhou_pre-trained_2023}. The adoption of pre-trained p\textsc{llm}s, however, presented a new potential source of data leakage. p\textsc{llm}s commonly used for \textsc{ppi} inference are typically trained on datasets that are exhaustive and are representative of all known protein sequences. The extent and nature of the data leakage caused by the incorporation of pre-trained p\textsc{llm}s in \textsc{ppi} inference models is explored in length by a study of which I am an author and whose text is reproduced in Chapter \ref{chap:plm} \cite{szymborski_flaw_2025}. In that same study, I demonstrate that current \textsc{ppi} inference models, including those which do not incorporate p\textsc{llm}s, fail to generalize in multiple practical real-world application. When evaluated on a dataset of protein interactions between proteins which originate from the \textsc{sars-c}o\textsc{v-2} virus and human proteins, all \textsc{ppi} inference models tested failed to make accurate predictions, obtaining scores which are consistent with random classifiers \cite{szymborski_flaw_2025}. Likewise, when faced with pairs comprised of sequences with small mutations, the inferred probability of interaction computed by models had no correlation with their true changes in binding affinity \cite{szymborski_flaw_2025}. Together, these results indicate that many challenges remain for \textsc{ppi} inference, particularly with respect to their ability to generalize.

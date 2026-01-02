@@ -189,7 +189,7 @@ the degree of \thesisdegree. \par}\vspace{1.5cm}
     % Even pages (left pages)
     \fancyhead[LE]{\thepage}
     %\fancyhead[RE]{\nouppercase{\leftmark}}
-    \fancyhead[RE]{J. Szymborski}
+    \fancyhead[RE]{Y. Zinati}
   \else
     % For oneside layout
     \fancyhead[L]{\nouppercase{\leftmark}}

@@ -39,20 +39,89 @@ The final result is a model which, achieved then-state-of-the-art accuracy on ou
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
 
-\textbf{Motivation:} Computational methods for the prediction of protein–protein interactions (\textsc{ppi}s), while important tools for researchers, are plagued by challenges in generalizing to unseen proteins. Datasets used for modelling protein-protein predictions are particularly predisposed to information leakage and sampling biases. \\
-\textbf{Results:} In this study, we introduce \textsc{rapppid}, a method for the Regularized Automatic Prediction of Protein–Protein Interactions using Deep Learning. \textsc{rapppid} is a twin Averaged Weight-Dropped Long Short-Term memory network which employs multiple regularization methods during training time to learn generalized weights. Testing on stringent interaction datasets composed of proteins not seen during training, \textsc{rapppid} outperforms state-of-the-art methods. Further experiments show that \textsc{rapppid}’s performance holds regardless of the particular proteins in the testing set and its performance is higher for experimentally supported edges. This study serves to demonstrate that appropriate regularization is an important component of overcoming the challenges of creating models for \textsc{ppi} prediction that generalize to unseen proteins. Additionally, as part of this study, we provide datasets corresponding to several data splits of various strictness, in order to facilitate assessment of \textsc{ppi} reconstruction methods by others in the future. \\
-\textbf{Availability:} Code and datasets are freely available at \href{https://github.com/jszym/rapppid}{https://github.com/jszym/rapppid} and \href{https://zenodo.org}{Zenodo.org}.\\
-\textbf{Contact:} \href{amin.emad@mcgill.ca}{amin.emad@mcgill.ca}\\
-\textbf{Supplementary information:} Supplementary data are available at \textit{Bioinformatics}
-online.
+We introduce GRouNdGAN, a gene regulatory network (GRN)-guided reference-based causal implicit generative model for simulating single-cell RNA-seq data, in silico perturbation experiments, and benchmarking GRN inference methods. Through the imposition of a user-defined GRN in its architecture, GRouNdGAN simulates steady-state and transient-state single-cell datasets where genes are causally expressed under the control of their regulating transcription factors (TFs). Training on six experimental reference datasets, we show that our model captures non-linear TF-gene dependencies and preserves gene identities, cell trajectories, pseudo-time ordering, and technical and biological noise, with no user manipulation and only implicit parameterization. GRouNdGAN can synthesize cells under new conditions to perform in silico TF knockout experiments. Benchmarking various GRN inference algorithms reveals that GRouNdGAN effectively bridges the existing gap between simulated and biological data benchmarks of GRN inference algorithms, providing gold standard ground truth GRNs and realistic cells corresponding to the biological system of interest.
 
-\section{Introduction}
-Interactions of proteins with other proteins and their surroundings are fundamental to the internal machinery of a cell. These interactions are of particular interest, as it is essential for a bevy of diverse cellular functions: from organizing cell structure to generating metabolic energy (Huttlin \textit{et al.}, 2017). These interactions are typically validated with a high degree of confidence by the many biological assays commonly employed today, each with their own specific advantages and challenges (Snider \textit{et al}., 2015). Assays for validating protein interactions range from the venerable yeast two hybrid (Vidal and Fields, 2014) which researchers have relied on for the past decades, to more recent Biotin-related techniques such as Bio\textsc{id-ms} (Roux \textit{et al.}, 2012). A characteristic of all these assays, however, is that they are costly in terms of time, labour and materials. A further complication of protein–protein interaction (\textsc{ppi}) studies are the multiple sources of biases that plague small and large datasets alike. Smaller datasets are particularly susceptible to `bait bias', whereby the dataset is biased by the limited and often non-random sampling of proteins studied. The proteins chosen by researchers for interaction studies often skew towards well-studied and well-annotated proteins. Larger datasets, in contrast, are often susceptible to so-called `prey bias', whereby biases in detected interactions begin to reveal themselves; be they non-specific interactions or the inability of a methodology to detect the interaction between certain proteins (Gillis \textit{et al.}, 2014). Computational approaches to predict \textsc{ppi}s are therefore useful to help towards reducing the number of costly experiments researchers are required to perform. Researchers have deployed many diverse approaches to solve the task of protein sequence-based interaction prediction. Most sequence-based methods rely on the understanding that co-evolution and co-expression of proteins are both tied to protein interaction and sequence similarity (Cong \textit{et al.}, 2019; Jansen, 2003). Some methods rely on substitution matrices for sequence alignment such as \textsc{blosum} or \textsc{pam} in combination with machine learning methods to predict interactions (Ding \textit{et al.}, 2016; Henikoff and Henikoff, 1992). Other methods utilize support vector machines (\textsc{svm}s) with kernels specifically designed for use with protein sequences (Ben-Hur and Noble, 2005). Other statistical methods including na\"ive Bayes and $k$-nearest neighbours have been used to predict protein interactions from protein sequences (Browne \textit{et al.}, 2007). Some of the most successful \textsc{ppi} prediction methods belong to the family of methods that rely on novel substring search algorithms (Dick \textit{et al.}, 2020; Li and Ilie, 2017), operating similarly to sequence search tools like \textsc{blast} (Altschul \textit{et al.}, 1990). Deep learning models have also been designed for predicting protein interactions (Chen \textit{et al.}, 2019). These deep approaches commonly either learn wide networks or share weights in a twin design; the latter being shown to be both more efficient and effective (Richoux \textit{et al.}, 2019). Such methods, however, face many challenges due to the nature of the data on which they train. Arguably, the most pervasive of which is the ability of models to generalize and predict the interactions of proteins previously unseen by the prediction method. To ensure such generalizability, careful cross-validation techniques must be used to avoid data leakage. While the necessity of appropriate cross-validation techniques is not unique to this area of research, the application of these networks (\textit{e.g.}: \textsc{ppi}s, transcriptional regulatory networks) to obtain biological insights makes it particularly important to address this challenge in the task of biological network reconstruction (Park and Marcotte, 2012; Tabe-Bordbar \textit{et al.}, 2018). For \textsc{ppi} reconstruction, developing generalizable models prove particularly difficult. The nature of \textsc{ppi} networks makes it easy to create datasets with testing/training splits which leak information, resulting in inflated performance metrics that cannot properly assess the generalizability of these methods. In particular, simply splitting interaction datasets into training and testing sets using random selection of edges results in the construction of testing datasets that are almost entirely comprised of interactions between proteins found in the training set. Indeed, Park and Marcotte (2012) found that all the \textsc{ppi} prediction models they surveyed were tested on such na\"ively constructed datasets. The surveyed models, which had optimized their performance on these na\"ive datasets that suffered from a large degree of information leakage, were also found to incur precipitous falls in their prediction metrics when tested on datasets where no proteins in the testing set occurred in the training dataset. When faced with obstacles in the construction of generalizable models, strategic and targeted applications of regularization at training time can significantly improve results. This is particularly relevant in the context of deep learning methods which pay for their expressiveness by learning an outsized number of parameters. Among the most common regularization techniques used in the deep learning context is `dropout' (Srivastava \textit{et al.}, 2014). Applying dropout to a layer consists of randomly zeroing the activations of the previous network with some probability $P$. However, choice of regularization techniques must be selected with care and in accordance with the architecture. For example, applying dropout directly to the hidden state of recurrent neural networks (\textsc{rnn}s) (Lipton \textit{et al.}, 2015), an architecture which lends itself naturally to sequential inputs such as amino acid chains, impairs its ability to retain its memory of previous inputs (Zaremba \textit{et al.}, 2015). Applying regularization to \textsc{rnn}s requires additional considerations. Recent work by Merity \textit{et al.} (2017) has demonstrated that randomly zeroing the weights of \textsc{rnn}s (`dropconnect') (Wan \textit{et al.}, 2013) rather than their hidden state activation (`dropout') effectively reduces testing error. Merity \textit{et al.} describe applying dropout to the embedding layer as well as using an averaged optimizer (non-monotonically triggered averaged stochastic gradient descent [\textsc{nt-asgd}]) as part of a series of regularization techniques dubbed Averaged Weight-Dropped Long Short-Term memory (\textsc{awd-lstm}). The regularization techniques used by \textsc{awd-lstm} models are specifically selected for their suitability in the context of training \textsc{rnn}s. To meet the generalization challenges posed by \textsc{ppi} prediction tasks, we developed a method for the Regularized Automatic Prediction of Protein–Protein Interactions using Deep Learning, or \textsc{rapppid}. \textsc{rapppid} addresses the challenges in creating generalized models for \textsc{ppi} prediction by adopting (with modification) the \textsc{awd-lstm}, a regularized \textsc{rnn} training routine (Merity \textit{et al.}, 2017). In this study, we showed that \textsc{rapppid} outperforms state-of-the-art \textsc{ppi} prediction methods on strict validation datasets constructed in accordance with guidelines set out by Park and Marcotte (2012). Additionally, we performed various analyses and applied \textsc{rapppid} to different use-cases to show case the effect of different components of its architecture and training on its performance and its applicability to different real-world scenarios. It is worth mentioning that in addition to \textsc{rapppid}'s code, we have made various pre-processed datasets freely available in the hope that they facilitate the evaluation of protein interaction prediction methods on datasets that both mitigate information leakage and are appropriately large for deep learning applications.
 
-\section{Materials and methods}
-\label{sec:rapppid:methods}
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
 
-\subsection[\textsc{ppi} prediction using \textsc{awd-lstm} twin networks]{PPI prediction using AWD-LSTM twin networks}
+Unraveling gene regulatory interactions, often represented as a gene regulatory network (GRN), plays a crucial role in studying biological processes under different conditions\textsuperscript{1,2,3}, simulating knockdown and knockout experiments\textsuperscript{4,5}, and identifying therapeutic drug targets\textsuperscript{6,7}. Many algorithms have been proposed for GRN reconstruction using bulk or single-cell RNA sequencing data (scRNA-seq), alone\textsuperscript{8,9,10,11,12,13,14} or with other modalities\textsuperscript{15,16,17,18}. While these advances have provided great biological insights, evaluating the performance of GRN Inference algorithms remains challenging\textsuperscript{19,20} due to the lack of reliable ground truth for the biological processes under study. Existing evaluation approaches often resort to curated databases\textsuperscript{21,22,23}. However, the regulatory interactions in these databases are aggregated from a wide range of datasets and are not specific to a biological system, making them not ideal benchmarks due to context specificity of gene regulation. Another strategy is to verify regulatory interactions by conducting perturbation experiments on the system under study\textsuperscript{20}. However, this approach is tedious, lengthy, and expensive. Another approach is to employ scRNA-seq simulators. Despite great progress in this domain, most simulators lack the essential properties for this task, such as the preservation of gene identities and simulation based on a user-provided ground truth GRN. For example, scGAN\textsuperscript{24}, cscGAN\textsuperscript{24}, scDESIGN2\textsuperscript{25}, and SPARSIM\textsuperscript{26} capture inter-gene correlations in their datasets. However, since they do not explicitly impose a known GRN (that can act as the ground truth), they are not suitable for benchmarking GRN inference methods.
+
+A small subset of simulators (e.g., BoolODE\textsuperscript{19}, SERGIO\textsuperscript{4}, and GeneNetWeaver (GNW)\textsuperscript{27}) explicitly incorporate GRNs capturing transcription factor (TF)-gene dynamics. GNW was used to generate benchmarks for Dialogue for Reverse Engineering Assessment and Methods (DREAM) challenges\textsuperscript{27,28,29}. However, being a bulk RNA-seq tool, its simulated datasets do not replicate the distribution of experimental scRNA-seq datasets nor exhibit their statistical properties, despite attempts to adapt it for this purpose by externally inducing dropout events\textsuperscript{10,30}. SERGIO and BoolODE were designed to simulate scRNA-seq data using stochastic differential equations (SDEs)\textsuperscript{4,19} and have been used to benchmark a variety of GRN inference methods. However, often a mismatch between the benchmarking results based on experimental and their simulated data have been reported, which may be attributed to differences between the simulated and experimental datasets. For example, in the BEELINE study (using BoolODE), some of the top ranking methods on simulated benchmarks reported near random performance on curated and experimental benchmarks\textsuperscript{19}. Both simulators enable the user to simulate more realistic datasets by carefully selecting the values of the SDE parameters. Moreover, using a reference dataset, SERGIO allows fine tuning the added technical noise in an iterative procedure until the generated and reference datasets are matched\textsuperscript{4}. While these steps can help improve the resemblance to real datasets, they are often suboptimal and pose an undue burden on the user: for example, in SERGIO, the user must evaluate the similarity based on five different statistics and change three parameters iteratively until desired resemblance is achieved (which itself can be subjective). In addition, since the GRN is imposed on the “clean” dataset, but technical noise is added afterwards, this step may change the encoded causal relationships in a non-trivial way (which may explain why the performance of GRN inference methods dropped close to random when applied to the noisy dataset\textsuperscript{4}). Furthermore, SERGIO and BoolODE do not readily preserve gene identities and make simplifying assumptions regarding cooperative regulation (see Discussion). These shortcomings demonstrate the need for simulators capable of generating realistic scRNA-seq data that retain the regulatory dynamics specified by a user-defined GRN. Importantly, with the growing interest in causal inference, simulators that impose causal GRNs are of great need.
+
+GRouNdGAN (\underline{GR}N-guided in silic\underline{o} sim\underline{u}lation of single-cell R\underline{N}A-seq \underline{d}ata using Causal generative \underline{a}dversarial \underline{n}etworks) is a causal implicit generative model for reference-based GRN-guided simulation of scRNA-seq data inspired by CausalGAN\textsuperscript{31}. Given an input GRN and a reference scRNA-seq dataset, it can be trained to generate simulated data that is both indistinguishable from the reference data and faithful to the causal regulatory interactions of the input GRN. Unlike model-based simulators that rely on simplifying assumptions regarding co-regulatory patterns, in GRouNdGAN these patterns are \textit{learned} through complex functions. This allows it not to compromise on the underlying complexity of the system and to model elaborate regulatory dynamics. GRouNdGAN provides state-of-the-art performance in realistic scRNA-seq data generation, while preserving gene identities, causal gene regulatory interactions, and cellular dynamics (e.g., lineage trajectory and pseudo-time ordering). This is achieved through implicit parameterization without the need for manual fine-tuning. Using GRouNdGAN, we benchmark eight GRN inference methods and find the results to be aligned with BEELINE’s experimental results\textsuperscript{19}. Furthermore, the causal structure of GRouNdGAN enables it to be used for sampling from both interventional and observational data distributions, enabling in silico knockout experiments.
+
+\section*{Results}
+\label{sec:groundgan:results}
+\addcontentsline{toc}{section}{Results}
+
+\subsection*{GRouNdGAN generates scRNA-seq data using causal generative adversarial networks}
+\addcontentsline{toc}{subsection}{GRouNdGAN generates scRNA-seq data using causal generative adversarial networks}
+
+GRouNdGAN is a deep learning model that generates scRNA-seq data while imposing a user-defined causal GRN to describe the regulatory relationships of the genes and TFs. Its architecture builds on the causal generative adversarial network\textsuperscript{31} and includes a causal controller, target generators, a critic, a labeler and an anti-labeler (Fig. \ref{fig:groundgan:fig1}). Training includes two steps. First, the causal controller that generates TF expression values is pre-trained (Fig. \ref{fig:groundgan:fig1}B) as the generator of a Wasserstein GAN (WGAN)\textsuperscript{32} with gradient penalty (WGAN-GP) (Methods). In the second step (Fig. \ref{fig:groundgan:fig1}C), TF expression values (generated by the pre-trained causal controller) and randomly generated noise are provided as input to the target generators that produce target genes’ expressions, while incorporating the TF-gene relationships of the input GRN. To achieve this, as input, each target generator only accepts a noise value and the generated expression values of TFs that causally regulate it (Fig. \ref{fig:groundgan:fig1}C, Methods). The generated expression of genes and TFs are then fed to a library-size normalization (LSN) layer\textsuperscript{24}.
+
+
+\begin{figure}[htbp]%figure1
+	\centerline{\includegraphics[width=0.8\textwidth]{figures/groundgan/groundgan_fig1.png}}
+	\caption[Architecture and training procedure of GRouNdGAN.]{\textsf{\textbf{Architecture and training procedure of GRouNdGAN.}} \textbf{A} The flowchart representing the steps of the training procedure and the overall architecture of the model in each step. Subscripts G, R, and E represent generated, real, and estimated, respectively. \textbf{B} A WGAN-GP is pre-trained to generate realistic simulated cells using the reference (real) training set. \textbf{C} The LSN layer of the generator of the trained WGAN-GP (panel \textbf{B}) is removed, its weights are frozen, and is used as the causal controller to generate unnormalized TF expression values (expression of target genes generated by the causal controller are discarded). These TF expression values along with a noise vector are provided as input to the target generators, following the provided causal GRN. The generated gene and TF expression values are reorganized and passed through the LSN layer. The normalized simulated expression vectors and experimental reference data (the same training set as \textbf{B} are then passed to the critic to estimate Wasserstein distance between the reference and the generated data distributions. The anti-labeler estimates TF values based on generated target gene expressions. The labeler performs a similar task, but in addition to receiving generated values, it also utilizes target gene expression values from the reference data. Labeler and anti-labeler ensure that the causal GRN is incorporated by the target generators. Details of the model are provided in Methods.}\label{fig:groundgan:fig1}
+\end{figure}
+
+The two steps of training above are performed based on the same reference experimental scRNA-seq training dataset. The goal of the first step (pre-training, Fig. \ref{fig:groundgan:fig1}B) is to train the causal controller to learn scRNA-seq data distribution and generate realistic data, irrespective of any GRN. The GRN edges between a set of regulators (e.g., TFs) and their targets are imposed in the second step of training (Fig. \ref{fig:groundgan:fig1}C). To achieve this, in the second step of training, only the expression of regulators (TFs) outputted by the causal controller are used and its output of target genes’ expressions are discarded and instead are re-generated using the target generator neural networks in Fig. \ref{fig:groundgan:fig1}C to enable imposition of causal relationships.
+
+The critic’s role (in both steps of training) is to quantify the Wasserstein distance (Supplementary Notes) between the reference and simulated data. The target generators are trained in an adversarial manner to generate realistic datapoints indistinguishable from the reference datapoints by the critic. The labeler/anti-labeler estimate the TF expression values \textit{only} from the target genes’ expressions to ensure that the generated causal TF-gene dependencies are encoded. The combination of the model architecture (in that each target generator only receives a noise value and the simulated expression of its regulating TFs in the GRN) and the labeler/anti-labeler ensure that the GRN edges are causally imposed in the simulated data. Details are provided in Methods, the architectural choices in Supplementary Tables 1 and 2, and an ablation study in Supplementary Notes and Supplementary Table 3. %TODO Suppl Table, Notes, and Tables 1, 2
+
+\subsection*{GRouNdGAN generates realistic scRNA-seq data}
+\addcontentsline{toc}{subsection}{GRouNdGAN generates realistic scRNA-seq data}
+
+We first trained GRouNdGAN on three datasets (results for three additional datasets will be discussed later). The first dataset contained scRNA-seq profiles of 68,579 human peripheral blood mononuclear cells (PBMCs) from 10x Genomics\textsuperscript{33} corresponding to eleven cell types (“PBMC-All”). We formed a dataset of the most common cell type in the PBMC-All dataset containing 20773 CD8+ Cytotoxic T-cells (“PBMC-CTL”). Additionally, we obtained the scRNA-seq (MARS-seq) profile of 2730 cells corresponding to differentiation of hematopoietic stem cells to different lineages from mouse bone marrow\textsuperscript{34} (“BoneMarrow”). We used GRNBoost\textsuperscript{28} to identify fifteen TFs for each gene to form the input GRN. Note that these identified interactions may contain both spurious correlations and causal relationships in the reference dataset. However, when they are used as input to GRouNdGAN, they will correspond to causal interactions in the \textit{simulated} dataset (see Kocaoglu et al. for theoretical details of causality in this architecture\textsuperscript{31}). For each dataset, we trained GRouNdGAN on a randomly selected training set and evaluated on a held-out test set (Methods, Supplementary Data 1 – Sheets 2 and 3). Figure \ref{fig:groundgan:fig2}A, B and Supplementary Figs. 1–3 show the t-SNE plots of reference and simulated cells, qualitatively revealing their similarity. %TODO These Figures and Supplementary Figures
+
+\begin{figure}[htbp]%figure2
+	\centerline{\includegraphics[width=0.8\textwidth]{figures/groundgan/groundgan_fig2.png}}
+	\caption[Performance of GRouNdGAN in generating realistic scRNA-seq data.]{\textsf{\textbf{Performance of GRouNdGAN in generating realistic scRNA-seq data.}} All plots correspond to 1000 real (experimental) held-out test cells and 1000 simulated cells. Each gene in the imposed GRN of GRouNdGAN is regulated by 15 TFs (identified using GRNBoost2 from the experimental training set). Panels \textbf{A} and \textbf{B} depict the t-SNE plots of real (blue) and simulated (red) cells for PBMC-CTL and PBMC-All, respectively, while panels \textbf{C} and \textbf{D} also show their iLISI distributions. \textbf{E} The ROC curve of a Random Forest classifier in distinguishing between simulated and real cells. \textbf{F} The distribution of adjusted $p$-values corresponding to the TF perturbation study on the PBMC-CTL dataset. The p-values are obtained using two-sided Wilcoxon signed ranked tests and are adjusted for multiple hypotheses following the Benjamini–Hochberg procedure. Source data are provided as a Source Data file.}\label{fig:groundgan:fig2}
+\end{figure}
+
+We quantitatively assessed the resemblance using Euclidean distance, Cosine distance, maximum mean discrepancy (MMD)\textsuperscript{35}, mean integration local inverse Simpson’s index (miLISI)\textsuperscript{36}, and the area under the receiver operating characteristic curve (AUROC) of a random forests (RF) classifier distinguishing simulated and experimental cells (Methods). As a “control” (and to enable calibration of these scores), we also calculated these metrics using two halves of the reference test set (corresponding to real cells). Table \ref{tab:table1} shows the performance of GRouNdGAN, control, and three state-of-the-art simulators for the PBMC-CTL dataset (see Supplementary Data 1 – Sheet 2 for training set performance). We did not include BoolODE in these tables since it is a reference-free simulator and is not designed to match a particular reference dataset. We tried generating samples using SERGIO to match the PBMC-CTL dataset, but the simulated dataset did not show high resemblance to the PBMC-CTL dataset (see Supplementary Notes, Supplementary Tables 4 and 5 and Supplementary Fig. 4). However, we decided not to include these results in Table \ref{tab:table1}, since SERGIO relies on the user’s judgement for distribution matching and the quality of the final simulated dataset is user dependent. Instead, we only included reference-based simulators that automatically generate scRNA-seq data resembling experimental data, in order to assess data quality systematically and fairly. %TODO Add tables and Figs
+
+\begin{table}[!t]
+	\caption[Performance of different simulators in generating realistic scRNA-seq data using the PBMC-CTL dataset]{\textsf{\textbf{Performance of different simulators in generating realistic scRNA-seq data using the PBMC-CTL dataset}} \label{tab:table1}}
+	\begin{tabular}{@{}lccccc@{}}
+		\toprule
+		\textbf{Simulator} & \textbf{Cosine distance} & \textbf{Euclidean distance} & \textbf{MMD} & \textbf{RF AUROC} & \textbf{miLISI} \\
+		\midrule
+		GRouNdGAN     & \textbf{0.00057} & \textbf{182} & \textbf{0.026} & \textbf{0.54} & \textbf{1.891} \\
+		scGAN\textsuperscript{24}        & 0.00095 & 222 & 0.031 & 0.59 & 1.888 \\
+		scDESIGN2\textsuperscript{25}    & 0.00100 & 229 & 0.065 & 0.76 & 1.736 \\
+		SPARsim\textsuperscript{26}      & 0.00104 & 235 & 0.309 & 0.95 & 1.625 \\
+		Control        & 0.00019 & 99  & 0.012 & 0.50 & 1.909 \\
+		\bottomrule
+	\end{tabular}
+	\addlinespace[0.4em]
+    {\footnotesize The metrics are calculated between a simulated dataset of 1000 cells and the held-out test set of 1000 real cells (see Supplementary Data 1 – Sheet 2 for training set performance). Each gene in the imposed GRN of GRouNdGAN is regulated by 15 TFs (constructed using GRNBoost2 from the experimental training set). For the first three metrics, a value closer to zero is preferred, for RF AUROC a value closer to 0.5 is preferred, and for miLISI a value closer to 2 is preferred. For the first two metrics, the values correspond to the distance of the mean centroids of the real and simulated cells. The RF AUROC of control corresponds to perfect performance (of a random classifier). The other control metrics are calculated using the two halves of the real test dataset. Best performance values (excluding control) are in bold-face.}
+\end{table}
+
+
+\begin{table}[!t]
+	\caption[Performance of different simulators in generating realistic scRNA-seq data using the PBMC-All dataset]{\textsf{\textbf{Performance of different simulators in generating realistic scRNA-seq data using the PBMC-All dataset}} \label{tab:table2}}
+	\resizebox{\linewidth}{!}{%	
+	\begin{tabular}{@{}lcccccc@{}}
+		\toprule
+		\textbf{Simulator} & \textbf{Cell cluster labels\\/ratios provided as input} & \textbf{Cosine distance} & \textbf{Euclidean distance} & \textbf{MMD} & \textbf{RF AUROC} & \textbf{miLISI} \\
+		\midrule
+		GRouNdGAN & No  & 0.00028 & \textbf{168} & \textbf{0.017} & \textbf{0.53} & 1.90 \\
+		cscGAN\textsuperscript{24} & Yes & 0.00025 & 242 & 0.030 & 0.56 & \textbf{1.91} \\
+		cWGAN & Yes & 0.00053 & 239 & 0.027 & 0.57 & 1.89 \\
+		scGAN\textsuperscript{24} & No  & 0.00081 & 300 & 0.035 & 0.58 & 1.90 \\
+		scDESIGN2\textsuperscript{25} & Yes & 0.00032 & 181 & 0.046 & 0.86 & 1.81 \\
+		scDESIGN2\textsuperscript{25} & No  & 0.00057 & 256 & 0.124 & 0.91 & 1.53 \\
+		SPARsim\textsuperscript{26} & Yes & \textbf{0.00019} & \textbf{158} & 0.287 & 0.96 & 1.66 \\
+		SPARsim\textsuperscript{26} & No  & 0.00035 & 245 & 0.307 & 0.96 & 1.39 \\
+		Positive control & NA & 0.00022 & 116 & 0.012 & 0.50 & 1.91 \\
+		\bottomrule
+	\end{tabular}}
+	\addlinespace[0.4em]
+    {\footnotesize Baseline models that enable utilization of cell cluster labels or ratios are run with and without this information. The metrics are calculated between a simulated dataset of 1000 cells and the held-out test set of 1000 real cells. Each gene in the imposed GRN of GRouNdGAN is regulated by 15 TFs (constructed using GRNBoost2 from the experimental training set). For the first three metrics, a value closer to zero is preferred, for RF AUROC a value closer to 0.5 is preferred, and for miLISI a value closer to 2 is preferred. For the first two metrics, the values correspond to the distance of the mean centroids of the real and simulated cells. The RF AUROC of control corresponds to perfect performance (of a random classifier). The other control metrics are calculated using the two halves of the real test dataset. Best performance values (excluding control) are in bold-face.}
+\end{table}
+
 
 \textsc{rapppid} is first trained by considering pairs of amino acid sequences of proteins along with a label indicating whether they do or do not interact. The amino acid sequences are first tokenized using the Sentencepiece algorithm (Kudo and Richardson, 2018), which allows for better recognition of common groupings of amino acid residues that make up the secondary structure and motifs of proteins. Fixed-length latent vector representations of the token sequences of both proteins are then computed by twin neural networks (Bromley \textit{et al.}, 1993), forming the encoder of \textsc{rapppid}’s pipeline. These twin networks have shared architectures and weights and are trained jointly. An overview of the pipeline is provided in Figure \ref{fig:rapppid:pipeline}. Each twin network consists of a two-layer bidirectional \textsc{awd-lstm} network (Merity \textit{et al.}, 2017), which takes a tokenized amino acid sequence as its input and generates a fixed-length latent vector representation as its output. \textsc{awd-lstm}s are architecturally identical to the \textsc{lstm}s (Hochreiter and Schmidhuber, 1997); however at inference time, several regularization techniques are employed while training to promote learning generalized weights. Among these regularization techniques are an averaged optimizer and dropout applied to embeddings and \textsc{lstm} weights (Athiwaratkun \textit{et al.}, 2019; Wan \textit{et al.}, 2013). Using an \textsc{awd-lstm} encoder enables \textsc{rapppid} to leverage the strong inductive biases of \textsc{lstm}s, while ensuring that the learned weights are generalized. The final hidden state of the \textsc{awd-lstm} is passed to a single fully connected layer whose output, once activated by the Mish function (Misra, 2020), is the latent representation of the amino acid sequences. The latent representations of both proteins are then concatenated and provided as inputs to the classifier network which generates an interaction probability for each protein pair. The classifier network is a two-layer fully connected network that outputs a single logit whose sigmoid activation serves as the probability of the two proteins interacting. The activated logit is then used to calculate the mean binary cross-entropy loss. Relegating the pairwise comparison of proteins to the shallower classifier network allows \textsc{rapppid} to infer protein interactions in an efficient manner. Figure \ref{fig:rapppid:pipeline} provides an overview of \textsc{rapppid}'s pipeline.
 
@@ -118,32 +187,6 @@ To establish the ability of \textsc{rapppid} to correctly predict \textsc{ppi}s 
 
 The two other methods, \textsc{pipr} and Deep\textsc{ppi}, are deep learning methods that similar to \textsc{rapppid} utilize twin networks (Chen \textit{et al.}, 2019; Richoux \textit{et al.}, 2019). \textsc{pipr} uses a residual recurrent convolutional neural network for its encoder with the goal of more effectively summarizing both local and global features. We compared \textsc{rapppid} against the best performing iteration of Deep\textsc{ppi}, whose encoder comprises of a convolutional neural network feature extractor followed by an \textsc{lstm} network. All three methods required retraining, as the available weights of these models belong to diverse datasets, all of which are either not \textsc{c2} or \textsc{c3} type, or (in the case of \textsc{sprint}) are insufficiently large for training a generalized deep learning model. Across \textsc{c1}, \textsc{c2} and \textsc{c3} testing datasets, \textsc{rapppid} achieved higher area under the receiver-operator curve (\textsc{auroc}) than all other methods tested (Table~\ref{Tab:auroc}). The margin between \textsc{rapppid} and the second highest performing method (\textsc{sprint} in all cases) was highest when performed on the stricter \textsc{c3} dataset, resulting in 24.3\% improvement. The improvement obtained by \textsc{rapppid} compared to \textsc{sprint} was lower on the \textsc{c2} dataset (3.4\%), and finally nearly equivalent on the least strict \textsc{c1} dataset. With regards to the area under the precision-recall curve (\textsc{aupr}), this trend across dataset types persisted. \textsc{rapppid}’s \textsc{aupr} was higher than all other methods for the \textsc{c3} dataset, with a margin to the second highest method of 0.094 (equivalent to a 14.6\% improvement). \textsc{rapppid}’s \textsc{aupr} score was matched by \textsc{sprint} in experiments conducted on the \textsc{c2} dataset, but outperformed Deep\textsc{ppi} and \textsc{pipr}. \textsc{sprint} achieved the highest \textsc{aupr} of all the methods in the \textsc{c1} dataset, outperforming \textsc{rapppid} with a margin of 0.009 (equivalent to a 0.9\% improvement). 
 
-\begin{table}[!t]
-	\caption[Comparison of \textsc{ppi} prediction performance on \textsc{c1}, \textsc{c2}, and \textsc{c3} datasets.]{\textbf{\textsf{Comparison of PPI prediction performance on C1, C2, and C3 datasets.}}
-    \label{tab:rapppid:auroc}} {
-    \begin{center}
-    \begin{tabular}{@{}llll@{}}\toprule 
-			Dataset & Method & Testing \textsc{auroc} & Testing \textsc{aupr}\\\midrule
-			\textsc{c1} & \textsc{rapppid} & \textbf{0.978} & 0.974\\
-			    & \textsc{sprint} & 0.977 & \textbf{0.983}\\
-			    & Deep\textsc{ppi} & 0.874 & 0.881\\
-			    & \textsc{pipr} & 0.501 & 0.405\\\midrule
-			\textsc{c2} & \textsc{rapppid} & \textbf{0.859} & \textbf{0.868}\\
-			   & \textsc{sprint}  & 0.830 & \textbf{0.868}\\
-			   & Deep\textsc{ppi} & 0.760 & 0.787\\
-			   & \textsc{pipr} & 0.507 & 0.508\\\midrule
-			\textsc{c3} & \textsc{rapppid} & \textbf{0.803} & \textbf{0.810}\\
-			   & \textsc{sprint}  & 0.646 & 0.716\\
-			   & Deep\textsc{ppi} & 0.574 & 0.590\\
-			   & \textsc{pipr} & 0.505 & 0.509\\
-			\midrule
-	\end{tabular}
-    \\\\
-    {\footnotesize Note: The testing AUROC and AUPR of four different PPI prediction methods is reported across the three different dataset types described by Park and Marcotte (Park and Marcotte, 2012). The highest value for each dataset are reported in boldface.}
-    \end{center}
-    }{}
-\end{table}
-
 While we were able to replicate results of the \textsc{pipr} model on the \textit{Saccharomyces cerevisiae} dataset published as part of the original \textsc{pipr} publication (Chen \textit{et al.}, 2019), \textsc{pipr} suffered from convergence issues during training on our \textit{H.~sapiens} \textsc{string} datasets. We suspect this is due to a variety of factors, with the large differences in dataset characteristics being the most likely cause. The number of proteins and interactions in the \textit{S. cerevisiae} dataset is far smaller than our \textsc{string} datasets. Furthermore, the \textit{S. cerevisiae} dataset selected pairs of proteins which occupy different sub-cellular compartments in order to construct negative samples; an approach found to lead to biased estimations of prediction accuracy (Ben-Hur and Noble, 2006). Taken together, these results suggest that \textsc{rapppid} outperforms alternative methods in the majority of evaluations on \textsc{c1}, \textsc{c2} and \textsc{c3} schemes and is particularly effective in the stricter and more difficult \textsc{c3} evaluation.
 
 \begin{figure*}[b!]%figure3
@@ -174,22 +217,6 @@ In spite of the challenges above, we sought to determine whether the superior pe
 \subsection[Effect of different components on \textsc{rapppid}'s performance]{Effect of different components on RAPPPID's performance}
 
 To understand \textsc{rapppid}’s performance when trained and tested on negative examples which are experimentally validated and manually curated, we created a new C3 dataset where the negative examples are provided by the Negatome database of non-interacting pairs. To combat the large class imbalance caused by the relatively few pairs of human proteins in Negatome (see Section~\ref{sec:rapppid:methods} for details), additional random pair negatives were supplemented until both positive and negative classes had an equal number of samples. After 13 epochs, \textsc{rapppid} achieved a testing \textsc{auroc} of 0.802 and a testing \textsc{aupr} of 0.799 on \textsc{c3} dataset, which is comparable to the performance of \textsc{rapppid} using randomly selected negative edges. Since \textsc{rapppid} utilizes random initialization, mini-batch sampling, and token sampling, there is some stochasticity present in its performance. First, we sought to test the effect of these stochastic components and to ensure that the specific choice of training and test sets were not responsible for the superior performance of \textsc{rapppid}. For this purpose, we ran \textsc{rapppid} twice on three additional \textsc{c3} datasets whose training, validation, and testing proteins were chosen at random (a total of six times). In each of these runs, different seeds were used to assess the effect of stochastic components of \textsc{rapppid} (Supplementary Table \ref{tab:rapppid_repeatability}). Overall, the average testing \textsc{auroc} across models trained on these additional three datasets was 0.792 (60.007). Results from these repeatability experiments illustrate that \textsc{rapppid}’s strong performance on \textsc{c3} datasets is not tied to a specific set of testing or validation proteins, nor certain weight initialization states. Next, we conducted an ablation study (Table~\ref{tab:ablation}) using the same three \textsc{c3} datasets and two runs of each variant per dataset (a total of six models per variant). Each variant substitutes one component of \textsc{rapppid}’s regularization, architecture or optimization, allowing us to quantify the difference in performance for which these components are responsible. In Table 2, `\textsc{rapppid-swa}' variant removes \textsc{swa}, `\textsc{rapppid}+Adam' replaces Ranger21 with Adam optimizer (learning rate selected by hyper-parameter tuning), `\textsc{rapppid-awd}' removes the \textsc{awd} regularization and `\textsc{rapppid}-SentencePiece’ substitutes the SentencePiece tokens with amino-acid-residue-level tokens. As can be seen in Table 2, the choice of optimizer has negligible effect on the performance. However, \textsc{swa}, \textsc{awd}, and SentencePiece tokens all contribute to the superior performance of \textsc{rapppid}, with the tokenizer having the largest contribution. One advantage that SentencePiece affords \textsc{rapppid} is the regularizing effect of random sampling tokens. Additionally, the SentencePiece tokenizer reduces the total length of sequences inputted into the tokenizer. The protein sequences on which \textsc{rapppid} is trained, while limited to 1~500 residues, are sufficiently large enough for gradients to vanish quiet substantially; a phenomenon long known to plague \textsc{rnn}s when trained on long sequences.
-
-\begin{table}[!t]
-	\caption[Results from an ablation study conducted on \textsc{rapppid}.]{\textsf{\textbf{Results from an ablation study conducted on RAPPPID.}} \label{tab:ablation}} {\begin{tabular}{@{}lllll@{}}\toprule 
-			Experiment & Test \textsc{auroc} & \textsc{auroc} Diff & Testing \textsc{apr} & \textsc{apr} Diff\\\midrule
-			\textsc{rapppid} (original) & 0.792 (±0.007) & \textsc{n/a} & 0.794 (±0.009) & \textsc{n/a}\\
-			\textsc{rapppid-swa} & 0.782 (±0.007) & -1.20\% & 0.783 (±0.007) & -1.37\%\\
-			\textsc{rapppid}+Adam & 0.791 (±0.025) & -0.100\% & 0.792 (±0.032) & -0.273\%\\
-			\textsc{rapppid-awd} & 0.762 (±0.020) & -3.70\% & 0.757 (±0.022) & -4.62\%\\
-			\textsc{rapppid}-SentencePiece & 0.749 (±0.009) & -5.37\% & 0.748 (±0.011) & -5.85\%\\
-			\textsc{rapppid}+TransfLG & 0.670 (±0.030) & -15.3\% & 0.686 (±0.040) & -13.6\%\\
-			\textsc{rapppid}+TransfSM & 0.747 (±0.026) & -5.68\% & 0.758 (±0.025) & -4.61\%\\
-			\midrule
-	\end{tabular}}{}
-    \\
-    {\footnotesize Note: Each model is trained/tested twice on three randomly generated C3 datasets.\\The performance metrics correspond to held-out test sets.}
-\end{table}
 
 In acknowledgement of the recent prevalence and performance of attention-based methods in deep learning (Vaswani \textit{et al.}, 2017), the sixth and seventh variants replace the \textsc{awd-lstm} encoder with transformers of varying sizes. `\textsc{rapppid}+TransfLG' has six layers and eight heads and feed-forward networks with 2048 dimensions, while `\textsc{rapppid}+TransfSM'’ has fewer parameters (2 layers, 2 heads and 80 dimensions). Both transformer variants have a dropout rate of 20\%. The number of heads and layers in \textsc{rapppid}+TransfLG were chosen to closely match those used in the \textsc{bert} language model (Devlin et al., 2019) whose architecture has been previously used for predicting protein function (Elnaggar \textit{et al}., 2021; Rao \textit{et al.}, 2020; Rives \textit{et al.}, 2019). The number of heads and layers for \textsc{rapppid}+TransfSM were chosen to be representative of reasonable lower bounds for those hyperparameters. The results of these analyses (Table 2) reveal that both of these models have worse performance compared to the original \textsc{rapppid} model. The superior performance of the small transformer compared to the large one suggests that the large number of parameters required by transformers are leading to severe overfitting in this task and are the reason behind the performance deterioration.
 
@@ -243,82 +270,225 @@ The data underlying this article are available on Zenodo.org, at \href{https://d
 \makeatother
 \renewcommand{\bibname}{References}
 \begin{thebibliography}{99\kern\bibindent}
-\markboth{Chapter 3: \textsc{rapppid}}{Chapter 3: \textsc{rapppid}}
+\markboth{Chapter 3: GRouNdGAN}{Chapter 3: GRouNdGAN}
 \makeatletter
-\def\@biblabel#1{}
+\def\@biblabel#1{#1.\hspace{0.5em}} 
 \let\old@bibitem\bibitem
-\def\bibitem#1{\old@bibitem{#1}\leavevmode\kern-\bibindent}
+\def\bibitem#1{\old@bibitem{#1}}
 \makeatother
-\bibitem{Lorem}Alanis-Lobato,G. \textit{et al.} (2017) Hippie v2.0: enhancing meaningfulness and reliability of protein–protein interaction networks. \textit{Nucleic Acids Res.}, 45, D408–D414.
-\bibitem{Lorem}Altschul,S.F. \textit{et al.} (1990) Basic local alignment search tool. \textit{J. Mol. Biol.}, 215, 403–410.
-\bibitem{Lorem}Altschul,S.F. \textit{et al.} (1997) Gapped BLAST and PSI-BLAST: a new generation of protein database search programs. \textit{Nucleic Acids Res.}, 25, 3389–3402.
-\bibitem{Lorem}Anfinsen,C.B. (1973) Principles that govern the folding of protein chains. \textit{Science}, 181, 223–230.
-\bibitem{Lorem}Athiwaratkun,B. \textit{et al.} (2019) There are many consistent explanations of unlabeled data: Why you should average. In: \textit{7th International Conference on Learning Representations, ICLR 2019, New Orleans, LA, USA, May 6-9, 2019}. OpenReview.net.
-\bibitem{Lorem}Ben-Hur,A. and Noble,W.S. (2005) Kernel methods for predicting protein-protein interactions. \textit{Bioinformatics}, 21, i38–i46.
-\bibitem{Lorem}Ben-Hur,A. and Noble,W.S. (2006) Choosing negative examples for the prediction of protein-protein interactions. \textit{BMC Bioinformatics}, 7, S2.
-\bibitem{Lorem}Berman,H.M. \textit{et al.} (2000) The protein data bank. \textit{Nucleic Acids Res.}, 28, 235–242.
-\bibitem{Lorem}Blohm,P. \textit{et al.} (2014) Negatome 2.0: a database of non-interacting proteins derived by literature mining, manual annotation and protein structure analysis. \textit{Nucleic Acids Res.}, 42, D396–D400.
-\bibitem{Lorem}Boekhout,A.H. \textit{et al.} (2011) Trastuzumab. \textit{Oncologist}, 16, 800–810.
-\bibitem{Lorem}Brock,A. \textit{et al.} (2021) High-performance large-scale image recognition without normalization. arXiv:2102.06171 [cs, stat]. arXiv: 2102.06171. https: //doi.org/10.48550/arXiv.2102.06171.
-\bibitem{Lorem}Bromley,J. \textit{et al.} (1993) Signature verification using a ``Siamese'' time delay neural network. \textit{Int. J. Pattern Recognit. Artif. Intell.}, 07, 669–688.  
-\bibitem{Lorem}Browne,F. \textit{et al.} (2007) Supervised statistical and machine learning approaches to inferring pairwise and module-based protein interaction networks. In: \textit{2007 IEEE 7th International Symposium on BioInformatics and BioEngineering}. IEEE, Boston, MA, USA, pp. 1365–1369. 
-\bibitem{Lorem}Carpenter,E.P. \textit{et al.} (2008) Overcoming the challenges of membrane protein crystallography. \textit{Curr. Opin. Struct. Biol.}, 18, 581–586. 
-\bibitem{Lorem}Chen,H.H. \textit{et al.} (2012) Novel protein therapeutics for systolic heart failure: chronic subcutaneous b-type natriuretic peptide. \textit{J. Am. Coll. Cardiol.}, 60, 2305–2312. 
-\bibitem{Lorem}Chen,M. \textit{et al.} (2019) Multifaceted protein–protein interaction prediction based on Siamese residual RCNN. \textit{Bioinformatics}, 35, i305–i314. 
-\bibitem{Lorem}Cong,Q. \textit{et al.} (2019) Protein interaction networks revealed by proteome coevolution. \textit{Science}, 365, 185–189. 
-\bibitem{Lorem}Desta,I.T. \textit{et al.} (2020) Performance and its limits in rigid body protein-protein docking. \textit{Structure}, 28, 1071–1081.e3. 
-\bibitem{Lorem}Devlin,J. \textit{et al.} (2019) Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv:1810.04805 [cs]. arXiv: 1810.04805. https: //doi.org/10.48550/arXiv.1810.04805. 
-\bibitem{Lorem}Dick,K. \textit{et al.} (2020) Pipe4: Fast PPI predictor for comprehensive inter- and cross-species interactomes. \textit{Sci. Rep.}, 10, 1390. 
-\bibitem{Lorem}Ding,Y. \textit{et al.} (2016) Predicting protein-protein interactions via multivariate mutual information of protein sequences. \textit{BMC Bioinformatics}., 17, 398. 
-\bibitem{Lorem}Elnaggar,A. \textit{et al.} (2021) ProtTrans: towards cracking the language of life’s code through self-supervised learning. page 2020.07.12.199554. https: //doi.org/10.1101/2020.07.12.199554. 
-\bibitem{Lorem}Evans,R. \textit{et al.} (2021) Protein complex prediction with AlphaFold-multimer. https://doi.org/10.1101/2021.10.04.463034.  
-\bibitem{Lorem}Falcon,W. \textit{et al.} (2020) PyTorchLightning/Pytorch-Lightning: 0.7.6 Release. Zenodo. https://doi.org/10.5281/ZENODO.3828935. 
-\bibitem{Lorem}Gillis,J. \textit{et al.} (2014) Bias tradeoffs in the creation and analysis of protein–protein interaction networks. \textit{J. Proteomics}, 100, 44–54. 
-\bibitem{Lorem}Henikoff,S. and Henikoff,J.G. (1992) Amino acid substitution matrices from protein blocks. \textit{Proc. Natl. Acad. Sci.} USA, 89, 10915–10919. 
-\bibitem{Lorem}Hochreiter,S. and Schmidhuber,J. (1997) Long short-term memory. \textit{Neural Comput.}, 9, 1735–1780. 
-\bibitem{Lorem}Huttlin,E.L. \textit{et al.} (2017) Architecture of the human interactome defines protein communities and disease networks. \textit{Nature}, 545, 505–509. 
-\bibitem{Lorem}Izmailov,P. \textit{et al.} (2019) Averaging weights leads to wider optima and better generalization. arXiv:1803.05407 [cs, stat]. arXiv: 1803.05407. https: //doi.org/10.48550/arXiv.1803.05407.
-\bibitem{Lorem}Jansen,R. \textit{et al.} (2003) A Bayesian networks approach for predicting protein-protein interactions from genomic data. \textit{Science}, 302, 449–453. 
-\bibitem{Lorem}Jassal,B. \textit{et al.} (2020) The Reactome pathway knowledgebase. \textit{Nucleic Acids Res.}, 48, D498–D503. 
-\bibitem{Lorem}Jumper,J. \textit{et al.} (2021) Highly accurate protein structure prediction with AlphaFold. \textit{Nature}, 596, 583–589. 
-\bibitem{Lorem}Kanehisa,M. and Goto,S. (2000) KEGG: Kyoto Encyclopedia of genes and genomes. \textit{Nucleic Acids Res.}, 28, 27–30. 
-\bibitem{Lorem}Kudo,T. (2018) Subword regularization: Improving neural network translation models with multiple subword candidates. arXiv:1804.10959 [cs]. arXiv: 1804.10959. https://doi.org/10.48550/arXiv.1804.10959. 
-\bibitem{Lorem}Kudo,T. and Richardson,J. (2018) Sentencepiece: a simple and language independent subword tokenizer and detokenizer for neural text processing. In: \textit{Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations. Association for Computational Linguistics}, Brussels, Belgium, pp. 66–71. 
-\bibitem{Lorem}Li,Y. and Ilie,L. (2017) Sprint: ultrafast protein-protein interaction prediction of the entire human interactome. \textit{BMC Bioinformatics}, 18, 485. 
-\bibitem{Lorem}Lipton,Z.C. \textit{et al.} (2015) A critical review of recurrent neural networks for sequence learning. arXiv:1506.00019 [cs]. arXiv: 1506.00019. https: //doi.org/10.48550/arXiv.1506.00019. 
-\bibitem{Lorem}Loshchilov,I. and Hutter,F. (2019) Decoupled weight decay regularization. In: \textit{7th International Conference on Learning Representations, ICLR 2019}, New Orleans, LA, USA, May 6-9, 2019. OpenReview.net.  
-\bibitem{Lorem}Malenfant,S.J. \textit{et al.} (2014) Pertuzumab: a new targeted therapy for her2-positive metastatic breast cancer. \textit{Pharmacotherapy}, 34, 60–71. 
-\bibitem{Lorem}Merity,S. \textit{et al.} (2017) Regularizing and optimizing LSTM language models. arXiv:1708.02182 [cs]. arXiv: 1708.02182. https://doi.org/10. 48550/arXiv.1708.02182. 
-\bibitem{Lorem}Misra,D. (2020) Mish: a self-regularized non-monotonic activation function. arXiv:1908.08681 [cs, stat]. arXiv: 1908.08681. https://doi.org/ 10.48550/arXiv.1908.08681. 
-\bibitem{Lorem}Orchard,S. \textit{et al.} (2012) Protein interaction data curation: the international molecular exchange (IMEx) consortium. \textit{Nat. Methods}, 9, 345–350. 
-\bibitem{Lorem}Orchard,S. \textit{et al.} (2014) The MIntAct project—IntAct as a common curation platform for 11 molecular interaction databases. \textit{Nucleic Acids Res.}, 42, D358–D363. 
-\bibitem{Lorem}Oughtred,R. \textit{et al.} (2021) The BioGRID database: a comprehensive biomedical resource of curated protein, genetic, and chemical interactions. \textit{Protein Sci.}, 30, 187–200. 
-\bibitem{Lorem}Park,Y. and Marcotte,E.M. (2012) Flaws in evaluation schemes for pair-input computational predictions. \textit{Nat. Methods}, 9, 1134–1136. 
-\bibitem{Lorem}Paszke,A. \textit{et al.} (2019) Pytorch: an imperative style, high-performance deep learning library. In: Wallach,H.M. \textit{et al.} (eds), \textit{Advances in Neural Information Processing Systems 32: Annual Conference on Neural Information Processing Systems 2019, NeurIPS 2019}, 8-14 December 2019, Vancouver, BC, Canada, pp. 8024–8035.  
-\bibitem{Lorem}Rao,R. \textit{et al.} (2020) Transformer protein language models are unsupervised structure learners. bioRxiv, 2020.12.15.422761. https://doi.org/10. 1101/2020.12.15.422761. 
-\bibitem{Lorem}Richoux,F. \textit{et al.} (2019) Comparing two deep learning sequence-based models for protein-protein interaction prediction. arXiv:1901.06268 [cs, q-bio, stat]. arXiv: 1901.06268. https://doi.org/10.48550/arXiv.1901.06268. 
-\bibitem{Lorem}Rives,A. \textit{et al.} (2019) Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences. bioRxiv, 622803. https://doi.org/10.1101/622803. 
-\bibitem{Lorem}Roux,K.J. \textit{et al.} (2012) A promiscuous biotin ligase fusion protein identifies proximal and interacting proteins in mammalian cells. \textit{J. Cell Biol.}, 196, 801–810. 
-\bibitem{Lorem}Salwinski,L. \textit{et al.} (2004) The database of interacting proteins: 2004 update. \textit{Nucleic Acids Res.}, 32, D449–451.
-\bibitem{Lorem}Schuster,M. and Nakajima,K. (2012) Japanese and Korean voice search. In: \textit{2012 IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2012}, Kyoto, Japan, March 25-30, 2012. IEEE, pp. 5149–5152. 
-\bibitem{Lorem}Sikder,S. \textit{et al.} (2019) Long-term delivery of protein and peptide therapeutics for cancer therapies. \textit{Exp. Opin. Drug Deliv.}, 16, 1113–1131. 
-\bibitem{Lorem}Snider,J. \textit{et al.} (2015) Fundamentals of protein interaction network mapping. \textit{Mol. Syst. Biol.}, 11, 848.  
-\bibitem{Lorem}Srivastava,N. \textit{et al.} (2014) Dropout: a simple way to prevent neural networks from overfitting. \textit{J. Mach. Learn. Res.}, 15, 1929–1958. 
-\bibitem{Lorem}Szklarczyk,D. \textit{et al.} (2019) String v11: protein–protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets. \textit{Nucleic Acids Res.}, 47, D607–D613. 
-\bibitem{Lorem}Szymborski,J. and Emad,A. (2022a) Data for RAPPPID: towards generalisable protein interaction prediction with AWD-LSTM Twin Networks. https: //doi.org/10.5281/zenodo.6709790. 
-\bibitem{Lorem}Szymborski,J. and Emad,A. (2022b) Software for RAPPPID: regularised automative prediction of protein-protein interactions using Deep Learning. https://doi.org/10.5281/zenodo.6709213. 
-\bibitem{Lorem}Tabe-Bordbar,S. \textit{et al.} (2018) A closer look at cross-validation for assessing the accuracy of gene regulatory networks and models. \textit{Sci. Rep.}, 8, 6620. 
-\bibitem{Lorem}Tsomaia,N. (2015) Peptide therapeutics: targeting the undruggable space. \textit{Eur. J. Med. Chem.}, 94, 459–470.  
-\bibitem{Lorem}Turner,B. \textit{et al.} (2010) iRefWeb: interactive analysis of consolidated protein interaction data and their supporting evidence. \textit{Database (Oxford)}, 2010, baq023. 
-\bibitem{Lorem}Usmani,S. \textit{et al.} (2017) THPdb: database of FDA-approved peptide and protein therapeutics. \textit{PLoS One}, 12, e0181748. 
-\bibitem{Lorem}Vaswani, A. \textit{et al.} (2017) Attention is all you need. In: \textit{Proceedings of the 31st International Conference on Neural Information Processing Systems, NIPS’17}. Curran Associates Inc., Red Hook, NY, USA, pp. 6000–6010. 
-\bibitem{Lorem}Vidal,M. and Fields,S. (2014) The yeast two-hybrid assay: still finding connections after 25 years. \textit{Nat. Methods}, 11, 1203–1206. 
-\bibitem{Lorem}Wan,L. \textit{et al.} (2013) Regularization of neural networks using DropConnect. In: Dasgupta, S. and McAllester, D. (eds). \textit{Proceedings of the 30th International Conference on Machine Learning, Volume 28 of Proceedings of Machine Learning Research. PMLR}, Atlanta, GA, USA, pp. 1058–1066. 
-\bibitem{Lorem}Wright,L. and Demeure,N. (2021) Ranger21: a synergistic deep learning optimizer. arXiv:2106.13731 [cs]. arXiv: 2106.13731. https://doi.org/ 10.48550/arXiv.2106.13731. 
-\bibitem{Lorem}Yang,J. \textit{et al.} (2013) BioLip: a semi-manually curated database for biologically relevant ligand–protein interactions. \textit{Nucleic Acids Res.}, 41, D1096–D1103. 
-\bibitem{Lorem}Yong,H. \textit{et al.} (2020) Gradient centralization: a new optimization technique for deep neural networks. In: Vedaldi,A. \textit{et al.} (eds), \textit{Computer Vision ECCV 2020 - 16th European Conference}, Glasgow, UK, August 23-28, 2020, Proceedings, Part I, Lecture Notes in Computer Science. Springer, pp. 635–652.  
-\bibitem{Lorem}Yosinski,J. \textit{et al.} (2014) How Transferable Are Features in Deep Neural Networks? In: Ghahramani,Z. \textit{et al.} (eds), \textit{Advances in Neural Information Processing Systems 27: Annual Conference on Neural Information Processing Systems} 2014, December 8-13 2014, Montr\'eal, Qu\'ebec, Canada, pp. 3320–3328. 
-\bibitem{Lorem}Zaremba,W. \textit{et al.} (2015) Recurrent neural network regularization. arXiv: 1409.2329 [cs]. arXiv: 1409.2329. https://doi.org/10.48550/arXiv.1409. 2329. 
-\bibitem{Lorem}Zhang,M.R. \textit{et al.} (2019) Lookahead optimizer: k steps forward, 1 step back. In: Wallach,H.M. \textit{et al.} (eds), \textit{Advances in Neural Information Processing Systems 32: Annual Conference on Neural Information Processing Systems 2019, NeurIPS} 2019, 8-14 December 2019, Vancouver, BC, Canada, pp. 9593–9604.
+\bibitem{Lorem}Lee, T. I. et al. Transcriptional regulatory networks in Saccharomyces cerevisiae. \textit{Science} \textbf{298}, 799–804 (2002).
+
+\bibitem{Lorem}Che, D. et al. Dynamic and modular gene regulatory networks drive
+the development of gametogenesis. \textit{Brief. Bioinform.} \textbf{18},
+712–721 (2017).
+
+\bibitem{Lorem}Olson, E. N. Gene regulatory networks in the evolution and development of the heart. \textit{Science} \textbf{313}, 1922–1927 (2006).
+
+\bibitem{Lorem}Dibaeinia, P. \& Sinha, S. SERGIO: a single-cell expression simulator
+guided by gene regulatory networks. \textit{Cell Syst.} \textbf{11}, 252–271.
+e211 (2020).
+
+\bibitem{Lorem}Yang, Y. et al. Gene knockout inference with variational graph
+autoencoder learning single-cell gene regulatory networks. \textit{Nucleic
+Acids Res.} \textbf{51}, 6578–6592 (2023).
+
+\bibitem{Lorem}Madhamshettiwar, P. B., Maetschke, S. R., Davis, M. J., Reverter, A. \&
+Ragan, M. A. Gene regulatory network inference: evaluation and
+application to ovarian cancer allows the prioritization of drug targets. \textit{Genome Med.} \textbf{4}, 1–16 (2012).
+
+\bibitem{Lorem}Manuel, A. M., Dai, Y., Jia, P., Freeman, L. A. \& Zhao, Z. A gene
+regulatory network approach harmonizes genetic and epigenetic
+signals and reveals repurposable drug candidates for multiple
+sclerosis. \textit{Hum. Mol. Genet.} \textbf{32}, 998–1009 (2023).
+
+\bibitem{Lorem}Moerman, T. et al. GRNBoost2 and Arboreto: efficient and scalable
+inference of gene regulatory networks. \textit{Bioinformatics} \textbf{35},
+2159–2161 (2019).
+
+\bibitem{Lorem}Huynh-Thu, V. A., Irrthum, A., Wehenkel, L. \& Geurts, P. Inferring
+regulatory networks from expression data using tree-based methods. \textit{PloS one} \textbf{5}, e12776 (2010).
+
+\bibitem{Lorem}Chan, T. E., Stumpf, M. P. \& Babtie, A. C. Gene regulatory network
+inference from single-cell data using multivariate information
+measures. \textit{Cell Syst.} \textbf{5}, 251–267. e253 (2017).
+
+\bibitem{Lorem}Emad, A. \& Sinha, S. Inference of phenotype-relevant transcriptional regulatory networks elucidates cancer type-specific regulatory mechanisms in a pan-cancer study. \textit{NPJ Syst. Biol. Appl.} \textbf{7}, 9 (2021).
+
+\bibitem{Lorem}Specht, A. T. \& Li, J. LEAP: constructing gene co-expression networks for single-cell RNA-sequencing data using pseudotime
+ordering. \textit{Bioinformatics} \textbf{33}, 764–766 (2017).
+
+\bibitem{Lorem}Matsumoto, H. et al. SCODE: an efficient regulatory network inference algorithm from single-cell RNA-Seq during differentiation.
+\textit{Bioinformatics} \textbf{33}, 2314–2321 (2017).
+
+\bibitem{Lorem}Papili Gao, N., Ud-Dean, S. M., Gandrillon, O. \& Gunawan, R. SINCERITIES: inferring gene regulatory networks from time-stamped
+single cell transcriptional expression profiles. \textit{Bioinformatics} \textbf{34}, 258–266 (2018).
+
+\bibitem{Lorem}Aibar, S. et al. SCENIC: single-cell regulatory network inference and
+clustering. \textit{Nat. Methods} \textbf{14}, 1083–1086 (2017).
+
+\bibitem{Lorem}Bravo González-Blas, C. et al. SCENIC+: single-cell multiomic
+inference of enhancers and gene regulatory networks. \textit{Nat. Methods} \textbf{20}, 1355–1367 (2023).
+
+\bibitem{Lorem}Kartha, V. K. et al. Functional inference of gene regulation using
+single-cell multi-omics. \textit{Cell Genomics} \textbf{2}, 100166 (2022).
+
+\bibitem{Lorem}Badia-i-Mompel, P. et al. Gene regulatory network inference in the
+era of single-cell multi-omics. \textit{Nat. Rev. Genet.} \textbf{24}, 739–754 (2023).
+
+\bibitem{Lorem}Pratapa, A., Jalihal, A. P., Law, J. N., Bharadwaj, A. \& Murali, T.
+Benchmarking algorithms for gene regulatory network inference
+from single-cell transcriptomic data. \textit{Nat. Methods} \textbf{17}, 147–154 (2020).
+
+\bibitem{Lorem}Emmert-Streib, F., Dehmer, M. \& Haibe-Kains, B. Gene regulatory
+networks and their applications: understanding biological and
+medical problems in terms of networks. \textit{Front. Cell Dev. Biol.} \textbf{2}, 38 (2014).
+
+\bibitem{Lorem}Kolmykov, S. et al. GTRD: an integrated view of transcription regulation. \textit{Nucleic Acids Res.} \textbf{49}, D104–D111 (2021).
+
+\bibitem{Lorem}Xu, H. et al. ESCAPE: database for integrating high-content published data collected from human and mouse embryonic stem
+cells. \textit{Database} \textbf{2013}, bat045 (2013).
+
+\bibitem{Lorem}Kanehisa, M. \& Goto, S. KEGG: kyoto encyclopedia of genes and
+genomes. \textit{Nucleic Acids Res.} \textbf{28}, 27–30 (2000).
+
+\bibitem{Lorem}Marouf, M. et al. Realistic in silico generation and augmentation of
+single-cell RNA-seq data using generative adversarial networks.
+\textit{Nat. Commun.} \textbf{11}, 1–12 (2020).
+
+\bibitem{Lorem}Sun, T., Song, D., Li, W. V. \& Li, J. J. scDesign2: a transparent
+simulator that generates high-fidelity single-cell gene expression
+count data with gene correlations captured. \textit{Genome Biol.} \textbf{22}, 1–37 (2021).
+
+\bibitem{Lorem}Baruzzo, G., Patuzzi, I. \& Di Camillo, B. SPARSim single cell: a count
+data simulator for scRNA-seq data. \textit{Bioinformatics} \textbf{36}, 1468–1475 (2020).
+
+\bibitem{Lorem}Schaffter, T., Marbach, D. \& Floreano, D. GeneNetWeaver: in silico
+benchmark generation and performance profiling of network
+inference methods. \textit{Bioinformatics} \textbf{27}, 2263–2270 (2011).
+
+\bibitem{Lorem}Marbach, D. et al. Revealing strengths and weaknesses of methods
+for gene network inference. \textit{Proc. Natl Acad. Sci.} \textbf{107}, 6286–6291 (2010).
+
+\bibitem{Lorem}Marbach, D. et al. Wisdom of crowds for robust gene network
+inference. \textit{Nat. Methods} \textbf{9}, 796–804 (2012).
+
+\bibitem{Lorem}Chen, S. \& Mar, J. C. Evaluating methods of inferring gene regulatory networks highlights their lack of performance for single cell
+gene expression data. \textit{BMC Bioinforma.} \textbf{19}, 1–21 (2018).
+
+\bibitem{Lorem}Kocaoglu, M., Snyder, C., Dimakis, A. G. \& Vishwanath, S. CausalGAN: Learning causal implicit generative models with adversarial training. Preprint at \href{https://arxiv.org/abs/1709.02023}{https://arxiv.org/abs/1709.02023} (2017).
+
+\bibitem{Lorem}Arjovsky, M., Chintala, S. \& Bottou, L. Wasserstein generative
+adversarial networks. In \textit{International conference on machine
+learning}. 214–223 (PMLR, 2017).
+
+\bibitem{Lorem}Zheng, G. X. et al. Massively parallel digital transcriptional profiling
+of single cells. \textit{Nat. Commun.} \textbf{8}, 1–12 (2017).
+
+\bibitem{Lorem}Paul, F. et al. Transcriptional heterogeneity and lineage commitment in myeloid progenitors. \textit{Cell} \textbf{163}, 1663–1677 (2015).
+
+\bibitem{Lorem}Gretton, A., Borgwardt, K. M., Rasch, M. J., Schölkopf, B. \& Smola, A.
+A kernel two-sample test. \textit{J. Mach. Learn. Res.} \textbf{13}, 723–773 (2012).
+
+\bibitem{Lorem}Korsunsky, I. et al. Fast, sensitive and accurate integration of single-cell data with Harmony. \textit{Nat. Methods} \textbf{16}, 1289–1296 (2019).
+
+\bibitem{Lorem}Kim, S. ppcor: an R package for a fast calculation to semi-partial
+correlation coefficients. \textit{Commun. Stat. Appl. Methods} \textbf{22}, 665 (2015).
+
+\bibitem{Lorem}Wolf, F. A. et al. PAGA: graph abstraction reconciles clustering with
+trajectory inference through a topology preserving map of single
+cells. \textit{Genome Biol.} \textbf{20}, 1–9 (2019).
+
+\bibitem{Lorem}Haghverdi, L., Büttner, M., Wolf, F. A., Buettner, F. \& Theis, F. J.
+Diffusion pseudotime robustly reconstructs lineage branching. \textit{Nat. Methods} \textbf{13}, 845–848 (2016).
+
+\bibitem{Lorem}Trapnell, C. et al. Pseudo-temporal ordering of individual cells
+reveals dynamics and regulators of cell fate decisions. \textit{Nat. Biotechnol.} \textbf{32}, 381 (2014).
+
+\bibitem{Lorem}Kumar, P., Tan, Y. \& Cahan, P. Understanding development and
+stem cells using single cell-based analyses of gene expression.
+\textit{Development} \textbf{144}, 17–32 (2017).
+
+\bibitem{Lorem}Saelens, W., Cannoodt, R., Todorov, H. \& Saeys, Y. A comparison of
+single-cell trajectory inference methods. \textit{Nat. Biotechnol.} \textbf{37}, 547–554 (2019).
+
+\bibitem{Lorem}Street, K. et al. Slingshot: cell lineage and pseudotime inference for
+single-cell transcriptomics. \textit{BMC Genom.} \textbf{19}, 1–16 (2018).
+
+\bibitem{Lorem}Hwang, B., Lee, J. H. \& Bang, D. Single-cell RNA sequencing technologies and bioinformatics pipelines. \textit{Exp. Mol. Med.} \textbf{50}, 1–14 (2018).
+
+\bibitem{Lorem}Wolf, F. A., Angerer, P. \& Theis, F. J. SCANPY: large-scale single-cell
+gene expression data analysis. \textit{Genome Biol.} \textbf{19}, 1–5 (2018).
+
+\bibitem{Lorem}Dahlin, J. S. et al. A single-cell hematopoietic landscape resolves 8
+lineage trajectories and defects in Kit mutant mice. \textit{Blood J. Am.
+Soc. Hematol.} \textbf{131}, e1–e11 (2018).
+
+\bibitem{Lorem}Han, G. et al. Follicular lymphoma microenvironment characteristics associated with tumor cell mutations and MHC class II
+expression. \textit{Blood Cancer Discov.} \textbf{3}, 428–443 (2022).
+
+\bibitem{Lorem}Zhang, Z., Han, J., Song, L. \& Zhang, X. Inferring cell-specific gene
+regulatory networks from single cell gene expression data. Preprint
+at \href{https://www.biorxiv.org/content/10.1101/2022.03.03.482887v3.full}{https://www.biorxiv.org/content/10.1101/2022.03.03.482887v3.full} (2022).
+
+\bibitem{Lorem}Yuan, Y. \& Bar-Joseph, Z. Deep learning for inferring gene relationships from single-cell expression data. \textit{Proc. Natl Acad. Sci.} \textbf{116}, 27151–27158 (2019).
+
+\bibitem{Lorem}Chen, J. et al. DeepDRIM: a deep neural network to reconstruct cell-type-specific gene regulatory network using single-cell RNA-seq
+data. \textit{Brief. Bioinforma.} \textbf{22}, bbab325 (2021).
+
+\bibitem{Lorem}Zhang, S. Y. \& Stumpf, M. P. Learning cell-specific networks from
+dynamical single cell data. Preprint at \href{https://www.biorxiv.org/content/10.1101/2023.01.08.523176v2}{https://www.biorxiv.org/content/10.1101/2023.01.08.523176v2} (2023).
+
+\bibitem{Lorem}Crowell, H. L., Morillo Leonardo, S. X., Soneson, C. \& Robinson, M.
+D. The shaky foundations of simulating single-cell RNA sequencing
+data. \textit{Genome Biol.} \textbf{24}, 1–19 (2023).
+
+\bibitem{Lorem}Gao, Y., Shen, L. \& Xia, S.-T. DAG-GAN: Causal structure learning with generative adversarial nets. In \textit{ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}. 3320-3324 (IEEE, 2021).
+
+\bibitem{Lorem}Satija, R., Farrell, J. A., Gennert, D., Schier, A. F. \& Regev, A. Spatial
+reconstruction of single-cell gene expression data. \textit{Nat. Biotechnol.} \textbf{33}, 495–502 (2015).
+
+\bibitem{Lorem}Goodfellow, I. et al. Generative adversarial networks. \textit{Commun. ACM} \textbf{63}, 139–144 (2020).
+
+\bibitem{Lorem}Gulrajani, I., Ahmed, F., Arjovsky, M., Dumoulin, V. \& Courville, A. C.
+Improved training of wasserstein gans. In \textit{Advances in neural information processing systems}, 30 (NeurIPS, 2017).
+
+\bibitem{Lorem}Reddi, S. J., Kale, S. \& Kumar, S. On the convergence of adam and
+beyond. Preprint at \href{https://arxiv.org/abs/1904.09237}{https://arxiv.org/abs/1904.09237} (2019).
+
+\bibitem{Lorem}He, K., Zhang, X., Ren, S. \& Sun, J. Delving deep into rectifiers:
+Surpassing human-level performance on imagenet classification. In
+\textit{Proceedings of the IEEE international conference on computer
+vision}. 1026–1034 (IEEE, 2015).
+
+\bibitem{Lorem}Glorot, X. \& Bengio, Y. Understanding the difficulty of training deep
+feedforward neural networks. In \textit{Proceedings of the thirteenth
+international conference on artificial intelligence and statistics}. 249-256 (JMLR Workshop and Conference Proceedings, 2010).
+
+\bibitem{Lorem}Ioffe, S. \& Szegedy, C. Batch normalization: Accelerating deep
+network training by reducing internal covariate shift. In \textit{International
+conference on machine learning}. 448-456 (PMLR, 2015).
+
+\bibitem{Lorem}Hu, H. et al. AnimalTFDB 3.0: a comprehensive resource for annotation and prediction of animal transcription factors. \textit{Nucleic Acids Res.} \textbf{47}, D33–D38 (2019).
+
+\bibitem{Lorem}Shaham, U. et al. Removal of batch effects using distribution-matching residual networks. \textit{Bioinformatics} \textbf{33}, 2539–2546 (2017).
+
+\bibitem{Lorem}Shu, H. et al. Modeling gene regulatory networks using neural
+network architectures. \textit{Nat. Comput. Sci.} \textbf{1}, 491–501 (2021).
+
+\bibitem{Lorem}Mirza, M. \& Osindero, S. Conditional generative adversarial nets. Preprint at \href{https://arxiv.org/abs/1411.1784}{https://arxiv.org/abs/1411.1784} (2014).
+
+\bibitem{Lorem}Islam, S. et al. Characterization of the single-cell transcriptional
+landscape by highly multiplex RNA-seq. \textit{Genome Res.} \textbf{21}, 1160–1167 (2011).
+
+\bibitem{Lorem}Jacomy, M., Venturini, T., Heymann, S. \& Bastian, M. ForceAtlas2, a
+continuous graph layout algorithm for handy network visualization
+designed for the Gephi software. \textit{PloS One} \textbf{9}, e98679 (2014).
+
+\bibitem{Lorem}Paszke, A. et al. Pytorch: An imperative style, high-performance
+deep learning library. In \textit{Advances in neural information processing
+systems} 32 (NeurIPS, 2019).
+
+\bibitem{Lorem}Zinati, Y., Takiddeen, A. \& Emad, A. GRouNdGAN. Zenodo \href{https://doi.org/10.5281/zenodo.11068246}{https://doi.org/10.5281/zenodo.11068246} (2024). article-v1.0.0.
+
 \end{thebibliography}
 \end{singlespace}

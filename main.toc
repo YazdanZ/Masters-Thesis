@@ -1,0 +1,90 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{ii}{chapter*.1}%
+\contentsline {chapter}{Résumé}{iii}{chapter*.2}%
+\contentsline {chapter}{Acknowledgments}{v}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{Motivation}{5}{section*.8}%
+\contentsline {section}{Thesis Organization \& Contributions}{6}{section*.9}%
+\contentsline {section}{Publications \& Author Contributions}{8}{section*.10}%
+\contentsline {chapter}{\numberline {2}Background Material and Literature Review}{9}{chapter.2}%
+\contentsline {section}{The Biological Basis of Protein-Protein Interactions}{9}{section*.11}%
+\contentsline {subsection}{Biological Processes, Pathways, and Networks}{9}{section*.12}%
+\contentsline {subsection}{Physiochemical Fundamentals of Protein Interactions}{11}{section*.14}%
+\contentsline {subsection}{Protein Interactions and Pathologies}{12}{section*.15}%
+\contentsline {section}{Experimental Approaches to Discovering Protein-Protein Interactions}{13}{section*.16}%
+\contentsline {subsection}{Yeast Two-Hybrid and Related Methods}{14}{section*.17}%
+\contentsline {subsection}{Affinity-based Methods}{14}{section*.18}%
+\contentsline {subsection}{Energy Transfer Methods}{15}{section*.19}%
+\contentsline {subsection}{Other methods}{15}{section*.20}%
+\contentsline {section}{Computational \& Statistical Models of Protein-Protein Interactions}{16}{section*.21}%
+\contentsline {subsection}{Non-Machine Learning Methods for \textsc {ppi} Inference}{16}{section*.23}%
+\contentsline {subsection}{Machine Learning Methods for \textsc {ppi} Inference}{19}{section*.27}%
+\contentsline {subsection}{Deep Learning Methods for \textsc {ppi} Inference}{22}{section*.31}%
+\contentsline {section}{The Issue of Generalization in \textsc {ppi} Inference Models}{28}{section*.37}%
+\contentsline {chapter}{\numberline {3}GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{32}{chapter.3}%
+\contentsline {section}{Abstract}{32}{section*.39}%
+\contentsline {section}{Introduction}{32}{section*.40}%
+\contentsline {section}{Results}{34}{section*.41}%
+\contentsline {subsection}{GRouNdGAN generates scRNA-seq data using causal generative adversarial networks}{34}{section*.42}%
+\contentsline {subsection}{GRouNdGAN generates realistic scRNA-seq data}{35}{section*.44}%
+\contentsline {subsection}{GRouNdGAN imposes a causal GRN in the simulated data}{39}{section*.48}%
+\contentsline {subsection}{The imposed GRN can be reconstructed from the simulated data}{41}{section*.49}%
+\contentsline {subsection}{GRouNdGAN-simulated data preserves trajectories and can be used for pseudo-time inference}{43}{section*.51}%
+\contentsline {subsection}{GRouNdGAN achieves high performance on other datasets}{46}{section*.54}%
+\contentsline {subsection}{Benchmarking GRN inference methods using GRouNdGAN confirms prior insights from curated and experimental datasets}{47}{section*.56}%
+\contentsline {subsection}{In silico perturbation experiments using GRouNdGAN}{49}{section*.58}%
+\contentsline {section}{Discussion}{50}{section*.59}%
+\contentsline {subsection}{\numberline {0.1}Sequence segmentation and tokenization}{51}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {0.2}Generalizing protein sequence encoding with \textsc {awd-lstm}}{51}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {0.3}Details of \textsc {rapppid}’s architecture and hyper-parameter tuning}{53}{subsection.3.0.3}%
+\contentsline {subsection}{\numberline {0.4}Protein interaction datasets}{54}{subsection.3.0.4}%
+\contentsline {subsection}{\numberline {0.5}Negative examples}{54}{subsection.3.0.5}%
+\contentsline {subsection}{\numberline {0.6}Training, validation and testing set construction}{55}{subsection.3.0.6}%
+\contentsline {subsection}{\numberline {0.7}Implementation}{56}{subsection.3.0.7}%
+\contentsline {subsection}{\numberline {0.8}Protein similarity experiments}{56}{subsection.3.0.8}%
+\contentsline {section}{\numberline {1}Results}{57}{section.3.1}%
+\contentsline {subsection}{\numberline {1.1}Performance evaluation of \textsc {rapppid} and other algorithms}{57}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {1.2}Channel-specific performance of \textsc {rapppid}}{58}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {1.3}Role of protein similarity on \textsc {rapppid}’s performance}{59}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {1.4}Effect of different components on \textsc {rapppid}'s performance}{61}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {1.5}Transfer learning on protein-ligand data from X-ray crystallography experiments}{63}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {1.6}\textsc {rapppid} predicts interaction of \textsc {her2} with Trastuzumab and\\Pertuzumab}{64}{subsection.3.1.6}%
+\contentsline {section}{\numberline {2}Discussion}{64}{section.3.2}%
+\contentsline {section}{Authors' contributions}{66}{section*.65}%
+\contentsline {section}{Funding}{67}{section*.66}%
+\contentsline {section}{Data availability}{67}{section*.67}%
+\contentsline {section}{References}{67}{section*.68}%
+\contentsline {chapter}{\numberline {4}Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{74}{chapter.4}%
+\contentsline {section}{Abstract}{74}{section*.70}%
+\contentsline {section}{Introduction}{75}{section*.73}%
+\contentsline {section}{Materials and methods}{80}{section*.75}%
+\contentsline {subsection}{The \textsc {intrepppid} architecture}{80}{section*.76}%
+\contentsline {subsection}{The protein–protein interaction classification task}{80}{section*.77}%
+\contentsline {subsection}{The orthologous locality task}{81}{section*.78}%
+\contentsline {subsection}{\textsc {intrepppid}’s loss function}{82}{section*.79}%
+\contentsline {subsection}{Preparing strict protein–protein interaction datasets}{83}{section*.80}%
+\contentsline {subsection}{Generating strict protein–protein interaction datasets with protein–protein interaction origami}{83}{section*.81}%
+\contentsline {subsection}{Training procedure}{84}{section*.82}%
+\contentsline {section}{Results}{84}{section*.83}%
+\contentsline {subsection}{\textsc {intrepppid} outperforms leading models for prediction of human protein–protein interaction}{84}{section*.84}%
+\contentsline {subsection}{\textsc {intrepppid} maintains high cross-species performance on multiple organisms}{86}{section*.87}%
+\contentsline {subsection}{\textsc {intrepppid} learns protein representations that exhibit strong orthologous locality}{88}{section*.89}%
+\contentsline {subsection}{\textsc {intrepppid}'s performance gain is due to the biologically relevant information encoded by orthology}{88}{section*.90}%
+\contentsline {subsection}{\textsc {intrepppid} learns interactions of evolutionarily conserved functions that \textsc {rapppid} does not}{89}{section*.91}%
+\contentsline {subsection}{A web server and interface for \textsc {rapppid} \& \textsc {intrepppid}}{90}{section*.92}%
+\contentsline {section}{Discussion}{92}{section*.94}%
+\contentsline {section}{Author contributions}{95}{section*.97}%
+\contentsline {section}{Funding}{95}{section*.98}%
+\contentsline {section}{References}{95}{section*.100}%
+\contentsline {chapter}{\numberline {5}Discussion}{100}{chapter.5}%
+\contentsline {section}{Appropriate regularization methods}{100}{section*.101}%
+\contentsline {subsection}{Regularization in \textsc {rapppid}}{100}{section*.102}%
+\contentsline {subsection}{Regularization in \textsc {intrepppid}}{101}{section*.103}%
+\contentsline {section}{Questions regarding sequence identity and its role in data leakage}{102}{section*.104}%
+\contentsline {section}{Distal impacts of efficient architectures}{106}{section*.105}%
+\contentsline {subsection}{As a means to improve generalization}{106}{section*.106}%
+\contentsline {subsection}{Lowering barriers to \textsc {ppi} inference research}{107}{section*.107}%
+\contentsline {subsection}{Environmental impacts}{108}{section*.108}%
+\contentsline {chapter}{\numberline {6}Conclusion}{111}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{113}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{119}{appendix.B}%

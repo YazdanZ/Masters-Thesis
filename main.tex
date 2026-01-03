@@ -9,6 +9,9 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{xurl}
 \usepackage{amsmath} 
+\usepackage{tcolorbox}
+\usepackage[scaled]{FiraMono} 
+\usepackage{xcolor}
 
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 %--------------------------------------------%
@@ -31,6 +34,21 @@
 \DeclareCaptionLabelFormat{sflabel}{\textsf{#1~#2}}
 \captionsetup[table]{labelformat=sflabel}
 \captionsetup[figure]{labelformat=sflabel}
+
+\newtcolorbox{codeblock}{
+    colback=gray!10,        % light grey background
+    colframe=black,         % black frame
+    boxrule=0.3pt,          % thin frame
+    arc=2pt,                % slightly rounded corners
+    left=6pt, right=6pt,
+    top=6pt, bottom=6pt,
+    fontupper=\footnotesize\ttfamily  % smaller font + Fira Code
+}
+
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\oldtexttt{\footnotesize #1}}
+
+\renewcommand{\UrlFont}{\ttfamily\footnotesize}
 
 
 \newcommand{\figuresection}[1]{%

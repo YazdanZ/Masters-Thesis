@@ -44,33 +44,31 @@
 \@writefile{toc}{\contentsline {subsection}{In silico perturbation experiments using GRouNdGAN}{49}{section*.58}\protected@file@percent }
 \newlabel{sec:groundgan:discussion}{{2}{50}{Discussion}{section*.59}{}}
 \@writefile{toc}{\contentsline {section}{Discussion}{50}{section*.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.1}Sequence segmentation and tokenization}{51}{subsection.3.0.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.2}Generalizing protein sequence encoding with \textsc  {awd-lstm}}{51}{subsection.3.0.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Overview of the \textsc  {rapppid} pipeline and architecture.}}{52}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:rapppid:pipeline}{{7}{52}{Overview of the \textsc {rapppid} pipeline and architecture}{figure.caption.60}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.3}Details of \textsc  {rapppid}’s architecture and hyper-parameter tuning}{53}{subsection.3.0.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.4}Protein interaction datasets}{54}{subsection.3.0.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.5}Negative examples}{54}{subsection.3.0.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.6}Training, validation and testing set construction}{55}{subsection.3.0.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.7}Implementation}{56}{subsection.3.0.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {0.8}Protein similarity experiments}{56}{subsection.3.0.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Illustration of differences in edges between \textsc  {c1}, \textsc  {c2}, and \textsc  {c3} datasets.}}{57}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:rapppid:c_dataset}{{8}{57}{Illustration of differences in edges between \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets}{figure.caption.61}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Results}{57}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Performance evaluation of \textsc  {rapppid} and other algorithms}{57}{subsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Channel-specific performance of \textsc  {rapppid}}{58}{subsection.3.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Receiver-Operator curves across methods and datasets.}}{58}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:rapppid:auroc}{{9}{58}{Receiver-Operator curves across methods and datasets}{figure.caption.62}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Role of protein similarity on \textsc  {rapppid}’s performance}{59}{subsection.3.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc  {string} channels.}}{60}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:rapppid:channels}{{10}{60}{Accuracy of positive edges across edge confidence stratified by \textsc {string} channels}{figure.caption.63}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc  {c2}.}}{61}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:rapppid:similarity}{{11}{61}{Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc {c2}}{figure.caption.64}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Effect of different components on \textsc  {rapppid}'s performance}{61}{subsection.3.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Transfer learning on protein-ligand data from X-ray crystallography experiments}{63}{subsection.3.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6}\textsc  {rapppid} predicts interaction of \textsc  {her2} with Trastuzumab and\\Pertuzumab}{64}{subsection.3.1.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Discussion}{64}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Authors' contributions}{66}{section*.65}\protected@file@percent }
+\newlabel{sec:groundgan:methods}{{2}{54}{Methods}{section*.60}{}}
+\@writefile{toc}{\contentsline {section}{Methods}{54}{section*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Datasets and preprocessing}{54}{section*.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{GRouNdGAN’s model architecture}{55}{section*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Causal controller}{55}{section*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Target generators}{56}{section*.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Critic}{57}{section*.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Labeler and anti-labeler}{57}{section*.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Training procedure and hyperparameter tuning}{58}{section*.67}\protected@file@percent }
+\newlabel{eq:groundgan1}{{{1}}{59}{Training procedure and hyperparameter tuning}{AMS.68}{}}
+\@writefile{toc}{\contentsline {subsection}{Causal GRN preparation}{59}{section*.69}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Evaluation of the resemblance of real and simulated cells}{60}{section*.70}\protected@file@percent }
+\newlabel{eq:groundgan2}{{{2}}{60}{Evaluation of the resemblance of real and simulated cells}{AMS.71}{}}
+\newlabel{eq:groundgan3}{{{3}}{61}{Evaluation of the resemblance of real and simulated cells}{AMS.72}{}}
+\newlabel{eq:groundgan4}{{{4}}{61}{Evaluation of the resemblance of real and simulated cells}{AMS.73}{}}
+\@writefile{toc}{\contentsline {subsection}{Baseline simulator models}{61}{section*.74}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{In silico perturbation experiments using GRoundGAN}{62}{section*.75}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Trajectory inference and pseudo-time analysis}{62}{section*.76}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{GRN inference methods}{63}{section*.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Statistics and reproducibility}{64}{section*.78}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Reporting summary}{64}{section*.79}\protected@file@percent }
+\newlabel{sec:groundgan:dataavailability}{{2}{64}{Data availability}{section*.80}{}}
+\@writefile{toc}{\contentsline {section}{Data availability}{64}{section*.80}\protected@file@percent }
+\newlabel{sec:groundgan:codeavailability}{{2}{64}{Code availability}{section*.81}{}}
+\@writefile{toc}{\contentsline {section}{Code availability}{64}{section*.81}\protected@file@percent }
 \bibcite{Lorem}{1}
 \bibcite{Lorem}{2}
 \bibcite{Lorem}{3}
@@ -81,13 +79,11 @@
 \bibcite{Lorem}{8}
 \bibcite{Lorem}{9}
 \bibcite{Lorem}{10}
-\@writefile{toc}{\contentsline {section}{Funding}{67}{section*.66}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Data availability}{67}{section*.67}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{67}{section*.68}\protected@file@percent }
 \bibcite{Lorem}{11}
 \bibcite{Lorem}{12}
 \bibcite{Lorem}{13}
 \bibcite{Lorem}{14}
+\@writefile{toc}{\contentsline {section}{References}{65}{section*.82}\protected@file@percent }
 \bibcite{Lorem}{15}
 \bibcite{Lorem}{16}
 \bibcite{Lorem}{17}
@@ -142,8 +138,12 @@
 \bibcite{Lorem}{66}
 \bibcite{Lorem}{67}
 \bibcite{Lorem}{68}
+\@writefile{toc}{\contentsline {section}{Acknowledgements}{69}{section*.83}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Author contributions}{69}{section*.84}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Competing interests}{70}{section*.85}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Additional information}{70}{section*.86}\protected@file@percent }
 \@setckpt{chapters/03_groundgan}{
-\setcounter{page}{72}
+\setcounter{page}{71}
 \setcounter{equation}{0}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
@@ -153,21 +153,21 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
-\setcounter{section}{2}
+\setcounter{section}{0}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{11}
+\setcounter{figure}{6}
 \setcounter{table}{3}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
-\setcounter{section@level}{1}
-\setcounter{Item}{6}
+\setcounter{section@level}{0}
+\setcounter{Item}{3}
 \setcounter{Hfootnote}{1}
-\setcounter{bookmark@seq@number}{55}
+\setcounter{bookmark@seq@number}{54}
 \setcounter{parentequation}{0}
 \setcounter{su@anzahl}{0}
 \setcounter{LT@tables}{0}

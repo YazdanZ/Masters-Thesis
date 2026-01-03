@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  2 JAN 2026 17:56
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  2 JAN 2026 20:13
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1557,6 +1557,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
 
 ! LaTeX Error: Command \thesisfaculty undefined.
 
@@ -1564,7 +1567,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19 \ThesisFaculty{Faculty of Engineering}
+l.23 \ThesisFaculty{Faculty of Engineering}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1848,26 +1851,26 @@ LaTeX Warning: Label `tab:intrepppid_perf' multiply defined.
 (./appendix/groundgan.aux) (./appendix/protocol.aux))
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1891,19 +1894,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 42.
-Package microtype Info: Applying patch `item' on input line 42.
-Package microtype Info: Applying patch `toc' on input line 42.
-Package microtype Info: Applying patch `eqnum' on input line 42.
-Package microtype Info: Applying patch `footnote' on input line 42.
-Package microtype Info: Applying patch `verbatim' on input line 42.
+LaTeX Info: Redefining \microtypecontext on input line 46.
+Package microtype Info: Applying patch `item' on input line 46.
+Package microtype Info: Applying patch `toc' on input line 46.
+Package microtype Info: Applying patch `eqnum' on input line 46.
+Package microtype Info: Applying patch `footnote' on input line 46.
+Package microtype Info: Applying patch `verbatim' on input line 46.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 42.
+LaTeX Info: Redefining \showhyphens on input line 46.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -1957,29 +1960,29 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 42.
+Package hyperref Info: Link coloring ON on input line 46.
 (./main.out) (./main.out)
 \@outlinefile=\write8
 
 \openout8 = main.out
 
-Package chemgreek Info: Activating mapping `fontspec' on line 42.
+Package chemgreek Info: Activating mapping `fontspec' on line 46.
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 44.
+(Font)              scaled to size 20.74pt on input line 48.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
-(Font)              scaled to size 20.74pt on input line 44.
+(Font)              scaled to size 20.74pt on input line 48.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 44.
+(Font)              scaled to size 17.28pt on input line 48.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 17.28pt on input line 44.
+(Font)              scaled to size 17.28pt on input line 48.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/it/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 44.
+(Font)              scaled to size 14.4pt on input line 48.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 44.
+(Font)              scaled to size 10.95pt on input line 48.
  [1
 
 
@@ -1995,18 +1998,18 @@ Package epstopdf Info: Source file: <figures/by-nc.eps>
 (epstopdf)                    size: 6543 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/by-nc-eps-converte
 d-to.pdf figures/by-nc.eps>
-(epstopdf)             \includegraphics on input line 52.
+(epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
-<figures/by-nc-eps-converted-to.pdf, id=368, 121.45375pt x 43.16125pt>
+<figures/by-nc-eps-converted-to.pdf, id=372, 121.45375pt x 43.16125pt>
 File: figures/by-nc-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/by-nc-eps-converted-to.pdf>
 Package luatex.def Info: figures/by-nc-eps-converted-to.pdf  used on input line
- 52.
+ 56.
 (luatex.def)             Requested size: 85.35696pt x 30.33318pt.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 53.
+(Font)              scaled to size 12.0pt on input line 57.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--55
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
@@ -2172,7 +2175,7 @@ LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/n' will be
 
 
 ]
-<figures/reactome.pdf, id=743, 1170.8267pt x 606.39047pt>
+<figures/reactome.pdf, id=735, 1170.8267pt x 606.39047pt>
 File: figures/reactome.pdf Graphic file (type pdf)
 <use figures/reactome.pdf>
 Package luatex.def Info: figures/reactome.pdf  used on input line 20.
@@ -2210,7 +2213,7 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 35.
  [11] [12] [13] [14] [15]
-<figures/timeline.pdf, id=913, 599.91774pt x 673.96823pt>
+<figures/timeline.pdf, id=905, 599.91774pt x 673.96823pt>
 File: figures/timeline.pdf Graphic file (type pdf)
 <use figures/timeline.pdf>
 Package luatex.def Info: figures/timeline.pdf  used on input line 133.
@@ -2221,7 +2224,7 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 151.
  [18] [19] [20] [21] [22] [23] [24] [25]
-<figures/pllm_params.pdf, id=1162, 462.52798pt x 346.89601pt>
+<figures/pllm_params.pdf, id=1154, 462.52798pt x 346.89601pt>
 File: figures/pllm_params.pdf Graphic file (type pdf)
 <use figures/pllm_params.pdf>
 Package luatex.def Info: figures/pllm_params.pdf  used on input line 298.
@@ -2245,7 +2248,7 @@ Chapter 3.
 [32
 
 ] [33] [34]
-<figures/groundgan/groundgan_fig1.png, id=1301, 1716.4125pt x 2511.3825pt>
+<figures/groundgan/groundgan_fig1.png, id=1293, 1716.4125pt x 2511.3825pt>
 File: figures/groundgan/groundgan_fig1.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig1.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig1.png  used on input li
@@ -2256,7 +2259,7 @@ ne 65.
 LaTeX Warning: Float too large for page by 11.39021pt on input line 67.
 
 [35] [36<./figures/groundgan/groundgan_fig1.png>]
-<figures/groundgan/groundgan_fig2.png, id=1316, 1756.5625pt x 2494.31876pt>
+<figures/groundgan/groundgan_fig2.png, id=1308, 1756.5625pt x 2494.31876pt>
 File: figures/groundgan/groundgan_fig2.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig2.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig2.png  used on input li
@@ -2290,21 +2293,21 @@ I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 [39] [40]
-<figures/groundgan/groundgan_fig3.png, id=1336, 1756.5625pt x 1769.61125pt>
+<figures/groundgan/groundgan_fig3.png, id=1328, 1756.5625pt x 1769.61125pt>
 File: figures/groundgan/groundgan_fig3.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig3.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig3.png  used on input li
 ne 142.
 (luatex.def)             Requested size: 426.79135pt x 429.95378pt.
  [41] [42<./figures/groundgan/groundgan_fig3.png>]
-<figures/groundgan/groundgan_fig4.png, id=1346, 1982.40625pt x 1470.49374pt>
+<figures/groundgan/groundgan_fig4.png, id=1338, 1982.40625pt x 1470.49374pt>
 File: figures/groundgan/groundgan_fig4.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig4.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig4.png  used on input li
 ne 158.
 (luatex.def)             Requested size: 426.79135pt x 316.57631pt.
  [43]
-<figures/groundgan/groundgan_fig5.png, id=1351, 2000.47375pt x 2286.5425pt>
+<figures/groundgan/groundgan_fig5.png, id=1343, 2000.47375pt x 2286.5425pt>
 File: figures/groundgan/groundgan_fig5.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig5.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig5.png  used on input li
@@ -2344,7 +2347,7 @@ l.201 ...rsus Fig. 4 of BEELINE\textsuperscript{19}}
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-<figures/groundgan/groundgan_fig6.png, id=1365, 2007.5pt x 2035.605pt>
+<figures/groundgan/groundgan_fig6.png, id=1357, 2007.5pt x 2035.605pt>
 File: figures/groundgan/groundgan_fig6.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig6.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig6.png  used on input li
@@ -2353,82 +2356,84 @@ ne 206.
 
 LaTeX Warning: Float too large for page by 12.6134pt on input line 208.
 
-[47] [48<./figures/groundgan/groundgan_fig6.png>] [49] [50]
-<figures/rapppid/overview_panel.pdf, id=1387, 296.39392pt x 432.17007pt>
-File: figures/rapppid/overview_panel.pdf Graphic file (type pdf)
-<use figures/rapppid/overview_panel.pdf>
-Package luatex.def Info: figures/rapppid/overview_panel.pdf  used on input line
- 234.
-(luatex.def)             Requested size: 296.39319pt x 432.16902pt.
- [51] [52<./figures/rapppid/overview_panel.pdf>] [53] [54] [55]
-Overfull \hbox (21.59491pt too wide) in paragraph at lines 276--277
-\TU/EBGaramond(0)/m/n/12 ity \TU/EBGaramond(0)/m/it/12 et al.\TU/EBGaramond(0)/
-m/n/12 , 2017). The source code for \TU/EBGaramond(0)/m/sc/12 󰆞󰅆󰆛󰆛
-󰌶󰆛󰅱󰅚 \TU/EBGaramond(0)/m/n/12 can be found by vis-it-ing [][]https:/
-/github.com/jszym/rapp-
+[47] [48<./figures/groundgan/groundgan_fig6.png>] [49] [50] [51] [52] [53]
+LaTeX Font Info:    Font shape `TU/Courier10Pitch(0)/m/n' will be
+(Font)              scaled to size 10.68pt on input line 254.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `Courier10Pitch' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+[54] [55] [56]
+
+LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(1)/b/n' undefined
+(Font)              using `TU/Garamond-Math.otf(1)/m/n' instead on input line 2
+93.
+
+
+LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(2)/b/n' undefined
+(Font)              using `TU/Garamond-Math.otf(2)/m/n' instead on input line 2
+93.
+
+
+LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(3)/b/n' undefined
+(Font)              using `TU/Garamond-Math.otf(3)/m/n' instead on input line 2
+93.
+
+[57] [58] [59]
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+[60]
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+.0.1'
+Missing character: There is no 𝜎 (U+1D70E) in font EBGaramond:mode=base;scrip
+t=latn;language=dflt;!
+[61] [62]
+Overfull \hbox (16.38452pt too wide) in paragraph at lines 386--387
+\TU/EBGaramond(0)/m/n/12 The sam-ple sizes were se-lected by orig-i-nal stud-ies
+ pro-duc-ing datasets used for train-ing GRouNdGAN.
  []
 
+[63] [64] [65
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 278.
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
 
-<figures/rapppid/c_datasets.png, id=1668, 287.109pt x 274.9545pt>
-File: figures/rapppid/c_datasets.png Graphic file (type png)
-<use figures/rapppid/c_datasets.png>
-Package luatex.def Info: figures/rapppid/c_datasets.png  used on input line 279
-.
-(luatex.def)             Requested size: 215.3312pt x 206.21536pt.
-[56]
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
 
-LaTeX Warning: Reference `Tab:auroc' on page 57 undefined on input line 293.
-
-[57<./figures/rapppid/c_datasets.png>]
-<figures/rapppid/auroc.png, id=1684, 467.127pt x 118.5885pt>
-File: figures/rapppid/auroc.png Graphic file (type png)
-<use figures/rapppid/auroc.png>
-Package luatex.def Info: figures/rapppid/auroc.png  used on input line 298.
-(luatex.def)             Requested size: 420.4104pt x 106.72864pt.
- [58<./figures/rapppid/auroc.png>]
-<figures/rapppid/channels.png, id=1698, 361.35pt x 543.7113pt>
-File: figures/rapppid/channels.png Graphic file (type png)
-<use figures/rapppid/channels.png>
-Package luatex.def Info: figures/rapppid/channels.png  used on input line 307.
-(luatex.def)             Requested size: 180.67456pt x 271.85498pt.
-
-
-LaTeX Font Warning: Font shape `TU/URWGothic(0)/b/sc' undefined
-(Font)              using `TU/URWGothic(0)/b/n' instead on input line 308.
-
-LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/sc' will be
-(Font)              scaled to size 9.30756pt on input line 308.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[59]
-
-LaTeX Warning: Reference `sec:rapppid:methods' on page 60 undefined on input li
-ne 315.
-
-<figures/rapppid/perc_id.png, id=1708, 719.8092pt x 472.4049pt>
-File: figures/rapppid/perc_id.png Graphic file (type png)
-<use figures/rapppid/perc_id.png>
-Package luatex.def Info: figures/rapppid/perc_id.png  used on input line 318.
-(luatex.def)             Requested size: 359.90372pt x 236.20187pt.
-[60<./figures/rapppid/channels.png>]
-
-LaTeX Warning: Reference `sec:rapppid:methods' on page 61 undefined on input li
-ne 324.
-
-
-LaTeX Warning: Reference `tab:ablation' on page 61 undefined on input line 324.
-
-
-[61<./figures/rapppid/perc_id.png>] [62] [63]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 332.
-
-[64] [65] [66] [67
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
@@ -2497,10 +2502,10 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
-
+[66
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
-[68
+
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 ]
@@ -2510,16 +2515,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-
-Underfull \hbox (badness 4779) in paragraph at lines 483--484
+Underfull \hbox (badness 4779) in paragraph at lines 534--535
 []\TU/EBGaramond(0)/m/n/12 Ko-caoglu, M., Sny-der, C., Di-makis, A. G. & Vish-wa
 nath, S. Causal-GAN:
  []
@@ -2560,7 +2556,19 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
-[69]
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+[67]
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
@@ -2599,13 +2607,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
-
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-[70]
+[68]
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
@@ -2618,13 +2620,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
-'
-
-Underfull \hbox (badness 1946) in paragraph at lines 583--584
+Underfull \hbox (badness 1946) in paragraph at lines 634--635
 []\TU/EBGaramond(0)/m/n/12 Mirza, M. & Osin-dero, S. Con-di-tional gen-er-a-tive
  ad-ver-sar-ial nets. Preprint at
  []
@@ -2642,31 +2638,31 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--597
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
 []\TU/EBGaramond(0)/m/n/12 Zi-nati, Y., Takid-deen, A. & Emad, A. GRouNdGAN. Zen
 -odo
  []
 
-) [71]
+[69]) [70]
 \openout2 = chapters/04_protocol.aux
- (./chapters/04_protocol.tex [72
+ (./chapters/04_protocol.tex [71
 
 
 
 
-] [73]
+] [72]
 Chapter 4.
-[74
+[73
 
 ]
-<figures/intrepppid/graphical_abstract.pdf, id=1825, 361.35pt x 142.26378pt>
+<figures/intrepppid/graphical_abstract.pdf, id=1550, 361.35pt x 142.26378pt>
 File: figures/intrepppid/graphical_abstract.pdf Graphic file (type pdf)
 <use figures/intrepppid/graphical_abstract.pdf>
 Package luatex.def Info: figures/intrepppid/graphical_abstract.pdf  used on inp
 ut line 38.
 (luatex.def)             Requested size: 361.34912pt x 142.26343pt.
- [75<./figures/intrepppid/graphical_abstract.pdf>]
-<figures/intrepppid/string_species_analysis-eps-converted-to.pdf, id=1836, 556.
+ [74<./figures/intrepppid/graphical_abstract.pdf>]
+<figures/intrepppid/string_species_analysis-eps-converted-to.pdf, id=1563, 556.
 0775pt x 184.69pt>
 File: figures/intrepppid/string_species_analysis-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -2674,16 +2670,16 @@ ile (type pdf)
 Package luatex.def Info: figures/intrepppid/string_species_analysis-eps-convert
 ed-to.pdf  used on input line 61.
 (luatex.def)             Requested size: 389.25159pt x 129.2821pt.
- [76<./figures/intrepppid/string_species_analysis-eps-converted-to.pdf>] [77] [
-78] [79] [80] [81]
-[82] [83]
+ [75<./figures/intrepppid/string_species_analysis-eps-converted-to.pdf>] [76] [
+77] [78] [79] [80]
+[81] [82]
 Overfull \hbox (4.93683pt too wide) in paragraph at lines 186--186
 [][]\TU/URWGothic(0)/b/n/14.4 IN-TREPP-PID out-per-forms lead-ing mod-els for pr
 e-dic-tion of hu-man pro-tein–pro-
  []
 
-[84]
-<figures/intrepppid/architecture_intra.pdf, id=1910, 495.22986pt x 696.8035pt>
+[83]
+<figures/intrepppid/architecture_intra.pdf, id=1634, 495.22986pt x 696.8035pt>
 File: figures/intrepppid/architecture_intra.pdf Graphic file (type pdf)
 <use figures/intrepppid/architecture_intra.pdf>
 Package luatex.def Info: figures/intrepppid/architecture_intra.pdf  used on inp
@@ -2696,63 +2692,57 @@ Overfull \hbox (6.6726pt too wide) in paragraph at lines 201--215
 [][] 
  []
 
-[85<./figures/intrepppid/architecture_intra.pdf>]
-<figures/intrepppid/cross_species2.pdf, id=2106, 498.55913pt x 620.39594pt>
+[84<./figures/intrepppid/architecture_intra.pdf>]
+<figures/intrepppid/cross_species2.pdf, id=1828, 498.55913pt x 620.39594pt>
 File: figures/intrepppid/cross_species2.pdf Graphic file (type pdf)
 <use figures/intrepppid/cross_species2.pdf>
 Package luatex.def Info: figures/intrepppid/cross_species2.pdf  used on input l
 ine 228.
 (luatex.def)             Requested size: 348.989pt x 434.27419pt.
- [86] [87<./figures/intrepppid/cross_species2.pdf>] [88] [89] [90]
-<figures/intrepppid/ppibio_screens.pdf, id=2353, 582.48018pt x 407.86037pt>
+ [85] [86<./figures/intrepppid/cross_species2.pdf>] [87] [88] [89]
+<figures/intrepppid/ppibio_screens.pdf, id=2073, 582.48018pt x 407.86037pt>
 File: figures/intrepppid/ppibio_screens.pdf Graphic file (type pdf)
 <use figures/intrepppid/ppibio_screens.pdf>
 Package luatex.def Info: figures/intrepppid/ppibio_screens.pdf  used on input l
 ine 274.
 (luatex.def)             Requested size: 407.73335pt x 285.5003pt.
- [91<./figures/intrepppid/ppibio_screens.pdf>] [92] [93] [94]
+ [90<./figures/intrepppid/ppibio_screens.pdf>] [91] [92] [93]
 Overfull \hbox (3.59323pt too wide) in paragraph at lines 328--329
 [][]\TU/EBGaramond(0)/m/n/12 https://github.com/Emad-COMBINE-lab/ppi.bio[][], an
 d [][]https://github.com/Emad-COMBINE-
  []
 
-[95]
+[94]
 Overfull \hbox (1.06134pt too wide) in paragraph at lines 344--345
 \TU/EBGaramond(0)/m/n/12 strate-gies for elu-ci-dat-ing protein-protein in-ter-a
 c-tions. Cell \TU/EBGaramond(0)/m/it/12 Mol Life Sci \TU/EBGaramond(0)/m/n/12 20
 21;\TU/EBGaramond(0)/b/n/12 78\TU/EBGaramond(0)/m/n/12 :5325–39. 
  []
 
-[96]
+[95]
 Overfull \hbox (30.74075pt too wide) in paragraph at lines 357--358
 []\TU/EBGaramond(0)/m/n/12 Baldi P, Chau-vin Y. Neu-ral net-works for fin-ger-pr
 int recog-ni-tion. \TU/EBGaramond(0)/m/it/12 Neu-ral Com-put \TU/EBGaramond(0)/
 m/n/12 1993;\TU/EBGaramond(0)/b/n/12 5\TU/EBGaramond(0)/m/n/12 :402–18. 
  []
 
-[97] [98]
+[96] [97]
 Overfull \hbox (15.92589pt too wide) in paragraph at lines 379--380
 \TU/EBGaramond(0)/m/n/12 func-tion anal-y-sis with PAN-THER clas-si-fi-ca-tion 
 sys-tem (v.14.0). \TU/EBGaramond(0)/m/it/12 Nat Pro-toc \TU/EBGaramond(0)/m/n/1
 2 2019;\TU/EBGaramond(0)/b/n/12 14\TU/EBGaramond(0)/m/n/12 :703–21. 
  []
 
-) [99]
+) [98]
 \openout2 = chapters/05_discussion.aux
  (./chapters/05_discussion.tex
 Chapter 5.
-LaTeX Font Info:    Font shape `TU/Courier10Pitch(0)/m/n' will be
-(Font)              scaled to size 10.68pt on input line 17.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `Courier10Pitch' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-[100
+[99
 
 
 
 
-] [101] [102] [103]
+] [100] [101] [102]
 Underfull \hbox (badness 10000) in paragraph at lines 61--64
 
  []
@@ -2762,16 +2752,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--64
 
  []
 
-[104] [105] [106] [107] [108] [109]) [110]
+[103] [104] [105] [106] [107] [108]) [109]
 \openout2 = chapters/06_conclusion.aux
  (./chapters/06_conclusion.tex
 Chapter 6.
-[111
+[110
 
 
 
 
-]) [112]
+]) [111]
 \openout2 = appendix/groundgan.aux
  (./appendix/groundgan.tex
 Appendix A.
@@ -2806,7 +2796,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--64
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/rapppid/rapppid_supp1.png, id=2686, 1504.62125pt x 751.80875pt>
+<figures/rapppid/rapppid_supp1.png, id=2404, 1504.62125pt x 751.80875pt>
 File: figures/rapppid/rapppid_supp1.png Graphic file (type png)
 <use figures/rapppid/rapppid_supp1.png>
 Package luatex.def Info: figures/rapppid/rapppid_supp1.png  used on input line 
@@ -2815,7 +2805,7 @@ Package luatex.def Info: figures/rapppid/rapppid_supp1.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/rapppid/rapppid_supp2.png, id=2687, 1564.84625pt x 1146.2825pt>
+<figures/rapppid/rapppid_supp2.png, id=2405, 1564.84625pt x 1146.2825pt>
 File: figures/rapppid/rapppid_supp2.png Graphic file (type png)
 <use figures/rapppid/rapppid_supp2.png>
 Package luatex.def Info: figures/rapppid/rapppid_supp2.png  used on input line 
@@ -2824,7 +2814,7 @@ Package luatex.def Info: figures/rapppid/rapppid_supp2.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/rapppid/rapppid_supp3.png, id=2688, 1436.36626pt x 936.49875pt>
+<figures/rapppid/rapppid_supp3.png, id=2406, 1436.36626pt x 936.49875pt>
 File: figures/rapppid/rapppid_supp3.png Graphic file (type png)
 <use figures/rapppid/rapppid_supp3.png>
 Package luatex.def Info: figures/rapppid/rapppid_supp3.png  used on input line 
@@ -2833,7 +2823,7 @@ Package luatex.def Info: figures/rapppid/rapppid_supp3.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/rapppid/rapppid_supp4.png, id=2689, 1434.35875pt x 1003.75pt>
+<figures/rapppid/rapppid_supp4.png, id=2407, 1434.35875pt x 1003.75pt>
 File: figures/rapppid/rapppid_supp4.png Graphic file (type png)
 <use figures/rapppid/rapppid_supp4.png>
 Package luatex.def Info: figures/rapppid/rapppid_supp4.png  used on input line 
@@ -2842,28 +2832,34 @@ Package luatex.def Info: figures/rapppid/rapppid_supp4.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/rapppid/rapppid_supp5.png, id=2690, 7227.0pt x 7227.0pt>
+<figures/rapppid/rapppid_supp5.png, id=2408, 7227.0pt x 7227.0pt>
 File: figures/rapppid/rapppid_supp5.png Graphic file (type png)
 <use figures/rapppid/rapppid_supp5.png>
 Package luatex.def Info: figures/rapppid/rapppid_supp5.png  used on input line 
 90.
 (luatex.def)             Requested size: 361.37117pt x 361.37117pt.
 
+LaTeX Font Warning: Font shape `TU/URWGothic(0)/b/sc' undefined
+(Font)              using `TU/URWGothic(0)/b/n' instead on input line 92.
+
+LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/sc' will be
+(Font)              scaled to size 9.30756pt on input line 92.
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [113
+) [112
 
 
 
 
-] [114<./figures/rapppid/rapppid_supp1.png>] [115<./figures/rapppid/rapppid_supp
-2.png>] [116<./figures/rapppid/rapppid_supp3.png>] [117<./figures/rapppid/rapppi
-d_supp4.png>] [118<./figures/rapppid/rapppid_supp5.png>]
+] [113<./figures/rapppid/rapppid_supp1.png>] [114<./figures/rapppid/rapppid_supp
+2.png>] [115<./figures/rapppid/rapppid_supp3.png>] [116<./figures/rapppid/rapppi
+d_supp4.png>] [117<./figures/rapppid/rapppid_supp5.png>]
 \openout2 = appendix/protocol.aux
 
 (./appendix/protocol.tex
 Appendix B.
-[119
+[118
 
 
 
@@ -2874,19 +2870,19 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/scit' will be
 Package microtype Info: Character `156' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/scit/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [120] [121] [122] [123] [124] [125] [126] [127] [128] [129]
+ [119] [120] [121] [122] [123] [124] [125] [126] [127] [128]
 Overfull \hbox (6.53587pt too wide) in paragraph at lines 216--241
  [][] 
  []
 
-[130]
-<figures/intrepppid/pr_curve3.pdf, id=2814, 550.57918pt x 346.89601pt>
+[129]
+<figures/intrepppid/pr_curve3.pdf, id=2523, 550.57918pt x 346.89601pt>
 File: figures/intrepppid/pr_curve3.pdf Graphic file (type pdf)
 <use figures/intrepppid/pr_curve3.pdf>
 Package luatex.def Info: figures/intrepppid/pr_curve3.pdf  used on input line 2
 50.
 (luatex.def)             Requested size: 440.46394pt x 277.51718pt.
-<figures/intrepppid/roc3.pdf, id=2815, 558.32907pt x 346.89601pt>
+<figures/intrepppid/roc3.pdf, id=2524, 558.32907pt x 346.89601pt>
 File: figures/intrepppid/roc3.pdf Graphic file (type pdf)
 <use figures/intrepppid/roc3.pdf>
 Package luatex.def Info: figures/intrepppid/roc3.pdf  used on input line 255.
@@ -2895,7 +2891,7 @@ Package luatex.def Info: figures/intrepppid/roc3.pdf  used on input line 255.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/intrepppid/scramble_oma4.pdf, id=2816, 738.84473pt x 666.13062pt>
+<figures/intrepppid/scramble_oma4.pdf, id=2525, 738.84473pt x 666.13062pt>
 File: figures/intrepppid/scramble_oma4.pdf Graphic file (type pdf)
 <use figures/intrepppid/scramble_oma4.pdf>
 Package luatex.def Info: figures/intrepppid/scramble_oma4.pdf  used on input li
@@ -2904,19 +2900,19 @@ ne 260.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[131<./figures/intrepppid/pr_curve3.pdf>] [132<./figures/intrepppid/roc3.pdf>]
-[133<./figures/intrepppid/scramble_oma4.pdf>]) [134
+[130<./figures/intrepppid/pr_curve3.pdf>] [131<./figures/intrepppid/roc3.pdf>]
+[132<./figures/intrepppid/scramble_oma4.pdf>]) [133
 
-] (./main.bbl [135
+] (./main.bbl [134
 
 
 
-] [136]
+] [135]
 Underfull \hbox (badness 1789) in paragraph at lines 156--159
 []\TU/EBGaramond(0)/m/n/12 Jonathan Flint and Trey Ideker.  The great hair-ball gam-bit.  \TU/EBGaramond(0)/m/it/12 PLOS Ge-net-ics\TU/EBGaramond(0)/m/n/12 ,
  []
 
-[137]
+[136]
 ! Misplaced alignment tab character &.
 l.187 \newblock {\em Molecular &
                                Cellular Proteomics : MCP}, 23(11):100844,
@@ -2937,13 +2933,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[138
+[137
 Missing character: There is no   (U+202F) in font EBGaramond/I:mode=node;scrip
 t=latn;language=dflt;+tlig;!
-] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150
+] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149
 Missing character: There is no ☥ (U+2625) in font EBGaramond:mode=node;script=
 latn;language=dflt;+tlig;!
-] [151] [152]
+] [150] [151]
 Underfull \hbox (badness 3019) in paragraph at lines 1258--1262
 []\TU/EBGaramond(0)/m/n/12 Sara Hooker.  The hard-ware lot-tery.  (arXiv:2009.06
 489), Septem-ber 2020.
@@ -2955,7 +2951,7 @@ Underfull \hbox (badness 1297) in paragraph at lines 1271--1275
 abil-i-ties of trans-form-ers.
  []
 
-[153]
+[152]
 ! Missing $ inserted.
 <inserted text> 
 $
@@ -2986,13 +2982,13 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[154])
+[153])
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[155] (./main.aux (./frontmatter/abstract.aux)
+[154] (./main.aux (./frontmatter/abstract.aux)
 (./frontmatter/acknowledgements.aux) (./chapters/00_abbreviations.aux)
 (./chapters/01_introduction.aux) (./chapters/02_lit_review.aux)
 (./chapters/03_groundgan.aux) (./chapters/04_protocol.aux)
@@ -3018,75 +3014,34 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 51C0155541D209B59107A2674B965285;24278
-(rerunfilecheck)             After:  649901B7EB5F95EC8701C4CB61BAFCCF;24709.
+(rerunfilecheck)             Before: 3CEAEF897D2C1DC16625ED241C59C21B;23536
+(rerunfilecheck)             After:  E204B7CA6754C9F00AA6F126F9255018;23468.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47406 strings out of 476553
+ 47394 strings out of 476553
  125016,2373549 words of node,token memory allocated
- 1320 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 6 glue, 4 kern, 1 penalty, 3 glyph, 13
-9 attribute, 74 glue_spec, 71 attribute_list, 2 write, 43 pdf_action nodes
-   avail lists: 1:1,2:2173,3:395,4:201,5:995,6:143,7:12979,8:54,9:566,10:32,11:1
-045,12:1
- 67395 multiletter control sequences out of 65536+600000
- 168 fonts using 56299611 bytes
- 125i,21n,117p,7201b,764s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1422 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 6 glue, 4 kern, 1 penalty, 2 sub_mlist
+, 3 glyph, 171 attribute, 74 glue_spec, 87 attribute_list, 2 write, 43 pdf_actio
+n nodes
+   avail lists: 1:2,2:2173,3:491,4:207,5:874,6:140,7:11356,8:98,9:566,10:32,11:8
+99,12:1
+ 67415 multiletter control sequences out of 65536+600000
+ 171 fonts using 56488931 bytes
+ 125i,21n,117p,2830b,764s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<./Garamond-Math.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/courie
+rten/Courier10PitchBT-Roman.otf></usr/share/fonts/opentype/urw-base35/URWGothic-
+DemiOblique.otf><./Garamond-Math.otf></usr/share/texlive/texmf-dist/fonts/openty
+pe/public/ebgaramond/EBGaramond-Regular.otf><./Garamond-Math.otf></usr/share/fon
+ts/opentype/urw-base35/URWGothic-Demi.otf></usr/share/texlive/texmf-dist/fonts/o
+pentype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/f
+onts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf
+-dist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
+Output written on main.pdf (170 pages, 15239752 bytes).
 
-warning  (pdf backend): unreferenced destination with name 'section*.128'
-
-warning  (pdf backend): unreferenced destination with name 'section*.116'
-
-warning  (pdf backend): unreferenced destination with name 'table.caption.127'
-
-warning  (pdf backend): unreferenced destination with name 'table.caption.122'
-
-warning  (pdf backend): unreferenced destination with name 'table.caption.108'
-
-warning  (pdf backend): unreferenced destination with name 'table.caption.107'
-
-warning  (pdf backend): unreferenced destination with name 'table.caption.84'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.132'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.131'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.112'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.111'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.91'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.86'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.83'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.59'
-
-warning  (pdf backend): unreferenced destination with name 'figure.caption.58'
-
-warning  (pdf backend): unreferenced destination with name 'section*.88'
-
-warning  (pdf backend): unreferenced destination with name 'section*.85'
-
-warning  (pdf backend): unreferenced destination with name 'section*.74'
-
-warning  (pdf backend): unreferenced destination with name 'section*.64'
-
-warning  (pdf backend): unreferenced destination with name 'section*.63'
-</usr/share/texlive/texmf-dist/fonts/opentype/public/courierten/Courier10PitchBT
--Roman.otf></usr/share/fonts/opentype/urw-base35/URWGothic-DemiOblique.otf><./Ga
-ramond-Math.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/
-EBGaramond-Regular.otf><./Garamond-Math.otf></usr/share/fonts/opentype/urw-base3
-5/URWGothic-Demi.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/ebgara
-mond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/
-ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/
-public/ebgaramond/EBGaramond-Bold.otf>
-Output written on main.pdf (171 pages, 17364842 bytes).
-
-PDF statistics: 3606 PDF objects out of 4296 (max. 8388607)
- 2978 compressed objects within 30 object streams
- 629 named destinations out of 1000 (max. 131072)
- 712 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 3318 PDF objects out of 3580 (max. 8388607)
+ 2716 compressed objects within 28 object streams
+ 607 named destinations out of 1000 (max. 131072)
+ 720 words of extra memory for PDF output out of 10000 (max. 100000000)
 

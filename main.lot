@@ -9,18 +9,26 @@
 \addvspace {10\p@ }
 \contentsline {chapter}{Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{73}{chapter.4}%
 \contentsline {table}{\numberline {1}{\ignorespaces Performance of GRouNdGAN in generating realistic scRNA-seq data using cell-type specific GRNs using the PBMC dataset.}}{83}{table.caption.97}%
+\contentsline {table}{\numberline {2}{\ignorespaces Arguments relevant to the preprocessing command in the configuration file.}}{94}{table.caption.118}%
+\contentsline {table}{\numberline {3}{\ignorespaces Arguments relevant to the GRN creation command in the configuration file.}}{96}{table.caption.121}%
+\contentsline {table}{\numberline {4}{\ignorespaces Arguments relevant to the training command in the configuration file.}}{99}{table.caption.124}%
+\contentsline {table}{\numberline {5}{\ignorespaces Arguments relevant to the generation command in the configuration file.}}{103}{table.caption.127}%
+\contentsline {table}{\numberline {6}{\ignorespaces Arguments relevant to the evaluation command in the configuration file.}}{104}{table.caption.129}%
+\contentsline {table}{\numberline {7}{\ignorespaces Arguments relevant to the benchmarking command in the configuration file.}}{106}{table.caption.131}%
+\contentsline {table}{\numberline {8}{\ignorespaces Arguments relevant to the perturbation command in the configuration file.}}{107}{table.caption.134}%
+\contentsline {table}{\numberline {9}{\ignorespaces Troubleshooting table.}}{111}{table.caption.138}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {chapter}{Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{108}{appendix.A}%
-\contentsline {table}{\numberline {S1}{\ignorespaces Ranges of hyperparameters used for training of \textsc {rapppid}.}}{108}{table.caption.126}%
-\contentsline {table}{\numberline {S2}{\ignorespaces The final values of hyperparameters selected.}}{108}{table.caption.127}%
-\contentsline {table}{\numberline {S3}{\ignorespaces Statistics for the \textsc {string} \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets.}}{109}{table.caption.128}%
-\contentsline {table}{\numberline {S4}{\ignorespaces Repeatability of results across randomly generated \textsc {c3} datasets.}}{109}{table.caption.129}%
+\contentsline {chapter}{Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{130}{appendix.A}%
+\contentsline {table}{\numberline {S1}{\ignorespaces Ranges of hyperparameters used for training of \textsc {rapppid}.}}{130}{table.caption.155}%
+\contentsline {table}{\numberline {S2}{\ignorespaces The final values of hyperparameters selected.}}{130}{table.caption.156}%
+\contentsline {table}{\numberline {S3}{\ignorespaces Statistics for the \textsc {string} \textsc {c1}, \textsc {c2}, and \textsc {c3} datasets.}}{131}{table.caption.157}%
+\contentsline {table}{\numberline {S4}{\ignorespaces Repeatability of results across randomly generated \textsc {c3} datasets.}}{131}{table.caption.158}%
 \addvspace {10\p@ }
-\contentsline {chapter}{Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{114}{appendix.B}%
-\contentsline {table}{\numberline {S2}{\ignorespaces Hyperparameters used to train \textsc {intrepppid} in all experiments.}}{118}{table.caption.141}%
-\contentsline {table}{\numberline {S4}{\ignorespaces Performance of \textsc {intrepppid} tested on increasing negative-to-positive ratios.}}{120}{table.caption.143}%
-\contentsline {table}{\numberline {S6}{\ignorespaces Performance of \textsc {intrepppid} with scrambled and not scrambled orthologue information.}}{122}{table.caption.145}%
-\contentsline {table}{\numberline {S7}{\ignorespaces Change in \textsc {intrepppid} performance when omitting orthology data.}}{123}{table.caption.146}%
-\contentsline {table}{\numberline {S9}{\ignorespaces Analysis of online availability of \textsc {ppi}-related tools.}}{125}{table.caption.148}%
+\contentsline {chapter}{Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{136}{appendix.B}%
+\contentsline {table}{\numberline {S2}{\ignorespaces Hyperparameters used to train \textsc {intrepppid} in all experiments.}}{140}{table.caption.170}%
+\contentsline {table}{\numberline {S4}{\ignorespaces Performance of \textsc {intrepppid} tested on increasing negative-to-positive ratios.}}{142}{table.caption.172}%
+\contentsline {table}{\numberline {S6}{\ignorespaces Performance of \textsc {intrepppid} with scrambled and not scrambled orthologue information.}}{144}{table.caption.174}%
+\contentsline {table}{\numberline {S7}{\ignorespaces Change in \textsc {intrepppid} performance when omitting orthology data.}}{145}{table.caption.175}%
+\contentsline {table}{\numberline {S9}{\ignorespaces Analysis of online availability of \textsc {ppi}-related tools.}}{147}{table.caption.177}%

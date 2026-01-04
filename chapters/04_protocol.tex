@@ -733,8 +733,883 @@ commands).
 Singularity container. 
 
 
-\subsection*{Step 1. Preprocessing\\● TIMING \textasciitilde <1 min}
+\subsection*{Step 1. Preprocessing\\● TIMING <1 min}
 \addcontentsline{toc}{subsection}{Step 1. Preprocessing }
 Before running the preprocessing command, ensure that the configuration file contains the
 required arguments to the Preprocessing and Data sections of the configuration file, as outlined
 in Table 2.
+
+\begin{table}[!t]
+	\caption[ Arguments relevant to the preprocessing command in the configuration file.]{ Arguments relevant to the preprocessing command in the configuration file.} \label{tab:protocol_table2}}
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{10x} \\ \texttt{[type: boolean]}} & ``True'' if you are supplying 10x-formatted data files (\texttt{matrix.mtx}, \texttt{genes.tsv}, and \texttt{barcodes.tsv}). ``False'' if you are providing annotated data (anndata) objects in the \texttt{.h5ad} format. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{Raw} \\ \texttt{[type: file path/directory]}} & If 10x is set to ``True'', path to the directory containing 10x-formatted data files. Otherwise, path to the raw (unprocessed) \texttt{.h5ad} file. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{validation set size} \\ \texttt{[type: integer]}} & Number of cells to include in the validation set. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{test set size} \\ \texttt{[type: integer]}} & Number of cells to include in the test set. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{Annotations} \\ \texttt{[type: directory, Optional]}} & Path to additional annotations (such as cell-type, clusters, etc. for cells/samples). \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{min cells} \\ \texttt{[type: integer]}} & Filter genes that are expressed in less than the specified ``min cells'' threshold of cells. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{min genes} \\ \texttt{[type: integer]}} & Filter cells with less than the specified threshold of ``min genes'' expressed. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{library size} \\ \texttt{[type: integer]}} & Library size used for library-size normalization. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{louvain res} \\ \texttt{[type: float]}} & Louvain clustering resolution (higher resolution means finding more and smaller clusters). \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Preprocessing]} & \makecell[l]{\texttt{highly variable number} \\ \texttt{[type: integer]}} & Number of highly variable genes to identify and keep for the rest of the pipeline. \\
+        \texttt{[EXPERIMENT]/[Data]} & \makecell[l]{\texttt{train} \\ \texttt{[type: file path]}} & Path to a \texttt{.h5ad} file to output the training set. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Data]} & \makecell[l]{\texttt{validation} \\ \texttt{[type: file path]}} & Path to a \texttt{.h5ad} file to output the validation set. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Data]} & \makecell[l]{\texttt{test} \\ \texttt{[type: file path]}} & Path to a \texttt{.h5ad} file to output the test set. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Data]} & \makecell[l]{\texttt{number of genes} \\ \texttt{[type: integer]}} & Number of genes in the dataset. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+Once the configuration file is ready, run the program with the \texttt{--preprocess} flag, supplying
+the path to the configuration file with the \texttt{--config} flag.
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg –preprocess
+\end{codeblock}
+\textbf{◆ \textcolor{blue}{TROUBLESHOOTING}}
+
+Once completed, you will be shown a success message and the preprocessed train, validation,
+and test sets will be saved as separate \texttt{.h5ad} files in the paths defined under the \texttt{[Data]} section
+of the configuration file. 
+
+\textit{Example of the expected output: }
+\begin{codeblock}
+Successfully preprocessed and saved dataset.\\
+Train set: data/processed/PBMC/PBMC68k\_train.h5ad\\
+Validation set: data/processed/PBMC/PBMC68k\_validation.h5ad\\
+Test set: data/processed/PBMC/PBMC68k\_test.h5ad
+\end{codeblock}
+\textbf{\textcolor{violet}{▲} CRITICAL} Do not replace GRouNdGAN’s preprocessing with a custom preprocessing step.
+GRouNdGAN specifically requires library-size normalized count data. 
+
+\subsection*{Step 2. GRN Creation}
+\addcontentsline{toc}{subsection}{Step 2. GRN Creation}
+
+\subsubsection*{A) Imposing a GRN Inferred from Data\\● TIMING \textasciitilde 8 min for a dataset of around 67000 cells with 4 CPU threads}
+\addcontentsline{toc}{subsubsection}{Imposing a GRN Inferred from Data}
+
+GRouNdGAN by default uses GRNBoost2[5] to infer a GRN on the preprocessed training set. It
+then uses the inferred GRN as a scaffold to subsample edges in order to create a causal bipartite
+directed acyclic graph (DAG). This DAG is then converted and saved as a pickle file in a custom
+format (see Step 2 - Imposing Custom GRNs) readable to the program. The \texttt{–-create\_grn}
+command requires the arguments listed in Table 3, in addition to those previously discussed for
+Step 1 - Preprocessing. GRouNdGAN provides two ways to subsample the GRN. The first uses
+\texttt{[EXPERIMENT]/[GRN Preparation]/strategy = top}, which includes the top k most
+important TFs of each gene. The second involves generating two separate GRNs, each containing
+half of these top k TFs per gene. By setting \texttt{[EXPERIMENT]/[GRN Preparation]/strategy
+= pos ctr} and then \texttt{[EXPERIMENT]/[GRN Preparation]/strategy = neg ctr} , the TFs are split based on their parity in the list of each gene’s ranked list of important TFs. Since this
+alternative method produces two GRNs of identical densities and relatively similar importances,
+it is useful for comparative and controlled analysis. 
+
+\begin{table}[!t]
+	\caption[Arguments relevant to the GRN creation command in the configuration file.]{Arguments relevant to the GRN creation command in the configuration file.} \label{tab:protocol_table3}}
+\resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/[GRN Preparation]} & \makecell[l]{\texttt{TFs} \\ \texttt{[type: file path]}} & Path to the file containing TF names (accepts the AnimalTFDB \texttt{.csv} format). \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Preparation]} & \makecell[l]{\texttt{k} \\ \texttt{[type: integer]}} & The number of most important TFs per gene to include in the GRN. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Preparation]} & \makecell[l]{\texttt{strategy} \\ \texttt{[type: string]}} & \makecell[l]{Defines the procedure used to subsample from the inferred\\GRN. The following options are\\available:\\ “top”: keep the top most important “k” TFs for every gene.\\ \\“pos ctr:” keep the TFs with even parity in the list of top “k”\\TFs per gene (even indices 0, 2, 4... = top 1, 3, 5, ...).\\ \\“neg ctr”: keep the TFs with odd parity in the list of top “k”\\TFs per gene (odd indices 1, 3, 5... = top 2, 4, 6,...).} \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Preparation]} & \makecell[l]{\texttt{Inferred GRN} \\ \texttt{[type: file path]}} & File path to store the GRN inferred by GRNBoost2 (\texttt{.csv} file). \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Data]} & \makecell[l]{\texttt{causal graph} \\ \texttt{[type: file path]}} & File path to store the GRouNdGAN subsampled GRN (\texttt{.pkl} file). \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+After completing the relevant sections of the configuration file, execute the following command
+to run this step:
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg --create\_grn
+\end{codeblock}
+\textbf{◆ \textcolor{blue}{TROUBLESHOOTING}}
+
+Once finished, you will be shown an output detailing the properties of the subsampled GRN and
+the causal graph will be written in the location specified by \texttt{[EXPERIMENT]/[Data]/causal
+graph} in the configuration file.
+
+\textit{Example of the expected output:}
+\begin{codeblock}
+Using 63 TFs for GRN inference.\\
+preparing dask client\\
+parsing input\\
+creating dask graph\\
+4 partitions\\
+computing dask graph\\
+shutting down client and local cluster\\
+finished\\
+Successfully saved GRN inferred by GRNBoost2 GRN to data/processed/PBMC/inferred\_grnboost2.csv\\
+\\
+Causal Graph\\
+----------------- ------------\\
+TFs 63\\
+Targets 937\\
+Genes 1000\\
+Possible Edges 59031\\
+Imposed Edges 14055\\
+GRN density Edges 0.238095\\
+----------------- ------------\\
+Successfully saved GRouNdGAN causal graph to data/processed/PBMC/causal\_graph.pkl
+\end{codeblock}
+
+\subsubsection*{B) Imposing a Custom GRN}
+\addcontentsline{toc}{subsubsection}{Imposing a Custom GRN}
+
+
+%\subsubsection*{B) Imposing a Custom GRN}
+%\addcontentsline{toc}{subsubsection}{Imposing a Custom GRN}
+
+\textbf{\textcolor{violet}{▲} CRITICAL STEP} Instead of creating causal graphs through the described subsampling process
+of a GRNBoost2 inferred GRN, it is possible to impose custom GRNs for greater control over exact
+edges to include and exclude from the causal graph. Nonetheless, we still advise users to impose
+causal edges that are biologically meaningful to the reference dataset (through evidence found
+from literature, computational methods, ChiP-seq datasets, etc.). 
+
+\textbf{\textcolor{violet}{▲} CRITICAL} Since GRouNdGAN’s two-fold objective is to impose a causal structure while
+generating realistic data points, drastic inconsistencies between the reference data and the
+imposed causal graph can deteriorate the quality of simulated cells.  
+
+GRouNdGAN reads the causal graph from a pickle file storing a python dictionary. In this
+dictionary, each key corresponds to a gene index, and each value is a Python set containing the
+indices of its regulating TFs.
+
+Before saving the dictionary, gene and TF names must be converted to their corresponding
+indices based on their order in the input dataset (\texttt{.var\_names} attribute in the Anndata file). For
+example, a dictionary structured with gene/TF names of the form
+\begin{codeblock}
+\begin{verbatim}
+causal_graph = {
+ "G2": {"TF2", "TFn"},
+ "G1": {"TF1"},
+ "Gn": {"TF2", "TF1"},
+ "G3": {"TFn", "TF1"}
+}
+\end{verbatim}
+\end{codeblock}
+must first be converted into index-based format after resolving each name to its datasetspecific index below:
+
+\begin{codeblock}
+\begin{verbatim}
+causal_graph = {
+ 1: {4, 5},
+ 3: {0},
+ 6: {4, 0},
+ 2: {5, 0}
+}
+\end{verbatim}
+\end{codeblock}
+
+Finally, the causal graph dictionary can be saved as a pickle file in python as shown below.
+
+\begin{codeblock}
+import pickle\\
+\\
+with open("path/to/write/causal\_graph.pkl", "wb") as fp:\\
+ pickle.dump(causal\_graph, fp, protocol=pickle.HIGHEST\_PROTOCOL)
+\end{codeblock}
+
+\textbf{\textcolor{violet}{▲} CRITICAL} If you’re imposing a custom GRN, skip the \texttt{--create\_grn} command.
+
+\textbf{\textcolor{violet}{▲} CRITICAL} The GRN must be a directed bipartite graph. It cannot include cycles. 
+
+\textbf{\textcolor{violet}{▲} CRITICAL} The python dictionary must include all TFs and genes present in the preprocessed
+dataset. Every target gene must appear as a key in the dictionary, and every TF must appear at
+least once in the list of values associated with those keys.
+
+\textbf{\textcolor{violet}{▲} CRITICAL} Make sure the \texttt{[EXPERIMENT]/[Data]/causal graph]} argument in the
+configuration file points to the newly-created pickle file.
+
+\subsection*{Step 3. Model Training\\● TIMING \textasciitilde 75 h on a single NVidia A100SXM4 GPU}
+\addcontentsline{toc}{subsection}{Step 3. Model Training}
+
+When running training command, three folders will be created in the output directory specified
+by the configuration file (\texttt{[EXPERIMENT]/output directory}). The configuration file will also
+be copied over into this directory. 
+\begin{itemize}
+  \item \texttt{checkpoints/}: contains the \texttt{.pth} state dictionaries, including model’s weights, biases,
+and other parameters.
+  \item \texttt{TensorBoard/}: contains stored TensorBoard logs (.tfevent files) for visualizing the
+model’s training progress and neural graph. 
+  \item \texttt{TSNE/}: contains t-SNE plots of reference and simulated data. 
+\end{itemize}
+The frequency at which these directories are updated can be configured through parameters
+specified in the configuration file, as detailed in Table 4.
+
+\begin{table}[!t]
+	\caption[Arguments relevant to the training command in the configuration file.]{Arguments relevant to the training command in the configuration file.} \label{tab:protocol_table4}}
+\resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/[Training]/[Logging]} & \makecell[l]{\texttt{summary frequency} \\ \texttt{[type: integer]}} & Specifies the frequency at which TensorBoard logs are generated for the GRouNdGAN model. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Training]/[Logging]} & \makecell[l]{\texttt{plot frequency} \\ \texttt{[type: integer]}} & Specifies the frequency at which t-SNE plots are generated for the GRouNdGAN model. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Training]/[Logging]} & \makecell[l]{\texttt{save frequency} \\ \texttt{[type: integer]}} & Specifies the frequency at which checkpoints are saved for the GRouNdGAN model. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[CC Training]/[Logging]} & \makecell[l]{\texttt{summary frequency} \\ \texttt{[type: integer]}} & Specifies the frequency at which TensorBoard logs are generated for the causal controller. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[CC Training]/[Logging]} & \makecell[l]{\texttt{plot frequency} \\ \texttt{[type: integer]}} & Specifies the frequency at which t-SNE plots are generated for the causal controller. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[CC Training]/[Logging]} & \makecell[l]{\texttt{save frequency} \\ \texttt{[type: integer]}} & Specifies the frequency at which checkpoints are saved for the causal controller. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+To begin training, use the \texttt{--train} flag and along with the path to the configuration file as shown
+below. 
+
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg –train
+\end{codeblock}
+\textbf{◆ \textcolor{blue}{TROUBLESHOOTING}}
+
+\textit{Example of the expected output:}
+\begin{codeblock}
+\begin{verbatim}
+Done training causal controller step 0
+Done training causal controller step 1
+Done training causal controller step 2
+...
+Done training causal controller step 10000
+Saved logs
+Saved t-SNE plot
+Done training causal controller step 10001
+...
+Done training causal controller step 200000
+Saved logs
+Saved t-SNE plot
+Saved checkpoint
+Done training GRouNdGAN step 0
+Done training GRouNdGAN step 1
+Done training GRouNdGAN step 2
+...
+Done training GRouNdGAN step 10000
+Saved logs
+Saved t-SNE plot
+Done training GRouNdGAN step 10001
+...
+Done training GRouNdGAN step 100000
+Saved logs
+Saved t-SNE plot
+Saved checkpoint
+...
+Done training GRouNdGAN step 1000000
+Saved logs
+Saved t-SNE plot
+Saved checkpoint
+Finished training
+\end{verbatim}
+\end{codeblock}
+\textbf{\textcolor{violet}{▲} CRITICAL} While GRouNdGAN supports muti-GPU training, we recommend using a single GPU
+to minimize overhead. By default, GRouNdGAN trains for 1000000 steps. Changing this setting in
+the configuration file is not recommended. 
+
+\textbf{\textcolor{violet}{▲} CRITICAL} GRouNdGAN also provides two slurm scripts for training and monitoring on HPC
+clusters in the \texttt{scripts/} directory of its code repository.
+
+\textbf{◼ PAUSE POINT} Users can stop and resume training from a checkpoint by setting
+\texttt{[EXPERIMENT]/\\checkpoint} in the configuration file to the latest saved checkpoint (\texttt{.pth} file
+in \texttt{[EXPERIMENT]/output directory/checkpoints/}) and rerunning the \texttt{–train}
+command. 
+
+\textit{\textbf{Training Monitoring using TensorBoard}}
+
+TensorBoard is a visualization tool that GRouNdGAN uses to provide its users with an intuitive
+monitoring and visualization platform. It keeps track of several key scalar values such as
+generator and critic losses, learning rates, and gradient penalty (Figure 4-b). At regular intervals,
+it also logs t-SNE plots comparing cells from the validation set with an equal number of simulated
+cells (Figure 4-a). Furthermore, TensorBoard provides a detailed view of GRouNdGAN’s
+architecture by rendering the computational graphs of the Wasserstein critic and generator
+(comprised of causal controller and target generators) at varying levels of complexity as shown
+in Figure 4-c,d.
+
+GRouNdGAN saves TensorBoard event files in \texttt{[EXPERIMENT]/output
+directory\_CC/\\Tensorboard} for the causal controller training and \texttt{[EXPERIMENT]/output
+directory/\\Tensorboard} for the second training step.
+
+Run the following command to start TensorBoard. 
+
+\begin{codeblock}
+tensorboard --logdir="{Tensorboard Event Directory} " --host 0.0.0.0 --load\_fast false 
+\end{codeblock}
+
+\textbf{\textcolor{violet}{▲} CRITICAL} Users can replace the \texttt{{Tensorboard Event Directory}} in the above command with a parent directory to compare different training runs of the model.
+
+Once Tensorboard is running, it will output a local URL (by default: \url{http://localhost:6006/}) that can
+be opened in a web browser to access the TensorBoard dashboard. In the case you are running
+GRouNdGAN on a remote server, you might need to set up port forwarding to access
+TensorBoard on your local machine. The command below forwards the remote machine's port
+6006 (where TensorBoard is running) to port 6007 on your local machine.
+
+\begin{codeblock}
+ssh -N -f -L localhost:6007:computenode:6006 userid@remote\_machine\_ip
+\end{codeblock}
+
+\textbf{\textcolor{violet}{▲} CRITICAL} The above command might need to be modified depending on your remote server
+setup, network configuration, and port availability. Ensure that the port on which TensorBoard is
+running is not blocked by a firewall on the remote server. Some servers might be configured to
+restrict port forwarding.
+
+\begin{figure}[!ht]%figure4
+	\centerline{\includegraphics[width=\textwidth]{figures/protocol/protocol_fig4.png}}
+	\caption[TensorBoard visualizations during GRouNdGAN training.]{\textbf{TensorBoard visualizations during GRouNdGAN training.} \textbf{a} The “images” tab displays
+a t-SNE plot of reference and generated cells. \textbf{b} The “scalars tab” displays key training metrics
+over time, including gradient penalty, learning rate, and losses for both the critic and generator.
+\textbf{c} and \textbf{d} The “graphs” tab visualise the computational graph for the critic and generator networks
+of GRouNdGAN, showing the model architecture and the flow of gradients during
+backpropagation.}\label{fig:protocol:fig4}
+\end{figure}
+
+\subsection*{Step 4. Simulation\\● TIMING <30 s}
+\addcontentsline{toc}{subsection}{Step 4. Simulation}
+
+Once training is finished, set the \texttt{[EXPERIMENT]/checkpoint} path in the configuration file to
+the desired model checkpoint (\texttt{.pth} file in \texttt{[EXPERIMENT]/output
+directory/checkpoints/}). In most cases, you would want to use the latest checkpoint
+corresponding to the greatest number of steps. Furthermore, you can control the generation
+path and number of cells to generate through the configuration file (refer to Table 5).
+
+\begin{table}[!t]
+	\caption[Arguments relevant to the generation command in the configuration file.]{Arguments relevant to the generation command in the configuration file.} \label{tab:protocol_table5}}
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/checkpoint} & \makecell[l]{\texttt{model checkpoint} \\ \texttt{[type: file path]}} & Path to the checkpoint from which to load the trained model. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[generation]} & \makecell[l]{\texttt{number of cells to generate} \\ \texttt{[type: integer]}} & Number of cells to simulate. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[generation]} & \makecell[l]{\texttt{generation path} \\ \texttt{[type: directory, Optional]}} & Path where to save the simulated dataset (\texttt{simulated.h5ad}). If left undefined, \texttt{simulated.h5ad} will be saved to \texttt{[Experiment]/output directory/}. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+Running the following command will save the generated cells as a \texttt{.h5ad} file (\texttt{simulated.h5ad}).
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg –-generate
+\end{codeblock}
+
+\textit{Example of the expected output: }
+\begin{codeblock}
+Simulated cells saved to results/GRouNdGAN/simulated.h5ad
+\end{codeblock}
+\textbf{◼ PAUSE POINT} Remaining steps are optional. Users can stop here and use the saved simulated
+dataset for benchmarking, data augmentation, and other external analyses. 
+
+\subsection*{Step 5. Assessing simulated data quality (Optional)\\● TIMING <30 s}
+\addcontentsline{toc}{subsection}{Step 5. Assessing simulated data quality (Optional)}
+
+This step provides a simple command for assessing the quality of simulated scRNA-seq data
+compared to its reference experimental dataset using the following qualitative and quantitative
+metrics:
+
+\begin{itemize}
+    \item t-SNE plot visualization of jointly embedded experimental and simulated cells. Greater
+overlap indicates better alignment.
+    \item Euclidean distance between the mean expression profiles of real and simulated cells. A
+lower value indicates higher similarity.
+    \item Cosine distance between the mean expression profiles of real and simulated cells. A lower
+value indicates higher directional similarity and better alignment.
+	\item AUROC of a random forest classifier trained to distinguish simulated cells from
+experimental cells. An AUROC closer to 0.5 indicates that the classifier fails to tell the two
+classes of cells apart, implying more realistic simulation. 
+	\item Maximum Mean Discrepancy (MMD) to quantify distributional similarity of experimental
+and simulated cells. A lower value is desired. 
+	\item Mean integration local inverse Simpson’s index (miLISI) to measure local mixing of real
+and simulated cells in the t-SNE space. A value closer to 2 indicates good integration and
+mixing. 
+\end{itemize}
+
+All metrics are computed by comparing the test set to an equal number of cells sampled from
+the simulated data. As a control, we also compute the Euclidean distance, Cosine distance, MMD,
+and miLISI between two halves of the reference test set to establish a baseline for comparison. You can specify which evaluation metrics to compute by setting the corresponding flags in the
+configuration file (see Table 6). Additionally, you can use GRouNdGAN's evaluation framework to
+assess simulated datasets generated by external simulators by updating \texttt{[EXPERIMENT]/
+[Evaluation]/simulated data path} in the configuration file to point to the desired
+dataset.
+
+\begin{table}[!t]
+	\caption[Arguments relevant to the evaluation command in the configuration file.]{Arguments relevant to the evaluation command in the configuration file.} \label{tab:protocol_table6}}
+\resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{simulated data path} \\ \texttt{[type: directory, Optional]}} & Path to the simulated data you wish to assess. Defaults to \texttt{[EXPERIMENT]/[Generation]/generation path} if left undefined. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{plot tsne} \\ \texttt{[type: boolean]}} & Whether to plot the t-SNE plot. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{compute euclidean distance} \\ \texttt{[type: boolean]}} & Whether to compute the Euclidean distance metric. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{compute cosine distance} \\ \texttt{[type: boolean]}} & Whether to compute the Cosine distance metric. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{compute rf auroc} \\ \texttt{[type: boolean]}} & Whether to compute the RF AUROC metric and plot the ROC curve. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{compute MMD} \\ \texttt{[type: boolean]}} & Whether to compute the MMD metric. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Evaluation]} & \makecell[l]{\texttt{compute miLISI} \\ \texttt{[type: boolean]}} & Whether to compute the miLISI metric. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+To run the evaluation pipeline with the specified configuration, execute the following command.
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg --evaluate 
+\end{codeblock}
+
+Output plots (following the format of Figure 5-a,b) will be saved to \textttt{[EXPERIMENT]/output directory/}
+
+\textit{Example of the expected output:}
+\begin{codeblock}
+\begin{verbatim}
+t-SNE plot saved to results/GRouNdGAN/tSNE.png
+
+Euclidean distance (real vs fake): 171.218017578125
+Euclidean distance (control): 242.84738159179688
+
+Cosine distance (real vs fake): 0.0003756880760192871
+Cosine distance (control): 0.0007848143577575684
+
+RF ROC plot saved to results/GRouNdGAN/RF.png
+RF AUROC: 0.5211342726343393
+
+MMD (real vs fake): 0.03008744777663175
+MMD (control): 0.06244054076970418
+
+miLISI (real vs fake): 1.89692891595357
+miLISI (control): 1.8900128524031679
+\end{verbatim}
+\end{codeblock}
+
+\subsection*{Step 6. GRN inference benchmarking (Optional)\\● TIMING <20 s}
+\addcontentsline{toc}{subsection}{Step 6. GRN inference benchmarking (Optional)}
+
+One of GRouNdGAN’s main goals is to provide tools and ground truth for benchmarking GRN
+inference methods. This command evaluates how faithful GRNs inferred on GRouNdGANgenerated data are to the one imposed onto the model and used for simulation. To run this
+command, you must provide the path to the inferred GRN through the configuration file using
+the \texttt{[EXPERIMENT]/[GRN Benchmarking]/grn to benchmark]} field (refer to Table 7).
+The GRN should be a tab-separated \texttt{.csv} file with three columns in the following order:
+
+\begin{enumerate}
+	\item TF
+	\item Gene 
+	\item Importance
+\end{enumerate}
+
+Headers are optional; only the column order matters.
+
+\textit{Example format:}
+\begin{codeblock}
+\begin{verbatim}
+Gata1 Tbb-bs 0.89
+Tal1 Tbb-bs 0.74
+Gata2 Gfi1b 0.52 
+\end{verbatim}
+\end{codeblock}
+
+When enabled in the configuration file, the GRN benchmarking command generates one or both
+of the following plots, which are saved to the directory specified in \texttt{[EXPERIMENT]/[GRN Benchmarking]/plots save path}:
+
+\begin{itemize}
+	\item Precision at k: Evaluates the proportion of the top-k inferred TFs for each gene are true
+regulators. The value of k is configurable. 
+	\item Precision-Recall (PR) curve: Computed across all predicted edges in the inferred GRN. 
+\end{itemize}
+
+\begin{table}[!t]
+	\caption[ Arguments relevant to the benchmarking command in the configuration file.]{ Arguments relevant to the benchmarking command in the configuration file.} \label{tab:protocol_table7}}
+\resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/[GRN Benchmarking]} & \makecell[l]{\texttt{grn to benchmark} \\ \texttt{[type: file path]}} & Path to the inferred GRN you wish to benchmark. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Benchmarking]} & \makecell[l]{\texttt{ground truth save path} \\ \texttt{[type: directory, Optional]}} & If specified, the ground truth GRN (GRouNdGAN’s causal graph) will be exported to the provided path. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Benchmarking]} & \makecell[l]{\texttt{plots save path} \\ \texttt{[type: path]}} & Folder in which to save generated plots. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Benchmarking]} & \makecell[l]{\texttt{compute precision at k} \\ \texttt{[type: boolean]}} & Whether to compute precision at k. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Benchmarking]} & \makecell[l]{\texttt{k} \\ \texttt{[type: integer]}} & How many of the top k regulators to consider when computing precision at k. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[GRN Benchmarking]} & \makecell[l]{\texttt{compute pr} \\ \texttt{[type: boolean]}} & Whether to plot the PR curve and compute AUPRC of GRN recovery. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+Run this step using the command below.
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg –benchmark\_grn 
+\end{codeblock}
+Both plots (see Figure 5-c, d) are saved as \texttt{.png} files, and relevant evaluation metrics such as
+precision at k scores and the area under the precision recall curve (AUPRC) are printed to the
+console.
+
+\textit{Example of the expected output: }
+
+\begin{codeblock}
+\begin{verbatim}
+Saved ground truth GRN to data/generated/ground truth GRN.csv
+
+Inferred GRN precision at k: [1.0, 0.9983425414364641,
+0.9918968692449356, 0.9820441988950276, 0.9703867403314917]
+Baseline precision at k: [0.010526315789473684, 0.021052631578947368,
+0.031578947368421054, 0.042105263157894736, 0.05263157894736842]
+Saved precision at k plot at results/GRouNdGAN/Top_TF_precision.png
+
+Inferred GRN AURPC: 0.71
+Baseline AUPRC (random predictor): 0.15789473684210525
+Saved PR curve at results/GRouNdGAN/PR_curve.png
+\end{verbatim}
+\end{codeblock}
+
+\textbf{◼ PAUSE POINT} The ground truth GRN can be exported as a \texttt{.csv} file to be used for additional
+analysis or use in external benchmarking tools. Simply specify \texttt{[EXPERIMENT]/[GRN
+Benchmarking]/ground truth save path} in the configuration file before running the
+command.
+
+\begin{figure}[!ht]%figure5
+	\centerline{\includegraphics[width=\textwidth]{figures/protocol/protocol_fig5.png}}
+	\caption[Example of expected plot outputs saved by the evaluation and benchmarking commands.]{\textbf{Example of expected plot outputs saved by the evaluation and benchmarking
+commands.} \textbf{a} t-SNE plot of simulated and test set experimental cells. \textbf{b} Receiver Operating
+Characteristic (ROC) curve of a random forest classifier distinguishing between simulated cells
+and test set experimental cells. \textbf{c} Precision at k plot showing the proportion of true regulators
+among the top-k predicted transcription factors for each gene. \textbf{d} Precision-Recall (PR) curve
+illustrating global GRN reconstruction performance. The baseline corresponds to the
+performance of a random predictor which also corresponds to the density of the ground truth
+GRN.}\label{fig:protocol:fig5}
+\end{figure}
+
+\subsection*{Step 7. Perturbation prediction (Optional)\\● TIMING <1 min}
+\addcontentsline{toc}{subsection}{Step 7. Perturbation prediction (Optional)}
+
+Once trained, GRouNdGAN can sample from interventional distributions and perform in silico
+perturbation experiments at inference time. It enables the creation of matched case/control
+comparison as perturbations are applied to the same batch of cells (batch size of 1024 by default).
+To simulate a perturbation, provide a list of TFs to perturb using
+\texttt{[EXPERIMENT]/[Perturba\\tion]/tfs to perturb}, along with the corresponding target
+values in \texttt{[EXPERIMENT]/[Per\allowbreak turbation]/perturbation values}. Each TF is matched to
+a value by its position in the list, with entries separated by spaces (as shown in Table 8).
+
+\begin{table}[!t]
+	\caption[Arguments relevant to the perturbation command in the configuration file.]{Arguments relevant to the perturbation command in the configuration file.} \label{tab:protocol_table8}
+\resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}llp{9cm}@{}}
+        \toprule
+        \textbf{Configuration File Section} & \textbf{Argument} & \textbf{Explanation} \\
+        \midrule
+        \texttt{[EXPERIMENT]/[Perturbation]} & \makecell[l]{\texttt{save dir} \\ \texttt{[type: directory]}} & Directory in which to save cells before and after perturbation, as well as generated plot. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Perturbation]} & \makecell[l]{\texttt{tfs to perturb} \\ \texttt{[type: list[string]]}} & List of space-separated TF names to perturb. Example: \texttt{IRF8 CEBPA}. \\
+        \addlinespace
+        \texttt{[EXPERIMENT]/[Perturbation]} & \makecell[l]{\texttt{perturbation values} \\ \texttt{[type: list[float]]}} & List of space-separated float values. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+\textbf{\textcolor{violet}{▲} CRITICAL} Ensure all TFs specified in \texttt{[EXPERIMENT]/[Pe\allowbreak rturbation]/tfs to perturb}
+exist in the causal graph and that their count matches the number of entries in \texttt{[EXPERIMENT]/[Pe\allowbreak rturbation]/perturbation}. 
+
+Once the experiment parameters are defined, you can run the perturbation experiment with the
+following command.
+\begin{codeblock}
+\$ python src/main.py --config configs/causal\_gan.cfg –perturb
+\end{codeblock}
+\textbf{◆ \textcolor{blue}{TROUBLESHOOTING}}
+
+The cell states before and after perturbation will be saved as \texttt{before\_perturbation.h5ad}
+and \texttt{after\_perturbation.h5ad}, respectively, in the specified output directory. There is a
+one-to-one correspondence between cells in the two simulated datasets (row and column indices match). These files can be used for downstream or secondary analysis. In addition to
+the data files, a series of plots, similar to Figure 6, will be generated and saved to visualize the
+effects of the perturbation.
+
+\textit{Example of the expected output: }
+
+\begin{codeblock}
+\begin{verbatim}
+Loaded GAN
+Using checkpoint at results/GRouNdGAN/checkpoints/step_1000000.pth
+Saved cells before and after perturbation to data/generated/
+\end{verbatim}
+\end{codeblock}
+
+\begin{figure}[!ht]%figure6
+	\centerline{\includegraphics[width=\textwidth]{figures/protocol/protocol_fig6.png}}
+	\caption[Example of expected plot outputs saved by the perturbation command.]{\textbf{Example of expected plot outputs saved by the perturbation command.} \textbf{a} UMAP
+embedding of experimental cells (left), unperturbed simulated cells (middle), and overlayed on
+top of each other (right). \textbf{b} similar to a but simulated cells were generated under perturbation. \textbf{c}
+Cell density in the UMAP embedding for experimental cells (left), unperturbed simulated cells
+(middle), and together (right). \textbf{d} similar to \textbf{c} but simulated cells are perturbed.}\label{fig:protocol:fig6}
+\end{figure}
+
+\section*{Timing}
+\addcontentsline{toc}{section}{Timing}
+
+The reported execution times correspond to running GRouNdGAN on the PBMC dataset, which
+comprises 67579 cells, using the hardware configuration detailed in the Equipment section. The
+duration of step 1 (Preprocessing) and step 2 (GRN creation) primarily scale with the dataset size.
+In contrast, the execution of step 3 (Model training) is largely dependent on the density of the
+imposed GRN and GPU specification. The remaining steps exhibit comparatively lower sensitivity
+to these factors. Installation times are predominantly affected by download speed and server loads.
+
+\begin{tabular}{@{}l@{}}
+Software installation - local: $\sim$12 min\\
+Software installation - running through the Docker image: $\sim$6 min\\
+Software installation - building Docker image from Dockerfile: $\sim$13 min\\
+Software installation - using Singularity: $\sim$7 min\\
+\addlinespace[0.8em]  % adds vertical space
+Procedure - Step 1, Preprocessing: <1 min\\
+Procedure - Step 2, GRN creation: $\sim$8 min\\
+Procedure - Step 3, Model training: $\sim$75 h\\
+Procedure - Step 4, Simulation: <30 s\\
+Procedure - Step 5, Data quality evaluation: <30 s\\
+Procedure - Step 6, GRN inference benchmarking: <20 s\\
+Procedure - Step 7: Perturbation prediction: <1 min\\
+Procedure - End to end (Steps 1-7): $\sim$75 h, 12 min
+\end{tabular}
+
+\subsection*{General notes and troubleshooting}
+\addcontentsline{toc}{subsection}{General notes and troubleshooting}
+
+Table 9 contains common issues and how to troubleshoot them. 
+
+\begin{table}[!t]
+	\caption[Troubleshooting table.]{Troubleshooting table.} \label{tab:protocol_table9}
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{@{}clp{5cm}p{8cm}@{}}
+        \toprule
+        \textbf{Step} & \textbf{Problem} & \textbf{Possible reason} & \textbf{Solution} \\
+        \midrule
+        1, 2 & \makecell[l]{Error message: \\ \texttt{check\_values\_indices\_shape\_match}} & Mismatch between the number of genes in \texttt{train}, \texttt{validation}, or \texttt{test} sets and configuration parameters or \texttt{GRN}. \addlinespace The \texttt{.X} attribute in the \texttt{anndata} input is a sparse expression matrix. & Verify \texttt{[EXPERIMENT]/[Preprocessing]/ highly variable number} and \texttt{[EXPERIMENT]/[Data]/number of genes} parameters in the configuration file against the input dataset. \addlinespace If the input expression matrix is sparse, convert it into a dense matrix using \texttt{adata.X.toarray()}. \\
+        \addlinespace[1.5em]
+        3 & \makecell[l]{Error message: \\ \texttt{torch.cuda.OutOfMemoryError: CUDA out of memory}} & Insufficient video memory on \texttt{GPU}. & Switching to a \texttt{GPU} with a larger \texttt{VRAM}. \addlinespace Making the input \texttt{GRN} sparser. If the \texttt{–create\_grn} command is used to construct the input \texttt{GRN}, making the hyperparameter \texttt{[GRN Preparation]/k} in the configuration file smaller will result in a sparser \texttt{GRN}. Reducing \texttt{GRN} size might result in a lower quality simulation. \addlinespace Reducing the \texttt{[EXPERIMENT]/[Model]/depth per gene} and \texttt{[EXPERIMENT]/[Model]/width per gene]} hyperparameters in the configuration file to 2 and 1, respectively. This will make \texttt{GRouNdGAN’s} neural network smaller to fit in a smaller \texttt{VRAM}. This option might result in a lower quality simulation. \\
+        \addlinespace[1.5em]
+        3 & \makecell[l]{Error message: \\ \texttt{what(): mat1 and mat2 shapes cannot be multiplied}} & The specified number of genes is inconsistent with the \texttt{GRN}. & Ensure that the number of nodes in the \texttt{GRN} correspond to the \texttt{[EXPERIMENT]/[Data]/number of genes} parameter in the configuration file. \\
+        \addlinespace[1.5em]
+        7 & \makecell[l]{Error message: \\ \texttt{ValueError: 'TF' is not in list}} & The \texttt{TF} targeted for perturbation does not exist in the \texttt{GRN}. & Ensure that all the \texttt{TFs} listed in the \texttt{[EXPERIMENT]/[Perturbation]/tfs to perturb} parameter of the configuration file exist in the dataset and are regulators (not targets) in the \texttt{GRN}. \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+\section*{Expected results}
+\addcontentsline{toc}{section}{Expected results}
+
+Running GRouNdGAN’s GRN-guided simulation procedure (Steps 1 to 4) produces a single final
+output: a \texttt{simulated.h5ad} file containing simulated scRNA-seq data. The file preserves the
+original gene annotations from the input data and assigns sequential labels to generated cells
+(e.g., Cell1, Cell2, …). The simulated expression matrix is stored in the \texttt{.X} attribute, where rows
+correspond to cells and columns to genes. Furthermore, \texttt{.var} and \texttt{.obs} store gene and cell
+metadata, respectively. This structured output format ensures compatibility with downstream
+python and R single-cell analysis workflows. A collection of such output datasets paired with the
+GRN used for simulation can be found on GRouNdGAN’s website at \url{https://emad-combinelab.github.io/GRouNdGAN/benchmarking.html}. 
+
+The perturbation prediction procedure generates two .h5ad files:
+\texttt{before\_perturbation.h5ad} and \texttt{after\_perturbation.h5ad}. They contain expression
+matrices (in the \texttt{.X} attribute) of identical dimensions, representing cellular states before and
+after perturbation, respectively. Both include the same set of genes and annotations.
+Additionally, cells are matched one-to-one between the two files, meaning that each cell (e.g.,
+“Cell 1”) in \texttt{before\_perturbation.h5ad} corresponds directly to its perturbed counterpart in
+\texttt{after\_perturbation.h5ad}.
+
+Given a reasonably sized training set and a sufficiently representative GRN, we expect the
+simulated output data to be realistic (i.e., mimicking experimental training data) and true to the
+imposed GRN. Under the same conditions, we also expect that the perturbation results will align
+with biological expectations, though perturbation prediction relies more heavily on the quality of
+the input GRN. We provide guidelines for evaluating the quality of the output data using five
+metrics (see the Procedure – Step 5) and comparing it to a control baseline, where the control is
+derived from the data itself. Furthermore, it is expected that the generator and critic losses,
+which can be monitored using TensorBoard (see Procedure – Step3), will decrease as the model
+undergoes training, showing better performance over time.
+
+\section*{Supplementary Information}
+\addcontentsline{toc}{section}{Supplementary Information}
+
+The online version contains supplementary material available in Supplementary File S1.
+
+\section*{Authors’ contributions}
+\addcontentsline{toc}{section}{Authors’ contributions}
+
+All authors contributed to the design of the protocol, data analyses, and writing the manuscript.
+A.E. supervised the study. Y.Z. implemented the protocol, conducted computational analyses,
+developed the website, and managed releases across various formats.
+
+\section*{Funding}
+\addcontentsline{toc}{section}{Funding}
+
+This work was supported by a Discovery grant from Natural Sciences and Engineering Research
+Council of Canada (NSERC) [RGPIN-2019-04460] (AE), a NOVA grant funded by NSERC and Fonds
+de recherche du Québec – Nature et technologies (FRQNT) [2024-NOVA-344140], and by a grant
+from Canada Foundation for Innovation (CFI) JELF [project 40781] (AE). This work was enabled in
+part by support provided by Calcul Québec (www.calculquebec.ca) and the Digital Research
+Alliance of Canada (alliancecan.ca)
+
+\section*{Data Availability}
+\addcontentsline{toc}{section}{Data Availability}
+
+The dataset used to demonstrate the protocol is publicly available. The PBMC-ALL scRNA-seq
+dataset (healthy donor A) can be downloaded through the 10x Genomics website at
+\url{https://support.10xgenomics.com/single-cell-geneexpression/datasets/1.1.0/fresh_68k_pbmc_donor_a?}. The GRouNdGAN-simulated PBMC-CTL
+dataset (100k cells by 1000 genes ,including TFs), along with the imposed ground truth GRN, is
+available on GRouNdGAN’s website at \url{https://emad-combinelab.github.io/GRouNdGAN/benchmarking.html#pbmc-ctl}.
+
+\section*{Code Availability}
+\addcontentsline{toc}{section}{Code Availability}
+
+An implementation of GRouNdGAN is freely available under the terms of the GNU Affero General
+Public License v3.0 on GitHub at \url{https://github.com/Emad-COMBINE-lab/GRouNdGAN}. The
+software is written in Python 3.9.6 using the PyTorch deep learning framework (v. 1.13.1). To
+ensure ease of use and reproducibility, a pre-build container image is also available on
+DockerHub (\url{https://hub.docker.com/r/yazdanz/groundgan}) and an archived version can be
+found on Zenodo (\url{https://doi.org/10.5281/zenodo.11068245}). Visit the GRouNdGAN website
+(\url{https://emad-combine-lab.github.io/GRouNdGAN}) to explore an expanding collection of readily
+available simulated datasets for benchmarking GRN inference algorithms, along with the latest
+updates on running the protocol.
+
+\section*{Competing interests}
+\addcontentsline{toc}{section}{Competing interests}
+
+The authors have no conflict of interest to declare.
+
+\begin{singlespace}
+\def\bibindent{1em}
+\makeatletter
+\renewcommand{\thebibliography}[1]{%
+  \section*{\bibname}%
+  \addcontentsline{toc}{section}{References}
+  \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+  \list{\@biblabel{\@arabic\c@enumiv}}%
+       {\settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep
+        \@openbib@code
+        \usecounter{enumiv}%
+        \let\p@enumiv\@empty
+        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+  \sloppy
+  \clubpenalty4000
+  \@clubpenalty \clubpenalty
+  \widowpenalty4000%
+  \sfcode`\.\@m}
+\makeatother
+\renewcommand{\bibname}{References}
+\begin{thebibliography}{99\kern\bibindent}
+\markboth{Chapter 3: GRouNdGAN}{Chapter 3: GRouNdGAN}
+\makeatletter
+\def\@biblabel#1{#1.\hspace{0.5em}} 
+\let\old@bibitem\bibitem
+\def\bibitem#1{\old@bibitem{#1}}
+\makeatother
+
+\bibitem{Lorem}Pardee AB: \textbf{Regulatory molecular biology.} \textit{Cell Cycle} 2006, \textbf{5}(8):846-852.
+
+\bibitem{Lorem}Jacob F, Monod J: \textbf{Genetic regulatory mechanisms in the synthesis of proteins.} \textit{Journal of molecular biology} 1961, \textbf{3}(3):318-356.
+
+\bibitem{Lorem}Afonja T, Sheth I, Binkyte R, Hanif W, Ulas T, Becker M, Fritz M: \textbf{LLM4GRN: Discovering Causal Gene Regulatory Networks with LLMs--Evaluation through Synthetic Data Generation.} \textit{arXiv preprint arXiv:241015828} 2024.
+
+\bibitem{Lorem}Emad A, Sinha S: \textbf{Inference of phenotype-relevant transcriptional regulatory networks elucidates cancer type-specific regulatory mechanisms in a pan-cancer study.} \textit{NPJ systems biology and applications} 2021, \textbf{7}(1):9.
+
+\bibitem{Lorem}Moerman T, Aibar Santos S, Bravo González-Blas C, Simm J, Moreau Y, Aerts J, Aerts S: \textbf{GRNBoost2 and Arboreto: efficient and scalable inference of gene regulatory networks.} \textit{Bioinformatics} 2019, \textbf{35}(12):2159-2161.
+
+\bibitem{Lorem}Chan TE, Stumpf MP, Babtie AC: \textbf{Gene regulatory network inference from single-cell data using multivariate information measures.} \textit{Cell systems} 2017, \textbf{5}(3):251-267. e253.
+
+\bibitem{Lorem}Kim S: \textbf{ppcor: an R package for a fast calculation to semi-partial correlation coefficients.} \textit{Communications for statistical applications and methods} 2015, \textbf{22}(6):665.
+
+\bibitem{Lorem}Su C, Pastor WA, Emad A: \textbf{Deciphering lineage-relevant gene regulatory networks during endoderm formation by InPheRNo-ChIP.} \textit{Briefings in Bioinformatics} 2024, \textbf{25}(6):bbae592.
+
+\bibitem{Lorem}Kamimoto K, Stringa B, Hoffmann CM, Jindal K, Solnica-Krezel L, Morris SA: \textbf{Dissecting cell identity via network inference and in silico gene perturbation.} \textit{Nature} 2023, \textbf{614}(7949):742-751.
+
+\bibitem{Lorem}Bravo González-Blas C, De Winter S, Hulselmans G, Hecker N, Matetovici I, Christiaens V, Poovathingal S, Wouters J, Aibar S, Aerts S: \textbf{SCENIC+: single-cell multiomic inference of enhancers and gene regulatory networks.} \textit{Nature Methods} 2023:1-13.
+
+\bibitem{Lorem}Emmert-Streib F, Dehmer M, Haibe-Kains B: \textbf{Gene regulatory networks and their applications: understanding biological and medical problems in terms of networks.} \textit{Frontiers in cell and developmental biology} 2014, \textbf{2}:38.
+
+\bibitem{Lorem}Pratapa A, Jalihal AP, Law JN, Bharadwaj A, Murali T: \textbf{Benchmarking algorithms for gene regulatory network inference from single-cell transcriptomic data.} \textit{Nature methods} 2020, \textbf{17}(2):147-154.
+
+\bibitem{Lorem}McCall MN: \textbf{Estimation of gene regulatory networks.} \textit{Postdoc journal: a journal of postdoctoral research and postdoctoral affairs} 2013, \textbf{1}(1):60.
+
+\bibitem{Lorem}Erbe R, Gore J, Gemmill K, Gaykalova DA, Fertig EJ: \textbf{The use of machine learning to discover regulatory networks controlling biological systems.} \textit{Molecular cell} 2022, \textbf{82}(2):260-273.
+
+\bibitem{Lorem}Dibaeinia P, Sinha S: \textbf{SERGIO: a single-cell expression simulator guided by gene regulatory networks.} \textit{Cell systems} 2020, \textbf{11}(3):252-271. e211.
+
+\bibitem{Lorem}Li H, Zhang Z, Squires M, Chen X, Zhang X: \textbf{scMultiSim: simulation of multi-modality single cell data guided by cell-cell interactions and gene regulatory networks.} \textit{Research Square} 2023:rs. 3. rs-2675530.
+
+\bibitem{Lorem}Schaffter T, Marbach D, Floreano D: \textbf{GeneNetWeaver: in silico benchmark generation and performance profiling of network inference methods.} \textit{Bioinformatics} 2011, \textbf{27}(16):2263-2270.
+
+\bibitem{Lorem}Zinati Y, Takiddeen A, Emad A: \textbf{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks.} \textit{Nature Communications} 2024, \textbf{15}(1):4055.
+
+\bibitem{Lorem}Marouf M, Machart P, Bansal V, Kilian C, Magruder DS, Krebs CF, Bonn S: \textbf{Realistic in silico generation and augmentation of single-cell RNA-seq data using generative adversarial networks.} \textit{Nature communications} 2020, \textbf{11}(1):166.
+
+\bibitem{Lorem}Kocaoglu M, Snyder C, Dimakis AG, Vishwanath S: \textbf{Causalgan: Learning causal implicit generative models with adversarial training.} \textit{arXiv preprint arXiv:170902023} 2017.
+
+\bibitem{Lorem}Arjovsky M, Chintala S, Bottou L: \textbf{Wasserstein generative adversarial networks.} In: \textit{International conference on machine learning: 2017.} PMLR: 214-223.
+
+\bibitem{Lorem}Gulrajani I, Ahmed F, Arjovsky M, Dumoulin V, Courville AC: \textbf{Improved training of wasserstein gans.} \textit{Advances in neural information processing systems} 2017, \textbf{30}.
+
+\bibitem{Lorem}Zandigohar M, Rehman J, Dai Y: \textbf{scRegulate: Single-Cell Regulatory-Embedded Variational Inference of Transcription Factor Activity from Gene Expression.} \textit{bioRxiv} 2025:2025.2004.2017.649372.
+
+\bibitem{Lorem}Marouf M, Machart P, Bansal V, Kilian C, Magruder DS, Krebs CF, Bonn S: \textbf{Realistic in silico generation and augmentation of single-cell RNA-seq data using generative adversarial networks.} \textit{Nature communications} 2020, \textbf{11}(1):1-12.
+
+\bibitem{Lorem}Xu Y, Zhang Z, You L, Liu J, Fan Z, Zhou X: \textbf{scIGANs: single-cell RNA-seq imputation using generative adversarial networks.} \textit{Nucleic acids research} 2020, \textbf{48}(15):e85-e85.
+
+\bibitem{Lorem}Baruzzo G, Patuzzi I, Di Camillo B: \textbf{SPARSim single cell: a count data simulator for scRNA-seq data.} \textit{Bioinformatics} 2020, \textbf{36}(5):1468-1475.
+
+\bibitem{Lorem}Song D, Wang Q, Yan G, Liu T, Sun T, Li JJ: \textbf{scDesign3 generates realistic in silico data for multimodal single-cell and spatial omics.} \textit{Nature Biotechnology} 2024, \textbf{42}(2):247-252.
+
+\bibitem{Lorem}Zappia L, Phipson B, Oshlack A: \textbf{Splatter: simulation of single-cell RNA sequencing data.} \textit{Genome biology} 2017, \textbf{18}(1):174.
+
+\bibitem{Lorem}Zhang X, Xu C, Yosef N: \textbf{Simulating multiple faceted variability in single cell RNA sequencing.} \textit{Nature communications} 2019, \textbf{10}(1):2611.
+
+\bibitem{Lorem}Marbach D, Prill RJ, Schaffter T, Mattiussi C, Floreano D, Stolovitzky G: \textbf{Revealing strengths and weaknesses of methods for gene network inference.} \textit{Proceedings of the national academy of sciences} 2010, \textbf{107}(14):6286-6291.
+
+\bibitem{Lorem}Marbach D, Costello JC, Küffner R, Vega NM, Prill RJ, Camacho DM, Allison KR, Kellis M, Collins JJ: \textbf{Wisdom of crowds for robust gene network inference.} \textit{Nature methods} 2012, \textbf{9}(8):796-804.
+
+\bibitem{Lorem}Kanehisa M, Goto S: \textbf{KEGG: kyoto encyclopedia of genes and genomes.} \textit{Nucleic acids research} 2000, \textbf{28}(1):27-30.
+
+\bibitem{Lorem}Brown KR, Jurisica I: \textbf{Unequal evolutionary conservation of human protein interactions in interologous networks.} \textit{Genome biology} 2007, \textbf{8}:1-11.
+
+\bibitem{Lorem}Kotlyar M, Pastrello C, Sheahan N, Jurisica I: \textbf{Integrated interactions database: tissue-specific view of the human and model organism interactomes.} \textit{Nucleic acids research} 2016, \textbf{44}(D1):D536-D541.
+
+\bibitem{Lorem}Xu H, Baroukh C, Dannenfelser R, Chen EY, Tan CM, Kou Y, Kim YE, Lemischka IR, Ma'ayan A: \textbf{ESCAPE: database for integrating high-content published data collected from human and mouse embryonic stem cells.} \textit{Database} 2013, \textbf{2013}:bat045.
+
+\bibitem{Lorem}Kolmykov S, Yevshin I, Kulyashov M, Sharipov R, Kondrakhin Y, Makeev VJ, Kulakovskiy IV, Kel A, Kolpakov F: \textbf{GTRD: an integrated view of transcription regulation.} \textit{Nucleic acids research} 2021, \textbf{49}(D1):D104-D111.
+
+\bibitem{Lorem}Zheng GX, Terry JM, Belgrader P, Ryvkin P, Bent ZW, Wilson R, Ziraldo SB, Wheeler TD, McDermott GP, Zhu J: \textbf{Massively parallel digital transcriptional profiling of single cells.} \textit{Nature communications} 2017, \textbf{8}(1):1-12.
+
+\bibitem{Lorem}Korsunsky I, Millard N, Fan J, Slowikowski K, Zhang F, Wei K, Baglaenko Y, Brenner M, Loh P-r, Raychaudhuri S: \textbf{Fast, sensitive and accurate integration of single-cell data with Harmony.} \textit{Nature methods} 2019, \textbf{16}(12):1289-1296.
+
+\bibitem{Lorem}Wolf FA, Angerer P, Theis FJ: \textbf{SCANPY: large-scale single-cell gene expression data analysis.} \textit{Genome biology} 2018, \textbf{19}:1-5.
+
+\bibitem{Lorem}Satija R, Farrell JA, Gennert D, Schier AF, Regev A: \textbf{Spatial reconstruction of single-cell gene expression data.} \textit{Nature biotechnology} 2015, \textbf{33}(5):495-502.
+
+\bibitem{Lorem}Zinati Y, Takiddeen A, Emad A: \textbf{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks.} \textit{bioRxiv} 2023:2023.2007. 2025.550225.
+
+\bibitem{Lorem}Sun T, Song D, Li WV, Li JJ: \textbf{scDesign2: a transparent simulator that generates high-fidelity single-cell gene expression count data with gene correlations captured.} \textit{Genome biology} 2021, \textbf{22}(1):1-37.
+
+\bibitem{Lorem}Paul F, Arkin Ya, Giladi A, Jaitin DA, Kenigsberg E, Keren-Shaul H, Winter D, Lara-Astiaso D, Gury M, Weiner A: \textbf{Transcriptional heterogeneity and lineage commitment in myeloid progenitors.} \textit{Cell} 2015, \textbf{163}(7):1663-1677.
+
+\bibitem{Lorem}Hu H, Miao Y-R, Jia L-H, Yu Q-Y, Zhang Q, Guo A-Y: \textbf{AnimalTFDB 3.0: a comprehensive resource for annotation and prediction of animal transcription factors.} \textit{Nucleic acids research} 2019, \textbf{47}(D1):D33-D38.
+
+\end{thebibliography}
+\end{singlespace}

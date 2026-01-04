@@ -18,17 +18,20 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Schematic overview of the GRouNdGAN pipeline.}}{78}{figure.caption.92}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Cell type-specific simulation of cells using GRouNdGAN.}}{82}{figure.caption.96}%
 \contentsline {figure}{\numberline {3}{\ignorespaces Robustness analysis of simulated data.}}{85}{figure.caption.99}%
+\contentsline {figure}{\numberline {4}{\ignorespaces TensorBoard visualizations during GRouNdGAN training.}}{102}{figure.caption.125}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Example of expected plot outputs saved by the evaluation and benchmarking commands.}}{108}{figure.caption.132}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Example of expected plot outputs saved by the perturbation command.}}{110}{figure.caption.135}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {chapter}{Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{108}{appendix.A}%
-\contentsline {figure}{\numberline {S1}{\ignorespaces Relative Degree of Proteins in the \textit {H. sapiens} \textsc {string} \textsc {c3} dataset.}}{109}{figure.caption.130}%
-\contentsline {figure}{\numberline {S2}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{110}{figure.caption.131}%
-\contentsline {figure}{\numberline {S3}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{111}{figure.caption.132}%
-\contentsline {figure}{\numberline {S4}{\ignorespaces Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc {c3}.}}{112}{figure.caption.133}%
-\contentsline {figure}{\numberline {S5}{\ignorespaces Distribution of Interaction Probabilities of Trastuzumab and Pertuzumab with all Proteins of the Human Proteome as Predicted by \textsc {rapppid}.}}{113}{figure.caption.134}%
+\contentsline {chapter}{Supplementary Material for ``GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks''}{130}{appendix.A}%
+\contentsline {figure}{\numberline {S1}{\ignorespaces Relative Degree of Proteins in the \textit {H. sapiens} \textsc {string} \textsc {c3} dataset.}}{131}{figure.caption.159}%
+\contentsline {figure}{\numberline {S2}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{132}{figure.caption.160}%
+\contentsline {figure}{\numberline {S3}{\ignorespaces Accuracy of positive edges across edge confidence stratified by \textsc {string} channels.}}{133}{figure.caption.161}%
+\contentsline {figure}{\numberline {S4}{\ignorespaces Accuracy of positive edges as a function of similarity between testing and training proteins in \textsc {c3}.}}{134}{figure.caption.162}%
+\contentsline {figure}{\numberline {S5}{\ignorespaces Distribution of Interaction Probabilities of Trastuzumab and Pertuzumab with all Proteins of the Human Proteome as Predicted by \textsc {rapppid}.}}{135}{figure.caption.163}%
 \addvspace {10\p@ }
-\contentsline {chapter}{Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{114}{appendix.B}%
-\contentsline {figure}{\numberline {S1}{\ignorespaces Precision-Recall curves of various \textsc {ppi} inference methods}}{126}{figure.caption.150}%
-\contentsline {figure}{\numberline {S2}{\ignorespaces Receiver-Operator curves of various \textsc {ppi} inference methods}}{127}{figure.caption.151}%
-\contentsline {figure}{\numberline {S3}{\ignorespaces The effect of orthologous locality task.}}{128}{figure.caption.152}%
+\contentsline {chapter}{Supplementary Material for ``Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit''}{136}{appendix.B}%
+\contentsline {figure}{\numberline {S1}{\ignorespaces Precision-Recall curves of various \textsc {ppi} inference methods}}{148}{figure.caption.179}%
+\contentsline {figure}{\numberline {S2}{\ignorespaces Receiver-Operator curves of various \textsc {ppi} inference methods}}{149}{figure.caption.180}%
+\contentsline {figure}{\numberline {S3}{\ignorespaces The effect of orthologous locality task.}}{150}{figure.caption.181}%

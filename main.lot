@@ -2,20 +2,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{5}{chapter.3}%
-\contentsline {table}{\numberline {1}{\ignorespaces Performance of different simulators in generating realistic scRNA-seq data using the PBMC-CTL dataset}}{10}{table.caption.16}%
-\contentsline {table}{\numberline {2}{\ignorespaces Performance of different simulators in generating realistic scRNA-seq data using the PBMC-All dataset}}{13}{table.caption.17}%
-\contentsline {table}{\numberline {3}{\ignorespaces Performance of GRouNdGAN in generating realistic scRNA-seq data using the Dahlin, Tumor-All, and Tumor-malignant datasets}}{19}{table.caption.25}%
+\contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{10}{chapter.3}%
+\contentsline {table}{\numberline {1}{\ignorespaces Performance of different simulators in generating realistic scRNA-seq data using the PBMC-CTL dataset}}{15}{table.caption.32}%
+\contentsline {table}{\numberline {2}{\ignorespaces Performance of different simulators in generating realistic scRNA-seq data using the PBMC-All dataset}}{18}{table.caption.33}%
+\contentsline {table}{\numberline {3}{\ignorespaces Performance of GRouNdGAN in generating realistic scRNA-seq data using the Dahlin, Tumor-All, and Tumor-malignant datasets}}{24}{table.caption.41}%
 \addvspace {10\p@ }
-\contentsline {chapter}{Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{45}{chapter.4}%
-\contentsline {table}{\numberline {1}{\ignorespaces Performance of GRouNdGAN in generating realistic scRNA-seq data using cell-type specific GRNs using the PBMC dataset.}}{55}{table.caption.67}%
-\contentsline {table}{\numberline {2}{\ignorespaces Arguments relevant to the preprocessing command in the configuration file.}}{66}{table.caption.88}%
-\contentsline {table}{\numberline {3}{\ignorespaces Arguments relevant to the GRN creation command in the configuration file.}}{68}{table.caption.91}%
-\contentsline {table}{\numberline {4}{\ignorespaces Arguments relevant to the training command in the configuration file.}}{71}{table.caption.94}%
-\contentsline {table}{\numberline {5}{\ignorespaces Arguments relevant to the generation command in the configuration file.}}{75}{table.caption.97}%
-\contentsline {table}{\numberline {6}{\ignorespaces Arguments relevant to the evaluation command in the configuration file.}}{76}{table.caption.99}%
-\contentsline {table}{\numberline {7}{\ignorespaces Arguments relevant to the benchmarking command in the configuration file.}}{78}{table.caption.101}%
-\contentsline {table}{\numberline {8}{\ignorespaces Arguments relevant to the perturbation command in the configuration file.}}{79}{table.caption.104}%
-\contentsline {table}{\numberline {9}{\ignorespaces Troubleshooting table.}}{83}{table.caption.108}%
+\contentsline {chapter}{Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{50}{chapter.4}%
+\contentsline {table}{\numberline {1}{\ignorespaces Performance of GRouNdGAN in generating realistic scRNA-seq data using cell-type specific GRNs using the PBMC dataset.}}{60}{table.caption.83}%
+\contentsline {table}{\numberline {2}{\ignorespaces Arguments relevant to the preprocessing command in the configuration file.}}{71}{table.caption.104}%
+\contentsline {table}{\numberline {3}{\ignorespaces Arguments relevant to the GRN creation command in the configuration file.}}{73}{table.caption.107}%
+\contentsline {table}{\numberline {4}{\ignorespaces Arguments relevant to the training command in the configuration file.}}{76}{table.caption.110}%
+\contentsline {table}{\numberline {5}{\ignorespaces Arguments relevant to the generation command in the configuration file.}}{80}{table.caption.113}%
+\contentsline {table}{\numberline {6}{\ignorespaces Arguments relevant to the evaluation command in the configuration file.}}{81}{table.caption.115}%
+\contentsline {table}{\numberline {7}{\ignorespaces Arguments relevant to the benchmarking command in the configuration file.}}{83}{table.caption.117}%
+\contentsline {table}{\numberline {8}{\ignorespaces Arguments relevant to the perturbation command in the configuration file.}}{84}{table.caption.120}%
+\contentsline {table}{\numberline {9}{\ignorespaces Troubleshooting table.}}{88}{table.caption.124}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

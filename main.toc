@@ -17,89 +17,89 @@
 \contentsline {subsection}{Motivation and Challenges in Benchmarking}{8}{section*.18}%
 \contentsline {subsection}{Experimental Validation-Based Benchmarks}{8}{section*.19}%
 \contentsline {subsection}{Gene Regulatory-Guided Simulation}{8}{section*.20}%
-\contentsline {section}{Generative Modeling and In-Silico Single-Cell Transcriptomics}{8}{section*.21}%
-\contentsline {subsection}{Single-Cell Simulation}{8}{section*.22}%
-\contentsline {subsection}{GANs, conditi onalGANs and CausalGANs}{8}{section*.23}%
-\contentsline {chapter}{\numberline {3}GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{10}{chapter.3}%
-\contentsline {section}{Abstract}{10}{section*.25}%
-\contentsline {section}{Introduction}{10}{section*.26}%
-\contentsline {section}{Results}{12}{section*.27}%
-\contentsline {subsection}{GRouNdGAN generates scRNA-seq data using causal generative adversarial networks}{12}{section*.28}%
-\contentsline {subsection}{GRouNdGAN generates realistic scRNA-seq data}{13}{section*.30}%
-\contentsline {subsection}{GRouNdGAN imposes a causal GRN in the simulated data}{17}{section*.34}%
-\contentsline {subsection}{The imposed GRN can be reconstructed from the simulated data}{19}{section*.35}%
-\contentsline {subsection}{GRouNdGAN-simulated data preserves trajectories and can be used for pseudo-time inference}{21}{section*.37}%
-\contentsline {subsection}{GRouNdGAN achieves high performance on other datasets}{24}{section*.40}%
-\contentsline {subsection}{Benchmarking GRN inference methods using GRouNdGAN confirms prior insights from curated and experimental datasets}{25}{section*.42}%
-\contentsline {subsection}{In silico perturbation experiments using GRouNdGAN}{27}{section*.44}%
-\contentsline {section}{Discussion}{28}{section*.45}%
-\contentsline {section}{Methods}{32}{section*.46}%
-\contentsline {subsection}{Datasets and preprocessing}{32}{section*.47}%
-\contentsline {subsection}{GRouNdGAN’s model architecture}{33}{section*.48}%
-\contentsline {subsubsection}{Causal controller}{33}{section*.49}%
-\contentsline {subsubsection}{Target generators}{34}{section*.50}%
-\contentsline {subsubsection}{Critic}{35}{section*.51}%
-\contentsline {subsubsection}{Labeler and anti-labeler}{35}{section*.52}%
-\contentsline {subsection}{Training procedure and hyperparameter tuning}{36}{section*.53}%
-\contentsline {subsection}{Causal GRN preparation}{37}{section*.55}%
-\contentsline {subsection}{Evaluation of the resemblance of real and simulated cells}{38}{section*.56}%
-\contentsline {subsection}{Baseline simulator models}{39}{section*.60}%
-\contentsline {subsection}{In silico perturbation experiments using GRoundGAN}{40}{section*.61}%
-\contentsline {subsection}{Trajectory inference and pseudo-time analysis}{40}{section*.62}%
-\contentsline {subsection}{GRN inference methods}{41}{section*.63}%
-\contentsline {subsection}{Statistics and reproducibility}{42}{section*.64}%
-\contentsline {subsection}{Reporting summary}{42}{section*.65}%
-\contentsline {section}{Data availability}{42}{section*.66}%
-\contentsline {section}{Code availability}{42}{section*.67}%
-\contentsline {section}{References}{43}{section*.68}%
-\contentsline {section}{Acknowledgements}{47}{section*.69}%
-\contentsline {section}{Author contributions}{47}{section*.70}%
-\contentsline {section}{Competing interests}{48}{section*.71}%
-\contentsline {section}{Additional information}{48}{section*.72}%
-\contentsline {chapter}{\numberline {4}Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{50}{chapter.4}%
-\contentsline {section}{Abstract}{50}{section*.74}%
-\contentsline {section}{Introduction and Background}{51}{section*.75}%
-\contentsline {subsection}{Development of the protocol}{52}{section*.76}%
-\contentsline {subsection}{Applications of the method}{53}{section*.77}%
-\contentsline {subsection}{Comparison with other methods}{54}{section*.79}%
-\contentsline {subsection}{Experimental design}{57}{section*.80}%
-\contentsline {subsubsection}{Input reference data and GRN considerations}{57}{section*.81}%
-\contentsline {subsubsection}{Output data considerations}{60}{section*.84}%
-\contentsline {subsection}{Expertise needed to implement the protocol}{61}{section*.86}%
-\contentsline {subsection}{Discussion and Limitations}{61}{section*.87}%
-\contentsline {section}{Materials and Methods}{63}{section*.88}%
-\contentsline {subsection}{Equipment}{63}{section*.89}%
-\contentsline {subsubsection}{Hardware}{63}{section*.90}%
-\contentsline {subsubsection}{Software}{64}{section*.91}%
-\contentsline {subsubsection}{Configuration file}{64}{section*.92}%
-\contentsline {subsubsection}{Input data files}{65}{section*.93}%
-\contentsline {subsection}{Equipment setup}{65}{section*.94}%
-\contentsline {subsubsection}{Software Installation}{65}{section*.95}%
-\contentsline {subsubsection}{Local Installation}{66}{section*.96}%
-\contentsline {subsubsection}{Using the Docker Image}{67}{section*.97}%
-\contentsline {subsubsection}{Building Docker Image from Dockerfile}{67}{section*.98}%
-\contentsline {subsubsection}{Using Singularity}{68}{section*.99}%
-\contentsline {subsubsection}{Verifying GPU Acceleration}{68}{section*.100}%
-\contentsline {subsubsection}{Example input data}{69}{section*.101}%
-\contentsline {section}{Procedure}{69}{section*.102}%
-\contentsline {subsection}{Step 1. Preprocessing }{71}{section*.103}%
-\contentsline {subsection}{Step 2. GRN Creation}{72}{section*.105}%
-\contentsline {subsubsection}{Imposing a GRN Inferred from Data}{72}{section*.106}%
-\contentsline {subsubsection}{Imposing a Custom GRN}{74}{section*.108}%
-\contentsline {subsection}{Step 3. Model Training}{75}{section*.109}%
-\contentsline {subsection}{Step 4. Simulation}{78}{section*.112}%
-\contentsline {subsection}{Step 5. Assessing simulated data quality (Optional)}{80}{section*.114}%
-\contentsline {subsection}{Step 6. GRN inference benchmarking (Optional)}{82}{section*.116}%
-\contentsline {subsection}{Step 7. Perturbation prediction (Optional)}{84}{section*.119}%
-\contentsline {section}{Timing}{86}{section*.122}%
-\contentsline {subsection}{General notes and troubleshooting}{86}{section*.123}%
-\contentsline {section}{Expected results}{87}{section*.125}%
-\contentsline {section}{Supplementary Information}{89}{section*.126}%
-\contentsline {section}{Authors’ contributions}{89}{section*.127}%
-\contentsline {section}{Funding}{89}{section*.128}%
-\contentsline {section}{Data Availability}{89}{section*.129}%
-\contentsline {section}{Code Availability}{90}{section*.130}%
-\contentsline {section}{Competing interests}{90}{section*.131}%
-\contentsline {section}{References}{90}{section*.132}%
-\contentsline {chapter}{\numberline {5}Discussion}{94}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{95}{chapter.6}%
+\contentsline {section}{Generative Modeling and In-Silico Single-Cell Transcriptomics}{9}{section*.21}%
+\contentsline {subsection}{Single-Cell Simulation}{9}{section*.22}%
+\contentsline {subsection}{CausalGAN}{9}{section*.23}%
+\contentsline {chapter}{\numberline {3}GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{14}{chapter.3}%
+\contentsline {section}{Abstract}{14}{section*.27}%
+\contentsline {section}{Introduction}{14}{section*.28}%
+\contentsline {section}{Results}{16}{section*.29}%
+\contentsline {subsection}{GRouNdGAN generates scRNA-seq data using causal generative adversarial networks}{16}{section*.30}%
+\contentsline {subsection}{GRouNdGAN generates realistic scRNA-seq data}{17}{section*.32}%
+\contentsline {subsection}{GRouNdGAN imposes a causal GRN in the simulated data}{21}{section*.36}%
+\contentsline {subsection}{The imposed GRN can be reconstructed from the simulated data}{23}{section*.37}%
+\contentsline {subsection}{GRouNdGAN-simulated data preserves trajectories and can be used for pseudo-time inference}{25}{section*.39}%
+\contentsline {subsection}{GRouNdGAN achieves high performance on other datasets}{28}{section*.42}%
+\contentsline {subsection}{Benchmarking GRN inference methods using GRouNdGAN confirms prior insights from curated and experimental datasets}{29}{section*.44}%
+\contentsline {subsection}{In silico perturbation experiments using GRouNdGAN}{31}{section*.46}%
+\contentsline {section}{Discussion}{32}{section*.47}%
+\contentsline {section}{Methods}{36}{section*.48}%
+\contentsline {subsection}{Datasets and preprocessing}{36}{section*.49}%
+\contentsline {subsection}{GRouNdGAN’s model architecture}{37}{section*.50}%
+\contentsline {subsubsection}{Causal controller}{37}{section*.51}%
+\contentsline {subsubsection}{Target generators}{38}{section*.52}%
+\contentsline {subsubsection}{Critic}{39}{section*.53}%
+\contentsline {subsubsection}{Labeler and anti-labeler}{39}{section*.54}%
+\contentsline {subsection}{Training procedure and hyperparameter tuning}{40}{section*.55}%
+\contentsline {subsection}{Causal GRN preparation}{41}{section*.57}%
+\contentsline {subsection}{Evaluation of the resemblance of real and simulated cells}{42}{section*.58}%
+\contentsline {subsection}{Baseline simulator models}{43}{section*.62}%
+\contentsline {subsection}{In silico perturbation experiments using GRoundGAN}{44}{section*.63}%
+\contentsline {subsection}{Trajectory inference and pseudo-time analysis}{44}{section*.64}%
+\contentsline {subsection}{GRN inference methods}{45}{section*.65}%
+\contentsline {subsection}{Statistics and reproducibility}{46}{section*.66}%
+\contentsline {subsection}{Reporting summary}{46}{section*.67}%
+\contentsline {section}{Data availability}{46}{section*.68}%
+\contentsline {section}{Code availability}{46}{section*.69}%
+\contentsline {section}{References}{47}{section*.70}%
+\contentsline {section}{Acknowledgements}{51}{section*.71}%
+\contentsline {section}{Author contributions}{51}{section*.72}%
+\contentsline {section}{Competing interests}{52}{section*.73}%
+\contentsline {section}{Additional information}{52}{section*.74}%
+\contentsline {chapter}{\numberline {4}Causal single-cell RNA-seq simulation, in silico perturbation, and GRN inference benchmarking using GRouNdGAN-Toolkit}{54}{chapter.4}%
+\contentsline {section}{Abstract}{54}{section*.76}%
+\contentsline {section}{Introduction and Background}{55}{section*.77}%
+\contentsline {subsection}{Development of the protocol}{56}{section*.78}%
+\contentsline {subsection}{Applications of the method}{57}{section*.79}%
+\contentsline {subsection}{Comparison with other methods}{58}{section*.81}%
+\contentsline {subsection}{Experimental design}{61}{section*.82}%
+\contentsline {subsubsection}{Input reference data and GRN considerations}{61}{section*.83}%
+\contentsline {subsubsection}{Output data considerations}{64}{section*.86}%
+\contentsline {subsection}{Expertise needed to implement the protocol}{65}{section*.88}%
+\contentsline {subsection}{Discussion and Limitations}{65}{section*.89}%
+\contentsline {section}{Materials and Methods}{67}{section*.90}%
+\contentsline {subsection}{Equipment}{67}{section*.91}%
+\contentsline {subsubsection}{Hardware}{67}{section*.92}%
+\contentsline {subsubsection}{Software}{68}{section*.93}%
+\contentsline {subsubsection}{Configuration file}{68}{section*.94}%
+\contentsline {subsubsection}{Input data files}{69}{section*.95}%
+\contentsline {subsection}{Equipment setup}{69}{section*.96}%
+\contentsline {subsubsection}{Software Installation}{69}{section*.97}%
+\contentsline {subsubsection}{Local Installation}{70}{section*.98}%
+\contentsline {subsubsection}{Using the Docker Image}{71}{section*.99}%
+\contentsline {subsubsection}{Building Docker Image from Dockerfile}{71}{section*.100}%
+\contentsline {subsubsection}{Using Singularity}{72}{section*.101}%
+\contentsline {subsubsection}{Verifying GPU Acceleration}{72}{section*.102}%
+\contentsline {subsubsection}{Example input data}{73}{section*.103}%
+\contentsline {section}{Procedure}{73}{section*.104}%
+\contentsline {subsection}{Step 1. Preprocessing }{75}{section*.105}%
+\contentsline {subsection}{Step 2. GRN Creation}{76}{section*.107}%
+\contentsline {subsubsection}{Imposing a GRN Inferred from Data}{76}{section*.108}%
+\contentsline {subsubsection}{Imposing a Custom GRN}{78}{section*.110}%
+\contentsline {subsection}{Step 3. Model Training}{79}{section*.111}%
+\contentsline {subsection}{Step 4. Simulation}{82}{section*.114}%
+\contentsline {subsection}{Step 5. Assessing simulated data quality (Optional)}{84}{section*.116}%
+\contentsline {subsection}{Step 6. GRN inference benchmarking (Optional)}{86}{section*.118}%
+\contentsline {subsection}{Step 7. Perturbation prediction (Optional)}{88}{section*.121}%
+\contentsline {section}{Timing}{90}{section*.124}%
+\contentsline {subsection}{General notes and troubleshooting}{90}{section*.125}%
+\contentsline {section}{Expected results}{91}{section*.127}%
+\contentsline {section}{Supplementary Information}{93}{section*.128}%
+\contentsline {section}{Authors’ contributions}{93}{section*.129}%
+\contentsline {section}{Funding}{93}{section*.130}%
+\contentsline {section}{Data Availability}{93}{section*.131}%
+\contentsline {section}{Code Availability}{94}{section*.132}%
+\contentsline {section}{Competing interests}{94}{section*.133}%
+\contentsline {section}{References}{94}{section*.134}%
+\contentsline {chapter}{\numberline {5}Discussion}{98}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{99}{chapter.6}%

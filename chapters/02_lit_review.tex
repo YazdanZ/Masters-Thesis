@@ -46,16 +46,61 @@
 \subsection*{Gene Regulatory-Guided Simulation}
 \addcontentsline{toc}{subsection}{Gene Regulatory-Guided Simulation}
 
-
+\newpage
 \section*{Generative Modeling and In-Silico Single-Cell Transcriptomics}
 \addcontentsline{toc}{section}{Generative Modeling and In-Silico Single-Cell Transcriptomics}
+
+Generative modeling is a branch of unsupervised learning that aims to learn an approximate probability distribution $p_{model}(x)$ from a finite set of observed data points $\mathcal{D} = \{x^{(1)}, x^{(2)}, \dots, x^{(n)}\}$ drawn from an unknown true distribution $p_{data}(x)$. The main challenge in generative modeling is the high dimensionality of the same space. In single-cell transcriptomics, where the dimensionality corresponds to the number of genes, approximately 20000, most combinations of gene expression do not represent biologically realistic states. The manifold hypothesis offers a widely recognized theoretical perspective that makes generative modeling in high-dimensional settings possible. It posits that many real-world datasets lie on intrinsically lower-dimensional geometric structures.
+
+
+Once a generative model is learned, it can be used for three fundamental tasks: synthesis, density estimation, and representation learning. Synthesis is perhaps the most well-known capability of generative modeling with applications in image synthesis, text generation, and audio synthesis. It refers to the ability to draw “realistic” samples from the learned distribution samples that resemble observed data when $p_{model}(x)\approx p_{data}(x)$ without merely replicating them. Density estimation is the problem of explicitly or implicitly recovering the underlying probability density function of a dataset, allowing us to evaluate the likelihood of observations $x$ under the learned model. This application is at the core of unsupervised learning tasks such as anomaly detection. Since many generative models first encode the input data into meaningful latent spaces z for reconstruction or generation back to a high-dimensional space ($p(x∣z)$, following the manifold hypothesis), their learned representations can be used for feature extraction, manifold learning, and downstream tasks such as dimensionality reduction and visualization, classification, and clustering.
+
+%https://www.jmlr.org/papers/volume26/24-1335/24-1335.pdf
 \subsection*{Single-Cell Simulation}
 \addcontentsline{toc}{subsection}{Single-Cell Simulation}
 
-\subsection*{GANs, conditionalGANs and CausalGANs}
-\addcontentsline{toc}{subsection}{GANs, conditi	onalGANs and CausalGANs}
+\subsection*{CausalGAN}
+\addcontentsline{toc}{subsection}{CausalGAN}
+%Generative modeling
+%Taxonomy of generative models
+% GANs
+%	Latent space interpolation
+% 	Mode Collapse
+%	WGAN-GPs
+%	WGAN-GP for single-cell
+%	Conditional GANs (cscGAN)
+Conditional GAN architectures generate samples from class-conditional data distributions by conditioning on class labels that are modeled independently of eachother. A conditional GAN trained on images of faces, given labels \textit{mustache} and \textit{sex}, will simply sample from a subset of its learned training distribution (corresponding to $sex = male$) when conditioned on $mustache = true$. However, since the choice of one label (here, \textit{mustache}) does not impact other labels (\textit{sex}), we expect the model to output samples corresponding to both male and female labels. CausalGAN \cite{kocaoglu2017causalgan} captures interdependencies between labels themselves (e.g., \textit{sex causes mustache} ($S \rightarrow M$)) through a causal graph (Figure \ref{fig:causalgraph}) and the causal effect between labels and the output by conditioning on labels (i.e., \textit{labels cause output} ($L \rightarrow O$)). By explicitly modeling the data-generating process as a causal mechanism, CausalGAN can not only sample from observational and conditional distributions but also interventional ones to synthesize samples that do not exist in the training dataset. Intervening on a label, for example, forcing $mustache = true$, only affects its descendants in the causal graph (e.g., \textit{output}). This allows the model to generate both male and female faces with mustaches because the intervention breaks the causal link to the parent node (\textit{sex}). In contrast, conditioning allows information to flow upstream to parent labels. By conditioning on mustache, we inadvertently update the probability of the \textit{sex} label, shifting it heavily towards male.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.67\textwidth]{figures/causalgraph.png}
+  \caption[Example of a possible causal graph]{Example of a possible causal graph (adapted from CausalGAN \cite{kocaoglu2017causalgan})}
+  \label{fig:causalgraph}
+\end{figure}
 
 
+At the core of CausalGAN’s architecture is a generator that strictly adheres to a user-provided causal graph (limited to a DAG), inheriting its neural connections directly from that causal structure. Thus, each variable is generated as a function of its parents in the DAG and independent noise. Returning to our example, under the causal sufficiency assumption, meaning there are no unobserved common causes (confounders) affecting the labels, the generation process for each node follows the path of the arrows:
+\begin{itemize}
+\item $N_S \rightarrow Sex$: represented as $Sex = f_S(N_S)$
+\item $\{Sex, N_M\} \rightarrow Mustache$: represented as $Mustache = f_M(Sex, N_M)$
+\item $\{Sex, Mustache, N_O\} \rightarrow Output$: represented as $Output = f_O(Sex, Mustache, N_O)$
+\end{itemize}
+where $f_S$, $f_M$, and $f_O$ are functions that can represented by feedforward neural networks and the exogenous noise terms $N_S$, $N_M$, and $N_O$ are jointly independent. In practice, simultaneously training such a generator to learn a joint distribution over discrete labels and high-dimensional images is challenging. CausalGAN employs a modular two-step approach. 
+\begin{enumerate}
+\item Causal Controller (Label Generator): A causal implicit model is trained on all causal graph nodes (labels) preceding the output, using the DAG to arrange the generator’s structure to generate labels in their topological order. Standard GAN training with Jensen-Shannon divergence has difficulties sampling from binary distributions; CausalGAN utilizes a WGAN-GP, which they empirically show can be used to output \textit{essentially discrete} (sharply concentrated at 0 and 1) labels. Once trained, the causal controller is frozen and no longer updated.
+\item Conditional Image Generator: This stage focuses on transitioning from all labels to the final output ($L \rightarrow O$). An image generator is trained conditioned on the outputs of the causal controller. Integrated with the pretrained causal controller,  it forms a causal implicit generative model over both labels and images. 
+\end{enumerate}
+In addition to the generator ($G$) and discriminator ($D$), CausalGAN extends the standard adversarial framework by incorporating two auxiliary networks: a Labeler and an Anti-Labeler (Figure \ref{fig:causalgan}). The Labeler is trained on real and generated images, tasked with recovering labels used to produce them. By minimizing the Labeler loss, we encourage the conditional image generator to capture labels. Conversely, the Anti-Labeler is trained only on synthetic samples with the same task. Counterintuitively, the Anti-Labeler loss is maximized and serves as a critical regularizer in CausalGAN. If the generator were to generate repeated samples for specific label combinations, the Anti-Labeler would easily achieve high accuracy in the early stages of training. By maximizing this loss, the generator is effectively penalized for label-conditioned model collapse, encouraging it to produce more diverse samples. As training progresses, maximizing Anti-Labeler loss and minimizing Labeler loss become conflicting objectives. CausalGAN exponentially decays the weight of the Anti-Labeler loss as training progresses.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.3]{figures/causalgan.png}
+  \caption[The CausalGAN Architecture]{The CausalGAN Architecture}
+  \label{fig:causalgan}
+\end{figure}
+
+
+Under mild assumptions, notably that the joint distribution over labels is strictly positive, theoretical guarantees for CausalGAN establish that the two-stage procedure produces a valid causal implicit generative model, where the generator is proven to match the true class conditional output distribution ($p_{data}(x|l)$) at its global minimum. While this guarantee is for single binary labels, it can be extended to multiple labels if an image deterministically defines its labels.
 % GANs
 % conditional GANs
 % causal GANs

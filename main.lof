@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {chapter}{Background Material and Literature Review}{8}{chapter.2}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of a possible causal graph}}{10}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of a possible causal graph.}}{10}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces The CausalGAN Architecture}}{11}{figure.caption.25}%
 \addvspace {10\p@ }
 \contentsline {chapter}{GRouNdGAN: GRN-guided simulation of single-cell RNA-seq data using causal generative adversarial networks}{14}{chapter.3}%

@@ -7,4 +7,10 @@ Murat Kocaoglu, Christopher Snyder, Alexandros~G Dimakis, and Sriram
   adversarial training.
 \newblock {\em arXiv preprint arXiv:1709.02023}, 2017.
 
+\bibitem{liu2015deep}
+Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang.
+\newblock Deep learning face attributes in the wild.
+\newblock In {\em Proceedings of the IEEE international conference on computer
+  vision}, pages 3730--3738, 2015.
+
 \end{thebibliography}

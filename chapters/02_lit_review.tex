@@ -55,6 +55,12 @@ Generative modeling is a branch of unsupervised learning that aims to learn an a
 
 Once a generative model is learned, it can be used for three fundamental tasks: synthesis, density estimation, and representation learning. Synthesis is perhaps the most well-known capability of generative modeling with applications in image synthesis, text generation, and audio synthesis. It refers to the ability to draw “realistic” samples from the learned distribution samples that resemble observed data when $p_{model}(x)\approx p_{data}(x)$ without merely replicating them. Density estimation is the problem of explicitly or implicitly recovering the underlying probability density function of a dataset, allowing us to evaluate the likelihood of observations $x$ under the learned model. This application is at the core of unsupervised learning tasks such as anomaly detection. Since many generative models first encode the input data into meaningful latent spaces $z$ for reconstruction or generation back to a high-dimensional space ($p(x∣z)$, following the manifold hypothesis), their learned representations can be used for feature extraction, manifold learning, and downstream tasks such as dimensionality reduction and visualization, classification, and clustering.
 
+\subsection*{Taxonomy of Generative Models}
+The taxonomy tree of generative models, famously established by Ian Goodfellow, can be broadly divided into two main branches, based on how they model the probability density function (\textsc{pdf}) $p_{model}(x)$ of the data they try to learn. Explicit density models, as the name implies, directly represent and learn a \textsc{pdf} $p_{model}(x; \theta)$, controlled by parameter $\theta$. Their objective is to maximize the likelihood of the training data by adjusting $\theta$ to make the observed data most probable under the model. Within this branch, models are further distinguished by the tractability of their density functions. Models are classified as tractable when they allow for an exact evaluation and/or sampling of the likelihood at any given data point $x$ without requiring computationally expensive numerical methods or approximations. 
+% Taxonomy
+% https://www.researchgate.net/publication/378159299_At_the_Dawn_of_Generative_AI_Era_A_Tutorial-cum-Survey_on_New_Frontiers_in_6G_Wireless_Intelligence
+
+
 %https://www.jmlr.org/papers/volume26/24-1335/24-1335.pdf
 \subsection*{Single-Cell Simulation}
 \addcontentsline{toc}{subsection}{Single-Cell Simulation}

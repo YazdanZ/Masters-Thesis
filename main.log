@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  14 JAN 2026 22:49
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  20 JAN 2026 22:43
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -2492,15 +2492,15 @@ LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/n' will be
 
 ]
 LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/n' will be
-(Font)              scaled to size 10.20007pt on input line 16.
+(Font)              scaled to size 10.20007pt on input line 17.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 []\TU/EBGaramond(0)/m/n/12 Zi-nati, Yaz-dan, Ab-dul-rah-man Takid-deen, and Amin
  Emad. 2024.
  []
 
 
-Underfull \hbox (badness 2326) in paragraph at lines 18--19
+Underfull \hbox (badness 2326) in paragraph at lines 19--20
 \TU/EBGaramond(0)/m/n/12 ``GRouNdGAN: GRN-guided sim-u-la-tion of single-cell RN
 A-seq data us-
  []
@@ -2523,25 +2523,28 @@ Overfull \vbox (2.19316pt too high) has occurred while \output is active []
 
 
 [8] [9]
-<figures/causalgraph.png, id=641, 5831.7875pt x 3222.0375pt>
+<figures/causalgraph.png, id=640, 5831.7875pt x 3222.0375pt>
 File: figures/causalgraph.png Graphic file (type png)
 <use figures/causalgraph.png>
-Package luatex.def Info: figures/causalgraph.png  used on input line 76.
+Package luatex.def Info: figures/causalgraph.png  used on input line 82.
 (luatex.def)             Requested size: 285.94942pt x 157.9648pt.
 LaTeX Font Info:    Font shape `TU/URWGothic(0)/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 77.
+(Font)              scaled to size 10.20007pt on input line 83.
 LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/n' will be
-(Font)              scaled to size 9.30756pt on input line 77.
+(Font)              scaled to size 9.30756pt on input line 83.
  [10<./figures/causalgraph.png>]
 <figures/causalgan.png, id=648, 5982.35pt x 3613.5pt>
 File: figures/causalgan.png Graphic file (type png)
 <use figures/causalgan.png>
-Package luatex.def Info: figures/causalgan.png  used on input line 96.
+Package luatex.def Info: figures/causalgan.png  used on input line 102.
 (luatex.def)             Requested size: 426.79135pt x 257.7678pt.
- [11<./figures/causalgan.png>]) [12]
-\openout2 = chapters/03_groundgan.aux
 
-(./chapters/03_groundgan.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11]) [12<./figures/causalgan.png>]
+\openout2 = chapters/03_groundgan.aux
+ (./chapters/03_groundgan.tex
 LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/it' will be
 (Font)              scaled to size 21.14815pt on input line 2.
  [13
@@ -2552,117 +2555,117 @@ LaTeX Font Info:    Font shape `TU/URWGothic(0)/b/it' will be
 ]
 Chapter 3.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 8.4pt on input line 28.
+(Font)              scaled to size 8.4pt on input line 31.
 [14
 
 ] [15] [16]
-<figures/groundgan/groundgan_fig1.png, id=685, 1716.4125pt x 2511.3825pt>
+<figures/groundgan/groundgan_fig1.png, id=689, 1716.4125pt x 2511.3825pt>
 File: figures/groundgan/groundgan_fig1.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig1.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig1.png  used on input li
-ne 45.
+ne 48.
 (luatex.def)             Requested size: 341.43437pt x 499.54684pt.
 LaTeX Font Info:    Font shape `TU/URWGothic(0)/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 46.
+(Font)              scaled to size 9.30756pt on input line 49.
 
 
-LaTeX Warning: Float too large for page by 11.39021pt on input line 47.
+LaTeX Warning: Float too large for page by 11.39021pt on input line 50.
 
 [17] [18<./figures/groundgan/groundgan_fig1.png>]
-<figures/groundgan/groundgan_fig2.png, id=694, 1756.5625pt x 2494.31876pt>
+<figures/groundgan/groundgan_fig2.png, id=698, 1756.5625pt x 2494.31876pt>
 File: figures/groundgan/groundgan_fig2.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig2.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig2.png  used on input li
-ne 59.
+ne 62.
 (luatex.def)             Requested size: 341.43437pt x 484.81071pt.
 
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.78 	\addlinespace
+l.81 	\addlinespace
                  [0.4em]
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Overfull \hbox (3.8407pt too wide) in paragraph at lines 67--78
+Overfull \hbox (3.8407pt too wide) in paragraph at lines 70--81
 [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 79.
+(Font)              scaled to size 10.0pt on input line 82.
 [19] [20<./figures/groundgan/groundgan_fig2.png>]
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.102 	\addlinespace
+l.105 	\addlinespace
                   [0.4em]
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 [21] [22]
-<figures/groundgan/groundgan_fig3.png, id=711, 1756.5625pt x 1769.61125pt>
+<figures/groundgan/groundgan_fig3.png, id=715, 1756.5625pt x 1769.61125pt>
 File: figures/groundgan/groundgan_fig3.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig3.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig3.png  used on input li
-ne 122.
+ne 125.
 (luatex.def)             Requested size: 426.79135pt x 429.95378pt.
  [23] [24<./figures/groundgan/groundgan_fig3.png>]
-<figures/groundgan/groundgan_fig4.png, id=720, 1982.40625pt x 1470.49374pt>
+<figures/groundgan/groundgan_fig4.png, id=724, 1982.40625pt x 1470.49374pt>
 File: figures/groundgan/groundgan_fig4.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig4.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig4.png  used on input li
-ne 138.
+ne 141.
 (luatex.def)             Requested size: 426.79135pt x 316.57631pt.
  [25]
-<figures/groundgan/groundgan_fig5.png, id=726, 2000.47375pt x 2286.5425pt>
+<figures/groundgan/groundgan_fig5.png, id=730, 2000.47375pt x 2286.5425pt>
 File: figures/groundgan/groundgan_fig5.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig5.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig5.png  used on input li
-ne 146.
+ne 149.
 (luatex.def)             Requested size: 426.79135pt x 487.79407pt.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 147.
+(Font)              scaled to size 8.0pt on input line 150.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 147.
+(Font)              scaled to size 10.95pt on input line 150.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
 
-LaTeX Warning: Float too large for page by 26.83745pt on input line 148.
+LaTeX Warning: Float too large for page by 26.83745pt on input line 151.
 
 [26<./figures/groundgan/groundgan_fig4.png>] [27<./figures/groundgan/groundgan_f
 ig5.png>]
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.172 	\addlinespace
+l.175 	\addlinespace
                   [0.4em]
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Overfull \hbox (0.77364pt too wide) in paragraph at lines 176--177
+Overfull \hbox (0.77364pt too wide) in paragraph at lines 179--180
 \TU/EBGaramond(0)/m/n/12 ex-pres-sion along the pseudo-time axis on the Dahlin 
 dataset us-ing both GRouNdGAN-simulated
  []
 
 [28]
 ! Too many }'s.
-l.181 ...rsus Fig. 4 of BEELINE\textsuperscript{19}}
+l.184 ...rsus Fig. 4 of BEELINE\textsuperscript{19}}
                                                   ): the only difference was...
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-<figures/groundgan/groundgan_fig6.png, id=740, 2007.5pt x 2035.605pt>
+<figures/groundgan/groundgan_fig6.png, id=744, 2007.5pt x 2035.605pt>
 File: figures/groundgan/groundgan_fig6.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig6.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig6.png  used on input li
-ne 186.
+ne 189.
 (luatex.def)             Requested size: 426.79135pt x 432.77pt.
 
-LaTeX Warning: Float too large for page by 12.6134pt on input line 188.
+LaTeX Warning: Float too large for page by 12.6134pt on input line 191.
 
 [29] [30<./figures/groundgan/groundgan_fig6.png>] [31] [32] [33] [34] [35]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2674,25 +2677,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(1)/b/n' undefined
 (Font)              using `TU/Garamond-Math.otf(1)/m/n' instead on input line 2
-73.
+76.
 
 
 LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(2)/b/n' undefined
 (Font)              using `TU/Garamond-Math.otf(2)/m/n' instead on input line 2
-73.
+76.
 
 
 LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(3)/b/n' undefined
 (Font)              using `TU/Garamond-Math.otf(3)/m/n' instead on input line 2
-73.
+76.
 
 [39] [40]
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 284.
+(Font)              scaled to size 12.0pt on input line 287.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 8.4pt on input line 284.
+(Font)              scaled to size 8.4pt on input line 287.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 284.
+(Font)              scaled to size 6.0pt on input line 287.
  [41]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .0.1'
@@ -2733,13 +2736,13 @@ Missing character: There is no 𝜎 (U+1D70E) in font EBGaramond:mode=base;scrip
 t=latn;language=dflt;!
 [43]
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 352.
+(Font)              scaled to size 10.0pt on input line 355.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 352.
+(Font)              scaled to size 7.0pt on input line 355.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 352.
+(Font)              scaled to size 5.0pt on input line 355.
  [44]
-Overfull \hbox (16.38452pt too wide) in paragraph at lines 366--367
+Overfull \hbox (16.38452pt too wide) in paragraph at lines 369--370
 \TU/EBGaramond(0)/m/n/12 The sam-ple sizes were se-lected by orig-i-nal stud-ies
  pro-duc-ing datasets used for train-ing GRouNdGAN.
  []
@@ -2835,7 +2838,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 4779) in paragraph at lines 514--515
+Underfull \hbox (badness 4779) in paragraph at lines 517--518
 []\TU/EBGaramond(0)/m/n/12 Ko-caoglu, M., Sny-der, C., Di-makis, A. G. & Vish-wa
 nath, S. Causal-GAN:
  []
@@ -2940,7 +2943,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 1946) in paragraph at lines 614--615
+Underfull \hbox (badness 1946) in paragraph at lines 617--618
 []\TU/EBGaramond(0)/m/n/12 Mirza, M. & Osin-dero, S. Con-di-tional gen-er-a-tive
  ad-ver-sar-ial nets. Preprint at
  []
@@ -2958,7 +2961,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
+Underfull \hbox (badness 10000) in paragraph at lines 630--631
 []\TU/EBGaramond(0)/m/n/12 Zi-nati, Y., Takid-deen, A. & Emad, A. GRouNdGAN. Zen
 -odo
  []
@@ -2975,7 +2978,7 @@ Chapter 4.
 [54
 
 ] [55] [56] [57]
-<figures/protocol/protocol_fig1.png, id=919, 4838.075pt x 5661.15pt>
+<figures/protocol/protocol_fig1.png, id=923, 4838.075pt x 5661.15pt>
 File: figures/protocol/protocol_fig1.png Graphic file (type png)
 <use figures/protocol/protocol_fig1.png>
 Package luatex.def Info: figures/protocol/protocol_fig1.png  used on input line
@@ -2983,7 +2986,7 @@ Package luatex.def Info: figures/protocol/protocol_fig1.png  used on input line
 (luatex.def)             Requested size: 426.79135pt x 499.37482pt.
  [58] [59<./figures/protocol/protocol_fig1.png>] [60]
 [61] [62]
-<figures/protocol/protocol_fig2.png, id=942, 10720.05pt x 11894.4375pt>
+<figures/protocol/protocol_fig2.png, id=946, 10720.05pt x 11894.4375pt>
 File: figures/protocol/protocol_fig2.png Graphic file (type png)
 <use figures/protocol/protocol_fig2.png>
 Package luatex.def Info: figures/protocol/protocol_fig2.png  used on input line
@@ -3002,7 +3005,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [63<./figures/protocol/protocol_fig2.png>] [64]
-<figures/protocol/protocol_fig3.png, id=954, 10188.0625pt x 10649.7875pt>
+<figures/protocol/protocol_fig3.png, id=958, 10188.0625pt x 10649.7875pt>
 File: figures/protocol/protocol_fig3.png Graphic file (type png)
 <use figures/protocol/protocol_fig3.png>
 Package luatex.def Info: figures/protocol/protocol_fig3.png  used on input line
@@ -3319,7 +3322,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
 󰀒󰀌󰀌󰀒
  []
 
-<figures/protocol/protocol_fig4.png, id=1080, 11091.4375pt x 12516.7625pt>
+<figures/protocol/protocol_fig4.png, id=1084, 11091.4375pt x 12516.7625pt>
 File: figures/protocol/protocol_fig4.png Graphic file (type png)
 <use figures/protocol/protocol_fig4.png>
 Package luatex.def Info: figures/protocol/protocol_fig4.png  used on input line
@@ -3404,7 +3407,7 @@ Overfull \hbox (5.49918pt too wide) in paragraph at lines 1266--1266
  []
 
 [87]
-<figures/protocol/protocol_fig5.png, id=1112, 9605.8875pt x 9385.0625pt>
+<figures/protocol/protocol_fig5.png, id=1116, 9605.8875pt x 9385.0625pt>
 File: figures/protocol/protocol_fig5.png Graphic file (type png)
 <use figures/protocol/protocol_fig5.png>
 Package luatex.def Info: figures/protocol/protocol_fig5.png  used on input line
@@ -3427,7 +3430,7 @@ Overfull \hbox (7.13393pt too wide) in paragraph at lines 1320--1322
 Missing character: There is no ◼ (U+25FC) in font EBGaramond/B:mode=node;scrip
 t=latn;language=dflt;+tlig;!
 ] [89<./figures/protocol/protocol_fig5.png>]
-<figures/protocol/protocol_fig6.png, id=1122, 7076.4375pt x 8321.0875pt>
+<figures/protocol/protocol_fig6.png, id=1126, 7076.4375pt x 8321.0875pt>
 File: figures/protocol/protocol_fig6.png Graphic file (type png)
 <use figures/protocol/protocol_fig6.png>
 Package luatex.def Info: figures/protocol/protocol_fig6.png  used on input line
@@ -3714,11 +3717,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F4768ECEA1C5595DBDC60D86CF4C5D2B;18906.
+(rerunfilecheck)             Checksum: 7C02C37A3D04E63D0001EB2EDED90513;18906.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47100 strings out of 476553
+ 47102 strings out of 476553
  125016,1977958 words of node,token memory allocated
  1230 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 2 sub_mlist
@@ -3726,8 +3729,8 @@ Here is how much of LuaTeX's memory you used:
 n nodes
    avail lists: 1:1,2:1698,3:1778,4:207,5:1152,6:122,7:11280,8:98,9:799,10:32,11
 :892,12:1
- 67490 multiletter control sequences out of 65536+600000
- 178 fonts using 57355991 bytes
+ 67491 multiletter control sequences out of 65536+600000
+ 178 fonts using 57356091 bytes
  125i,17n,114p,2830b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
 talic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGara
@@ -3738,10 +3741,10 @@ thic-DemiOblique.otf><./Garamond-Math.otf><./Garamond-Math.otf></usr/share/fonts
 ntype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fon
 ts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
-Output written on main.pdf (116 pages, 41294409 bytes).
+Output written on main.pdf (116 pages, 41298372 bytes).
 
-PDF statistics: 1270 PDF objects out of 1440 (max. 8388607)
- 1084 compressed objects within 11 object streams
- 279 named destinations out of 1000 (max. 131072)
+PDF statistics: 1274 PDF objects out of 1440 (max. 8388607)
+ 1088 compressed objects within 11 object streams
+ 280 named destinations out of 1000 (max. 131072)
  696 words of extra memory for PDF output out of 10000 (max. 100000000)
 

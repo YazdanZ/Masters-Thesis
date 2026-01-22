@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  20 JAN 2026 22:43
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  21 JAN 2026 23:10
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -2351,7 +2351,12 @@ Package luatex.def Info: figures/by-nc-eps-converted-to.pdf  used on input line
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 79.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
 
@@ -2368,6 +2373,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `URWGothic' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
+(Font)              scaled to size 12.0pt on input line 6.
+Package microtype Info: Character `156' is missing
+(microtype)             in font `TU/EBGaramond(0)/m/it/12'.
+(microtype)             Ignoring protrusion settings for this character.
  [2
 
 
@@ -2376,48 +2386,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ]
 \openout2 = frontmatter/acknowledgements.aux
- (./frontmatter/acknowledgements.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-
- []
-
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 11.
-Package microtype Info: Character `156' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/it/12'.
-(microtype)             Ignoring protrusion settings for this character.
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \\\\
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 T
-    o my parents, this thesis is dedicated to you for being my support throu...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[4
+ (./frontmatter/acknowledgements.tex [4
 
 
 
@@ -3721,15 +3690,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47102 strings out of 476553
+ 47100 strings out of 476553
  125016,1977958 words of node,token memory allocated
  1230 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 2 sub_mlist
 , 3 glyph, 123 attribute, 75 glue_spec, 63 attribute_list, 2 write, 38 pdf_actio
 n nodes
-   avail lists: 1:1,2:1698,3:1778,4:207,5:1152,6:122,7:11280,8:98,9:799,10:32,11
+   avail lists: 1:2,2:1698,3:1778,4:207,5:1152,6:122,7:11280,8:98,9:799,10:32,11
 :892,12:1
- 67491 multiletter control sequences out of 65536+600000
+ 67489 multiletter control sequences out of 65536+600000
  178 fonts using 57356091 bytes
  125i,17n,114p,2830b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
@@ -3741,7 +3710,7 @@ thic-DemiOblique.otf><./Garamond-Math.otf><./Garamond-Math.otf></usr/share/fonts
 ntype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fon
 ts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
-Output written on main.pdf (116 pages, 41298372 bytes).
+Output written on main.pdf (116 pages, 41298988 bytes).
 
 PDF statistics: 1274 PDF objects out of 1440 (max. 8388607)
  1088 compressed objects within 11 object streams

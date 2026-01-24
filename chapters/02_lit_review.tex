@@ -56,7 +56,32 @@ Generative modeling is a branch of unsupervised learning that aims to learn an a
 Once a generative model is learned, it can be used for three fundamental tasks: synthesis, density estimation, and representation learning. Synthesis is perhaps the most well-known capability of generative modeling with applications in image synthesis, text generation, and audio synthesis. It refers to the ability to draw “realistic” samples from the learned distribution samples that resemble observed data when $p_{model}(x)\approx p_{data}(x)$ without merely replicating them. Density estimation is the problem of explicitly or implicitly recovering the underlying probability density function of a dataset, allowing us to evaluate the likelihood of observations $x$ under the learned model. This application is at the core of unsupervised learning tasks such as anomaly detection. Since many generative models first encode the input data into meaningful latent spaces $z$ for reconstruction or generation back to a high-dimensional space ($p(x∣z)$, following the manifold hypothesis), their learned representations can be used for feature extraction, manifold learning, and downstream tasks such as dimensionality reduction and visualization, classification, and clustering.
 
 \subsection*{Taxonomy of Generative Models}
-The taxonomy tree of generative models, famously established by Ian Goodfellow, can be broadly divided into two main branches, based on how they model the probability density function (\textsc{pdf}) $p_{model}(x)$ of the data they try to learn. Explicit density models, as the name implies, directly represent and learn a \textsc{pdf} $p_{model}(x; \theta)$, controlled by parameter $\theta$. Their objective is to maximize the likelihood of the training data by adjusting $\theta$ to make the observed data most probable under the model. Within this branch, models are further distinguished by the tractability of their density functions. Models are classified as tractable when they allow for an exact evaluation and/or sampling of the likelihood at any given data point $x$ without requiring computationally expensive numerical methods or approximations. 
+The taxonomy tree of generative models, famously established by Ian Goodfellow, can be broadly divided into two main branches, based on how they model the probability density function (\textsc{pdf}) $p_{model}(x)$ of the data they try to learn. 
+
+\subsubsection{Explicit Density Models}
+Explicit density models, as the name implies, directly represent and learn a \textsc{pdf} $p_{model}(x; \theta)$, controlled by parameter $\theta$. Their objective is to maximize the likelihood of the training data by adjusting $\theta$ to make the observed data most probable under the model. Within this branch, models are further distinguished by the tractability of their density functions. Models are classified as tractable when they allow for an exact evaluation and/or sampling of the likelihood at any given data point $x$ without requiring computationally expensive numerical methods or approximations. 
+
+Generative models in this category include normalizing flow-based models (e.g., NICE, RealNVP, Glow, MAF) and autoregressive models (e.g., fully visible belief networks (NADE, MADE, PixelRNN, PixelCNN), WaveNet, and GPT).Normalizing flow models, like many generative models, operate on the idea of transforming a simple base probability density $p_z(\mathbf{z})$, such as a multivariate Gaussian, into the complex target distribution $p_x(\mathbf{x})$ of the observed data through a series of invertible, differential mapping functions. To compute $p_x(\mathbf{x})$, these models apply the change of variables formula: 
+
+\[
+p_\mathbf{x}(\mathbf{x}) = p_\mathbf{z}(\mathbf{z}) \, \left| \det \frac{\partial \mathbf{z}}{\partial \mathbf{x}} \right|
+= p_\mathbf{z}(f^{-1}(\mathbf{x})) \, \left| \det \frac{\partial f^{-1}(\mathbf{x})}{\partial \mathbf{x}} \right|,
+\]
+where $\det \frac{\partial \mathbf{z}}{\partial \mathbf{x}}$ is the Jacobian determinant. Computing determinants of large matrices is generally very slow ($O(n^3)$). Through architectural designs such as block-diagonal, triangular, additive, or affine coupling layers, flow-based models simplify the calculation of the Jacobian determinant to $O(n)$. 
+
+
+
+Autoregressive models decompose a joint probability into a product of conditional probabilities, using the chain rule:
+
+\[
+p(\mathbf{x}) = p(x_1, \dots, x_D) 
+= \prod_{i=1}^{D} p(x_i \mid x_1, \dots, x_{i-1}),
+\] 
+
+where $x_i$ is the $i$-th variable, and $D$ is the dimension of $\mathbf{x}$ (a sample). Instead of generating an entire sample (e.g., an image or text) at once, the model generates units (e.g., pixels, words, or tokens) one at a time, conditioned on all units that preceded it, in a fixed, predefined ordering. As such, sampling cannot be readily parallelized, long-range context is hard to maintain, small errors can accumulate or “snowball”, making it difficult to maintain overall coherence over long sequences.   
+
+While these models provide a clear principled means of training via direct likelihood optimization, they are often computationally expensive. Autoregressive models suffer from slow inference, while normalizing flow models are constrained by the requirement for invertible transformations with tractable Jacobians, which can hinder their performance on some complex data distributions.
+
 % Taxonomy
 % https://www.researchgate.net/publication/378159299_At_the_Dawn_of_Generative_AI_Era_A_Tutorial-cum-Survey_on_New_Frontiers_in_6G_Wireless_Intelligence
 

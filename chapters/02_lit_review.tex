@@ -56,31 +56,76 @@ Generative modeling is a branch of unsupervised learning that aims to learn an a
 Once a generative model is learned, it can be used for three fundamental tasks: synthesis, density estimation, and representation learning. Synthesis is perhaps the most well-known capability of generative modeling with applications in image synthesis, text generation, and audio synthesis. It refers to the ability to draw “realistic” samples from the learned distribution samples that resemble observed data when $p_{model}(x)\approx p_{data}(x)$ without merely replicating them. Density estimation is the problem of explicitly or implicitly recovering the underlying probability density function of a dataset, allowing us to evaluate the likelihood of observations $x$ under the learned model. This application is at the core of unsupervised learning tasks such as anomaly detection. Since many generative models first encode the input data into meaningful latent spaces $z$ for reconstruction or generation back to a high-dimensional space ($p(x∣z)$, following the manifold hypothesis), their learned representations can be used for feature extraction, manifold learning, and downstream tasks such as dimensionality reduction and visualization, classification, and clustering.
 
 \subsection*{Taxonomy of Generative Models}
+\addcontentsline{toc}{subsection}{Taxonomy of Generative Models}
+
 The taxonomy tree of generative models, famously established by Ian Goodfellow, can be broadly divided into two main branches, based on how they model the probability density function (\textsc{pdf}) $p_{model}(x)$ of the data they try to learn. 
 
-\subsubsection{Explicit Density Models}
-Explicit density models, as the name implies, directly represent and learn a \textsc{pdf} $p_{model}(x; \theta)$, controlled by parameter $\theta$. Their objective is to maximize the likelihood of the training data by adjusting $\theta$ to make the observed data most probable under the model. Within this branch, models are further distinguished by the tractability of their density functions. Models are classified as tractable when they allow for an exact evaluation and/or sampling of the likelihood at any given data point $x$ without requiring computationally expensive numerical methods or approximations. 
+\subsubsection*{Explicit Generative Models}
+\addcontentsline{toc}{subsubsection}{Explicit Generative Models}
 
-Generative models in this category include normalizing flow-based models (e.g., NICE, RealNVP, Glow, MAF) and autoregressive models (e.g., fully visible belief networks (NADE, MADE, PixelRNN, PixelCNN), WaveNet, and GPT).Normalizing flow models, like many generative models, operate on the idea of transforming a simple base probability density $p_z(\mathbf{z})$, such as a multivariate Gaussian, into the complex target distribution $p_x(\mathbf{x})$ of the observed data through a series of invertible, differential mapping functions. To compute $p_x(\mathbf{x})$, these models apply the change of variables formula: 
+Explicit density models, as the name implies, directly represent and learn a \textsc{pdf} $p_{model}(x; \theta)$, controlled by parameter $\theta$. Their objective is to maximize the likelihood of the training data by adjusting $\theta$ to make the observed data most probable under the model. Within this branch, models are further distinguished by the tractability of their density functions. 
+
+\paragraph*{Tractable Explicit Density Models}
+Models are classified as tractable when they allow for an exact evaluation and/or sampling of the likelihood at any given data point $x$ without requiring computationally expensive numerical methods or approximations. Generative models in this category include normalizing flow-based models (e.g., NICE, RealNVP, Glow, MAF), autoregressive models (e.g., fully visible belief networks (NADE, MADE, PixelRNN, PixelCNN), WaveNet, and GPT), and change of variables models (e.g., nonlinear ICA).
+
+Normalizing flow models, like many generative models, operate on the idea of transforming a simple base probability density $p_z(z)$, such as a multivariate Gaussian, into the complex target distribution $p_x(x)$ of the observed data through a series of invertible, differential mapping functions. To compute $p_x(x)$, these models apply the change of variables formula: 
 
 \[
-p_\mathbf{x}(\mathbf{x}) = p_\mathbf{z}(\mathbf{z}) \, \left| \det \frac{\partial \mathbf{z}}{\partial \mathbf{x}} \right|
-= p_\mathbf{z}(f^{-1}(\mathbf{x})) \, \left| \det \frac{\partial f^{-1}(\mathbf{x})}{\partial \mathbf{x}} \right|,
+p_x(x) = p_z{z) \, \left| \det \frac{\partial z}{\partial x} \right|
+= p_z(f^{-1}(x)) \, \left| \det \frac{\partial f^{-1}(x)}{\partial {x}} \right|,
 \]
-where $\det \frac{\partial \mathbf{z}}{\partial \mathbf{x}}$ is the Jacobian determinant. Computing determinants of large matrices is generally very slow ($O(n^3)$). Through architectural designs such as block-diagonal, triangular, additive, or affine coupling layers, flow-based models simplify the calculation of the Jacobian determinant to $O(n)$. 
-
-
+where $\det \frac{\partial z}{\partial x}$ is the Jacobian determinant. Computing determinants of large matrices is generally very slow ($O(n^3)$). Through architectural designs such as block-diagonal, triangular, additive, or affine coupling layers, flow-based models simplify the calculation of the Jacobian determinant to $O(n)$. 
 
 Autoregressive models decompose a joint probability into a product of conditional probabilities, using the chain rule:
 
 \[
-p(\mathbf{x}) = p(x_1, \dots, x_D) 
+p(x) = p(x_1, \dots, x_D) 
 = \prod_{i=1}^{D} p(x_i \mid x_1, \dots, x_{i-1}),
 \] 
 
-where $x_i$ is the $i$-th variable, and $D$ is the dimension of $\mathbf{x}$ (a sample). Instead of generating an entire sample (e.g., an image or text) at once, the model generates units (e.g., pixels, words, or tokens) one at a time, conditioned on all units that preceded it, in a fixed, predefined ordering. As such, sampling cannot be readily parallelized, long-range context is hard to maintain, small errors can accumulate or “snowball”, making it difficult to maintain overall coherence over long sequences.   
+where $x_i$ is the $i$-th variable, and $D$ is the dimension of $x$ (a sample). Instead of generating an entire sample (e.g., an image or text) at once, the model generates units (e.g., pixels, words, or tokens) one at a time, conditioned on all units that preceded it, in a fixed, predefined ordering. As such, sampling cannot be readily parallelized, long-range context is hard to maintain, small errors can accumulate or “snowball”, making it difficult to maintain overall coherence over long sequences.   
 
 While these models provide a clear principled means of training via direct likelihood optimization, they are often computationally expensive. Autoregressive models suffer from slow inference, while normalizing flow models are constrained by the requirement for invertible transformations with tractable Jacobians, which can hinder their performance on some complex data distributions.
+
+\paragraph*{Approximate Explicit Density Models}
+Oftentimes, the complexity of the target distribution makes the true density function mathematically intractable to compute or optimize directly, and models must rely on approximate density methods such as variational inference or Markov chain-based sampling . Variational inference introduces latent variables $z$ and a parametric distribution $q_\phi(z|x)$ to approximate the true posterior $p(z|x)$. The objective becomes maximizing the Evidence Lower Bound (ELBO) on the log marginal likelihood: 
+\[
+\log p_\theta(x) \geq \mathbb{E}_{q_\phi(z)} \big[ \log p_\theta(x \mid z) \big] - \mathrm{KL}\big(q_\phi(z) \,\|\, p_\theta(z)\big)
+\], 
+where $KL$ is the Kullback-Leibler divergence. In variational autoencoders (VAEs), the encoder and decoder neural networks parameterize \(q_\phi(z|x)\) and \(p_\theta(x|z)\), respectively. As VAE training involves stochastic gradient descent and directly sampling \(z \sim q_\phi(z|x)\) would block backpropagation, the “reparameterization trick” is used to express \(z\) as a differentiable function of the encoder outputs $\mu_\phi(x)$ and $\sigma_\phi(x)$ for each input $x$ and random noise: 
+\[
+z = \mu_\phi(x) + \sigma_\phi(x) \cdot \epsilon, \quad \epsilon \sim \mathcal{N}(0,1),
+\]
+
+Another class of models in this category is Markov-chain-based models, where the probability density is specified through an energy function. Sampling is done by modeling generation as a sequence of stochastic state transitions that converges to the desired distribution. Typical examples of energy-based methods (EMBs) include Boltzmann machines and their variations. They define a join distribution over visible units $v$ (representing observed data) and hidden units $h$ (that capture underlying features): 
+
+\[
+p(v,h;\theta) = \frac{\exp\left(-E(v,h;\theta)\right)}{Z(\theta)}
+\]
+
+\[
+Z(\theta) = \sum_{v,h} \exp\left(-E(v,h;\theta)\right),
+\]
+
+
+where $E(v,h;\theta)$ is the energy function and $Z(\theta)$ is the partition function. $p(v,h;\theta)$ specifies the likeliness of particular combinations of hidden and visible states, as determined by the overall energy associated with that configuration. Computing $Z(\theta)$ requires summing over all possible configurations, making its computation intractabe. We overcome this issue by relying on approximate Markov Chain Monte Carlo (MCMC) methods such as Contrastive Divergence and Gibbs sampling. Learning can be expressed as the difference between the expectation under the data distribution (positive phase) and the expectation under the model distribution (negative phase), approximated by running a short Markov chain initialized at the data.
+\[
+\frac{\partial \mathcal{L}}{\partial w_{ij}} = \langle v_i h_j \rangle_{\text{data}} - \langle v_i h_j \rangle_{\text{model}}
+\]
+ Models like Deep Boltzmann Machines or Deep Belief Networks (composed of stacks of Restricted Boltzmann Machines (RBMs) use a similar concept for parameter learning and have explicit but approximate density. 
+
+
+\subsubsection*{Implicit Generative Models}
+\addcontentsline{toc}{subsubsection}{Implicit Generative Models}
+
+Implicit generative models do not explicitly define a density function for the data. The goal is to sample realistic data points from a model distribution that is implicitly learned by the process used to generate the data itself, without relying on likelihood maximization. As a result, these models can only rely on indirect objectives such as adversarial and reconstruction losses or learned stochastic transitions.  Despite not being capable of density estimation, they synthesize very realistic data and empirically outperform explicit approximate density models such as VAEs. 
+
+\paragraph*{Direct Implicit Density Models}
+These models learn a direct mapping from a simple latent distribution (e.g., multivariate Gaussian noise) to the training data distribution (that is usually high-dimensional and complex) in a single pass without the need to sample iteratively. Generative Adversarial Networks, which we will discuss later on, are a classic example. 
+
+
+\paragraph*{Markov Chain Implicit Density Models}
+The sampling process in these models requires iteratively applying transitions until convergence by learning the stochastic transition operator of a Markov chain whose stationary distribution represents the target distribution. An emblematic example is Generative Stochastic Networks (GSNs), which generalize Denoising Auto-Encoders (DAE).  GSNs learn the data manifold by being injected with noise and attempting to reconstruct the original data. They are trained at each step to predict a conditional distribution $P_\theta\!\left(X_{t+1} \mid H_t\right)$, where $X_{t+1}$ is the next reconstructed sample and $H_t$ is the hidden state at the current step of the Markov chain. Learning these local transitions is generally more simple than the entire data distribution. Because the Markov chain steps through small, local moves (as noise is injected at each step), its transition distributions usually include only a limited set of dominant modes near the current state and effectively becomes unimodal as moves become small. Consequently, GSNs' learning objectives resemble supervised function approximation rather than unsupervised global density estimation, and avoid computing intractable partition functions, unlike Boltzmann machines.
 
 % Taxonomy
 % https://www.researchgate.net/publication/378159299_At_the_Dawn_of_Generative_AI_Era_A_Tutorial-cum-Survey_on_New_Frontiers_in_6G_Wireless_Intelligence

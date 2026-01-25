@@ -127,13 +127,27 @@ These models learn a direct mapping from a simple latent distribution (e.g., mul
 \paragraph*{Markov Chain Implicit Density Models}
 The sampling process in these models requires iteratively applying transitions until convergence by learning the stochastic transition operator of a Markov chain whose stationary distribution represents the target distribution. An emblematic example is Generative Stochastic Networks (GSNs), which generalize Denoising Auto-Encoders (DAE).  GSNs learn the data manifold by being injected with noise and attempting to reconstruct the original data. They are trained at each step to predict a conditional distribution $P_\theta\!\left(X_{t+1} \mid H_t\right)$, where $X_{t+1}$ is the next reconstructed sample and $H_t$ is the hidden state at the current step of the Markov chain. Learning these local transitions is generally more simple than the entire data distribution. Because the Markov chain steps through small, local moves (as noise is injected at each step), its transition distributions usually include only a limited set of dominant modes near the current state and effectively becomes unimodal as moves become small. Consequently, GSNs' learning objectives resemble supervised function approximation rather than unsupervised global density estimation, and avoid computing intractable partition functions, unlike Boltzmann machines.
 
+\subsubsection*{Hybrid Generative Models}
+\addcontentsline{toc}{subsubsection}{Hybrid Generative Models}
+This branch of the taxonomy includes models that incorporate elements from both explicit and implicit generative modeling. Diffusion models, for example, follow a fully fixed and tractable stochastic forward process that gradually adds noise to the data, forming an explicit likelihood-based model of data corruption. While diffusion models share the denoising mechanisms of GSNs, they are not implicit. GSNs use denoising to learn a transition operator for sampling. Meanwhile, in diffusion models, stepwise denoising serves as a proxy for score matching, where the model learns the gradient of the log-density of the data ($\nabla_x \log p(x)$. This allows diffusion models to be trained using likelihood-based objectives like ELBO, similar to VAEs. However, they differ from explicit models as their reverse process is intractable and learned implicitly through neural network approximations.
 % Taxonomy
 % https://www.researchgate.net/publication/378159299_At_the_Dawn_of_Generative_AI_Era_A_Tutorial-cum-Survey_on_New_Frontiers_in_6G_Wireless_Intelligence
 
+\subsection*{Generative Adversarial Networks (GANs)}
+\addcontentsline{toc}{subsection}{Generative Adversarial Networks (GANs)}
+Generative Adversarial Networks (GANs) are implicit generative models that learn a differentiable mapping function $G$, from a simple latent distribution (e.g., Gaussian or uniform noise) to the training distribution ($x_{gen} = G(z; \theta_g)$). To learn the function $G$, GANs follow a game-theoretic approach, using two players implemented as neural networks. A generator ($G$) with the goal of generating “fake” samples that closely mimic “real” samples (from the reference data) to deceive the second player. The discriminator ($D$) takes in samples from both the generator and the reference dataset, and tries to distinguish between them by assigning a probability that the input is real rather than fake. GANs are trained using stochastic gradient-based optimization methods, typically variants of the Adam optimizer, which update the parameters of both the generator and discriminator iteratively. It is common to perform multiple updates of the discriminator for every update of the generator so that the generator is always provided with meaningful gradients and to aid with stability and convergence. During each update, one network’s parameters are temporarily “frozen” while the other is optimized. GAN training involes the value function $V(D, G)$:
+
+\[\min_{G} \max_{D} V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_{z}(z)}[\log(1 - D(G(z)))]\]
+
+The generator aims to minimize this objective while the discriminator seeks to maximize it. As the adversarial training approach is a zero-sum game (one player’s gain is equivalent to the other player’s loss), during training, the generator will update its parameters to maximize the probability of the discriminator misclassifying its outputs, while the discriminator, in turn, will update its parameters to better tell apart real and generated samples. By symbiotically providing feedback during training, the two adversaries can co-evolve together. The Nash equilibrium is reached when the generator outputs become indistinguishable from real data, and the discriminator outputs a probability of 0.5 for all inputs.
+
+
+
+\subsection*{GANs applied to scRNA-seq}
+\addcontentsline{toc}{subsection}{GANs applied to scRNA-seq}
+
 
 %https://www.jmlr.org/papers/volume26/24-1335/24-1335.pdf
-\subsection*{Single-Cell Simulation}
-\addcontentsline{toc}{subsection}{Single-Cell Simulation}
 
 \subsection*{CausalGAN}
 \addcontentsline{toc}{subsection}{CausalGAN}
@@ -186,3 +200,7 @@ Under mild assumptions, notably that the joint distribution over labels is stric
 % simulators for single-cell
 % GRN-Guided Simulation
 
+\subsection*{Single-Cell Simulation}
+\addcontentsline{toc}{subsection}{Single-Cell Simulation}
+
+% talk about the variations of the GAN	

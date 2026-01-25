@@ -135,12 +135,45 @@ This branch of the taxonomy includes models that incorporate elements from both 
 
 \subsection*{Generative Adversarial Networks (GANs)}
 \addcontentsline{toc}{subsection}{Generative Adversarial Networks (GANs)}
-Generative Adversarial Networks (GANs) are implicit generative models that learn a differentiable mapping function $G$, from a simple latent distribution (e.g., Gaussian or uniform noise) to the training distribution ($x_{gen} = G(z; \theta_g)$). To learn the function $G$, GANs follow a game-theoretic approach, using two players implemented as neural networks. A generator ($G$) with the goal of generating “fake” samples that closely mimic “real” samples (from the reference data) to deceive the second player. The discriminator ($D$) takes in samples from both the generator and the reference dataset, and tries to distinguish between them by assigning a probability that the input is real rather than fake. GANs are trained using stochastic gradient-based optimization methods, typically variants of the Adam optimizer, which update the parameters of both the generator and discriminator iteratively. It is common to perform multiple updates of the discriminator for every update of the generator so that the generator is always provided with meaningful gradients and to aid with stability and convergence. During each update, one network’s parameters are temporarily “frozen” while the other is optimized. GAN training involes the value function $V(D, G)$:
-
+Generative Adversarial Networks (GANs) are implicit generative models that learn a differentiable mapping function $G$, from a simple latent distribution (e.g., Gaussian or uniform noise) to the training distribution ($x_{gen} = G(z; \theta_g)$). To learn the function $G$, GANs follow a game-theoretic approach, using two players implemented as neural networks. A generator ($G$) with the goal of generating “fake” samples that closely mimic “real” samples (from the reference data) to deceive the second player. The discriminator ($D$) takes in samples from both the generator and the reference dataset, and tries to distinguish between them by assigning a probability that the input is real rather than fake. GANs are trained using stochastic gradient-based optimization methods, typically variants of the Adam optimizer, which update the parameters of both the generator and discriminator iteratively. During each update, one network’s parameters are temporarily “frozen” while the other is optimized. GAN training involes the value function $V(D, G)$:
 \[\min_{G} \max_{D} V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_{z}(z)}[\log(1 - D(G(z)))]\]
 
 The generator aims to minimize this objective while the discriminator seeks to maximize it. As the adversarial training approach is a zero-sum game (one player’s gain is equivalent to the other player’s loss), during training, the generator will update its parameters to maximize the probability of the discriminator misclassifying its outputs, while the discriminator, in turn, will update its parameters to better tell apart real and generated samples. By symbiotically providing feedback during training, the two adversaries can co-evolve together. The Nash equilibrium is reached when the generator outputs become indistinguishable from real data, and the discriminator outputs a probability of 0.5 for all inputs.
 
+\subsection*{On the Convergence and Mode Collapse of GANs}
+\addcontentsline{toc}{subsection}{On Convergence and Mode Collapse of GANs}
+GAN training, at least in the vanilla formulation introduced, is infamously fickle and unstable, and vulnerable to numerous failure modes. Mode collapse is one of the most common issues faced, where the generator learns to primarily produce from a subset of the reference data distribution, ignoring other modes. Intuitively, this issue arises when the generator has little incentive to generate from other modes of the data, when the discriminator consistently underperforms in its task. The adversarial training procedure must follow a delicate balance between the two players. Achieving this balance is a challenge, as GAN training is designed to follow the optimization procedure of a minimax game, which is not equivalent to that of the maximin game ($\min\limits_{G} \max\limits_{D} V(D, G) \neq \max\limits_{D} \min\limits_{G} V(D, G)$). The theoretical guarantees of GANs rely on solving the minimax game, but in practice, it is not possible to achieve the optimal discriminator in a single step. Instead, training alternates between $G$ and $D$, which can result in a drift toward a maximin-like regime, where the generator gets optimized against a suboptimal, fixed discriminator. A simple solution is to perform multiple updates of the discriminator for every update of the generator so that the generator is always provided with meaningful gradients. Unrolled GANs are another solution that mitigates this problem by “looking ahead” at future discriminator updates during the generator optimization. 
+
+GANs implicitly minimize the Jensen–Shannon (JS) divergence between $p_{model}(x)$ and $p_{data}(x)$, provided $D$ is optimal. When the supports of these two distributions in low-dimensional manifolds are non-overlapping, the JS divergence saturates at a constant value of $\log(2)$. Consequently, training becomes unstable and the gradient of the loss function with respect to the generator's parameters vanishes, providing no feedback for the generator to evolve. To address this issue, Wasserstein GANs (WGANs) replace JS divergence with the Wasserstein-1 (Earth Mover’s) distance:
+
+\[
+W(p_{\text{data}}, p_g) = \inf_{\gamma \in \Pi(p_{\text{data}}, p_g)} \mathbb{E}_{(x, y) \sim \gamma} \left[ \| x - y \| \right],
+\]
+
+where $\Pi(p_{\text{data}}, p_g)$ are the set of all possible "transport plans" (joint distributions) that have marginals $p_{\text{data}}$ and $p_g$. Intuitively, this distance measures the minimum cost of transporting mass from one distribution to the other and provides meaningful gradients even when the two distributions are disjoint in the low-dimensional manifold. The above equation is computationally intractable. For GAN training, it is rewritten using the Kantorovich-Rubinstein Duality as:
+
+\[
+W(p_{\text{data}}, p_g) = \sup_{\| f \|_L \leq 1} \mathbb{E}_{x \sim p_{\text{data}}}[f(x)] - \mathbb{E}_{x \sim p_g}[f(x)]
+\]
+
+Here, our critic (which replaces the discriminator as it outputs real-valued score instead of probabilities) approximates the function $f$ and must be $1$-Lipschitz continuous ($|f(x) - f(y)| \le |x - y|$).
+
+Early WGANs enforced this constraint by weight clipping, which limited model capacity. A more optimal approach involves penalizing the WGANs if the gradient norm of the Critic deviates from 1 by adding a gradient penalty term to the WGAN objective that is regulated by $\lambda$.
+
+\[
+\mathcal{L}_D = 
+\underbrace{\mathbb{E}_{\tilde{x} \sim p_g}[D(\tilde{x})] - \mathbb{E}_{x \sim p_\text{real}}[D(x)]}_{\text{Wasserstein distance}}
++ 
+\underbrace{\lambda \, \mathbb{E}_{\hat{x} \sim p_{\hat{x}}} \left[ \left(\|\nabla_{\hat{x}} D(\hat{x})\|_2 - 1\right)^2 \right],}_{\text{Gradient Penalty}}
+\]
+
+where $\hat{x} = \epsilon x + (1-\epsilon)\tilde{x}$ is a random sample interpolated between real and generated samples. Wasserstein GANs with gradient penalty (WGAN-GPs) have shown to be successful in tackling model collapse and improving convergence and training stability across data modalities.  
+
+
+
+
+\subsection*{Conditional and Controllable Generation with GANs}
+\addcontentsline{toc}{subsection}{Conditional and Controllable Generation with GANs}
 
 
 \subsection*{GANs applied to scRNA-seq}

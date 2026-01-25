@@ -228,7 +228,7 @@ Under mild assumptions, notably that the joint distribution over labels is stric
 % GRN-Guided Simulation
 
 \subsection*{In-Silico Simulation of scRNA-seq}
-\addcontentsline{toc}{subsection}{GANs applied to scRNA-seq}
+\addcontentsline{toc}{subsection}{In-Silico Simulation of scRNA-seq}
 % simulators for single-cell. De-novo, Rule-based, Reference-based. Name the ones that exist
 
 %reference-based methods
@@ -246,7 +246,7 @@ Under mild assumptions, notably that the joint distribution over labels is stric
 
 \subsubsection*{GANs Applied to scRNA-seq}
 \addcontentsline{toc}{subsubsection}{In-Silico Simulation of scRNA-seq}
-Many GAN-based methods were developed to tackle challenges in the scRNA-seq domain, including data augmentation, dropout imputation, and batch effect correction, and cross-modality translation. Ghahramani et al. were one of the first to apply GANs to scRNA-seq. They found that WGAN-GPs lead to better training stability than vanilla GANs. This study also examined the use of learned features for dimensionality reduction and demonstrated a case of controllable generation by interpolating in the latent space (between $z_{\text{basal}$ and $z_{\text{differentiated}}$) to predict intermediate gene expression profiles of epidermal differentiation. 
+Numerous GAN-based methods were developed to tackle challenges in the scRNA-seq domain, including data augmentation, dropout imputation, batch effect correction, and cross-modality translation. Ghahramani et al. were one of the first to apply GANs to scRNA-seq. They found that WGAN-GPs lead to better training stability than vanilla GANs. This study also examined the use of learned features for dimensionality reduction and demonstrated a case of controllable generation by interpolating in the latent space (between $z_{\text{basal}$ and $z_{\text{differentiated}}$) to predict intermediate gene expression profiles of epidermal differentiation. 
 
 However, applied to ~20000 genes, realism was subpar, and synthetic samples failed to capture the entire diversity of samples, even when qualitatively evaluated on a 2-dimensional t-SNE embedding. scRNA-seq data are highly heterogeneous with great cell-to-cell variability, even for the same cell types and populations. By library-size normalizing input cells, scGAN saw a significant improvement in simulation quality, likely due to gradient stabilization resulting from gene expression being similarly ranged across cells. Furthermore, scGAN introduced a library-size normalization layer (LSN) to explicitly output the same read count as the training data for all generated cells, leaving the GAN with one less feature to learn. The same study also introduced cscGAN, a projection-based conditional extension of scGAN with CBN layers for conditioning on labels such as cell type, state, and cluster. Using cscGAN for data augmentation led to improvements in downstream classification and trajectory analysis tasks. Other augmentation methods include LSH-GAN, which guides the generator using locality-sensitive hashing to focus training on informative subsets of real samples, and GARAGE, which augments the generator’s input with attention-weighted embeddings of real cells derived from a k-nearest-neighbor graph via a graph attention network. 
 

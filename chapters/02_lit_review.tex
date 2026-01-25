@@ -174,11 +174,9 @@ where $\hat{x} = \epsilon x + (1-\epsilon)\tilde{x}$ is a random sample interpol
 
 \subsection*{Conditional and Controllable Generation with GANs}
 \addcontentsline{toc}{subsection}{Conditional and Controllable Generation with GANs}
+Conditional GANs (cGANs) offer a method for directly generating samples from user-specified categorical labels $y$. The most direct form of conditioning involves concatenating one-hot-encoded class labels to the input of both the generator and the discriminator. In this setup, the generator produces $G(z|y)$, and the discriminator evaluates $D(x|y)$, generating samples that are not only realistic but also adhere to the provided conditions. Over the years, implementations of cGANs have been extended beyond discrete labels to continuous variables (InfoGAN), structured attributes (AC-GAN), textual embeddings (stackedGANs), feature maps (Pix2Pix, CycleGAN), and more. Furthermore, numerous new conditioning techniques have been proposed that improve class fidelity and training stability. For example, auxiliary classifier GANs (AC-GANs) add an additional classification head to the discriminator that predicts the conditioning label for both real and generated samples. In projection-based conditioning, the discriminator takes the inner product between learned class embeddings ($V$) and intermediate feature representations ($\phi(x)$) by projecting the one-hot label ($y$), and adds this term to its output score (resulting in $D(x, y) =  y^TV\phi(x) + \psi(\phi(x))$). Conditioning can also be integrated in the generator using conditional batch normalization (CBN). In CBN, the scale ($\gamma(y)$) and shift ($\beta(y)$) parameters of normalization layers are made functions of the conditioning variable ($y$), modulating hidden activations ($h$): $\text{CBN}(h, y) = \gamma(y) \hat{h} + \beta(y)$.
 
-
-\subsection*{GANs applied to scRNA-seq}
-\addcontentsline{toc}{subsection}{GANs applied to scRNA-seq}
-
+A complementary line of work to cGANs is controllable generation, which offers more fine-grained control over synthesized outputs without the need for labeled samples by interpreting and deliberately sampling the latent space. These efforts were greatly influenced by the ability to interpolate the latent space and produce smooth semantic transitions on images of faces (e.g., from young to old) and perform arithmetic operations in the $Z$-space (e.g., $Z_{\text{smiling man}} = Z_{\text{smiling woman}} - Z_{\text{neutral woman}} + Z_{\text{neutral man}}$ produces a smiling man) in DCGAN. Yet, GAN latent spaces are entangled, and features are correlated, making the manipulation of an attribute affect other ones (we will discuss how to overcome this problem with CausalGANs). Substantial efforts have been made to achieve GAN latent space disentanglement. InfoGAN encourages disentanglement by introducing a mutual information regularization term to ensure that specific latent codes are strongly predictive of interpretable features in the generated data. Other methods penalize statistical dependence between latent dimensions. StyleGAN introduces a generator architecture with intermediate latent spaces to separate high-level semantics from stochastic variations at multiple levels of hierarchy.
 
 %https://www.jmlr.org/papers/volume26/24-1335/24-1335.pdf
 
@@ -226,14 +224,40 @@ In addition to the generator ($G$) and discriminator ($D$), CausalGAN extends th
 
 
 Under mild assumptions, notably that the joint distribution over labels is strictly positive, theoretical guarantees for CausalGAN establish that the two-stage procedure produces a valid causal implicit generative model, where the generator is proven to match the true class conditional output distribution ($p_{data}(x|l)$) at its global minimum. While this guarantee is for single binary labels, it can extend to multiple binary labels using cross-entropy losses for each label. This setup primarily captures individual label posteriors $p_r(l_i|x) = p_g(l_i|x)$, where $p_r(l_i|x)$ is the probability of the $i$-th label being present in a real image and $p_g(l_i|x)$ is the same for a fake image. However, it is sufficient to recover the full joint label posterior given the image in cases where the labels are completely determined by the image (as is the case for the CelebA dataset \cite{liu2015deep} used in the CausalGAN study).
-% GANs
-% conditional GANs
-% causal GANs
 
-% simulators for single-cell
 % GRN-Guided Simulation
 
-\subsection*{Single-Cell Simulation}
-\addcontentsline{toc}{subsection}{Single-Cell Simulation}
+\subsection*{In-Silico Simulation of scRNA-seq}
+\addcontentsline{toc}{subsection}{GANs applied to scRNA-seq}
+% simulators for single-cell. De-novo, Rule-based, Reference-based. Name the ones that exist
+
+%reference-based methods
+	% Parametric, Semi-Parametric, Deep Generative
+% de novo (or mechanistic) methods
+	% break down more
+	
+% the stats, poisson, zinb, ..
+
+% foundation models
+% multi-modal and spatial
+%Virtual Cell Paradigm
+% for references: A benchmark study of simulation methods for single-cell RNA sequencing data
+
+
+\subsubsection*{GANs Applied to scRNA-seq}
+\addcontentsline{toc}{subsubsection}{In-Silico Simulation of scRNA-seq}
+Many GAN-based methods were developed to tackle challenges in the scRNA-seq domain, including data augmentation, dropout imputation, and batch effect correction, and cross-modality translation. Ghahramani et al. were one of the first to apply GANs to scRNA-seq. They found that WGAN-GPs lead to better training stability than vanilla GANs. This study also examined the use of learned features for dimensionality reduction and demonstrated a case of controllable generation by interpolating in the latent space (between $z_{\text{basal}$ and $z_{\text{differentiated}}$) to predict intermediate gene expression profiles of epidermal differentiation. 
+
+However, applied to ~20000 genes, realism was subpar, and synthetic samples failed to capture the entire diversity of samples, even when qualitatively evaluated on a 2-dimensional t-SNE embedding. scRNA-seq data are highly heterogeneous with great cell-to-cell variability, even for the same cell types and populations. By library-size normalizing input cells, scGAN saw a significant improvement in simulation quality, likely due to gradient stabilization resulting from gene expression being similarly ranged across cells. Furthermore, scGAN introduced a library-size normalization layer (LSN) to explicitly output the same read count as the training data for all generated cells, leaving the GAN with one less feature to learn. The same study also introduced cscGAN, a projection-based conditional extension of scGAN with CBN layers for conditioning on labels such as cell type, state, and cluster. Using cscGAN for data augmentation led to improvements in downstream classification and trajectory analysis tasks. Other augmentation methods include LSH-GAN, which guides the generator using locality-sensitive hashing to focus training on informative subsets of real samples, and GARAGE, which augments the generator’s input with attention-weighted embeddings of real cells derived from a k-nearest-neighbor graph via a graph attention network. 
+
+In scRNA-seq, dropouts are zero-valued gene expression measurements due to technical limitations, such as low mRNA capture. Imputing these missing values is a challenge, as scRNA-seq data is sparse and standard methods that rely on borrowing information from similar cells risk oversmoothing and removing biological noise. scIGAN uses generated cells rather than observed cells to avoid these problems. scGGAN learns gene-gene relations using Graph Convolutional Networks (GCN)-based GAN, which uses a learned gene-gene network to simulate data used for imputation. scMultiGAN also does imputation through first training two generators, one to simulate authentic gene expression (without dropout) and another to model dropout. Then, a third generator uses pre-trained knowledge from the first training step to input raw expression and output imputed values. All the models discussed for imputation first reshape scRNA-seq data into an image-like format for training.
+
+GANs are also used to remove batch effects (non-biological differences between datasets from different experiments). For example, AWGAN uses attention-guided WGANs, while ResPAN employs WGAN-GPs along with random walk mutual nearest neighbor pairing and fully skip-connected autoencoders to map cells from a query batch to a reference batch. Methods such as scMMGAN and scACT use cycle-consistency, inspired by CycleGAN, to integrate or map measurements across modalities, including scRNA-seq.
+
+% scGAN, ghahramani WGAN, scIGAN, the GAN with interpolation. Other variations
 
 % talk about the variations of the GAN	
+
+
+
+%SERGIO (Single-cell ExpRession of Genes In silicO) represents a significant leap in mechanistic simulation. It models the expression dynamics of a gene as a function of its regulators using the chemical Langevin equation, a form of Stochastic Differential Equation (SDE). This approach allows for the simulation of linear and non-linear influences of multiple transcription factors on a single target gene.A unique feature of SERGIO is its "steady-state" and "differentiation" modes. In steady-state, cells are sampled from the equilibrium of the SDE, representing established cell types. In differentiation mode, the model simulates a dynamic transition along a provided trajectory, explicitly modeling the splicing step ($S$) to produce both unspliced and spliced transcript counts. This provides the "ground truth" necessary to benchmark RNA velocity tools, which predict future cell states based on the ratio of unspliced to spliced mRNA.BoolODE takes a different approach by bridging qualitative Boolean logic with quantitative ODEs. It reads a Boolean model definition (e.g., "Gene A is ON if Gene B is OFF") and converts these rules into a system of Hill functions—continuous functions that represent the sigmoidal nature of gene regulation. By adding Gaussian white noise to these ODEs, BoolODE generates stochastic expression data that follows the logic of the underlying network.

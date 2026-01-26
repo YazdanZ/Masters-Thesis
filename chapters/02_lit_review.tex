@@ -45,8 +45,24 @@
 
 \subsection*{Gene Regulatory-Guided Simulation}
 \addcontentsline{toc}{subsection}{Gene Regulatory-Guided Simulation}
+  GRN-guided simulators generate datasets given known user-provided ground truth regulatory interactions. They allow for quantitative and systematic evaluation of GRN inference under a tightly controlled setup. GeneNetWeaver (GNW) is the earliest and possibly most influential example of such methods. It was originally developed for bulk RNA-seq and used for the community-driven benchmarks of the DREAM network inference challenges. GNW models both transcription and translation using a thermodynamic approach that allows for both additive and multiplicative regulatory interactions. To express the network in terms of Ordinary Differential Equations (ODEs), each node $i$ in the network is assigned the rate of change of mRNA concentration and the rate of change of protein concentration as:  
 
-\newpage
+\[\frac{{{\mathrm{d}}\left[ {x_{{i}}} \right]}}{{{\mathrm{d}t}}} = m\,f\left( {R_{{i}}} \right) - l_{{x}}\left[ {x_{{i}}} \right]\]
+
+\[\frac{{{\mathrm{d}}\left[ {p_{{i}}} \right]}}{{{\mathrm{d}t}}} = r\left[ {x_{{i}}} \right] - l_{{p}}\left[ {p_{{i}}} \right]\]
+
+where $m$ is the rate of mRNA transcription, $r$ is the translation rate, $R_i$ is the set of regulators of $i$, and $l_x$ and $l_p$ are the mRNA and protein degradation rates, respectively. $f$ models the relative activation (between 0 and 1) of node $i$ given the TF or protein concentration of its regulators $R_i$. To account for stochasticity in gene expression, GNW converts these ODEs into Chemical Langevin Equations (CLE). It adds molecular noise proportional to the square root of the production and degradation rates terms to mimic thermal fluctuations:
+
+\[
+\frac{dX_t}{dt} = V(X_t) - D(X_t)\,t + c\Big(\sqrt{V(X_t)}\,\eta_t + \sqrt{D(X_t)}\,\eta_d\Big)
+\]
+
+where $V(X_t)$ and $D(X_t)$ are the mRNA or protein production and degradation terms, respectively. $c$ regulates the intensity of the molecular noise and $\eta_v$ and $\eta_d$ are independent Gaussian white-noises. GNW uses the Stratonovich scheme and the Milstein method to integrate the two equations in the form of the Stochastic ODE (SDE) above and create an internal cell state.
+
+Although GNW has been used in some single-cell studies, at times with minor adaptation (such as inducing dropout events to simulate sparsity), it does not preserve trajectories or statistical properties of scRNA-seq. Inspired by GNW, BoolODE was developed to extend it to handle Boolean regulatory logic by requiring the user to provide truth tables. When used in the BEELINE study, the best-performing GRN inference methods on its synthetic benchmarks performed poorly on non-synthetic benchmarks. Similarly, SERGIO uses SDEs, but follows a two-step approach by first generating a dataset strictly following the GRN, then relying on the user to match it to a reference by iteratively adjusting three parameters to add technical noise. This process not only burdens the user but introduces subjectivity (affecting reproducibility) and can also disrupt regulatory interactions imposed in the first simulation step. Importantly, neither of these methods preserves gene identities by default. Furthermore, to model cooperative regulation (multiple TFs regulating a gene), BoolODE relies on user-provided truth tables, and SERGIO assumes the combined effect of multiple TFs to be the sum of their individual effects. 
+
+More recently, scMultiSim, also following a mechanistic approach, uses a unified kinetic framework to generate multi-modal single-cell data (including gene expression, chromatin accessibility, RNA velocity, and spatial coordinates) while also modeling cell identity, GRNs, cell–cell interactions (CCI), and chromatin accessibility while incorporating technical noise. MOSim allows for multilayer GRNs to be imposed, but does so by  “rearranging” a provided seed scRNA-seq and scATAC-seq to match defined regulatory patterns. 
+
 \section*{Generative Modeling and In-Silico Single-Cell Transcriptomics}
 \addcontentsline{toc}{section}{Generative Modeling and In-Silico Single-Cell Transcriptomics}
 

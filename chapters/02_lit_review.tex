@@ -54,7 +54,7 @@
 where $m$ is the rate of mRNA transcription, $r$ is the translation rate, $R_i$ is the set of regulators of $i$, and $l_x$ and $l_p$ are the mRNA and protein degradation rates, respectively. $f$ models the relative activation (between 0 and 1) of node $i$ given the TF or protein concentration of its regulators $R_i$. To account for stochasticity in gene expression, GNW converts these ODEs into Chemical Langevin Equations (CLE). It adds molecular noise proportional to the square root of the production and degradation rates terms to mimic thermal fluctuations:
 
 \[
-\frac{dX_t}{dt} = V(X_t) - D(X_t)\,t + c\Big(\sqrt{V(X_t)}\,\eta_t + \sqrt{D(X_t)}\,\eta_d\Big)
+\frac{dX_t}{dt} = V(X_t) - D(X_t) + c\Big(\sqrt{V(X_t)}\,\eta_t + \sqrt{D(X_t)}\,\eta_d\Big)
 \]
 
 where $V(X_t)$ and $D(X_t)$ are the mRNA or protein production and degradation terms, respectively. $c$ regulates the intensity of the molecular noise and $\eta_v$ and $\eta_d$ are independent Gaussian white-noises. GNW uses the Stratonovich scheme and the Milstein method to integrate the two equations in the form of the Stochastic ODE (SDE) above and create an internal cell state.
@@ -74,7 +74,15 @@ Once a generative model is learned, it can be used for three fundamental tasks: 
 \subsection*{Taxonomy of Generative Models}
 \addcontentsline{toc}{subsection}{Taxonomy of Generative Models}
 
-The taxonomy tree of generative models, famously established by Ian Goodfellow, can be broadly divided into two main branches, based on how they model the probability density function (\textsc{pdf}) $p_{model}(x)$ of the data they try to learn. 
+The taxonomy tree of generative models (Fig. \ref{fig:taxonomy}), famously established by Ian Goodfellow, can be broadly divided into two main branches, based on how they model the probability density function (\textsc{pdf}) $p_{model}(x)$ of the data they try to learn. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{figures/taxonomy.png}
+  \caption[Taxonomy of generative models]{Taxonomy of generative models.}
+  \label{fig:taxonomy}
+\end{figure}
+
 
 \subsubsection*{Explicit Generative Models}
 \addcontentsline{toc}{subsubsection}{Explicit Generative Models}
@@ -211,7 +219,7 @@ Conditional GAN architectures generate samples from class-conditional data distr
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.67\textwidth]{figures/causalgraph.png}
-  \caption[Example of a possible causal graph.]{Example of a possible causal graph.}
+  \caption[Example of a possible causal graph]{Example of a possible causal graph.}
   \label{fig:causalgraph}
 \end{figure}
 

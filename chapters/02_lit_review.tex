@@ -4,36 +4,58 @@
 
 \section*{The Biological Basis of Gene Regulation}
 \addcontentsline{toc}{section}{The Biological Basis of Gene Expression and Regulation}
-\subsection*{Gene Expression and Transcriptional Control}
-\addcontentsline{toc}{subsection}{Gene Expression and Transcriptional Control}
+\subsection*{Gene Expression and Transcription Profiling}
+\addcontentsline{toc}{subsection}{Gene Expression and Transcription Profiling}
+
+Genes code for functional \textsc{RNA}s and proteins, and these molecules, in turn, determine cell function, structure, movement, transport, storage, defense, communication, and chemical reactions. Gene expression is the process by which information encoded in \textsc{DNA} is converted into these products, following the central dogma of molecular biology. For protein-coding genes, this process starts with transcription, where \textsc{DNA} serves as a template for \textsc{RNA} polymerase to produce messenger \textsc{RNA} (m\textsc{RNA}), followed by translation by ribosomes into a polypeptide chain that folds into a protein. For non-coding genes, the \textsc{RNA} products of transcription (small nuclear \textsc{RNA}s (sn\textsc{RNA}s), transfer \textsc{RNA}s (t\textsc{RNA}s), ribosomal \textsc{RNA}s (r\textsc{RNA}s), or microRNAs (mi\textsc{RNA}s)) themselves play roles in protein assembly, gene expression itself, and regulation. 
+
+Transcription profiling provides a systematic approach for studying gene expression by quantifying the abundance of mRNA and non-coding transcripts in a biological sample under various conditions. Common profiling methods include microarrays, RNA-sequencing (RNA-seq), single-cell RNA-sequencing (scRNA-seq), and quantitative reverse transcription PCR (qRT-PCR), each with distinct characteristics, resolutions, and sensitivity. In this thesis, we conduct studies focusing on RNA-seq and scRNA-seq.
+
+RNA-seq, also referred to as bulk RNA-seq, quantifies gene expression in a sample by aggregating mRNA abundance across all the cells by converting RNA into cDNA and sequencing it. It is an essential tool for comparing global changes and differences between, for example, healthy and diseased states. Nonetheless, it obscures heterogeneity when the sample contains multiple cell types or cells of the same type but at different stages of a biological process or under different conditions, each contributing differently to this overall averaged-out expression. For example, the tumor microenvironment is a heterogeneous mixture of malignant cells, stromal components, fibroblasts, endothelial cells, etc. In such contexts, measuring gene expression at the cell type- or even cell-level is extremely valuable and enables an array of new studies on cell-type identification, developmental trajectories, cell-cell communication, and rare cell identification.
+
+scRNA-seq, introduced in 2009, enhances the resolution of RNA-seq to the individual cells. At a high level, this is made possible by isolating individual cells and tagging mRNA from each individual cell with a unique barcode. Since then, new technologies have increased the throughput, sensitivity, and efficiency of experiments, and the number of profiled cells has reached hundreds of thousands or even millions in a single experiment on some platforms. Compared to bulk data, single-cell data usually suffers from high technical noise and sparsity.
+
+One point to consider, which is sometimes overlooked in computational studies involving transcriptomics data, is that gene expression profiling is a good proxy for protein abundance but doesn’t directly translate to functional importance or protein levels due to many factors, including protein degradation and post-transcriptional modifications. 
+
+
+%https://www.thermofisher.com/ca/en/home/life-science/pcr/real-time-pcr/real-time-pcr-learning-center/gene-expression-analysis-real-time-pcr-information/introduction-gene-expression-profiling.html
 %Central Dogma and mRNA Abundance
 %Regulation at the Transcriptional Level
 
-\subsection*{Mechanisms of Gene Regulation and Transcription Factors}
-\addcontentsline{toc}{subsection}{Mechanisms of Gene Regulation and Transcription Factors}
+\subsection*{Mechanisms of Gene Regulation and Transcriptional Control}
+\addcontentsline{toc}{subsection}{Mechanisms of Gene Regulation and Transcriptional Control}
+Interestingly, despite all cells of multicellular organisms containing the same static genome regardless of cell type and tissue of origin, they display vastly distinct characteristics, morphologies, and functions. This difference can primarily be attributed to differential gene expression resulting from precisely controlled regulation programs subject to spatio-temporal specificity. 
+
+In this thesis, we mainly focus on eukaryotic organisms and transcriptional regulation, which we will study in more detail. However, regulation is controlled at different levels:
+
+\begin{itemize}
+\item Epigenetic Regulation: DNA is wound around proteins called histones to form chromatin. When wound tightly (heterochromatin), it is more difficult for DNA to be transcribed, and easier when wound loosely (euchromatin). DNA methylation, histone modifications, chromatin remodeling, and non-coding RNAs that target chromatin can affect chromatin accessibility and thus, regulation. Assay for Transposase-Accessible Chromatin Sequencing (ATAC-seq) can identify open chromatin regions, and Chromatin Immunoprecipitation Sequencing (ChIP-seq) can map binding sites of histone modifications or transcription factors (which we will introduce). These omics modalities are often used to study gene regulation.
+\item Transcriptional Regulation: We will study this level in more depth.
+\item Post-Transcriptional Regulation
+\item Translational Regulation: Regulation at this stage involves many factors, such as the spatial location and upstream open reading frames (uORF) and motifs in the 5’ and 3′ untranslated regions (UTRs) of the mRNA, interactions with RNA-binding regulatory proteins (RBPs) and microRNAs (miRNAs). 
+\item Post-Translational Regulation: 
+\item Spatio-Temporal Regulation: Ensures that genes are expressed differently depending on environmental signals, subcellular location, and time, for example, during development and morphogenesis. It involves previously introduced regulatory mechanisms and other signaling pathways.
+
+% https://pmc.ncbi.nlm.nih.gov/articles/PMC3504442/
+\end{itemize}
+
 %TF Binding, Activation, and Repression
 %Promoters, Enhancers, and Chromatin Context
 
 \subsection*{Gene Regulatory Networks as System-Level Biological Models}
-\addcontentsline{toc}{subsection}{Gene Regulatory Networks as Biological Models}
+\addcontentsline{toc}{subsection}{Gene Regulatory Networks as System-Level Biological Models}
 %Graph-Based Representation of Regulation (edge weights, sign, directionality,..)
 
-\section*{Computational \& Statistical Models of Gene Regulatory Network Inference}
-\addcontentsline{toc}{section}{Computational \& Statistical Models of Gene Regulatory Network Inference}
 
-\subsection*{Problem Formulation of Gene Regulatory Network Inference}
-\addcontentsline{toc}{subsection}{Problem Formulation of GRN Inference}
 %Inferring Directed Networks from Expression Data
 %Identifiability and Causality Challenges
 
 % types of GRN inferene methods (, cell-specific, correlational, MI methods, Regression and Trajectory-Based (pseudotime), Structural Causal Models)
 
-\section*{Benchmarking Gene Regulatory Network Inference Methods}
-\addcontentsline{toc}{section}{Benchmarking Gene Regulatory Network Inference Methods}
-
-\subsection*{Motivation and Challenges in Benchmarking}
-\addcontentsline{toc}{subsection}{Motivation and Challenges in Benchmarking}
-
+\section*{Gene Regulatory Network Inference and Benchmarking}
+\addcontentsline{toc}{section}{Gene Regulatory Network Inference and Benchmarking}
+\subsection*{Computational \& Statistical Models of Gene Regulatory Network Inference}
+\addcontentsline{toc}{subsection}{Computational \& Statistical Models of Gene Regulatory Network Inference}
 
 \subsection*{Experimental Validation-Based Benchmarks}
 \addcontentsline{toc}{subsection}{Experimental Validation-Based Benchmarks}
@@ -256,11 +278,11 @@ The expansion in availability and access to large-scale single-cell datasets has
 
 In addition, simulators can be used for data augmentation, generating synthetic observations to be used alongside real ones, leading to a boost in performance, robustness, and higher reproducibility rates. An interesting yet underexplored and understandably controversial application of single-cell simulators is their potential use in privacy-preserving data sharing. While synthetic data generation offers the promise of masking sensitive, proprietary, or patient information, recent work has shown that these approaches can be vulnerable to adversarial privacy attacks. 
 
-Single-cell simulators can be classified in numerous ways; however, a broad distinction can be made between de novo simulators, which generate data from scratch, and reference-based simulators, which rely on real datasets to guide the simulation. Do novo simulation is especially useful for creating a wide range of hypothetical or theoretical scenarios without being constrained by a particular reference. These approaches offer unmatched flexibility in controlling a multitude of specific biological signals. Naturally, this flexibility comes with a trade-off: users often must have a solid understanding of the simulator’s underlying process to make informed decisions about simulation parameters, which can be burdensome and carry the risk of generating unrealistic datasets if their choices do not reflect biologically plausible conditions. It can also be challenging to validate their biological faithfulness or trust that studies on the resulting datasets will be transferable to real data.  
+Single-cell simulators can be classified in numerous ways; however, a broad distinction can be made between de novo simulators, which generate data from scratch, and reference-based simulators, which rely on real datasets to guide the simulation. Do novo simulation (e.g., BoolODE and GNW) is especially useful for creating a wide range of hypothetical or theoretical scenarios without being constrained by a particular reference. These approaches offer unmatched flexibility in controlling a multitude of specific biological signals. Naturally, this flexibility comes with a trade-off: users often must have a solid understanding of the simulator’s underlying process to make informed decisions about simulation parameters, which can be burdensome and carry the risk of generating unrealistic datasets if their choices do not reflect biologically plausible conditions. It can also be challenging to validate their biological faithfulness or trust that studies on the resulting datasets will be transferable to real data.  
 
 Reference-based models mimic the statistical properties and gene expression profiles of a given dataset. They generally require less user input and produce realistic data by design, which can be validated for realism. However, they can be limited by the complexity of their reference. As more data becomes available, general-purpose simulation for augmenting existing data will become less needed, and these simulators would have to go beyond reproducing what already exists. As with many method classifications, there are hybrid options that combine elements from both to balance the trade-off between flexibility and realism. They typically involve a two-step process, either estimating parameters from a reference before adding de novo features post-hoc or generating de novo effects and subsequently aligning them with reference data, as in the case of SERGIO.
 
-Beyond this classification, simulation methods differ in their modeling assumptions, which range from fully parametric to semi-parametric or non-parametric. Underlying the majority of well-known parametric simulators is a set of statistical frameworks for count modeling. Historically, the negative binomial (NB) has been the default choice for discrete count modeling of bulk data (BASiCS, hierarchicell, muscat, and powsimR all use NB for single-cell) as it accounts for overdispersion through a gene-specific dispersion parameter. To account for the sparsity in single-cell data, its variation, the zero-inflated negative binomial (ZINB used in ZINB-WaVE, zingeR), has become a popular choice in this domain. Other approaches that offer more flexibility include the gamma-Poisson (ESCO, splat/splatter), zero-inflated log-normal Poisson mixtures (POWSC), Bayesian NB mixture (scDD), gamma-normal mixture (scDesign), beta-Poisson (SymSim, SCRIP), and gamma-multivariate hypergeometric (SPARSim), and zero-inflated Poisson or NB with a Gaussian copula for gene-gene correlations (scDesign2). Deep learning models such as scVI and scGAN break free from making strong distributional assumptions about the data, while semi-parametric approaches like SPsimSeq do not require large source datasets and provide a flexible compromise between the two.
+Beyond this classification, simulation methods differ in their modeling assumptions, which range from fully parametric to semi-parametric or non-parametric. Underlying the majority of well-known parametric simulators is a set of statistical frameworks for count modeling. Historically, the negative binomial (NB) has been the default choice for discrete count modeling of bulk data (BASiCS, hierarchicell, muscat, and powsimR all use NB for single-cell) as it accounts for overdispersion through a gene-specific dispersion parameter. To account for the sparsity in single-cell data, its variation, the zero-inflated negative binomial (ZINB used in ZINB-WaVE, and zingeR), has become a popular choice in this domain. Other approaches that offer more flexibility include the gamma-Poisson (ESCO, splat/splatter), zero-inflated log-normal Poisson mixtures (POWSC), Bayesian NB mixture (scDD), gamma-normal mixture (scDesign), beta-Poisson (SymSim, SCRIP), gamma-multivariate hypergeometric (SPARSim), and zero-inflated Poisson or NB with a Gaussian copula for gene-gene correlations (scDesign2). Deep learning models such as scVI and scGAN break free from making strong distributional assumptions about the data, while semi-parametric approaches like SPsimSeq do not require the same large source datasets and provide a flexible compromise between the two.
 
 
 % https://www.biorxiv.org/content/10.64898/2026.01.22.701160v1.full.pdf

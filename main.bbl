@@ -1,4 +1,135 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{olsen2014inference}
+Catharina Olsen, Kathleen Fleming, Niall Prendergast, Renee Rubio, Frank
+  Emmert-Streib, Gianluca Bontempi, Benjamin Haibe-Kains, and John Quackenbush.
+\newblock Inference and validation of predictive gene networks from biomedical
+  literature and gene expression data.
+\newblock {\em Genomics}, 103(5-6):329--336, 2014.
+
+\bibitem{frohlich2008analyzing}
+Holger Fr{\"o}hlich, Tim Bei{\ss}barth, Achim Tresch, Dennis Kostka, Juby
+  Jacob, Rainer Spang, and Florian Markowetz.
+\newblock Analyzing gene perturbation screens with nested effects models in r
+  and bioconductor.
+\newblock {\em Bioinformatics}, 24(21):2549--2550, 2008.
+
+\bibitem{mccalla2023identifying}
+Sunnie~Grace McCalla, Alireza Fotuhi~Siahpirani, Jiaxin Li, Saptarshi Pyne,
+  Matthew Stone, Viswesh Periyasamy, Junha Shin, and Sushmita Roy.
+\newblock Identifying strengths and weaknesses of methods for computational
+  network inference from single-cell rna-seq data.
+\newblock {\em G3: Genes, Genomes, Genetics}, 13(3):jkad004, 2023.
+
+\bibitem{chen2022live}
+Wanze Chen, Orane Guillaume-Gentil, Pernille~Yde Rainer, Christoph~G
+  G{\"a}belein, Wouter Saelens, Vincent Gardeux, Amanda Klaeger, Riccardo
+  Dainese, Magda Zachara, Tomaso Zambelli, et~al.
+\newblock Live-seq enables temporal transcriptomic recording of single cells.
+\newblock {\em Nature}, 608(7924):733--740, 2022.
+
+\bibitem{feng2024knocktf}
+Chenchen Feng, Chao Song, Shuang Song, Guorui Zhang, Mingxue Yin, Yuexin Zhang,
+  Fengcui Qian, Qiuyu Wang, Maozu Guo, and Chunquan Li.
+\newblock Knocktf 2.0: a comprehensive gene expression profile database with
+  knockdown/knockout of transcription (co-) factors in multiple species.
+\newblock {\em Nucleic Acids Research}, 52(D1):D183--D193, 2024.
+
+\bibitem{xu2013escape}
+Huilei Xu, Caroline Baroukh, Ruth Dannenfelser, Edward~Y Chen, Christopher~M
+  Tan, Yan Kou, Yujin~E Kim, Ihor~R Lemischka, and Avi Ma'ayan.
+\newblock Escape: database for integrating high-content published data
+  collected from human and mouse embryonic stem cells.
+\newblock {\em Database}, 2013:bat045, 2013.
+
+\bibitem{datlinger2017pooled}
+Paul Datlinger, Andr{\'e}~F Rendeiro, Christian Schmidl, Thomas Krausgruber,
+  Peter Traxler, Johanna Klughammer, Linda~C Schuster, Amelie Kuchler, Donat
+  Alpar, and Christoph Bock.
+\newblock Pooled crispr screening with single-cell transcriptome readout.
+\newblock {\em Nature methods}, 14(3):297--301, 2017.
+
+\bibitem{dixit2016perturb}
+Atray Dixit, Oren Parnas, Biyu Li, Jenny Chen, Charles~P Fulco, Livnat
+  Jerby-Arnon, Nemanja~D Marjanovic, Danielle Dionne, Tyler Burks, Raktima
+  Raychowdhury, et~al.
+\newblock Perturb-seq: dissecting molecular circuits with scalable single-cell
+  rna profiling of pooled genetic screens.
+\newblock {\em cell}, 167(7):1853--1866, 2016.
+
+\bibitem{marbach2012wisdom}
+Daniel Marbach, James~C Costello, Robert K{\"u}ffner, Nicole~M Vega, Robert~J
+  Prill, Diogo~M Camacho, Kyle~R Allison, Manolis Kellis, James~J Collins,
+  et~al.
+\newblock Wisdom of crowds for robust gene network inference.
+\newblock {\em Nature methods}, 9(8):796--804, 2012.
+
+\bibitem{salgado2024regulondb}
+Heladia Salgado, Socorro Gama-Castro, Paloma Lara, Citlalli Mejia-Almonte,
+  Gabriel Alarc{\'o}n-Carranza, Andr{\'e}s~G L{\'o}pez-Almazo, Felipe
+  Betancourt-Figueroa, Pablo Pe{\~n}a-Loredo, Shirley Alquicira-Hern{\'a}ndez,
+  Daniela Ledezma-Tejeida, et~al.
+\newblock Regulondb v12. 0: a comprehensive resource of transcriptional
+  regulation in e. coli k-12.
+\newblock {\em Nucleic acids research}, 52(D1):D255--D264, 2024.
+
+\bibitem{mering2003string}
+Christian~von Mering, Martijn Huynen, Daniel Jaeggi, Steffen Schmidt, Peer
+  Bork, and Berend Snel.
+\newblock String: a database of predicted functional associations between
+  proteins.
+\newblock {\em Nucleic acids research}, 31(1):258--261, 2003.
+
+\bibitem{han2018trrust}
+Heonjong Han, Jae-Won Cho, Sangyoung Lee, Ayoung Yun, Hyojin Kim, Dasom Bae,
+  Sunmo Yang, Chan~Yeong Kim, Muyoung Lee, Eunbeen Kim, et~al.
+\newblock Trrust v2: an expanded reference database of human and mouse
+  transcriptional regulatory interactions.
+\newblock {\em Nucleic acids research}, 46(D1):D380--D386, 2018.
+
+\bibitem{garcia2019benchmark}
+Luz Garcia-Alonso, Christian~H Holland, Mahmoud~M Ibrahim, Denes Turei, and
+  Julio Saez-Rodriguez.
+\newblock Benchmark and integration of resources for the estimation of human
+  transcription factor activities.
+\newblock {\em Genome research}, 29(8):1363--1375, 2019.
+
+\bibitem{zheng2019cistrome}
+Rongbin Zheng, Changxin Wan, Shenglin Mei, Qian Qin, Qiu Wu, Hanfei Sun,
+  Chen-Hao Chen, Myles Brown, Xiaoyan Zhang, Clifford~A Meyer, et~al.
+\newblock Cistrome data browser: expanded datasets and new tools for gene
+  regulatory analysis.
+\newblock {\em Nucleic acids research}, 47(D1):D729--D735, 2019.
+
+\bibitem{yevshin2019gtrd}
+Ivan Yevshin, Ruslan Sharipov, Semyon Kolmykov, Yury Kondrakhin, and Fedor
+  Kolpakov.
+\newblock Gtrd: a database on gene transcription regulation—2019 update.
+\newblock {\em Nucleic acids research}, 47(D1):D100--D105, 2019.
+
+\bibitem{mendoza2013quality}
+Marco-Antonio Mendoza-Parra, Wouter Van~Gool, Mohamed~Ashick Mohamed~Saleem,
+  Danilo~Guillermo Ceschin, and Hinrich Gronemeyer.
+\newblock A quality control system for profiles obtained by chip sequencing.
+\newblock {\em Nucleic acids research}, 41(21):e196--e196, 2013.
+
+\bibitem{liu2015regnetwork}
+Zhi-Ping Liu, Canglin Wu, Hongyu Miao, and Hulin Wu.
+\newblock Regnetwork: an integrated database of transcriptional and
+  post-transcriptional regulatory networks in human and mouse.
+\newblock {\em Database}, 2015:bav095, 2015.
+
+\bibitem{kanehisa2000kegg}
+Minoru Kanehisa and Susumu Goto.
+\newblock Kegg: kyoto encyclopedia of genes and genomes.
+\newblock {\em Nucleic acids research}, 28(1):27--30, 2000.
+
+\bibitem{pratapa2020benchmarking}
+Aditya Pratapa, Amogh~P Jalihal, Jeffrey~N Law, Aditya Bharadwaj, and
+  TM~Murali.
+\newblock Benchmarking algorithms for gene regulatory network inference from
+  single-cell transcriptomic data.
+\newblock {\em Nature methods}, 17(2):147--154, 2020.
 
 \bibitem{kocaoglu2017causalgan}
 Murat Kocaoglu, Christopher Snyder, Alexandros~G Dimakis, and Sriram

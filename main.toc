@@ -107,7 +107,6 @@
 \contentsline {section}{Code Availability}{108}{section*.143}%
 \contentsline {section}{Competing interests}{108}{section*.144}%
 \contentsline {section}{References}{108}{section*.145}%
-\contentsline {chapter}{\numberline {5}Discussion}{112}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{113}{chapter.6}%
-\contentsline {subsection}{Discussion}{113}{section*.146}%
-\contentsline {subsection}{Future Work}{113}{section*.147}%
+\contentsline {chapter}{\numberline {5}Conclusion}{112}{chapter.5}%
+\contentsline {section}{Discussion}{112}{section*.146}%
+\contentsline {section}{Future Work}{113}{section*.147}%

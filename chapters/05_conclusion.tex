@@ -1,6 +1,6 @@
-\chapter{Conclusion}
-\section*{Summary}
-\addcontentsline{toc}{section}{Discussion}
+\chapter{Discussions}
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
 
 This thesis presented two complementary works originally motivated by challenges in evaluating GRN reconstruction algorithms, specifically from single-cell transcriptomics data. We first presented GRouNdGAN, a causal implicit generative model inspired by CausalGAN, a simulator from the computer vision domain. This method accepts an scRNA-seq reference and a set of user-supplied regulatory TF-gene interactions and adversarially trains a generator neural network consistent with both. Importantly, these interactions do not need to reflect the true causal relationships of the reference (as those are unknown). But, empirical and theoretical guarantees demonstrate that they will collectively form the underlying causal graph of the synthetic data, which can serve as ground truth when inferring GRNs. Furthermore, our method disrupts interactions present in the reference data but unimposed during simulation, an essential property to avoid false-positive inference of such edges. We used this usecase to benchmark various GRN inference methods, obtaining results that aligned with experimental and curated benchmarks. 
 
@@ -18,4 +18,13 @@ Further, we have published a database of simulated datasets with various GRNs an
 
 As it currently stands, our method has a few constraints that can be relaxed in the future. Our ablation studies show that the LSN layer boosts realism. However, its effect is less noticeable when simulating fewer genes (1000 instead of 20000, as was the case with scGAN). While most GRN inference methods infer TRNs (bipartite TF to gene graphs), it is trivially possible to extend the method to enforce GRNs with depth > 1 on the generator. Cycles could be incorporated by unfolding the graph and following a multi-step training approach to generate genes layer by layer. MOSim, another GRN-guided simulator, allows multi-layer GRNs. 
 
-GRouNdGAN can also be extended to condition on additional labels such as cell type, cluster, or location. Our network-guided simulation framework can be adapted to generate data from other modalities (e.g., ATAC-seq and ChIP-Seq) and networks (e.g., protein-protein interaction and signaling networks) and to inspire the development of newer causal generative models for biology, based on newer models, for example, diffusion and transformers. 
+GRouNdGAN can also be extended to condition on additional labels such as cell type, cluster, or location. Our network-guided simulation framework can be adapted to generate data from other modalities (e.g., ATAC-seq and ChIP-Seq) and networks (e.g., protein-protein interaction and signaling networks) and to inspire the development of newer causal generative models for biology, based on newer models, for example, diffusion and transformers. We currently rely on the user or GRNBoost2 to provide us with the GRN to impose. An interesting direction would be to impose a GRN simultaneously as we learn it by encouraging sparsity in the generator for DAG learning. 
+
+
+% talk about ill-posed Observational vs. Interventional
+% 3. Biological Latency and "Snapshots"
+%Transcription is a dynamic, time-dependent process.
+
+%The Delay: A Transcription Factor (TF) protein is produced, enters the nucleus, binds to DNA, and then the target gene is transcribed.
+%
+%The Mismatch: In scRNA-seq, we measure mRNA levels, not protein activity. Since there is a significant time lag and complex translation regulation between mRNA and functional protein, the "cause" (TF activity) and the "effect" (target gene expression) often aren't captured in the same state.

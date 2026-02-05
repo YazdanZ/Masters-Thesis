@@ -554,11 +554,17 @@ Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang.
 \newblock In {\em Proceedings of the IEEE international conference on computer
   vision}, pages 3730--3738, 2015.
 
-\bibitem{ghahramani2018generative}
-Arsham Ghahramani, Fiona~M Watt, and Nicholas~M Luscombe.
-\newblock Generative adversarial networks simulate gene expression and predict
-  perturbations in single cells.
-\newblock {\em BioRxiv}, page 262501, 2018.
+\bibitem{cao2021benchmark}
+Yue Cao, Pengyi Yang, and Jean Yee~Hwa Yang.
+\newblock A benchmark study of simulation methods for single-cell rna
+  sequencing data.
+\newblock {\em Nature communications}, 12(1):6911, 2021.
+
+\bibitem{crowell2023shaky}
+Helena~L Crowell, Sarah~X Morillo~Leonardo, Charlotte Soneson, and Mark~D
+  Robinson.
+\newblock The shaky foundations of simulating single-cell rna sequencing data.
+\newblock {\em Genome Biology}, 24(1):62, 2023.
 
 \bibitem{marouf2020realistic}
 Matteo Marouf, Pierre Machart, Vikas Bansal, Christoph Kilian, Daniel~S
@@ -566,6 +572,119 @@ Matteo Marouf, Pierre Machart, Vikas Bansal, Christoph Kilian, Daniel~S
 \newblock Realistic in silico generation and augmentation of single-cell
   rna-seq data using generative adversarial networks.
 \newblock {\em Nature communications}, 11(1):166, 2020.
+
+\bibitem{golob2026privacy}
+Steven Golob, Patrick McKeever, Sikha Pentyala, Martine De~Cock, and Jonathan
+  Peck.
+\newblock Privacy vulnerabilities in synthetic single-cell rna-sequence data.
+\newblock {\em bioRxiv}, pages 2026--01, 2026.
+
+\bibitem{vallejos2015basics}
+Catalina~A Vallejos, John~C Marioni, and Sylvia Richardson.
+\newblock Basics: Bayesian analysis of single-cell sequencing data.
+\newblock {\em PLoS computational biology}, 11(6):e1004333, 2015.
+
+\bibitem{zimmerman2021hierarchicell}
+Kip~D Zimmerman and Carl~D Langefeld.
+\newblock Hierarchicell: an r-package for estimating power for tests of
+  differential expression with single-cell data.
+\newblock {\em BMC genomics}, 22(1):319, 2021.
+
+\bibitem{crowell2020muscat}
+Helena~L Crowell, Charlotte Soneson, Pierre-Luc Germain, Daniela Calini,
+  Ludovic Collin, Catarina Raposo, Dheeraj Malhotra, and Mark~D Robinson.
+\newblock Muscat detects subpopulation-specific state transitions from
+  multi-sample multi-condition single-cell transcriptomics data.
+\newblock {\em Nature communications}, 11(1):6077, 2020.
+
+\bibitem{vieth2017powsimr}
+Beate Vieth, Christoph Ziegenhain, Swati Parekh, Wolfgang Enard, and Ines
+  Hellmann.
+\newblock powsimr: power analysis for bulk and single cell rna-seq experiments.
+\newblock {\em Bioinformatics}, 33(21):3486--3488, 2017.
+
+\bibitem{risso2018general}
+Davide Risso, Fanny Perraudeau, Svetlana Gribkova, Sandrine Dudoit, and
+  Jean-Philippe Vert.
+\newblock A general and flexible method for signal extraction from single-cell
+  rna-seq data.
+\newblock {\em Nature communications}, 9(1):284, 2018.
+
+\bibitem{van2017zinger}
+Koen Van~den Berge, Charlotte Soneson, Michael~I Love, Mark~D Robinson, and
+  Lieven Clement.
+\newblock zinger: unlocking rna-seq tools for zero-inflation and single cell
+  applications. biorxiv.
+\newblock {\em Preprint}, 10:157982, 2017.
+
+\bibitem{tian2021esco}
+Jinjin Tian, Jiebiao Wang, and Kathryn Roeder.
+\newblock Esco: single cell expression simulation incorporating gene
+  co-expression.
+\newblock {\em Bioinformatics}, 37(16):2374--2381, 2021.
+
+\bibitem{zappia2017splatter}
+Luke Zappia, Belinda Phipson, and Alicia Oshlack.
+\newblock Splatter: simulation of single-cell rna sequencing data.
+\newblock {\em Genome biology}, 18(1):174, 2017.
+
+\bibitem{su2020simulation}
+Kenong Su, Zhijin Wu, and Hao Wu.
+\newblock Simulation, power evaluation and sample size recommendation for
+  single-cell rna-seq.
+\newblock {\em Bioinformatics}, 36(19):4860--4868, 2020.
+
+\bibitem{korthauer2016statistical}
+Keegan~D Korthauer, Li-Fang Chu, Michael~A Newton, Yuan Li, James Thomson, Ron
+  Stewart, and Christina Kendziorski.
+\newblock A statistical approach for identifying differential distributions in
+  single-cell rna-seq experiments.
+\newblock {\em Genome biology}, 17(1):222, 2016.
+
+\bibitem{li2019statistical}
+Wei~Vivian Li and Jingyi~Jessica Li.
+\newblock A statistical simulator scdesign for rational scrna-seq experimental
+  design.
+\newblock {\em Bioinformatics}, 35(14):i41--i50, 2019.
+
+\bibitem{zhang2019simulating}
+Xiuwei Zhang, Chenling Xu, and Nir Yosef.
+\newblock Simulating multiple faceted variability in single cell rna
+  sequencing.
+\newblock {\em Nature communications}, 10(1):2611, 2019.
+
+\bibitem{qin2022scrip}
+Fei Qin, Xizhi Luo, Feifei Xiao, and Guoshuai Cai.
+\newblock Scrip: an accurate simulator for single-cell rna sequencing data.
+\newblock {\em Bioinformatics}, 38(5):1304--1311, 2022.
+
+\bibitem{baruzzo2020sparsim}
+Giacomo Baruzzo, Ilaria Patuzzi, and Barbara Di~Camillo.
+\newblock Sparsim single cell: a count data simulator for scrna-seq data.
+\newblock {\em Bioinformatics}, 36(5):1468--1475, 2020.
+
+\bibitem{sun2021scdesign2}
+Tianyi Sun, Dongyuan Song, Wei~Vivian Li, and Jingyi~Jessica Li.
+\newblock scdesign2: a transparent simulator that generates high-fidelity
+  single-cell gene expression count data with gene correlations captured.
+\newblock {\em Genome biology}, 22(1):163, 2021.
+
+\bibitem{lopez2018deep}
+Romain Lopez, Jeffrey Regier, Michael~B Cole, Michael~I Jordan, and Nir Yosef.
+\newblock Deep generative modeling for single-cell transcriptomics.
+\newblock {\em Nature methods}, 15(12):1053--1058, 2018.
+
+\bibitem{assefa2020spsimseq}
+Alemu~Takele Assefa, Jo~Vandesompele, and Olivier Thas.
+\newblock Spsimseq: semi-parametric simulation of bulk and single-cell
+  rna-sequencing data.
+\newblock {\em Bioinformatics}, 36(10):3276--3278, 2020.
+
+\bibitem{ghahramani2018generative}
+Arsham Ghahramani, Fiona~M Watt, and Nicholas~M Luscombe.
+\newblock Generative adversarial networks simulate gene expression and predict
+  perturbations in single cells.
+\newblock {\em BioRxiv}, page 262501, 2018.
 
 \bibitem{lall2022lsh}
 Snehalika Lall, Sumanta Ray, and Sanghamitra Bandyopadhyay.

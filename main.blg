@@ -11,54 +11,59 @@ A level-1 auxiliary file: chapters/04_protocol.aux
 A level-1 auxiliary file: chapters/05_conclusion.aux
 The style file: unsrt.bst
 Database file #1: bibliography/refs.bib
-Repeated entry---line 375 of file bibliography/refs.bib
+Repeated entry---line 383 of file bibliography/refs.bib
  : @article{chan2017gene
  :                      ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 554 of file bibliography/refs.bib
+ : 
+ : @article{fefferman2016testing,
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty journal in radford2018improving
 Warning--empty journal in neal1993probabilistic
 Warning--there's a number but no volume in geman1984stochastic
 Warning--empty journal in hinton1984boltzmann
 Warning--empty institution in smolensky1986information
-You've used 105 entries,
+You've used 125 entries,
             1791 wiz_defined-function locations,
-            997 strings with 26327 characters,
-and the built_in function-call counts, 28166 in all, are:
-= -- 2339
-> -- 1736
-< -- 16
-+ -- 616
-- -- 511
-* -- 2211
-:= -- 4615
-add.period$ -- 322
-call.type$ -- 105
-change.case$ -- 106
+            1082 strings with 29912 characters,
+and the built_in function-call counts, 33269 in all, are:
+= -- 2770
+> -- 2016
+< -- 17
++ -- 716
+- -- 591
+* -- 2652
+:= -- 5451
+add.period$ -- 382
+call.type$ -- 125
+change.case$ -- 126
 chr.to.int$ -- 0
-cite$ -- 110
-duplicate$ -- 1115
-empty$ -- 2421
-format.name$ -- 511
-if$ -- 6086
+cite$ -- 130
+duplicate$ -- 1306
+empty$ -- 2886
+format.name$ -- 591
+if$ -- 7178
 int.to.chr$ -- 0
-int.to.str$ -- 105
-missing$ -- 104
-newline$ -- 528
-num.names$ -- 105
-pop$ -- 220
+int.to.str$ -- 125
+missing$ -- 124
+newline$ -- 628
+num.names$ -- 125
+pop$ -- 242
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 556
+skip$ -- 633
 stack$ -- 0
-substring$ -- 1928
-swap$ -- 278
-text.length$ -- 16
+substring$ -- 2333
+swap$ -- 309
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 249
-width$ -- 108
-write$ -- 1143
-(There was 1 error message)
+while$ -- 299
+width$ -- 128
+write$ -- 1363
+(There were 2 error messages)

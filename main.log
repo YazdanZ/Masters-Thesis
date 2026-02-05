@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  4 FEB 2026 23:00
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  4 FEB 2026 23:29
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -2548,7 +2548,7 @@ Package luatex.def Info: figures/causalgan.png  used on input line 281.
 ! Missing } inserted.
 <inserted text> 
 }
-l.325 ...the latent space (between $z_{\text{basal}$
+l.308 ...the latent space (between $z_{\text{basal}$
                                                    and $z_{\text{differentia...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2571,7 +2571,7 @@ Chapter 3.
 [29
 
 ] [30] [31]
-<figures/groundgan/groundgan_fig1.png, id=1030, 1716.4125pt x 2511.3825pt>
+<figures/groundgan/groundgan_fig1.png, id=1077, 1716.4125pt x 2511.3825pt>
 File: figures/groundgan/groundgan_fig1.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig1.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig1.png  used on input li
@@ -2584,7 +2584,7 @@ LaTeX Font Info:    Font shape `TU/URWGothic(0)/m/n' will be
 LaTeX Warning: Float too large for page by 11.39021pt on input line 50.
 
 [32] [33<./figures/groundgan/groundgan_fig1.png>]
-<figures/groundgan/groundgan_fig2.png, id=1039, 1756.5625pt x 2494.31876pt>
+<figures/groundgan/groundgan_fig2.png, id=1086, 1756.5625pt x 2494.31876pt>
 File: figures/groundgan/groundgan_fig2.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig2.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig2.png  used on input li
@@ -2620,21 +2620,21 @@ I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 [36] [37]
-<figures/groundgan/groundgan_fig3.png, id=1057, 1756.5625pt x 1769.61125pt>
+<figures/groundgan/groundgan_fig3.png, id=1104, 1756.5625pt x 1769.61125pt>
 File: figures/groundgan/groundgan_fig3.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig3.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig3.png  used on input li
 ne 125.
 (luatex.def)             Requested size: 426.79135pt x 429.95378pt.
  [38] [39<./figures/groundgan/groundgan_fig3.png>]
-<figures/groundgan/groundgan_fig4.png, id=1067, 1982.40625pt x 1470.49374pt>
+<figures/groundgan/groundgan_fig4.png, id=1113, 1982.40625pt x 1470.49374pt>
 File: figures/groundgan/groundgan_fig4.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig4.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig4.png  used on input li
 ne 141.
 (luatex.def)             Requested size: 426.79135pt x 316.57631pt.
  [40]
-<figures/groundgan/groundgan_fig5.png, id=1072, 2000.47375pt x 2286.5425pt>
+<figures/groundgan/groundgan_fig5.png, id=1118, 2000.47375pt x 2286.5425pt>
 File: figures/groundgan/groundgan_fig5.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig5.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig5.png  used on input li
@@ -2674,7 +2674,7 @@ l.184 ...rsus Fig. 4 of BEELINE\textsuperscript{19}}
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-<figures/groundgan/groundgan_fig6.png, id=1085, 2007.5pt x 2035.605pt>
+<figures/groundgan/groundgan_fig6.png, id=1131, 2007.5pt x 2035.605pt>
 File: figures/groundgan/groundgan_fig6.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig6.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig6.png  used on input li
@@ -2986,7 +2986,7 @@ Chapter 4.
 [69
 
 ] [70] [71] [72]
-<figures/protocol/protocol_fig1.png, id=1262, 4838.075pt x 5661.15pt>
+<figures/protocol/protocol_fig1.png, id=1309, 4838.075pt x 5661.15pt>
 File: figures/protocol/protocol_fig1.png Graphic file (type png)
 <use figures/protocol/protocol_fig1.png>
 Package luatex.def Info: figures/protocol/protocol_fig1.png  used on input line
@@ -2994,7 +2994,7 @@ Package luatex.def Info: figures/protocol/protocol_fig1.png  used on input line
 (luatex.def)             Requested size: 426.79135pt x 499.37482pt.
  [73] [74<./figures/protocol/protocol_fig1.png>] [75]
 [76] [77]
-<figures/protocol/protocol_fig2.png, id=1287, 10720.05pt x 11894.4375pt>
+<figures/protocol/protocol_fig2.png, id=1333, 10720.05pt x 11894.4375pt>
 File: figures/protocol/protocol_fig2.png Graphic file (type png)
 <use figures/protocol/protocol_fig2.png>
 Package luatex.def Info: figures/protocol/protocol_fig2.png  used on input line
@@ -3013,7 +3013,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [78<./figures/protocol/protocol_fig2.png>] [79]
-<figures/protocol/protocol_fig3.png, id=1298, 10188.0625pt x 10649.7875pt>
+<figures/protocol/protocol_fig3.png, id=1344, 10188.0625pt x 10649.7875pt>
 File: figures/protocol/protocol_fig3.png Graphic file (type png)
 <use figures/protocol/protocol_fig3.png>
 Package luatex.def Info: figures/protocol/protocol_fig3.png  used on input line
@@ -3330,7 +3330,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
 󰀒󰀌󰀌󰀒
  []
 
-<figures/protocol/protocol_fig4.png, id=1424, 11091.4375pt x 12516.7625pt>
+<figures/protocol/protocol_fig4.png, id=1470, 11091.4375pt x 12516.7625pt>
 File: figures/protocol/protocol_fig4.png Graphic file (type png)
 <use figures/protocol/protocol_fig4.png>
 Package luatex.def Info: figures/protocol/protocol_fig4.png  used on input line
@@ -3415,7 +3415,7 @@ Overfull \hbox (5.49918pt too wide) in paragraph at lines 1266--1266
  []
 
 [102]
-<figures/protocol/protocol_fig5.png, id=1455, 9605.8875pt x 9385.0625pt>
+<figures/protocol/protocol_fig5.png, id=1501, 9605.8875pt x 9385.0625pt>
 File: figures/protocol/protocol_fig5.png Graphic file (type png)
 <use figures/protocol/protocol_fig5.png>
 Package luatex.def Info: figures/protocol/protocol_fig5.png  used on input line
@@ -3438,7 +3438,7 @@ Overfull \hbox (7.13393pt too wide) in paragraph at lines 1320--1322
 Missing character: There is no ◼ (U+25FC) in font EBGaramond/B:mode=node;scrip
 t=latn;language=dflt;+tlig;!
 ] [104<./figures/protocol/protocol_fig5.png>]
-<figures/protocol/protocol_fig6.png, id=1465, 7076.4375pt x 8321.0875pt>
+<figures/protocol/protocol_fig6.png, id=1512, 7076.4375pt x 8321.0875pt>
 File: figures/protocol/protocol_fig6.png Graphic file (type png)
 <use figures/protocol/protocol_fig6.png>
 Package luatex.def Info: figures/protocol/protocol_fig6.png  used on input line
@@ -3694,13 +3694,13 @@ Chapter 5.
 
 
 ] [117] [118] [119] [120] [121] [122]
-[123] [124])
+[123] [124] [125] [126])
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[125] (./main.aux (./frontmatter/abstract.aux)
+[127] (./main.aux (./frontmatter/abstract.aux)
 (./frontmatter/acknowledgements.aux) (./chapters/00_abbreviations.aux)
 (./chapters/01_introduction.aux) (./chapters/02_lit_review.aux)
 (./chapters/03_groundgan.aux) (./chapters/04_protocol.aux)
@@ -3721,7 +3721,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47328 strings out of 476553
+ 47370 strings out of 476553
  125016,1977958 words of node,token memory allocated
  1350 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 2 sub_mlist
@@ -3729,7 +3729,7 @@ Here is how much of LuaTeX's memory you used:
 n nodes
    avail lists: 1:1,2:1693,3:1778,4:208,5:1149,6:122,7:11256,8:98,9:799,10:32,11
 :892,12:1
- 67593 multiletter control sequences out of 65536+600000
+ 67613 multiletter control sequences out of 65536+600000
  181 fonts using 58901995 bytes
  125i,17n,114p,2830b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
@@ -3741,10 +3741,10 @@ mond-Math.otf><./Garamond-Math.otf></usr/share/texlive/texmf-dist/fonts/opentype
 ntype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fon
 ts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
-Output written on main.pdf (141 pages, 41595926 bytes).
+Output written on main.pdf (143 pages, 41603558 bytes).
 
-PDF statistics: 1682 PDF objects out of 1728 (max. 8388607)
- 1465 compressed objects within 15 object streams
- 422 named destinations out of 1000 (max. 131072)
+PDF statistics: 1737 PDF objects out of 2073 (max. 8388607)
+ 1517 compressed objects within 16 object streams
+ 444 named destinations out of 1000 (max. 131072)
  720 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1,5 +1,136 @@
 \begin{thebibliography}{100}
 
+\bibitem{emad2017epithelial}
+Amin Emad, Tania Ray, Tor~W Jensen, Meera Parat, Rachael Natrajan, Saurabh
+  Sinha, and Partha~S Ray.
+\newblock An epithelial-mesenchymal-amoeboid transition gene signature reveals
+  molecular subtypes of breast cancer progression and metastasis.
+\newblock {\em bioRxiv}, page 219410, 2017.
+
+\bibitem{che2017dynamic}
+Dongxue Che, Yang Wang, Weiyang Bai, Leijie Li, Guiyou Liu, Liangcai Zhang,
+  Yongchun Zuo, Shiheng Tao, Jinlian Hua, and Mingzhi Liao.
+\newblock Dynamic and modular gene regulatory networks drive the development of
+  gametogenesis.
+\newblock {\em Briefings in bioinformatics}, 18(4):712--721, 2017.
+
+\bibitem{delgado2019computational}
+Fernando~M Delgado and Francisco G{\'o}mez-Vela.
+\newblock Computational methods for gene regulatory networks reconstruction and
+  analysis: a review.
+\newblock {\em Artificial intelligence in medicine}, 95:133--145, 2019.
+
+\bibitem{zhang2019differential}
+Jiajun Zhang, Wenbo Zhu, Qianliang Wang, Jiayu Gu, L~Frank Huang, and Xiaoqiang
+  Sun.
+\newblock Differential regulatory network-based quantification and
+  prioritization of key genes underlying cancer drug resistance based on
+  time-course rna-seq data.
+\newblock {\em PLoS computational biology}, 15(11):e1007435, 2019.
+
+\bibitem{pratapa2020benchmarking}
+Aditya Pratapa, Amogh~P Jalihal, Jeffrey~N Law, Aditya Bharadwaj, and
+  TM~Murali.
+\newblock Benchmarking algorithms for gene regulatory network inference from
+  single-cell transcriptomic data.
+\newblock {\em Nature methods}, 17(2):147--154, 2020.
+
+\bibitem{karamveer2024approaches}
+Karamveer and Yasin Uzun.
+\newblock Approaches for benchmarking single-cell gene regulatory network
+  methods.
+\newblock {\em Bioinformatics and Biology Insights}, 18:11779322241287120,
+  2024.
+
+\bibitem{emmert2014gene}
+Frank Emmert-Streib, Matthias Dehmer, and Benjamin Haibe-Kains.
+\newblock Gene regulatory networks and their applications: understanding
+  biological and medical problems in terms of networks.
+\newblock {\em Frontiers in cell and developmental biology}, 2:38, 2014.
+
+\bibitem{lockhart2000genomics}
+David~J Lockhart and Elizabeth~A Winzeler.
+\newblock Genomics, gene expression and dna arrays.
+\newblock {\em Nature}, 405(6788):827--836, 2000.
+
+\bibitem{wang2009rna}
+Zhong Wang, Mark Gerstein, and Michael Snyder.
+\newblock Rna-seq: a revolutionary tool for transcriptomics.
+\newblock {\em Nature reviews genetics}, 10(1):57--63, 2009.
+
+\bibitem{tang2009mrna}
+Fuchou Tang, Catalin Barbacioru, Yangzhou Wang, Ellen Nordman, Clarence Lee,
+  Nanlan Xu, Xiaohui Wang, John Bodeau, Brian~B Tuch, Asim Siddiqui, et~al.
+\newblock mrna-seq whole-transcriptome analysis of a single cell.
+\newblock {\em Nature methods}, 6(5):377--382, 2009.
+
+\bibitem{bustin2009miqe}
+Stephen~A Bustin, Vladimir Benes, Jeremy~A Garson, Jan Hellemans, Jim Huggett,
+  Mikael Kubista, Reinhold Mueller, Tania Nolan, Michael~W Pfaffl, Gregory~L
+  Shipley, et~al.
+\newblock The miqe guidelines: M inimum i nformation for publication of q
+  uantitative real-time pcr e xperiments, 2009.
+
+\bibitem{tirosh2016dissecting}
+Itay Tirosh, Benjamin Izar, Sanjay~M Prakadan, Marc~H Wadsworth, Daniel Treacy,
+  John~J Trombetta, Asaf Rotem, Christopher Rodman, Christine Lian, George
+  Murphy, et~al.
+\newblock Dissecting the multicellular ecosystem of metastatic melanoma by
+  single-cell rna-seq.
+\newblock {\em Science}, 352(6282):189--196, 2016.
+
+\bibitem{puram2017single}
+Sidharth~V Puram, Itay Tirosh, Anuraag~S Parikh, Anoop~P Patel, Keren Yizhak,
+  Shawn Gillespie, Christopher Rodman, Christina~L Luo, Edmund~A Mroz, Kevin~S
+  Emerick, et~al.
+\newblock Single-cell transcriptomic analysis of primary and metastatic tumor
+  ecosystems in head and neck cancer.
+\newblock {\em Cell}, 171(7):1611--1624, 2017.
+
+\bibitem{zheng2017massively}
+Grace~XY Zheng, Jessica~M Terry, Phillip Belgrader, Paul Ryvkin, Zachary~W
+  Bent, Ryan Wilson, Solongo~B Ziraldo, Tobias~D Wheeler, Geoff~P McDermott,
+  Junjie Zhu, et~al.
+\newblock Massively parallel digital transcriptional profiling of single cells.
+\newblock {\em Nature communications}, 8(1):14049, 2017.
+
+\bibitem{hicks2018missing}
+Stephanie~C Hicks, F~William Townes, Mingxiang Teng, and Rafael~A Irizarry.
+\newblock Missing data and technical variability in single-cell rna-sequencing
+  experiments.
+\newblock {\em Biostatistics}, 19(4):562--578, 2018.
+
+\bibitem{buenrostro2013transposition}
+Jason~D Buenrostro, Paul~G Giresi, Lisa~C Zaba, Howard~Y Chang, and William~J
+  Greenleaf.
+\newblock Transposition of native chromatin for fast and sensitive epigenomic
+  profiling of open chromatin, dna-binding proteins and nucleosome position.
+\newblock {\em Nature methods}, 10(12):1213--1218, 2013.
+
+\bibitem{johnson2007genome}
+David~S Johnson, Ali Mortazavi, Richard~M Myers, and Barbara Wold.
+\newblock Genome-wide mapping of in vivo protein-dna interactions.
+\newblock {\em Science}, 316(5830):1497--1502, 2007.
+
+\bibitem{thomas2006general}
+Mary~C Thomas and Cheng-Ming Chiang.
+\newblock The general transcription machinery and general cofactors.
+\newblock {\em Critical reviews in biochemistry and molecular biology},
+  41(3):105--178, 2006.
+
+\bibitem{lambert2018human}
+Samuel~A Lambert, Arttu Jolma, Laura~F Campitelli, Pratyush~K Das, Yimeng Yin,
+  Mihai Albu, Xiaoting Chen, Jussi Taipale, Timothy~R Hughes, and Matthew~T
+  Weirauch.
+\newblock The human transcription factors.
+\newblock {\em Cell}, 172(4):650--665, 2018.
+
+\bibitem{davidson2005gene}
+Eric Davidson and Michael Levin.
+\newblock Gene regulatory networks.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  102(14):4935--4935, 2005.
+
 \bibitem{aibar2017scenic}
 Sara Aibar, Carmen~Bravo Gonz{\'a}lez-Blas, Thomas Moerman, V{\^a}n~Anh
   Huynh-Thu, Hana Imrichova, Gert Hulselmans, Florian Rambow, Jean-Christophe
@@ -220,13 +351,6 @@ Zhi-Ping Liu, Canglin Wu, Hongyu Miao, and Hulin Wu.
 Minoru Kanehisa and Susumu Goto.
 \newblock Kegg: kyoto encyclopedia of genes and genomes.
 \newblock {\em Nucleic acids research}, 28(1):27--30, 2000.
-
-\bibitem{pratapa2020benchmarking}
-Aditya Pratapa, Amogh~P Jalihal, Jeffrey~N Law, Aditya Bharadwaj, and
-  TM~Murali.
-\newblock Benchmarking algorithms for gene regulatory network inference from
-  single-cell transcriptomic data.
-\newblock {\em Nature methods}, 17(2):147--154, 2020.
 
 \bibitem{schaffter2011genenetweaver}
 Thomas Schaffter, Daniel Marbach, and Dario Floreano.

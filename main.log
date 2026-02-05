@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  4 FEB 2026 17:58
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  4 FEB 2026 19:02
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -3720,20 +3720,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A430F2CE8F56EC063B1F15A9B91FF4F4;19706.
+(rerunfilecheck)             Checksum: 11D15D3FAA10F6BCE3E6BC1795D9BA4C;19784.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47150 strings out of 476553
+ 47153 strings out of 476553
  125016,1977958 words of node,token memory allocated
  1350 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 2 sub_mlist
 , 3 glyph, 163 attribute, 75 glue_spec, 83 attribute_list, 2 write, 38 pdf_actio
 n nodes
-   avail lists: 1:1,2:1693,3:1778,4:208,5:1148,6:122,7:11256,8:98,9:799,10:32,11
+   avail lists: 1:1,2:1693,3:1778,4:208,5:1149,6:122,7:11256,8:98,9:799,10:32,11
 :892,12:1
  67509 multiletter control sequences out of 65536+600000
- 181 fonts using 58901895 bytes
+ 181 fonts using 58902195 bytes
  125i,17n,114p,2830b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
 talic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraMono-Reg
@@ -3744,10 +3744,10 @@ mond-Math.otf><./Garamond-Math.otf></usr/share/texlive/texmf-dist/fonts/opentype
 ntype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fon
 ts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
-Output written on main.pdf (134 pages, 41557671 bytes).
+Output written on main.pdf (134 pages, 41558935 bytes).
 
-PDF statistics: 1420 PDF objects out of 1440 (max. 8388607)
- 1212 compressed objects within 13 object streams
- 328 named destinations out of 1000 (max. 131072)
+PDF statistics: 1423 PDF objects out of 1440 (max. 8388607)
+ 1215 compressed objects within 13 object streams
+ 331 named destinations out of 1000 (max. 131072)
  720 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -3364,4 +3364,389 @@ Garamond(0)/m/n/12 will be saved to
 
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
-           
+                                                  \color@endbox 
+l.1103 \end{table}
+                
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[98<./figures/protocol/protocol_fig4.png>] [99
+Missing character: There is no ◼ (U+25FC) in font EBGaramond/B:mode=node;scrip
+t=latn;language=dflt;+tlig;!
+]
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.1171 \end{table}
+                
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.1178 ...of Figure 5-a,b) will be saved to \textttt
+                                                  {[EXPERIMENT]/output direc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[100] [101]
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.1257 \end{table}
+                
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \hbox (5.49918pt too wide) in paragraph at lines 1275--1275
+[]\TU/FiraMono(0)/m/n/10 Baseline precision at k: [󰀌.󰀌󰀍󰀌󰀑󰀎
+󰀒󰀏󰀍󰀑󰀓󰀔󰀕󰀐󰀓󰀏󰀒󰀔󰀐, 󰀌.󰀌󰀎󰀍󰀌
+󰀑󰀎󰀒󰀏󰀍󰀑󰀓󰀔󰀕󰀐󰀓󰀏󰀒󰀔,[] 
+ []
+
+[102]
+<figures/protocol/protocol_fig5.png, id=1551, 9605.8875pt x 9385.0625pt>
+File: figures/protocol/protocol_fig5.png Graphic file (type png)
+<use figures/protocol/protocol_fig5.png>
+Package luatex.def Info: figures/protocol/protocol_fig5.png  used on input line
+ 1291.
+(luatex.def)             Requested size: 426.79135pt x 416.86783pt.
+
+Overfull \hbox (9.18027pt too wide) in paragraph at lines 1329--1331
+[][]\TU/EBGaramond(0)/b/n/12 ▲[] CRIT-I-CAL \TU/EBGaramond(0)/m/n/12 En-sure 
+all TFs spec-i-fied in \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Perturbation]/tfs to
+ perturb
+ []
+
+
+Overfull \hbox (7.13393pt too wide) in paragraph at lines 1329--1331
+\TU/EBGaramond(0)/m/n/12 ex-ist in the causal graph and that their count matches
+ the num-ber of en-tries in \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Pe
+ []
+
+[103
+Missing character: There is no ◼ (U+25FC) in font EBGaramond/B:mode=node;scrip
+t=latn;language=dflt;+tlig;!
+] [104<./figures/protocol/protocol_fig5.png>]
+<figures/protocol/protocol_fig6.png, id=1561, 7076.4375pt x 8321.0875pt>
+File: figures/protocol/protocol_fig6.png Graphic file (type png)
+<use figures/protocol/protocol_fig6.png>
+Package luatex.def Info: figures/protocol/protocol_fig6.png  used on input line
+ 1356.
+(luatex.def)             Requested size: 426.79135pt x 501.78311pt.
+
+! Misplaced \noalign.
+\addlinespace ->\noalign 
+                         {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
+l.1410     \end{tabular}}
+                       
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+[]|\TU/EBGaramond(0)/m/n/12 Mis-match be-tween the
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 1410--1410
+\TU/EBGaramond(0)/m/n/12 num-ber of genes in \TU/FiraMono(0)/m/n/10 train\TU/EB
+Garamond(0)/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+\TU/EBGaramond(0)/m/n/12 con-fig-u-ra-tion pa-ram-e-ters or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+[]\TU/EBGaramond(0)/m/n/12 The \TU/FiraMono(0)/m/n/10 .X \TU/EBGaramond(0)/m/n/
+12 at-tribute in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+\TU/FiraMono(0)/m/n/10 anndata \TU/EBGaramond(0)/m/n/12 in-put is a sparse
+ []
+
+! Misplaced \noalign.
+\addlinespace ->\noalign 
+                         {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
+l.1410     \end{tabular}}
+                       
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+[]|\TU/EBGaramond(0)/m/n/12 Ver-ify \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Preproc
+essing]/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+\TU/FiraMono(0)/m/n/10 highly variable number \TU/EBGaramond(0)/m/n/12 and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+\TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Data]/number of genes
+ []
+
+! Misplaced \noalign.
+\addlinespace ->\noalign 
+                         {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
+l.1410     \end{tabular}}
+                       
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\addlinespace ->\noalign 
+                         {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
+l.1410     \end{tabular}}
+                       
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 1410--1410
+[]\TU/EBGaramond(0)/m/n/12 Re-duc-ing the \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[M
+odel]/depth
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 1410--1410
+\TU/EBGaramond(0)/m/n/12 file to 2 and 1, re-spec-tively. This will make
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+[]|\TU/EBGaramond(0)/m/n/12 En-sure that all the \TU/FiraMono(0)/m/n/10 TFs \TU
+/EBGaramond(0)/m/n/12 listed in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+\TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Perturbation]/tfs to
+ []
+
+[105] [106<./figures/protocol/protocol_fig6.png>]
+Overfull \hbox (2.64081pt too wide) in paragraph at lines 1425--1432
+[]\TU/EBGaramond(0)/m/n/12 The per-tur-ba-tion pre-dic-tion pro-ce-dure gen-er-a
+tes two .h5ad files: \TU/FiraMono(0)/m/n/10 before_perturbation.h󰀑ad
+ []
+
+[107] [108]
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+[109]
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+[110]
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+[111]
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
+'
+) [112]
+\openout2 = chapters/05_conclusion.aux
+ (./chapters/05_conclusion.tex
+Chapter 5.
+[113
+
+
+
+
+] [114]) [115] (./main.bbl [116
+
+
+
+] [117] [118] [119] [120] [121] [122]
+[123] [124] [125] [126] [127] [128])
+
+Package glossaries Warning: No \printglossary or \printglossaries found. 
+(Remove \makeglossaries if you don't want any glossaries.) 
+This document will not have a glossary.
+
+[129] (./main.aux (./frontmatter/abstract.aux)
+(./frontmatter/acknowledgements.aux) (./chapters/00_abbreviations.aux)
+(./chapters/01_introduction.aux) (./chapters/02_lit_review.aux)
+(./chapters/03_groundgan.aux) (./chapters/04_protocol.aux)
+(./chapters/05_conclusion.aux))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: F6B41FF3206742797B96819AE5BC4B7F;19779.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 47411 strings out of 476553
+ 125016,1977958 words of node,token memory allocated
+ 1350 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 2 sub_mlist
+, 3 glyph, 163 attribute, 75 glue_spec, 83 attribute_list, 2 write, 38 pdf_actio
+n nodes
+   avail lists: 1:1,2:1693,3:1778,4:208,5:1149,6:122,7:11256,8:98,9:799,10:32,11
+:892,12:1
+ 67633 multiletter control sequences out of 65536+600000
+ 181 fonts using 58902095 bytes
+ 125i,17n,114p,2830b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
+talic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraMono-Reg
+ular.otf></usr/share/fonts/opentype/urw-base35/URWGothic-DemiOblique.otf><./Gara
+mond-Math.otf><./Garamond-Math.otf></usr/share/texlive/texmf-dist/fonts/opentype
+/public/ebgaramond/EBGaramond-Regular.otf><./Garamond-Math.otf></usr/share/fonts
+/opentype/urw-base35/URWGothic-Demi.otf></usr/share/texlive/texmf-dist/fonts/ope
+ntype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fon
+ts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-d
+ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
+Output written on main.pdf (145 pages, 41617357 bytes).
+
+PDF statistics: 1795 PDF objects out of 2073 (max. 8388607)
+ 1573 compressed objects within 16 object streams
+ 465 named destinations out of 1000 (max. 131072)
+ 720 words of extra memory for PDF output out of 10000 (max. 100000000)
+

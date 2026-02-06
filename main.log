@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  5 FEB 2026 00:10
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.1.1)  5 FEB 2026 21:42
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -2567,117 +2567,117 @@ Chapter 3.
 [29
 
 ] [30] [31]
-<figures/groundgan/groundgan_fig1.png, id=1122, 1716.4125pt x 2511.3825pt>
+<figures/groundgan/groundgan_fig1.png, id=1123, 1716.4125pt x 2511.3825pt>
 File: figures/groundgan/groundgan_fig1.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig1.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig1.png  used on input li
-ne 48.
+ne 53.
 (luatex.def)             Requested size: 341.43437pt x 499.54684pt.
 LaTeX Font Info:    Font shape `TU/URWGothic(0)/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 49.
+(Font)              scaled to size 9.30756pt on input line 54.
 
 
-LaTeX Warning: Float too large for page by 11.39021pt on input line 50.
+LaTeX Warning: Float too large for page by 11.39021pt on input line 55.
 
 [32] [33<./figures/groundgan/groundgan_fig1.png>]
-<figures/groundgan/groundgan_fig2.png, id=1131, 1756.5625pt x 2494.31876pt>
+<figures/groundgan/groundgan_fig2.png, id=1132, 1756.5625pt x 2494.31876pt>
 File: figures/groundgan/groundgan_fig2.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig2.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig2.png  used on input li
-ne 62.
+ne 67.
 (luatex.def)             Requested size: 341.43437pt x 484.81071pt.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 63.
+(Font)              scaled to size 10.95pt on input line 68.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 63.
+(Font)              scaled to size 8.0pt on input line 68.
 
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.81 	\addlinespace
+l.86 	\addlinespace
                  [0.4em]
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Overfull \hbox (3.8407pt too wide) in paragraph at lines 70--81
+Overfull \hbox (3.8407pt too wide) in paragraph at lines 75--86
 [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 82.
+(Font)              scaled to size 10.0pt on input line 87.
 [34] [35<./figures/groundgan/groundgan_fig2.png>]
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.105 	\addlinespace
+l.110 	\addlinespace
                   [0.4em]
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 [36] [37]
-<figures/groundgan/groundgan_fig3.png, id=1149, 1756.5625pt x 1769.61125pt>
+<figures/groundgan/groundgan_fig3.png, id=1150, 1756.5625pt x 1769.61125pt>
 File: figures/groundgan/groundgan_fig3.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig3.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig3.png  used on input li
-ne 125.
+ne 130.
 (luatex.def)             Requested size: 426.79135pt x 429.95378pt.
  [38] [39<./figures/groundgan/groundgan_fig3.png>]
-<figures/groundgan/groundgan_fig4.png, id=1158, 1982.40625pt x 1470.49374pt>
+<figures/groundgan/groundgan_fig4.png, id=1159, 1982.40625pt x 1470.49374pt>
 File: figures/groundgan/groundgan_fig4.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig4.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig4.png  used on input li
-ne 141.
+ne 146.
 (luatex.def)             Requested size: 426.79135pt x 316.57631pt.
  [40]
-<figures/groundgan/groundgan_fig5.png, id=1163, 2000.47375pt x 2286.5425pt>
+<figures/groundgan/groundgan_fig5.png, id=1164, 2000.47375pt x 2286.5425pt>
 File: figures/groundgan/groundgan_fig5.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig5.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig5.png  used on input li
-ne 149.
+ne 154.
 (luatex.def)             Requested size: 426.79135pt x 487.79407pt.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 150.
+(Font)              scaled to size 8.0pt on input line 155.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 150.
+(Font)              scaled to size 10.95pt on input line 155.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
 
-LaTeX Warning: Float too large for page by 26.83745pt on input line 151.
+LaTeX Warning: Float too large for page by 26.83745pt on input line 156.
 
 [41<./figures/groundgan/groundgan_fig4.png>] [42<./figures/groundgan/groundgan_f
 ig5.png>]
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.175 	\addlinespace
+l.180 	\addlinespace
                   [0.4em]
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Overfull \hbox (0.77364pt too wide) in paragraph at lines 179--180
+Overfull \hbox (0.77364pt too wide) in paragraph at lines 184--185
 \TU/EBGaramond(0)/m/n/12 ex-pres-sion along the pseudo-time axis on the Dahlin 
 dataset us-ing both GRouNdGAN-simulated
  []
 
 [43]
 ! Too many }'s.
-l.184 ...rsus Fig. 4 of BEELINE\textsuperscript{19}}
+l.189 ...rsus Fig. 4 of BEELINE\textsuperscript{19}}
                                                   ): the only difference was...
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-<figures/groundgan/groundgan_fig6.png, id=1176, 2007.5pt x 2035.605pt>
+<figures/groundgan/groundgan_fig6.png, id=1177, 2007.5pt x 2035.605pt>
 File: figures/groundgan/groundgan_fig6.png Graphic file (type png)
 <use figures/groundgan/groundgan_fig6.png>
 Package luatex.def Info: figures/groundgan/groundgan_fig6.png  used on input li
-ne 189.
+ne 194.
 (luatex.def)             Requested size: 426.79135pt x 432.77pt.
 
-LaTeX Warning: Float too large for page by 12.6134pt on input line 191.
+LaTeX Warning: Float too large for page by 12.6134pt on input line 196.
 
 [44] [45<./figures/groundgan/groundgan_fig6.png>] [46] [47] [48] [49] [50]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2685,27 +2685,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 237.
+(Font)              scaled to size 10.0pt on input line 242.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 237.
+(Font)              scaled to size 7.0pt on input line 242.
 LaTeX Font Info:    Font shape `TU/EBGaramond(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 237.
+(Font)              scaled to size 5.0pt on input line 242.
 
 [51] [52] [53]
 
 LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(1)/b/n' undefined
 (Font)              using `TU/Garamond-Math.otf(1)/m/n' instead on input line 2
-76.
+81.
 
 
 LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(2)/b/n' undefined
 (Font)              using `TU/Garamond-Math.otf(2)/m/n' instead on input line 2
-76.
+81.
 
 
 LaTeX Font Warning: Font shape `TU/Garamond-Math.otf(3)/b/n' undefined
 (Font)              using `TU/Garamond-Math.otf(3)/m/n' instead on input line 2
-76.
+81.
 
 [54] [55] [56]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
@@ -2746,7 +2746,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 Missing character: There is no 𝜎 (U+1D70E) in font EBGaramond:mode=base;scrip
 t=latn;language=dflt;!
 [58] [59]
-Overfull \hbox (16.38452pt too wide) in paragraph at lines 369--370
+Overfull \hbox (16.38452pt too wide) in paragraph at lines 374--375
 \TU/EBGaramond(0)/m/n/12 The sam-ple sizes were se-lected by orig-i-nal stud-ies
  pro-duc-ing datasets used for train-ing GRouNdGAN.
  []
@@ -2842,7 +2842,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 4779) in paragraph at lines 517--518
+Underfull \hbox (badness 4779) in paragraph at lines 522--523
 []\TU/EBGaramond(0)/m/n/12 Ko-caoglu, M., Sny-der, C., Di-makis, A. G. & Vish-wa
 nath, S. Causal-GAN:
  []
@@ -2947,7 +2947,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 1946) in paragraph at lines 617--618
+Underfull \hbox (badness 1946) in paragraph at lines 622--623
 []\TU/EBGaramond(0)/m/n/12 Mirza, M. & Osin-dero, S. Con-di-tional gen-er-a-tive
  ad-ver-sar-ial nets. Preprint at
  []
@@ -2965,7 +2965,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 warning  (pdf backend): ignoring duplicate destination with the name 'cite.Lorem
 '
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
 []\TU/EBGaramond(0)/m/n/12 Zi-nati, Y., Takid-deen, A. & Emad, A. GRouNdGAN. Zen
 -odo
  []
@@ -2982,25 +2982,25 @@ Chapter 4.
 [69
 
 ] [70] [71] [72]
-<figures/protocol/protocol_fig1.png, id=1354, 4838.075pt x 5661.15pt>
+<figures/protocol/protocol_fig1.png, id=1358, 4838.075pt x 5661.15pt>
 File: figures/protocol/protocol_fig1.png Graphic file (type png)
 <use figures/protocol/protocol_fig1.png>
 Package luatex.def Info: figures/protocol/protocol_fig1.png  used on input line
- 119.
+ 128.
 (luatex.def)             Requested size: 426.79135pt x 499.37482pt.
  [73] [74<./figures/protocol/protocol_fig1.png>] [75]
 [76] [77]
-<figures/protocol/protocol_fig2.png, id=1378, 10720.05pt x 11894.4375pt>
+<figures/protocol/protocol_fig2.png, id=1382, 10720.05pt x 11894.4375pt>
 File: figures/protocol/protocol_fig2.png Graphic file (type png)
 <use figures/protocol/protocol_fig2.png>
 Package luatex.def Info: figures/protocol/protocol_fig2.png  used on input line
- 247.
+ 256.
 (luatex.def)             Requested size: 426.79135pt x 473.51855pt.
 
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.285 \end{table}
+l.294 \end{table}
                
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3009,15 +3009,15 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [78<./figures/protocol/protocol_fig2.png>] [79]
-<figures/protocol/protocol_fig3.png, id=1389, 10188.0625pt x 10649.7875pt>
+<figures/protocol/protocol_fig3.png, id=1393, 10188.0625pt x 10649.7875pt>
 File: figures/protocol/protocol_fig3.png Graphic file (type png)
 <use figures/protocol/protocol_fig3.png>
 Package luatex.def Info: figures/protocol/protocol_fig3.png  used on input line
- 330.
+ 339.
 (luatex.def)             Requested size: 426.79135pt x 446.06926pt.
  [80] [81<./figures/protocol/protocol_fig3.png>] [82] [83] [84]
 ! Undefined control sequence.
-l.519 \$ groundgan\_env \Scripts
+l.528 \$ groundgan\_env \Scripts
                               \activate
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3026,7 +3026,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.519 \$ groundgan\_env \Scripts\activate
+l.528 \$ groundgan\_env \Scripts\activate
                                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3035,18 +3035,18 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [85]
-Underfull \hbox (badness 10000) in paragraph at lines 564--565
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
 []\TU/FiraMono(0)/m/n/10 󰁇 docker build -t yourusername/groundgan:custom -f
  []
 
 [86]
-Underfull \hbox (badness 10000) in paragraph at lines 569--571
+Underfull \hbox (badness 10000) in paragraph at lines 578--580
 []\TU/FiraMono(0)/m/n/10 󰁇 docker run -itd --name yourusername/groundgan:cust
 om --gpus all
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--581
+Underfull \hbox (badness 10000) in paragraph at lines 588--590
 []\TU/FiraMono(0)/m/n/10 󰁇 singularity pull groundgan.sif docker://yazdanz/gr
 oundgan
  []
@@ -3059,7 +3059,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.607 ]
+l.616 ]
      
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -3074,7 +3074,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.607 ]
+l.616 ]
      
 (That was another \errmessage.)
 
@@ -3086,7 +3086,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.607 ]
+l.616 ]
      
 (That was another \errmessage.)
 
@@ -3099,20 +3099,20 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.607 ]
+l.616 ]
      
 (That was another \errmessage.)
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 607.
+(Font)              scaled to size 7.0pt on input line 616.
 
-! LaTeX Error: \begin{tcolorbox} on input line 596 ended by \end{codeblock}.
+! LaTeX Error: \begin{tcolorbox} on input line 605 ended by \end{codeblock}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.629 \end{codeblock}
+l.638 \end{codeblock}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3127,7 +3127,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.679 ]
+l.688 ]
      
 (That was another \errmessage.)
 
@@ -3139,7 +3139,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.679 ]
+l.688 ]
      
 (That was another \errmessage.)
 
@@ -3151,7 +3151,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.679 ]
+l.688 ]
      
 (That was another \errmessage.)
 
@@ -3164,63 +3164,63 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.679 ]
+l.688 ]
      
 (That was another \errmessage.)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 \TU/FiraMono(0)/m/n/8 usage: GRouNdGAN [-h] --config CONFIG [--preprocess] [--cr
 eate_grn] [--train] [--generate]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 \TU/FiraMono(0)/m/n/8 GRouNdGAN is a gene regulatory network (GRN)-guided causal
  implicit generative model
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 \TU/FiraMono(0)/m/n/8 for simulating single-cell RNA-seq data, in-silico perturb
 ation experiments, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 \TU/FiraMono(0)/m/n/8 benchmarking GRN inference methods. This program also cont
 ains cWGAN and unofficial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 \TU/FiraMono(0)/m/n/8 --create_grn Infer a GRN from preprocessed data using GRNB
 oost󰀎 and appropriately
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--698
+Underfull \hbox (badness 10000) in paragraph at lines 689--707
 \TU/FiraMono(0)/m/n/8 --benchmark_grn Evaluate the performance of a GRN inferenc
 e method in inferring the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--705
+Underfull \hbox (badness 10000) in paragraph at lines 712--714
 []\TU/FiraMono(0)/m/n/10 󰁇 python src/main.py --config configs/causal_gan.cfg
  --preprocess --
  []
@@ -3229,7 +3229,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 703--705
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.764 \end{table}
+l.773 \end{table}
                
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3238,21 +3238,21 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [90]
-Overfull \hbox (3.06912pt too wide) in paragraph at lines 793--805
+Overfull \hbox (3.06912pt too wide) in paragraph at lines 802--814
 \TU/FiraMono(0)/m/n/10 󰁙 pos ctr \TU/EBGaramond(0)/m/n/12 and then \TU/FiraM
 ono(0)/m/n/10 [EXPERIMENT]/[GRN Preparation]/strategy 󰁙 neg ctr \TU/EBGaramo
 nd(0)/m/n/12 , the TFs
  []
 
 
-Overfull \hbox (18.61314pt too wide) in paragraph at lines 823--823
+Overfull \hbox (18.61314pt too wide) in paragraph at lines 832--832
 |[][]
  []
 
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.824 \end{table}
+l.833 \end{table}
                
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3261,22 +3261,22 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [91]
-Underfull \hbox (badness 10000) in paragraph at lines 839--859
+Underfull \hbox (badness 10000) in paragraph at lines 848--868
 \TU/FiraMono(0)/m/n/10 Successfully saved GRN inferred by GRNBoost󰀎 GRN to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 839--859
+Underfull \hbox (badness 10000) in paragraph at lines 848--868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 839--859
+Underfull \hbox (badness 10000) in paragraph at lines 848--868
 \TU/FiraMono(0)/m/n/10 Successfully saved GRouNdGAN causal graph to
  []
 
 [92] [93]
-Underfull \hbox (badness 10000) in paragraph at lines 911--915
+Underfull \hbox (badness 10000) in paragraph at lines 920--924
 
  []
 
@@ -3284,7 +3284,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 911--915
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.964 \end{table}
+l.973 \end{table}
                
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3293,21 +3293,21 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [95]
-Overfull \hbox (16.64919pt too wide) in paragraph at lines 1018--1022
+Overfull \hbox (16.64919pt too wide) in paragraph at lines 1027--1031
 []\TU/EBGaramond(0)/b/n/12 ◼󰀀 PAUSE POINT \TU/EBGaramond(0)/m/n/12 Users ca
 n stop and re-sume train-ing from a check-point by set-ting \TU/FiraMono(0)/m/n
 /10 [EXPERIMENT]/ 
  []
 
 
-Overfull \hbox (37.3871pt too wide) in paragraph at lines 1018--1022
+Overfull \hbox (37.3871pt too wide) in paragraph at lines 1027--1031
 \TU/FiraMono(0)/m/n/10 checkpoint \TU/EBGaramond(0)/m/n/12 in the con-fig-u-ra-t
 ion file to the lat-est saved check-point (\TU/FiraMono(0)/m/n/10 .pth \TU/EBGa
 ramond(0)/m/n/12 file in \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/output
  []
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/it' will be
-(Font)              scaled to size 12.0pt on input line 1023.
+(Font)              scaled to size 12.0pt on input line 1032.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `TU/EBGaramond(0)/b/it/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3315,43 +3315,43 @@ Package microtype Info: Character `156' is missing
 Missing character: There is no ◼ (U+25FC) in font EBGaramond/B:mode=node;scrip
 t=latn;language=dflt;+tlig;!
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1042
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1051
 []\TU/FiraMono(0)/m/n/10 tensorboard --logdir󰁙”Tensorboard Event Directory 
 ” --host 󰀌.󰀌.󰀌.󰀌
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1063
 []\TU/FiraMono(0)/m/n/10 ssh -N -f -L localhost:󰀒󰀌󰀌󰀓:computenode:
 󰀒󰀌󰀌󰀒
  []
 
-<figures/protocol/protocol_fig4.png, id=1515, 11091.4375pt x 12516.7625pt>
+<figures/protocol/protocol_fig4.png, id=1519, 11091.4375pt x 12516.7625pt>
 File: figures/protocol/protocol_fig4.png Graphic file (type png)
 <use figures/protocol/protocol_fig4.png>
 Package luatex.def Info: figures/protocol/protocol_fig4.png  used on input line
- 1062.
+ 1071.
 (luatex.def)             Requested size: 426.79135pt x 481.48622pt.
 
-Overfull \hbox (15.99765pt too wide) in paragraph at lines 1074--1079
+Overfull \hbox (15.99765pt too wide) in paragraph at lines 1083--1088
 \TU/EBGaramond(0)/m/n/12 the de-sired model check-point (\TU/FiraMono(0)/m/n/10
  .pth \TU/EBGaramond(0)/m/n/12 file in \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/outpu
 t directory/checkpoints/\TU/EBGaramond(0)/m/n/12 ).
  []
 
 [97]
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1102
 []|\TU/EBGaramond(0)/m/n/12 Path where to save the sim-u-lated dataset
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1102
 \TU/EBGaramond(0)/m/n/12 (\TU/FiraMono(0)/m/n/10 simulated.h󰀑ad\TU/EBGaramon
 d(0)/m/n/12 ). If left un-de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1102
 \TU/EBGaramond(0)/m/n/12 fined, \TU/FiraMono(0)/m/n/10 simulated.h󰀑ad \TU/EB
 Garamond(0)/m/n/12 will be saved to
  []
@@ -3359,7 +3359,7 @@ Garamond(0)/m/n/12 will be saved to
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.1094 \end{table}
+l.1103 \end{table}
                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3374,7 +3374,7 @@ t=latn;language=dflt;+tlig;!
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.1162 \end{table}
+l.1171 \end{table}
                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3383,7 +3383,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.1169 ...of Figure 5-a,b) will be saved to \textttt
+l.1178 ...of Figure 5-a,b) will be saved to \textttt
                                                   {[EXPERIMENT]/output direc...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3395,7 +3395,7 @@ and I'll forget about whatever was undefined.
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
-l.1248 \end{table}
+l.1257 \end{table}
                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3404,28 +3404,28 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-Overfull \hbox (5.49918pt too wide) in paragraph at lines 1266--1266
+Overfull \hbox (5.49918pt too wide) in paragraph at lines 1275--1275
 []\TU/FiraMono(0)/m/n/10 Baseline precision at k: [󰀌.󰀌󰀍󰀌󰀑󰀎
 󰀒󰀏󰀍󰀑󰀓󰀔󰀕󰀐󰀓󰀏󰀒󰀔󰀐, 󰀌.󰀌󰀎󰀍󰀌
 󰀑󰀎󰀒󰀏󰀍󰀑󰀓󰀔󰀕󰀐󰀓󰀏󰀒󰀔,[] 
  []
 
 [102]
-<figures/protocol/protocol_fig5.png, id=1547, 9605.8875pt x 9385.0625pt>
+<figures/protocol/protocol_fig5.png, id=1551, 9605.8875pt x 9385.0625pt>
 File: figures/protocol/protocol_fig5.png Graphic file (type png)
 <use figures/protocol/protocol_fig5.png>
 Package luatex.def Info: figures/protocol/protocol_fig5.png  used on input line
- 1282.
+ 1291.
 (luatex.def)             Requested size: 426.79135pt x 416.86783pt.
 
-Overfull \hbox (9.18027pt too wide) in paragraph at lines 1320--1322
+Overfull \hbox (9.18027pt too wide) in paragraph at lines 1329--1331
 [][]\TU/EBGaramond(0)/b/n/12 ▲[] CRIT-I-CAL \TU/EBGaramond(0)/m/n/12 En-sure 
 all TFs spec-i-fied in \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Perturbation]/tfs to
  perturb
  []
 
 
-Overfull \hbox (7.13393pt too wide) in paragraph at lines 1320--1322
+Overfull \hbox (7.13393pt too wide) in paragraph at lines 1329--1331
 \TU/EBGaramond(0)/m/n/12 ex-ist in the causal graph and that their count matches
  the num-ber of en-tries in \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Pe
  []
@@ -3434,76 +3434,76 @@ Overfull \hbox (7.13393pt too wide) in paragraph at lines 1320--1322
 Missing character: There is no ◼ (U+25FC) in font EBGaramond/B:mode=node;scrip
 t=latn;language=dflt;+tlig;!
 ] [104<./figures/protocol/protocol_fig5.png>]
-<figures/protocol/protocol_fig6.png, id=1557, 7076.4375pt x 8321.0875pt>
+<figures/protocol/protocol_fig6.png, id=1561, 7076.4375pt x 8321.0875pt>
 File: figures/protocol/protocol_fig6.png Graphic file (type png)
 <use figures/protocol/protocol_fig6.png>
 Package luatex.def Info: figures/protocol/protocol_fig6.png  used on input line
- 1347.
+ 1356.
 (luatex.def)             Requested size: 426.79135pt x 501.78311pt.
 
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.1401     \end{tabular}}
+l.1410     \end{tabular}}
                        
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 []|\TU/EBGaramond(0)/m/n/12 Mis-match be-tween the
  []
 
 
-Underfull \hbox (badness 6125) in paragraph at lines 1401--1401
+Underfull \hbox (badness 6125) in paragraph at lines 1410--1410
 \TU/EBGaramond(0)/m/n/12 num-ber of genes in \TU/FiraMono(0)/m/n/10 train\TU/EB
 Garamond(0)/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 \TU/EBGaramond(0)/m/n/12 con-fig-u-ra-tion pa-ram-e-ters or
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 []\TU/EBGaramond(0)/m/n/12 The \TU/FiraMono(0)/m/n/10 .X \TU/EBGaramond(0)/m/n/
 12 at-tribute in the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 \TU/FiraMono(0)/m/n/10 anndata \TU/EBGaramond(0)/m/n/12 in-put is a sparse
  []
 
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.1401     \end{tabular}}
+l.1410     \end{tabular}}
                        
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 []|\TU/EBGaramond(0)/m/n/12 Ver-ify \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Preproc
 essing]/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 \TU/FiraMono(0)/m/n/10 highly variable number \TU/EBGaramond(0)/m/n/12 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Data]/number of genes
  []
 
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.1401     \end{tabular}}
+l.1410     \end{tabular}}
                        
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -3511,35 +3511,35 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \noalign.
 \addlinespace ->\noalign 
                          {\ifnum 0=`}\fi \@ifnextchar [{\@addspace }{\@addsp...
-l.1401     \end{tabular}}
+l.1410     \end{tabular}}
                        
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 1401--1401
+Underfull \hbox (badness 1648) in paragraph at lines 1410--1410
 []\TU/EBGaramond(0)/m/n/12 Re-duc-ing the \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[M
 odel]/depth
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 1401--1401
+Underfull \hbox (badness 1796) in paragraph at lines 1410--1410
 \TU/EBGaramond(0)/m/n/12 file to 2 and 1, re-spec-tively. This will make
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 []|\TU/EBGaramond(0)/m/n/12 En-sure that all the \TU/FiraMono(0)/m/n/10 TFs \TU
 /EBGaramond(0)/m/n/12 listed in the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
 \TU/FiraMono(0)/m/n/10 [EXPERIMENT]/[Perturbation]/tfs to
  []
 
 [105] [106<./figures/protocol/protocol_fig6.png>]
-Overfull \hbox (2.64081pt too wide) in paragraph at lines 1416--1423
+Overfull \hbox (2.64081pt too wide) in paragraph at lines 1425--1432
 []\TU/EBGaramond(0)/m/n/12 The per-tur-ba-tion pre-dic-tion pro-ce-dure gen-er-a
 tes two .h5ad files: \TU/FiraMono(0)/m/n/10 before_perturbation.h󰀑ad
  []
@@ -3717,7 +3717,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47410 strings out of 476553
+ 47411 strings out of 476553
  125016,1977958 words of node,token memory allocated
  1350 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 2 sub_mlist
@@ -3725,8 +3725,8 @@ Here is how much of LuaTeX's memory you used:
 n nodes
    avail lists: 1:1,2:1693,3:1778,4:208,5:1149,6:122,7:11256,8:98,9:799,10:32,11
 :892,12:1
- 67632 multiletter control sequences out of 65536+600000
- 181 fonts using 58901995 bytes
+ 67633 multiletter control sequences out of 65536+600000
+ 181 fonts using 58902095 bytes
  125i,17n,114p,2830b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-BoldI
 talic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraMono-Reg
@@ -3737,10 +3737,10 @@ mond-Math.otf><./Garamond-Math.otf></usr/share/texlive/texmf-dist/fonts/opentype
 ntype/public/ebgaramond/EBGaramond-Italic.otf></usr/share/texlive/texmf-dist/fon
 ts/opentype/public/ebgaramond/EBGaramond-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf>
-Output written on main.pdf (145 pages, 41611949 bytes).
+Output written on main.pdf (145 pages, 41614414 bytes).
 
-PDF statistics: 1791 PDF objects out of 2073 (max. 8388607)
- 1569 compressed objects within 16 object streams
+PDF statistics: 1795 PDF objects out of 2073 (max. 8388607)
+ 1573 compressed objects within 16 object streams
  465 named destinations out of 1000 (max. 131072)
  720 words of extra memory for PDF output out of 10000 (max. 100000000)
 
